@@ -1,0 +1,232 @@
+    <!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <head id="Head1">
+        <title>
+            Comment dân trí
+        </title>
+        <script>var jsSettings={"ImageDomain":"https://icdn.dantri.com.vn","VideoDomain":"https://vcdn.dantri.com.vn","AudioDomain":null,"CommentsDomain":"https://comment.dantri.com.vn","ApiComments":"https://apicomment.dantri.com.vn","DuLichDomain":"https://dulich.dantri.com.vn","TuyenSinhDomain":"https://tuyensinh.dantri.com.vn","DuHocDomain":"https://duhoc.dantri.com.vn","WebDomain":"https://dantri.com.vn","MobileDomain":"https://m.dantri.com.vn","CaptchaDomain":"https://captcha.dantri.com.vn","WebApi":"https://webapi.dantri.com.vn","AssertsDomain":"https://cdncomment.dantri.com.vn","ResourceDomains":["https://*.dantri.com.vn/**","http://*.dantri.com.vn/**"],"CurrentDomain":"https://comment.dantri.com.vn","IsMobile":0,"UngHoDomain":null,"FacebookAppId":"164035690775918","CommonCDN":"https://cdnasset.dantri.com.vn","IsAmp":0,"BlockedAds":false,"AppType":"None","Version":"637502855948769626"};</script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+        <meta name="MobileOptimized" content="100"/>
+        <link href="/css/css-comment3.6.css" rel="stylesheet"/>
+        <noscript>
+            <style type="text/css">
+                img.lazy { display: none; }
+            </style>
+        </noscript>
+        <script type='text/javascript'  src='https://cdncomment.dantri.com.vn/bundle/js/oldcode.min.js?v=1119100844'></script>
+
+        <script type="text/html" id="tplBoxComment">
+            <div class="clearfix box-comment box-leavecomment" data-type="box-comment">
+                <div class="comment-bar clearfix">
+                    <p class="dantri-label fl">DÂN TRÍ <sup class="sub">ID</sup></p>
+                    <div class="comment-acc user-action fr">
+                        <a data-type="button-login" onclick="login(this);">Đăng nhập</a> | <a data-type="button-register" onclick="register(this);">Đăng ký</a>
+                        <a class="help" onclick="showHelp(this);">
+                            <img src="https://comment.dantri.com.vn/images/comment-helper-sz18.png" />
+                        </a>
+                    </div>
+                    <div class="comment-acc user-info fr"><b data-type="user-name"></b>&nbsp;|&nbsp;<a onclick="javascript:logout();">Thoát</a> </div>
+                    <div style="display:none" id="user-email"></div>
+                </div>
+                <div class="form" data-type="comment-form" data-parentid="0">
+                    <div class="inner">
+                        <textarea data-type="comment-content" placeholder="Nội dung bình luận"></textarea>
+                        <div class="action clearfix">
+                            <a class="btnSend" data-type="button-send" onclick="doComment(this);">Gửi bình luận</a>
+                            <span id="spanCommentCount" class="comment-count">0 bình luận</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </script>
+        <script type='text/javascript'  src='https://cdncomment.dantri.com.vn/bundle/js/main.min.js?v=1119100844'></script>
+        
+        <script type="text/javascript">
+
+            comments.init({
+                objectId: '20210302114323780',
+                objectType: 1,
+                objectTitle: 'TWFsYXlzaWEgbmjhuq1wIHThu4tjaCB0aMOqbSBj4bqndSB0aOG7pyBCcmF6aWwsIGNo4budIMSR4bqldSDEkeG7mWkgdHV54buDbiBWaeG7h3QgTmFt',
+                objectUrl: 'https://dantri.com.vn',
+                zoneId: 26
+            });
+
+            window.addEventListener('message', listenToParent, false);
+        </script>
+        <script type="text/javascript">
+            window.fbAsyncInit = function() {
+                FB.init({
+                    appId: '164035690775918',
+                    xfbml: true,
+                    version: 'v2.7'
+                });
+            };
+
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) {
+                    return;
+                }
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+
+            function fbEnsureInit(callback) {
+                if (!window.fbApiInit) {
+                    setTimeout(function() { fbEnsureInit(callback); }, 50);
+                } else {
+                    if (callback) {
+                        callback();
+                    }
+                }
+            }
+
+            function loginFacebook(callback) {
+                FB.login(function(data) {
+                        reloginFacebook(callback);
+                    },
+                    { scope: 'email, public_profile' });
+            }
+
+            function reloginFacebook(callback) {
+                FB.api('/me?fields=id,name,email,picture',
+                    function(me) {
+                        ajax.user.loginFacebook(me,
+                            {
+                                success: function() {
+                                    if (typeof callback === "function")
+                                        callback();
+                                }
+                            });
+                    });
+            }
+
+            function doLoginFacebook() {
+                loginFacebook(function() {
+                    opener.postMessage2('reload');
+                    //window.location.reload();
+                });
+            }
+
+        </script>
+        <script type="text/javascript">
+            function doComment(elmt) {
+                var cookieId = vcCore.getCookie('cdlgifdaec');
+                if (cookieId === null) {
+                    
+                    $(elmt).popupWindow({
+                        windowURL: '/home/login',
+                        width: 500,
+                        height: 380,
+                        centerScreen: 1,
+                        windowName: 'popupform'
+                    });
+                } else {
+                    elmt = $(elmt);
+                    var form = elmt.closest('[data-type="box-comment"]');
+                    var taContent = form.find('[data-type="comment-content"]');
+                    var content = $.trim(taContent.val());
+                    if (content == '') {
+                        alert("Bạn chưa nhập nội dung bình luận");
+                        taContent.focus();
+                        return;
+                    }
+                    var userEmail = $("#user-email").text();
+                    if (!userEmail || userEmail === "") {
+                        userEmail = null;
+                    }
+                    window.parent.postMessage({ action: userEmail, label: content, from: "comment" }, "*");
+                    sendComment2(form.attr('data-parentid'), content,"trongvu", function() { taContent.val(''); });
+                }
+            }
+        </script>
+    </head>
+    <body>
+    <form method="post" action="/boxcomment2.aspx?objecttype=1&amp;objectid=20210302114323780&amp;objecttitle=TWFsYXlzaWEgbmjhuq1wIHThu4tjaCB0aMOqbSBj4bqndSB0aOG7pyBCcmF6aWwsIGNo4budIMSR4bqldSDEkeG7mWkgdHV54buDbiBWaeG7h3QgTmFt&amp;objecturl=http://dantri.com.vn//the-thao/malaysia-nhap-tich-them-cau-thu-brazil-cho-dau-doi-tuyen-viet-nam-20210302114323780.htm;zoneid=26&amp;commentId=" id="form1">
+        <script id="tplListCommentParent" type="text/jtemplate">
+
+                {#foreach $T as data}
+                <li id="comment-{$T.data.Id}" data-type="comment-item" data-isprocessed="0" data-isparent="1" data-id="{$T.data.Id}" data-parentid="{$T.data.ParentId}" data-liked="{$T.data.Liked}">
+                    <img class="cmt-avatar" data-type="user-avatar" src="{$T.data.SenderAvatar}" />
+                    <div class="cmt-content">
+                        <a class="cmt-author">{$T.data.SenderFullName}<span class="date"> · {$T.data.Date}</span></a>{$T.data.Content}
+                    </div>
+                    <div class="action clearfix" data-type="comment-nav" data-id="{$T.data.Id}">
+                        <a class="btn act-item" data-type="button-like">Thích</a><span class="sprt">·</span>
+                        <a data-type="button-reply" class="btn act-item">Trả lời</a>
+                        <span class="sprt">·</span>
+                        <a data-type="button-share" class="btn act-item" onclick="share(this,'{$T.data.Id}');">Chia sẻ</a><span class="sprt" data-group="liked">·</span>
+                        <span class="act-item likecount" data-group="liked"><i class="ico-like"></i><span data-type="liked">{$T.data.Liked}</span></span>
+                    </div>
+                    {#if $T.data.ReplyCount > 0}
+                    <a class="view-subcmt" data-type="button-loadcomment" data-start="0" data-rows="{$T.data.ReplyCount}"><span class="default-text"><i class="ico-viewsubcmt"></i>{$T.data.ReplyCount} trả lời</span><span class="toggle-text"><i class="ico-slideup"></i>Ẩn {$T.data.ReplyCount} trả lời</span></a>
+                    <div style="display:none !important;" type="text/json" id="replies-{$T.data.Id}">{initReplies($T.data.Id, $T.data.Replies)}</div>
+                    {#/if}
+                    <ul class="comments sub" data-template="tplListCommentChild" data-type="list-comment">
+                        <li class="comment-placeholder" data-generated="0" data-type="comment-reply-placeholder"><img class="cmt-avatar" data-type="user-avatar" src="https://icdn.dantri.com.vn/images/no-avatar.png" data-userid="{$T.data.UserId}" /></li>
+                    </ul>
+                </li>
+                {#/for}
+
+            </script>
+
+        <script id="tplListCommentChild" type="text/jtemplate">
+                {#foreach $T as data}
+                <li id="comment-{$T.data.Id}" data-type="comment-item" data-isprocessed="0" data-id="{$T.data.Id}" data-parentid="{$T.data.ParentId}" data-liked="{$T.data.Liked}">
+                    <img class="cmt-avatar" data-type="user-avatar" src="{$T.data.SenderAvatar}" />
+                    <div class="cmt-content">
+                        <a class="cmt-author">{$T.data.SenderFullName}<span class="date"> · {$T.data.Date}</span></a>{$T.data.Content}
+                    </div>
+                    <div class="action clearfix" data-type="comment-nav" data-id="{$T.data.Id}">
+                        <a class="btn act-item" data-type="button-like">Thích</a><span class="sprt">·</span>
+                        <a data-type="button-reply" class="btn act-item">Trả lời</a><span class="sprt">·</span>
+                        <a data-type="button-share" class="btn act-item" onclick="share(this,'{$T.data.Id}');">Chia sẻ</a><span class="sprt" data-group="liked">·</span>
+                        <span class="act-item likecount" data-group="liked"><i class="ico-like"></i><span data-type="liked">{$T.data.Liked}</span></span>
+                    </div>
+                </li>
+                {#/for}
+            </script>
+
+        <div class="clearfix box-comment">
+            <div id="divComment"></div>
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    
+                   
+                    
+                    
+                    var div = generateBoxComment(0);
+                    $('#divComment').replaceWith(div);
+                    checkSession();
+                    initEventsForListCommentStream();
+
+                    $.ajax({
+                        url: jsSettings.ApiComments +
+                            '/Api/Comment/aj-GetTotalCommentByNewsId?arrnewsid=' +
+                            '20210302114323780',
+                        dataType: "json",
+                        success: function(b) {
+                            if (b != null && b.length > 0 && b[0].CommentCount > 0) {
+                                $(".comment-count").html(b[0].CommentCount + ' bình luận');
+                            } else {
+                                $(".comment-count").hide();
+                            }
+                        }
+                    });
+
+                });
+            </script>
+            <div class="list-comments">
+                <ul class="comments" data-type="list-commentstream" data-parentid="0" data-template="tplListCommentParent">
+                    <li data-type="button-loadcommentstream" data-isloading="0" data-parentid="0" data-start="0" data-rows="5" class="last more loading">
+                        <span class="loading-text">Đang tải bình luận...</span>
+                        <span class="default-text">Xem thêm các bình luận khác</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </form>
+    </body>
+    </html>

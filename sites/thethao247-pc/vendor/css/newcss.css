@@ -1,0 +1,94 @@
+
+.ads-detail-inline .dugout_custom{
+padding: 10px;
+background: #f2f2f2;
+margin-bottom: 15px;
+border: 1px solid #ddd;
+}
+.ads-detail-inline .dugout_custom:before{
+content: '';
+background: url(https://dugout.com/assets/images/logo/club_logo_ws_tl.png);
+width: 90px;
+height: 21px;
+display: block;
+background-size: 100%;
+margin-bottom: 10px;
+}
+.mb-10{margin-bottom: 10px;}
+#main-detail .table-responsive-247{
+width: 100%;
+overflow-x: auto;
+}
+.list_utility_fixture [class^="icon-"], .list_utility_fixture [class*=" icon-"] {
+vertical-align: middle;
+font-size:25px;
+}
+#main-detail a.rate-link{
+color: #004370!important;
+font-weight: bold;
+padding-left: 32px;
+font-family: 'Times New Roman';
+text-decoration: none;
+font-size: 22px!important;
+line-height: 30px!important;
+margin-top: 30px!important;
+display: block!important;
+}
+#main-detail a.btn-cta{
+background: #1f7def;
+padding: 10px 15px;
+color: #fff!important;
+font-size: 18px;
+font-weight: normal;
+border-radius: 30px;
+}
+.xemnhieu .bg_title_news .hsubtitle{
+color: #0f408b;
+font-size: 20px;
+line-height: 1.35;
+}
+.xemnhieu .bg_title_news{
+position: static;
+background: none;
+padding: 10px 0;
+}
+.xemnhieu.col_video_clip .sub_thumb_news{
+/* float: left; */
+height: auto;
+}
+.xemnhieu .link_news_other{
+font-size: 15px;
+font-weight: normal
+}
+#main-detail .expNoEdit figcaption{
+color: #828282;
+display: block;
+background: #eee;
+padding: 8px 12px;
+text-align: center;
+margin-bottom: 13px;
+font-size: 16px!important;
+margin-top: -8px;
+}
+#main-detail .exp_attach {box-shadow: 1px 1px 3px rgba(0,0,0,0.5); background: url(cms/static/tinymce/images/attach-icon.jpg) no-repeat #eee; height: 64px; overflow: hidden; max-width: 250px; padding-left: 72px;}
+#main-detail .exp_attach h2 {margin: 8px 0 0 !important;}
+#main-detail .exp_attach h2 a {text-decoration: none;}
+#main-detail .exp_attach p {color: #999; margin: 0 !important;}
+#main-detail .explus_related_1404022217 {border-top: 3px solid #E0E0E0; margin-top: 12px; margin-bottom: 12px;}
+#main-detail .explus_related_1404022217_letter {font-weight: normal;border-top: 3px solid #c32c2c;display: inline-block;margin-top: -3px;line-height: 26px !important;font-family: Arial !important;font-size: 14px !important;margin-bottom: 3px;padding: 0;}
+#main-detail .expNoEdit.explus_related_1404022217.explus_related_1404022217_bottom .explus_related_1404022217_item .explus_related_1404022217_title {text-decoration: none;font-family: Arial !important;font-size: 16px !important;margin: 8px 0 !important;display: block;font-weight: bold;color: #333 !important;}
+#main-detail .explus_related_1404022217_title:hover {text-decoration: underline;}
+#main-detail .explus_related_1404022217_photo {display: block;}
+#main-detail .explus_related_1404022217_photo img {max-width: 100% !important;}
+#main-detail .explus_related_1404022217_left {float: left; width: 140px; margin-right: 12px;}
+#main-detail .explus_related_1404022217_right {float: right; width: 140px; margin-left: 12px;}
+#main-detail .explus_related_1404022217_bottom {display: inline-block;width: 100%;}
+#main-detail .explus_related_1404022217_bottom .explus_related_1404022217_item {float: left;width: 23.5%;margin-right: 2%;overflow: hidden;border: none;padding: 0;}
+#main-detail .explus_related_1404022217_bottom .explus_related_1404022217_item_last {margin-right: 0 !important;}
+#main-detail .explus_related_1404022217_bottom .explus_related_1404022217_title {font-weight: normal !important; line-height: 18px;}
+/* #main-detail a:not([class^="vmp"]):not([component]):not([class*=adbro]), #main-detail a *:not([class^="vmp"]):not([component]):not([class*=adbro]){
+max-width: 100%;
+}
+#main-detail *{
+max-width: 100%;
+} */

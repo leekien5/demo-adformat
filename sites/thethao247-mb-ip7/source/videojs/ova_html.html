@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" type="text/css" href="styles/ads-label.css">
+  <link rel="stylesheet" type="text/css" href="styles/black-poster.css">
+  <link rel="stylesheet" type="text/css" href="styles/videojs.vast.css">
+  <link rel="stylesheet" type="text/css" href="styles/video-js.css">
+  <link rel="stylesheet" type="text/css" href="styles/videojs.vpaid.css">
+  
+  <script src="js/video.js"></script>
+  <script src="js/es5-shim.js"></script>
+  <script src="js/ie8fix.js"></script>
+  <script src="js/swfobject.js"></script>
+  <script src="js/videojs-vast-vpaid.js"></script>
+  
+</head>
+<body style="width:100%;height:100%;margin:0px">
+</body>
+<script>
+	var yw = getURLParameter('yw');
+	var yh = getURLParameter('yh');
+	var plf = getURLParameter('plf');
+	var aid = getURLParameter('aid');
+	var fpid = getURLParameter('fpid');
+	var zid = getURLParameter('zid');
+	var cs = getURLParameter('cs');
+	var ovr = getURLParameter('ovr');
+	var ref = getURLParameter('ref');
+	//var poster = getURLParameter('poster');
+	document.body.innerHTML = '<video id="yomedia-video" height="200" class="video-js vjs-default-skin"><source src="pub-video.mp4" type="video/mp4" /></video>';
+	var yomedia_video = document.getElementById("yomedia-video");
+	//yomedia_video.style.width = width + 'px';
+	//yomedia_video.style.height = height + 'px';
+	//alert(yomedia_video.style.width);
+	//yomedia_video.poster = encodeURI(poster);
+	document.onreadystatechange = function () {
+    	if (document.readyState == "complete") {
+        	
+
+    		if ('mobile' == plf) {
+    			vjs=videojs("yomedia-video", {hls: {withCredentials: true},"controls": true,"autoplay": true, "preload": "false" });
+       		} else {
+       			vjs=videojs("yomedia-video", {hls: {withCredentials: true},"controls": false,"autoplay": true, "preload": "false" });
+			}
+
+    		vjs.vastClient({
+    	   		url: '../../vast.php',
+    	   		playAdAlways: true,
+    	   		adCancelTimeout: 10000 
+    	   	});
+
+    		if ('pc' == plf) {
+    			vjs.play();
+       		}
+
+    		vjs.on('ended', function(evt) {
+   				parent.postMessage("onLinearAdSkippedYomedia();", "*");
+   	      	});
+			vjs.on('vast.adSkip', function(evt) {
+   				parent.postMessage("onLinearAdSkippedYomedia();", "*");
+   	      	});
+   	      	vjs.on('error', function(evt) {
+   	      		parent.postMessage("onLinearAdFinishYomedia();", "*");
+   	      	});
+    	}
+	}
+
+	function getURLParameter(name) {
+		return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
+	}    	
+</script>	
+</html>

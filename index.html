@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Demo</title>
+        <link rel="icon" href="favicon.ico" type="image/gif" sizes="16x16" />
+        <link rel="stylesheet" href="resource/css/bootstrap.min.css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css" />
+        <link href="resource/css/style.css" rel="stylesheet" type="text/css" />
+    </head>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand"></a>
+            <a href="https://yomedia.vn" target="_blank">
+                <img class="logo-yomedia" src="./resource/images/logo-yomedia.png" alt="" />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Adformats
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://yomedia.vn/case-studies/" target="_blank">Case Studies</a>
+                            <a class="dropdown-item" href="https://yomedia.vn/demos/" target="_blank">Showcases</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8 offset-xl-2 pt-5 pb-2">
+                    <h1>Adformats Demo Form</h1>
+                    <p class="lead">Fill in required fields to generate an adformat demo link.</p>
+                    <form id="frmCreateSource" name="create_source" method="get" action="#" role="form">
+                        <div class="messages"></div>
+                        <div class="controls">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="optTypes">Choose device type *</label>
+                                        <select id="optTypes" name="optTypes" class="form-control" required="required" data-error="Please choose a specify device.">
+                                            <option value="" disabled selected hidden>Please select a device ...</option>
+                                            <optgroup class="options" label="Devices">
+                                                <option value="display">Display</option>
+                                                <option value="mobile">Mobile</option>
+                                                <option value="video">Video</option>
+                                            </optgroup>
+                                        </select>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="optTemplates">Choose a template *</label>
+                                        <select class="form-control"  id="optTemplates" required="required" data-error="Please choose a specify template.">
+                                            <option value="" disabled selected hidden>Please select a template ...</option>
+                                                <optgroup id="templateDisplay" label="Display">
+                                                </optgroup>
+                                                <optgroup id="templateMobile" label="Mobile">
+                                                </optgroup>
+                                        </select>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="optAdformats">Choose an adformat *</label>
+                                        <select id="optAdformats" name="optAdformats" class="form-control" required="required" data-error="Please choose a specify adformat.">
+                                            <option value="" disabled selected hidden>Please select an adformat ...</option>
+                                            <optgroup id="optAdformatsDisplay" label="Display Device" >
+                                            </optgroup>
+                                            <optgroup id="optAdformatsMobile" label="Mobile Device">
+                                            </optgroup>
+                                            <!-- <optgroup id="optAdformatsVideo" label="Video">
+                                                <option value="preroll">Video Preroll</option>
+                                                <option value="instream">Video Instream</option>
+                                                <option value="outstream">Video Outstream</option>
+                                            </optgroup>                                                  -->
+                                        </select>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12" id="mainSource">
+                                    <div class="form-group">
+                                        <label for="txtBanner">Source *</label>
+                                        <textarea class="form-control" type="input" id="txtBanner" placeholder="Source here ..." rows="2" data-error="Banner link is required."></textarea>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                    <div class="form-group" id="secondSource">
+                                        <label for="txtBanner2">Addition source *</label>
+                                        <textarea class="form-control" type="input" id="txtBanner2" placeholder="Addition source here ..." rows="2" data-error="Banner link is required."></textarea>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                    <div class="form-group" id="videoSource">
+                                        <label for="txtBannerVideo">Video Source *</label>
+                                        <textarea class="form-control" type="input" id="txtBannerVideo" placeholder="Video source here ..." rows="2" data-error="Banner link is required."></textarea>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group" id="output">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                              <button class="btn btn-info" id="btnCopy" title="Copy link">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+                                                    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                                                    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+                                                  </svg>
+                                              </button>
+                                              <button class="btn btn-info border-left" id="btnOpen" title="Open link">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-door-open" viewBox="0 0 16 16">
+                                                    <path d="M8.5 10c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z"/>
+                                                    <path d="M10.828.122A.5.5 0 0 1 11 .5V1h.5A1.5 1.5 0 0 1 13 2.5V15h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V1.5a.5.5 0 0 1 .43-.495l7-1a.5.5 0 0 1 .398.117zM11.5 2H11v13h1V2.5a.5.5 0 0 0-.5-.5zM4 1.934V15h6V1.077l-6 .857z"/>
+                                                </svg>
+                                              </button>
+                                            </div>
+                                            <textarea class="form-control" id="txtOutput" readonly></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p class="text-muted"><strong>*</strong> For more informations, please visit our website. <a href="https://yomedia.vn" target="_blank">Yomedia</a>.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden"><input type="submit"></div>
+                    </form>
+                </div>
+                <div class="col-xl-8 offset-xl-2">
+                        <button type="button" id="btnSave" onclick="$('#frmCreateSource').submit();" class="btn btn-success btn-send">Submit</button>
+                        <button type="button" id="btnReset" class="ml-2 btn btn-warning btn-send">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <footer class="bg-light text-center text-lg-start">
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: #f8f9fa;">
+            COPPYRIGHT © 2021
+            <a class="text-dark" href="https://yomedia.vn">YOMEDIA ALL RIGHTS RESERVED.</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <script type="text/javascript" src="resource/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="resource/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="resource/js/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js" integrity="sha256-dHf/YjH1A4tewEsKUSmNnV05DDbfGN3g7NMq86xgGh8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="main_scripts.js"></script>
+    <script type="text/javascript" src="database.js"></script>
+</html>
