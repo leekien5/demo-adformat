@@ -134,9 +134,6 @@ function copyFunction() {
 
 $('#frmCreateSource').submit(function(e) {
     e.preventDefault();
-    var messageAlert = 'alert-success';
-    var messageText = "Link generated successfully";
-
     var template = $("#optTemplates").val();
     var format = $("#optAdformats").val();
     var sourceURL = $("#txtBanner").val();
@@ -158,7 +155,4 @@ $('#frmCreateSource').submit(function(e) {
     $("#txtOutput").empty();
     $("#txtOutput").append(adformatURL);
     
-    var alertBox = '<div class="alert ' + messageAlert + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + messageText + '</div>';
-    $('#frmCreateSource').find('.messages').html(alertBox);
-
 });
