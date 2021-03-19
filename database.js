@@ -26,18 +26,6 @@ const list = {
             value: 'Báo Thể Thao 247 Mobile',
             id: 'thethao247-mb'
         },
-        {
-            value: 'Báo Dân Trí Mobile (iPhone 7)',
-            id: 'dantri-mb-ip7'
-        },
-        {
-            value: 'Báo Phụ Nữ Today Mobile (iPhone 7)',
-            id: 'phunutoday-mb-ip7'
-        },
-        {
-            value: 'Báo Thể Thao 247 Mobile (iPhone 7)',
-            id: 'thethao247-mb-ip7'
-        },
     ],
     optAdformatsDisplay : [
         {

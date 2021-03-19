@@ -1,1 +1,0 @@
-$(document).ready(function(){var $city=$('.wrapper-weather').find('*[id^="city_"]');$("#select_city").change(function(){var a=$("#select_city").val();$city.hide().filter("#"+a).show();}).change();});
