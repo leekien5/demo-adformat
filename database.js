@@ -1,110 +1,36 @@
 const list = {
-    templateDisplay : [
-        {   
-            value: 'Báo Dân Trí',
-            id: 'dantri-pc'
-        },
-        {
-            value: 'Báo Phụ Nữ Today',
-            id: 'phunutoday-pc'
-        },
-        {
-            value: 'Báo Thể Thao 247',
-            id: 'thethao247-pc'
-        },
+    devices : [
+        { name: 'Display', value: 'display' },
+        { name: 'Mobile', value: 'mobile' },
+        { name: 'Video', value: 'Video' }
     ],
-    templateMobile : [
-        {
-            value: 'Báo Dân Trí Mobile',
-            id: 'dantri-mb'
-        },
-        {
-            value: 'Báo Phụ Nữ Today Mobile',
-            id: 'phunutoday-mb'
-        },
-        {
-            value: 'Báo Thể Thao 247 Mobile',
-            id: 'thethao247-mb'
-        },
+    templates : [
+        { name: 'Báo Dân Trí 1', value: 'dantri-pc', type: 'display' },
+        { name: 'Báo Phụ Nữ Today 1', value: 'phunutoday-pc', type: 'display' },
+        { name: 'Báo Thể Thao 247 1', value: 'thethao247-pc', type: 'display' },
+        { name: 'Báo Dân Trí', value: 'dantri-mb', type: 'mobile' },
+        { name: 'Báo Phụ Nữ Today', value: 'phunutoday-mb', type: 'mobile' },
+        { name: 'Báo Thể Thao 247', value: 'thethao247-mb', type: 'mobile' },
     ],
-    optAdformatsDisplay : [
-        {
-            value: 'Display Masthead (Billboard)',
-            id: 'billboard'
-        },
-        {
-            value: 'Display Balloon Expandable',
-            id: 'balloon'
-        },
-        {
-            value: 'Display Bottom Up Expandable',
-            id: 'bottom-up'
-        },
-        {
-            value: 'Display In Image',
-            id: 'in-native'
-        },
-        {
-            value: 'Display In Image Takeover',
-            id: 'in-takeover'
-        },
-        {
-            value: 'Display In Image Carousel',
-            id: 'in-carousel'
-        },
-        {
-            value: 'Display In Image With Inread Video',
-            id: 'in-inread'
-        },
-        {
-            value: 'Display On Image',
-            id: 'on-image-pc'
-        },
-        {
-            value: 'Display 3D Post Carousel',
-            id: '3d-post-carousel'
-        },
-    ],
-    optAdformatsMobile : [
-        {
-            value: 'Mobile Masthead',
-            id: 'masthead-mb'
-        },
-        {
-            value: 'Mobile Interscroller (Inpage)',
-            id: 'inpage'
-        },
-        {
-            value: 'Mobile Interstitial (Firstview)',
-            id: 'firstview'
-        },
-        {
-            value: 'Mobile Footer Expandable',
-            id: 'footer'
-        },
-        {
-            value: 'Mobile In Image',
-            id: 'in-native'
-        },
-        {
-            value: 'Mobile In Image Takeover',
-            id: 'in-takeover'
-        },
-        {
-            value: 'Mobile In Image Carousel',
-            id: 'in-carousel'
-        },
-        {
-            value: 'Mobile On Image With Inread Video',
-            id: 'in-inread'
-        },
-        {
-            value: 'Mobile On Image',
-            id: 'on-image-mb'
-        },
-        {
-            value: 'Mobile 3D Post Carousel',
-            id: '3d-post-carousel'
-        },
+    adformats : [
+        { name: 'Display Masthead (Billboard)', value: 'billboard', type: 'display' },
+        { name: 'Display Balloon Expandable', value: 'balloon', type: 'display' },
+        { name: 'Display Bottom Up Expandable', value: 'bottom-up', type: 'display' },
+        { name: 'Display In Image', value: 'in-native', type: 'display' },
+        { name: 'Display In Image Takeover', value: 'in-takeover', type: 'display' },
+        { name: 'Display In Image Carousel', value: 'in-carousel', type: 'display' },
+        { name: 'Display In Image With Inread Vvalueeo', value: 'in-inread', type: 'display' },
+        { name: 'Display On Image', value: 'on-image-pc', type: 'display' },
+        { name: 'Display 3D Post Carousel', value: '3d-post-carousel', type: 'display' },
+        { name: 'Mobile Masthead', value: 'masthead-mb', type: 'mobile' },
+        { name: 'Mobile Interscroller (Inpage)', value: 'inpage', type: 'mobile' },
+        { name: 'Mobile Interstitial (Firstview)', value: 'firstview', type: 'mobile' },
+        { name: 'Mobile Footer Expandable', value: 'footer', type: 'mobile' },
+        { name: 'Mobile In Image', value: 'in-native', type: 'mobile' },
+        { name: 'Mobile In Image Takeover', value: 'in-takeover', type: 'mobile' },
+        { name: 'Mobile In Image Carousel', value: 'in-carousel', type: 'mobile' },
+        { name: 'Mobile On Image With Inread Video', value: 'in-inread', type: 'mobile' },
+        { name: 'Mobile On Image', value: 'on-image-mb', type: 'mobile' },
+        { name: 'Mobile 3D Post Carousel', value: '3d-post-carousel', type: 'mobile' },
     ],
 }

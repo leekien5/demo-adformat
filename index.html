@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="resource/css/bootstrap.min.css" />
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css" />
         <link href="resource/css/style.css" rel="stylesheet" type="text/css" />
+        <!-- <link href="resource/css/chosen.min.css" rel="stylesheet" type="text/css" /> -->
     </head>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -43,55 +44,35 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-8 offset-xl-2 pt-5 pb-2">
-                    <h1>Adformats Demo Form</h1>
-                    <p class="lead">Fill in required fields to generate an adformat demo link.</p>
+                    <h1>Ad Formats Demo Form</h1>
+                    <p class="lead">Fill in required fields to generate an ad format demo link.</p>
                     <form id="frmCreateSource" name="create_source" method="get" action="#" role="form">
                         <div class="messages"></div>
                         <div class="controls">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="optTypes">Choose device type *</label>
-                                        <select id="optTypes" name="optTypes" class="form-control" required="required" data-error="Please choose a specify device.">
-                                            <option value="" disabled selected hidden>Please select a device ...</option>
-                                            <optgroup class="options" label="Devices">
-                                                <option value="display">Display</option>
-                                                <option value="mobile">Mobile</option>
-                                                <option value="video">Video</option>
-                                            </optgroup>
+                                    <div class="form-group" id="type">
+                                        <label for="optTypes">Device</label>
+                                        <select id="optTypes" name="optTypes" class="chosen-select form-control" required="required" data-placeholder="Choose a device ..." data-error="Please choose a specify device.">
+                                            <option type="" value=""></option>
                                         </select>
-                                        <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="optTemplates">Choose a template *</label>
-                                        <select class="form-control"  id="optTemplates" required="required" data-error="Please choose a specify template.">
-                                            <option value="" disabled selected hidden>Please select a template ...</option>
-                                                <optgroup id="templateDisplay" label="Display">
-                                                </optgroup>
-                                                <optgroup id="templateMobile" label="Mobile">
-                                                </optgroup>
+                                    <div class="form-group" id="template">
+                                        <label for="optTemplates">Template</label>
+                                        <select class="chosen-select form-control"  id="optTemplates" required="required" data-error="Please choose a specify template.">
+                                                <option type="none" value="none">None</option>
                                         </select>
-                                        <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="optAdformats">Choose an adformat *</label>
-                                        <select id="optAdformats" name="optAdformats" class="form-control" required="required" data-error="Please choose a specify adformat.">
-                                            <option value="" disabled selected hidden>Please select an adformat ...</option>
-                                            <optgroup id="optAdformatsDisplay" label="Display Device" >
-                                            </optgroup>
-                                            <optgroup id="optAdformatsMobile" label="Mobile Device">
-                                            </optgroup>
-                                            <!-- <optgroup id="optAdformatsVideo" label="Video">
-                                                <option value="preroll">Video Preroll</option>
-                                                <option value="instream">Video Instream</option>
-                                                <option value="outstream">Video Outstream</option>
-                                            </optgroup>                                                  -->
+                                        <label for="optAdformats">Ad Format</label>
+                                        <select id="optAdformats" name="optAdformats" class="form-control" required="required" data-placeholder="Choose an ad format ..." data-error="Please choose a specify adformat.">
+                                            <option value=""></option>
                                         </select>
                                         <div class="help-block with-errors"></div>
                                     </div>
@@ -100,18 +81,18 @@
                             <div class="row">
                                 <div class="col-md-12" id="mainSource">
                                     <div class="form-group">
-                                        <label for="txtBanner">Source *</label>
-                                        <textarea class="form-control" type="input" id="txtBanner" placeholder="Source here ..." rows="2" data-error="Banner link is required."></textarea>
+                                        <label for="txtBanner">Source</label>
+                                        <input class="form-control" type="input" id="txtBanner" placeholder="Source here ..." rows="2" data-error="Banner link is required."></input>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                     <div class="form-group" id="secondSource">
-                                        <label for="txtBanner2">Addition source *</label>
-                                        <textarea class="form-control" type="input" id="txtBanner2" placeholder="Addition source here ..." rows="2" data-error="Banner link is required."></textarea>
+                                        <label for="txtBanner2">Addition Source</label>
+                                        <input class="form-control" type="input" id="txtBanner2" placeholder="Addition source here ..." rows="2" data-error="Banner link is required."></input>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                     <div class="form-group" id="videoSource">
-                                        <label for="txtBannerVideo">Video Source *</label>
-                                        <textarea class="form-control" type="input" id="txtBannerVideo" placeholder="Video source here ..." rows="2" data-error="Banner link is required."></textarea>
+                                        <label for="txtBannerVideo">Video Source</label>
+                                        <input class="form-control" type="input" id="txtBannerVideo" placeholder="Video source here ..." rows="2" data-error="Banner link is required."></input>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -166,6 +147,141 @@
     <script type="text/javascript" src="resource/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="resource/js/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js" integrity="sha256-dHf/YjH1A4tewEsKUSmNnV05DDbfGN3g7NMq86xgGh8=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="main_scripts.js"></script>
+    <!-- <script type="text/javascript" src="resource/js/chosen.jquery.min.js"></script> -->
     <script type="text/javascript" src="database.js"></script>
+    <script type="text/javascript">
+        $("#secondSource").hide();
+        $("#videoSource").hide();
+        $("#output").hide();
+
+        $('#frmCreateSource').validator();
+
+        $(function () {
+            $.each(list.devices, function (idx, obj) {
+                $("#optTypes").append('<option type="' + obj.type + '" value="' + obj.value + '">' + obj.name + '</option>');
+            });
+            // $("#optTemplates").append('<option type="none" value="none">None</option>');
+            // $.each(list.templates, function (idx, obj) {
+            //     $("#optTemplates").append('<option type="' + obj.type + '" value="' + obj.value + '">' + obj.name + '</option>');
+            // });
+            // $.each(list.adformats, function (idx, obj) {
+            //     $("#optAdformats").append('<option type="' + obj.type + '" value="' + obj.value + '">' + obj.name + '</option>');
+            // });
+
+            $("#optTemplates, #optAdformats").trigger("list:updated");
+            // $("#optTemplates, #optAdformats").chosen();
+
+            // $("#optTemplates, #optAdformats, #optTypes").chosen({search_contains: true});
+            // $("#optTemplates, #optAdformats, #optTypes").chosen({max_selected_options:10, search_contains: true});
+
+            $('#btnCopy').on('click', function () {
+                copyFunction();
+            });
+            $('#btnOpen').on('click', function () {
+                openFunction();
+            });
+            $('#btnReset').on('click', function () {
+                resetForm();
+            });
+
+            $("#optTypes").change(function(){
+                var type = $(this).find(":selected").val();
+                var templates = list.templates.filter(function(template) {
+                    return template.type === type;
+                });
+                var adformats = list.adformats.filter(function(adformat) {
+                    return adformat.type === type;
+                });
+                $('#optTemplates').empty();
+                $.each(templates, function (idx, obj) {
+                    $('#optTemplates').append(`<option type="${obj.type}" value="${obj.value}">${obj.name}</option>`)            
+                });
+                $('#optAdformats').empty();
+                $.each(adformats, function (idx, obj) {
+                    $('#optAdformats').append(`<option type="${obj.type}" value="${obj.value}">${obj.name}</option>`)            
+                });
+            });
+
+
+            $("#optAdformats").change(function() {
+            selectedType = $(this).val();
+                switch (selectedType) {
+                    case 'billboard': case 'balloon': case '3d-post-carousel': case 'masthead-mb': case 'inpage': case 'firstview': case 'footer': case 'on-image-mb':
+                        $("#mainSource").show();
+                        $("#secondSource").hide();
+                        $("#videoSource").hide();
+                        break;
+                    
+                    case 'in-native': case 'in-takeover': case 'in-carousel': case 'on-image-pc':
+                        $("#mainSource").show();
+                        $("#secondSource").show();
+                        $("#videoSource").hide();
+                        $("#txtBannerVideo").val('');                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+                        break;
+
+                    case 'in-inread':
+                        $("#mainSource").show();
+                        $("#videoSource").show();
+                        $("#secondSource").hide();
+                        $("#txtBanner2").val('');
+                        break;
+                }
+            });
+        });
+
+        function resetForm() {
+            $('#frmCreateSource').trigger("reset");
+            // $('#optTypes, #optTemplates, #optAdformats').prop('selectedIndex',0);
+            $('#optTypes option, #optTemplates option, #optAdformats option').prop('selected', false).trigger('chosen:updated');
+            $('.chosen').trigger('chosen:updated');
+            $("#optTemplates").children('#templateDisplay').show();
+            $("#optTemplates").children('#templateMobile').show();
+            $("#optAdformats").children('#optAdformatsDisplay').show();
+            $("#optAdformats").children('#optAdformatsMobile').show();
+            $("#secondSource").hide();
+            $("#videoSource").hide();
+            $("#output").hide();
+            $('#txtOutput').trigger(':reset');
+        };
+
+        function openFunction() {
+            var textURL = document.getElementById("txtOutput");
+            textURL.select();
+            window.open(textURL.value);
+        };
+
+        function copyFunction() {
+            var copyText = document.getElementById("txtOutput");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); /* For mobile devices */
+            document.execCommand("copy");
+        };
+
+        $('#frmCreateSource').submit(function(e) {
+            e.preventDefault();
+            var template = $("#optTemplates").val();
+            var format = $("#optAdformats").val();
+            var sourceURL = $("#txtBanner").val();
+            var additionSourceURL = $("#txtBanner2").val();
+            var videoSourceURL = $("#txtBannerVideo").val();
+            var url = window.location.href;
+            var p = url.search("index.");
+            var prefix = "https://demo.yomedia.vn/"
+
+            if (p != -1) {
+            url = url.substring(0, p);
+            }
+
+            let adformatURL = url + 'sites/'  + template + '/index.html' + `?f=${format}&b=` + prefix + `${sourceURL}`;
+            additionSourceURL ? adformatURL = adformatURL + '&c=' + prefix + `${additionSourceURL}` : adformatURL;
+            videoSourceURL ? adformatURL = adformatURL + `&c=` + prefix + `${videoSourceURL}` : adformatURL;
+
+            $("#output").show();
+            $("#txtOutput").empty();
+            $("#txtOutput").append(adformatURL);
+            
+        });
+
+    </script>
+
 </html>

@@ -4,27 +4,30 @@ $(" #output").hide();
 
 $('#frmCreateSource').validator();
 
+$("#optTemplates, #optAdformats, #optTypes").chosen({search_contains: true});
+$("#optTemplates, #optAdformats, #optTypes").chosen({max_selected_options:10, search_contains: true});
+
 $(function () {
     $.each(list.templateDisplay, function (i, item) {
-        $('#templateDisplay').append($('<option>', { 
+        $('#optTemplates').append($('<option>', { 
             value: item.id,
             text : item.value
         }));
     });
     $.each(list.templateMobile, function (i, item) {
-        $('#templateMobile').append($('<option>', { 
+        $('#optTemplates').append($('<option>', { 
             value: item.id,
             text : item.value
         }));
     });
     $.each(list.optAdformatsDisplay, function (i, item) {
-        $('#optAdformatsDisplay').append($('<option>', { 
+        $('#optAdformats').append($('<option>', { 
             value: item.id,
             text : item.value
         }));
     });
     $.each(list.optAdformatsMobile, function (i, item) {
-        $('#optAdformatsMobile').append($('<option>', { 
+        $('#optAdformats').append($('<option>', { 
             value: item.id,
             text : item.value
         }));
@@ -108,13 +111,15 @@ $(function () {
 
 function resetForm() {
     $('#frmCreateSource').trigger("reset");
-    $('#optTypes, #optTemplates, #optAdformats').prop('selectedIndex',0);
+    // $('#optTypes, #optTemplates, #optAdformats').prop('selectedIndex',0);
+    $('#optTypes option, #optTemplates option, #optAdformats option').prop('selected', false).trigger('chosen:updated');
+    $('.chosen').trigger('chosen:updated');
     $("#optTemplates").children('#templateDisplay').show();
     $("#optTemplates").children('#templateMobile').show();
     $("#optAdformats").children('#optAdformatsDisplay').show();
     $("#optAdformats").children('#optAdformatsMobile').show();
-    $(" #secondSource").hide();
-    $(" #videoSource").hide();
+    $("#secondSource").hide();
+    $("#videoSource").hide();
     $("#output").hide();
     $('#txtOutput').trigger(':reset');
 };
