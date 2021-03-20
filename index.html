@@ -10,6 +10,7 @@
         <link href="resource/css/style.css" rel="stylesheet" type="text/css" />
         <link href="resource/css/chosen.min.css" rel="stylesheet" type="text/css" />
         <link href="resource/css/compiled.min.css" rel="stylesheet" type="text/css" />
+        <link href="resource/css/jquery.toast.css" rel="stylesheet" type="text/css" />
     </head>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -84,7 +85,7 @@
                                     <div class="form-group">
                                         <label for="basic-url">Source</label>
                                         <div class="input-group mb-3">
-                                            <div class="input-group-prepend" style="height: 35px;">
+                                            <div class="input-group-prepend" id="domain" style="height: 35px;">
                                                 <span class="input-group-text">https://demo.yomedia.vn/</span>
                                             </div>
                                             <input class="form-control" type="input" id="txtBanner" placeholder="Source here ..." rows="2" data-error="Banner link is required."></input>
@@ -93,7 +94,7 @@
                                     <div class="form-group" id="secondSource">
                                         <label for="basic-url">Addition Source</label>
                                         <div class="input-group mb-3">
-                                            <div class="input-group-prepend" style="height: 35px;">
+                                            <div class="input-group-prepend" id="domain" style="height: 35px;">
                                                 <span class="input-group-text">https://demo.yomedia.vn/</span>
                                             </div>
                                             <input class="form-control" type="input" id="txtBanner2" placeholder="Source here ..." rows="2" data-error="Banner link is required."></input>
@@ -102,7 +103,7 @@
                                     <div class="form-group" id="videoSource">
                                         <label for="basic-url">Video Source</label>
                                         <div class="input-group mb-3">
-                                            <div class="input-group-prepend" style="height: 35px;">
+                                            <div class="input-group-prepend" id="domain" style="height: 35px;">
                                                 <span class="input-group-text">https://demo.yomedia.vn/</span>
                                             </div>
                                             <input class="form-control" type="input" id="txtBannerVideo" placeholder="Source here ..." rows="2" data-error="Banner link is required."></input>
@@ -163,6 +164,7 @@
     <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js" integrity="sha256-dHf/YjH1A4tewEsKUSmNnV05DDbfGN3g7NMq86xgGh8=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="resource/js/chosen.jquery.min.js"></script>
+    <script type="text/javascript" src="resource/js/jquery.toast.js"></script>
     <script type="text/javascript" src="database.js"></script>
     <script type="text/javascript">
         $("#secondSource").hide();
@@ -182,7 +184,14 @@
             $('#btnCopy').on('click', function() {
                 event.preventDefault(); 
                 if( $('#txtOutput').val().length === 0 ) {
-                    console.log("Empty");
+                    //Notification: error
+                    $.toast({
+                        heading: 'Warning',
+                        text: 'There is nothing to copy, please try again!',
+                        position: 'top-right',
+                        showHideTransition: 'fade',
+                        icon: 'warning'
+                    })
                 } else {
                     //get a reference to the JQUERY object of the current button
                     let theButton = $(this);
@@ -257,9 +266,17 @@
         });
         //Reset Form
         function resetForm() {
+            //Notification: success
+            $.toast({
+                    heading: 'Success',
+                    text: 'Reset successful!',
+                    position: 'top-right',
+                    showHideTransition: 'slide',
+                    icon: 'success'
+            });
+
             $('#frmCreateSource').trigger("reset");
             $('#optTypes, #optTemplates, #optAdformats').prop('selectedIndex',0);
-            // $('#optTypes option, #optTemplates option, #optAdformats option').prop('selected', false).trigger('chosen:updated');
             $('#optTemplates, #optAdformats').empty();
             $('#optTemplates, #optAdformats, #optTypes').val('').trigger('chosen:updated');
             $('.chosen').trigger('chosen:updated');
@@ -270,7 +287,14 @@
         //Open function for btnOpen
         function openFunction() {
             if( $('#txtOutput').val().length === 0 ) {
-               console.log("Empty");
+                //Notification: error
+                $.toast({
+                    heading: 'Warning',
+                    text: 'There is nothing to open, please try again!',
+                    position: 'top-right',
+                    showHideTransition: 'fade',
+                    icon: 'warning'
+                })
             } else {
                 var textURL = document.getElementById("txtOutput");
                 textURL.select();
@@ -298,8 +322,25 @@
                 videoSourceURL ? adformatURL = adformatURL + `&c=` + prefix + `${videoSourceURL}` : adformatURL;
                 $("#txtOutput").empty();
                 $("#txtOutput").append(adformatURL);
-            }   else {
-                console.log("Missing Element");
+                
+                //Notification: success
+                $.toast({
+                    heading: 'Success',
+                    text: 'Ad format demo link generated!',
+                    position: 'top-right',
+                    showHideTransition: 'slide',
+                    icon: 'success'
+                })
+
+            } else {
+                //Notification: error
+                $.toast({
+                    heading: 'Error',
+                    text: 'Template or Format is missing, please try again!',
+                    position: 'top-right',
+                    showHideTransition: 'fade',
+                    icon: 'error'
+                })
             } 
         });
     </script>

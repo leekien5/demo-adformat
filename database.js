@@ -33,4 +33,8 @@ const list = {
         { name: 'Mobile On Image', value: 'on-image-mb', type: 'mobile' },
         { name: 'Mobile 3D Post Carousel', value: '3d-post-carousel', type: 'mobile' },
     ],
+    domains : [
+        { name: 'Demo', value: 'https://demo.yomedia.vn/' },
+        { name: 'Media', value: 'https://media.yomedia.vn/' },
+    ],
 }
