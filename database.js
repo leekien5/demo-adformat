@@ -5,9 +5,9 @@ const list = {
         { name: 'Video', value: 'Video' }
     ],
     templates : [
-        { name: 'Báo Dân Trí 1', value: 'dantri-pc', type: 'display' },
-        { name: 'Báo Phụ Nữ Today 1', value: 'phunutoday-pc', type: 'display' },
-        { name: 'Báo Thể Thao 247 1', value: 'thethao247-pc', type: 'display' },
+        { name: 'Báo Dân Trí', value: 'dantri-pc', type: 'display' },
+        { name: 'Báo Phụ Nữ Today', value: 'phunutoday-pc', type: 'display' },
+        { name: 'Báo Thể Thao 247', value: 'thethao247-pc', type: 'display' },
         { name: 'Báo Dân Trí', value: 'dantri-mb', type: 'mobile' },
         { name: 'Báo Phụ Nữ Today', value: 'phunutoday-mb', type: 'mobile' },
         { name: 'Báo Thể Thao 247', value: 'thethao247-mb', type: 'mobile' },
@@ -19,7 +19,7 @@ const list = {
         { name: 'Display In Image', value: 'in-native', type: 'display' },
         { name: 'Display In Image Takeover', value: 'in-takeover', type: 'display' },
         { name: 'Display In Image Carousel', value: 'in-carousel', type: 'display' },
-        { name: 'Display In Image With Inread Vvalueeo', value: 'in-inread', type: 'display' },
+        { name: 'Display In Image With Inread Video', value: 'in-inread', type: 'display' },
         { name: 'Display On Image', value: 'on-image-pc', type: 'display' },
         { name: 'Display 3D Post Carousel', value: '3d-post-carousel', type: 'display' },
         { name: 'Mobile Masthead', value: 'masthead-mb', type: 'mobile' },
