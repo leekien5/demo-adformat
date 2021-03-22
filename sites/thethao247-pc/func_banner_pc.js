@@ -33,7 +33,7 @@ if(bannerURL && formatURL) {
 	//Switching cases
 	switch(formatURL) {
 		case 'masthead-mb':
-			document.title = "Masthead Mobile";
+			document.title = "Mobile Masthead";
 			fileDirectory = fileName.masthead;
 			removeClass();
 			adPlacement = document.getElementById('ads-billboard');
@@ -45,7 +45,7 @@ if(bannerURL && formatURL) {
 			break;
 		
 		case 'billboard':
-			document.title = "Billboard";
+			document.title = "Display Masthead (Billboard)";
 			fileDirectory = fileName.billboard;
 			removeClass();
 			adPlacement = document.getElementById('ads-billboard');
@@ -57,7 +57,7 @@ if(bannerURL && formatURL) {
 			break;
 
 		case 'balloon':
-			document.title = "Balloon";
+			document.title = "Display Balloon";
 			//Replace div id with link banner source
 			adBalloon = document.getElementById('ads-balloon').src = `${bannerURL}?pid=104`;
 			//Get file javascript
@@ -73,7 +73,7 @@ if(bannerURL && formatURL) {
 			break;
 		
 		case 'bottom-up':
-			document.title = "Bottom Up";
+			document.title = "Display Bottom Up";
 			//Replace div id with link banner source
 			adBalloon = document.getElementById('ads-bottom-up').src = `${bannerURL}?pid=104&ord=12`;
 			//Get file javascript
@@ -88,7 +88,7 @@ if(bannerURL && formatURL) {
 			break;
 			
 		case 'inpage':
-			document.title = "Mobile Inpage";
+			document.title = "Mobile Interscroller (Inpage)";
 			fileDirectory = fileName.inpage;
 			removeClass();
 			adPlacement = document.getElementById('ads-inpage');
@@ -100,7 +100,7 @@ if(bannerURL && formatURL) {
 			break;
 
 		case 'firstview':
-			document.title = "Mobile Firstview";
+			document.title = "Mobile Interstitial (Firstview)";
 			fileDirectory = fileName.firstview;
 			removeClass();
 			//Replace div id with script source
@@ -124,7 +124,7 @@ if(bannerURL && formatURL) {
 		case '3d-post-carousel':
 			document.title = "3D Post Carousel";
 			fileDirectory = fileName.threeDPostCarousel;
-			removeClass();
+			// removeClass();
 			adPlacement = document.getElementById('ads-3d-post-carousel');
 			//Replace div id with script source
 			var scriptPlacement = document.createElement('script');
@@ -178,7 +178,7 @@ if(bannerURL && formatURL) {
 			break;
 		
 		case 'on-image-pc':
-			document.title = "On Image PC";
+			document.title = "Display On Image";
 			fileDirectory = fileName.onImagePc;
 			removeClass();
 			adPlacement = document.getElementById('ads-on-image');
@@ -190,7 +190,7 @@ if(bannerURL && formatURL) {
 			break;
 			
 		case 'on-image-mb':
-			document.title = "On Image Mobile";
+			document.title = "Mobile On Image";
 			fileDirectory = fileName.onImageMb;
 			// removeClass();
 			adPlacement = document.getElementById('ads-on-image');

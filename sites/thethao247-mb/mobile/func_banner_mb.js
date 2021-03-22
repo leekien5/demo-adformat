@@ -30,7 +30,7 @@ if(bannerURL && formatURL) {
 			break;
 
 		case 'inpage':
-			document.title = "Mobile Inpage";
+			document.title = "Mobile Interscroller (Inpage)";
 			fileDirectory = fileName.inpage;
 			adPlacement = document.getElementById('ads-inpage');
 			//Replace div id with script source
@@ -41,7 +41,7 @@ if(bannerURL && formatURL) {
 			break;
 
 			case 'firstview':
-			document.title = "Mobile Firstview";
+			document.title = "Mobile Interstitial (Firstview)";
 			fileDirectory = fileName.firstview;
 			//Replace div id with script source
 			var scriptPlacement = document.createElement('script');
@@ -112,7 +112,7 @@ if(bannerURL && formatURL) {
 			break;
 			
 		case 'on-image-mb':
-			document.title = "On Image Mobile";
+			document.title = "Mobile On Image";
 			fileDirectory = fileName.onImageMb;
 			adPlacement = document.getElementById('ads-on-image');
 			//Replace div id with script source

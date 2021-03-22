@@ -2,15 +2,16 @@ const list = {
     devices : [
         { name: 'Display', value: 'display' },
         { name: 'Mobile', value: 'mobile' },
-        { name: 'Video', value: 'Video' }
     ],
     templates : [
-        { name: 'Báo Dân Trí', value: 'dantri-pc', type: 'display' },
-        { name: 'Báo Phụ Nữ Today', value: 'phunutoday-pc', type: 'display' },
-        { name: 'Báo Thể Thao 247', value: 'thethao247-pc', type: 'display' },
-        { name: 'Báo Dân Trí', value: 'dantri-mb', type: 'mobile' },
-        { name: 'Báo Phụ Nữ Today', value: 'phunutoday-mb', type: 'mobile' },
-        { name: 'Báo Thể Thao 247', value: 'thethao247-mb', type: 'mobile' },
+        { name: 'Dân Trí', value: 'dantri-pc', type: 'display' },
+        { name: 'Phụ Nữ Today', value: 'phunutoday-pc', type: 'display' },
+        { name: 'Thể Thao 247', value: 'thethao247-pc', type: 'display' },
+        { name: 'Fullformat', value: 'index-pc', type: 'display' },
+        { name: 'Dân Trí', value: 'dantri-mb', type: 'mobile' },
+        { name: 'Phụ Nữ Today', value: 'phunutoday-mb', type: 'mobile' },
+        { name: 'Thể Thao 247', value: 'thethao247-mb', type: 'mobile' },
+        { name: 'Fullformat', value: 'index-mb', type: 'mobile' },
     ],
     adformats : [
         { name: 'Display Masthead (Billboard)', value: 'billboard', type: 'display' },
@@ -29,12 +30,8 @@ const list = {
         { name: 'Mobile In Image', value: 'in-native', type: 'mobile' },
         { name: 'Mobile In Image Takeover', value: 'in-takeover', type: 'mobile' },
         { name: 'Mobile In Image Carousel', value: 'in-carousel', type: 'mobile' },
-        { name: 'Mobile On Image With Inread Video', value: 'in-inread', type: 'mobile' },
+        { name: 'Mobile In Image With Inread Video', value: 'in-inread', type: 'mobile' },
         { name: 'Mobile On Image', value: 'on-image-mb', type: 'mobile' },
         { name: 'Mobile 3D Post Carousel', value: '3d-post-carousel', type: 'mobile' },
-    ],
-    domains : [
-        { name: 'Demo', value: 'https://demo.yomedia.vn/' },
-        { name: 'Media', value: 'https://media.yomedia.vn/' },
     ],
 }

@@ -13,23 +13,27 @@ function getBannerURL() {
   if (formatURL) {
     switch(formatURL) {
       case 'masthead-mb':
-        document.title = "Masthead Mobile";
+        document.title = "Mobile Masthead";
         break;
       
       case 'billboard':
-        document.title = "Billboard";
+        document.title = "Display Masthead (Billboard)";
+        break;
+
+      case 'bottom-up':
+        document.title = "Display Bottom Up";
         break;
   
       case 'balloon':
-        document.title = "Balloon";
+        document.title = "Display Balloon";
         break;
         
       case 'inpage':
-        document.title = "Mobile Inpage";
+        document.title = "Mobile Interscroller (Inpage)";
         break;
   
       case 'firstview':
-        document.title = "Mobile Firstview";
+        document.title = "Mobile Interstitial (Firstview)";
         break;
       
       case 'footer':
@@ -57,11 +61,11 @@ function getBannerURL() {
         break;
       
       case 'on-image-pc':
-        document.title = "On Image PC";
+        document.title = "Displat On Image";
         break;
         
       case 'on-image-mb':
-        document.title = "On Image Mobile";
+        document.title = "Mobile On Image";
         break;
     }
   }
