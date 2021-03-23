@@ -5,12 +5,12 @@ let formatURL = urlParams.get('f');
 let fileDirectory;
 let adPlacement = null;
 
-// function removeClass (placementBalloon, placementBottomUp) {
-// 	placementBalloon = document.getElementById('ads-balloon');
-// 	placementBalloon.remove();
-// 	placementBottomUp = document.getElementById('ads-bottom-up');
-// 	placementBottomUp.remove();
-// }
+function removeClass (placementBalloon, placementBottomUp) {
+	placementBalloon = document.getElementById('ads-balloon');
+	placementBalloon.remove();
+	placementBottomUp = document.getElementById('ads-bottom-up');
+	placementBottomUp.remove();
+}
 
 if(bannerURL && formatURL) {
 	//Get fireDirectory name from file directories
@@ -35,7 +35,7 @@ if(bannerURL && formatURL) {
 		case 'masthead-mb':
 			document.title = "Mobile Masthead";
 			fileDirectory = fileName.masthead;
-			// removeClass();
+			removeClass();
 			adPlacement = document.getElementById('ads-billboard');
 			//Replace div id with script source
 			var scriptPlacement = document.createElement('script');
@@ -47,7 +47,7 @@ if(bannerURL && formatURL) {
 		case 'billboard':
 			document.title = "Display Masthead (Billboard)";
 			fileDirectory = fileName.billboard;
-			// removeClass();
+			removeClass();
 			adPlacement = document.getElementById('ads-billboard');
 			//Replace div id with script source
 			var scriptPlacement = document.createElement('script');
@@ -78,7 +78,7 @@ if(bannerURL && formatURL) {
 			adBalloon = document.getElementById('ads-bottom-up').src = `${bannerURL}?pid=104&ord=12`;
 			//Get file javascript
 			fileDirectory = fileName.bottomUp;
-			// removeClass();
+			removeClass();
 			adPlacement = document.getElementById('yomedia-destination-197');
 			//Replace div id with script source
 			var scriptPlacement = document.createElement('script');
@@ -124,7 +124,7 @@ if(bannerURL && formatURL) {
 		case '3d-post-carousel':
 			document.title = "3D Post Carousel";
 			fileDirectory = fileName.threeDPostCarousel;
-			// removeClass();
+			removeClass();
 			adPlacement = document.getElementById('ads-3d-post-carousel');
 			//Replace div id with script source
 			var scriptPlacement = document.createElement('script');

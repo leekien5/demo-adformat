@@ -3,6 +3,13 @@
    Note: Fluid media requires that you remove the media's height and width attributes from the HTML
    http://www.alistapart.com/articles/fluid-images/ 
 */
+::-webkit-scrollbar {
+	display: none;
+}
+::-webkit-scrollbar-button {
+	display: none;
+}
+
 img, object, embed, video {
 	max-width: 100%;
 }
@@ -72,9 +79,7 @@ section.fluid {
 .gridContainer {
 	margin-left: auto;
 	margin-right: auto;
-	width: 98%;
-	padding-left: 1%;
-	padding-right: 1%;
+	width: 100%;
 	clear: none;
 	float: none;
 	max-width:1000px;
@@ -776,11 +781,4 @@ font: normal normal normal 14px/1 FontAwesome;font-size: inherit;text-rendering:
 	display:inline-block;
 	right:0;
 	bottom:50px;
-}
-
-::-webkit-scrollbar {
-	display: none;
-}
-::-webkit-scrollbar-button {
-	display: none;
 }

@@ -1191,7 +1191,7 @@ function isValidURL(str) {
                     advi: "mobile",
                     bnr: {
                         id: "c31e7877bffb4bab8c81fd274ef0f8a4",
-                        ctv: { source: `${bannerURL}`, width: "600", height: "650", min_height: "125", content_min_width: "200", content_min_height: "50" },
+                        ctv: { source: `${bannerURL}`, width: "600", height: "650", min_height: "125", content_min_width: "200", content_min_height: "100" },
                         ldp: "https://pinetech.vn",
                     },
                     gtr: [],

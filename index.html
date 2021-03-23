@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Demo</title>
+        <title>YOMEDIA | Ad Format Demo</title>
         <link rel="icon" href="favicon.ico" type="image/gif" sizes="16x16" />
         <link rel="stylesheet" href="resource/css/bootstrap.min.css" />
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css" />
@@ -54,8 +54,8 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group" id="type">
-                                        <label for="optTypes">Device</label>
-                                        <select id="optTypes" name="optTypes" class="chosen-select form-control" >
+                                        <label for="optTypes">Ad View</label>
+                                        <select id="optTypes" name="optTypes" class="chosen-select form-control">
                                             <option value=""></option>
                                         </select>
                                     </div>
@@ -76,7 +76,6 @@
                                         <select id="optAdformats" name="optAdformats" class="form-control">
                                             <option value="">None</option>
                                         </select>
-                                        <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                             </div>
@@ -164,14 +163,14 @@
     <script type="text/javascript" src="resource/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="resource/js/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js" integrity="sha256-dHf/YjH1A4tewEsKUSmNnV05DDbfGN3g7NMq86xgGh8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
     <script type="text/javascript" src="resource/js/chosen.jquery.min.js"></script>
     <script type="text/javascript" src="resource/js/jquery.toast.js"></script>
     <script type="text/javascript" src="database.js"></script>
     <script type="text/javascript">
     $("#secondSource").hide();
     $("#videoSource").hide();
-    $('#frmCreateSource').validator();
+    $('#frmCreateSource').validate();
 
     $(function () {
         //Buttons area
@@ -329,6 +328,7 @@
         var url = window.location.href;
         var p = url.search("index.");
         var prefix = "https://demo.yomedia.vn/"
+
         if (p != -1) {
             url = url.substring(0, p);
         }
@@ -336,21 +336,21 @@
                 //Notification: error
                 $.toast({
                 heading: 'Error',
-                text: 'Please choose Device, Template or Ad Format before submitting!',
+                text: 'Please choose an Ad View, Template or Ad Format before submitting!',
                 position: 'top-right',
                 showHideTransition: 'fade',
                 icon: 'error'
             });
             return;
         }
-        if(isValidURL(sourceURL || additionSourceURL)) {
+        if(isValidURL(sourceURL || additionSourceURL || videoSourceURL)) {
             adformatURL = url + 'sites/'  + template + '/index.html' + `?f=${format}&b=` + `${sourceURL}`;
             additionSourceURL ? adformatURL = adformatURL + '&c=' + `${additionSourceURL}` : adformatURL;
-            videoSourceURL ? adformatURL = adformatURL + `&c=` + `${videoSourceURL}` : adformatURL;
+            videoSourceURL ? adformatURL = adformatURL + '&c=' + `${videoSourceURL}` : adformatURL;
         } else {
             adformatURL = url + 'sites/'  + template + '/index.html' + `?f=${format}&b=` + prefix + `${sourceURL}`;
             additionSourceURL ? adformatURL = adformatURL + '&c=' + prefix + `${additionSourceURL}` : adformatURL;
-            videoSourceURL ? adformatURL = adformatURL + `&c=` + prefix + `${videoSourceURL}` : adformatURL;
+            videoSourceURL ? adformatURL = adformatURL + '&c=' + prefix + `${videoSourceURL}` : adformatURL;
         }
         $("#txtOutput").empty();
         $("#txtOutput").append(adformatURL);
