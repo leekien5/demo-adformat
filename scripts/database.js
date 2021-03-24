@@ -23,6 +23,8 @@ const list = {
         { name: 'Display In Image With Inread Video', value: 'in-inread', type: 'display' },
         { name: 'Display On Image', value: 'on-image-pc', type: 'display' },
         { name: 'Display 3D Post Carousel', value: '3d-post-carousel', type: 'display' },
+        { name: 'Display IAB Medium Rectangle (300x250)', value: 'iab-medium-rectangle', type: 'display' },
+        { name: 'Display IAB Half Page (300x600)', value: 'iab-half-page', type: 'display' },
         { name: 'Mobile Masthead', value: 'masthead-mb', type: 'mobile' },
         { name: 'Mobile Interscroller (Inpage)', value: 'inpage', type: 'mobile' },
         { name: 'Mobile Interstitial (Firstview)', value: 'firstview', type: 'mobile' },
@@ -33,5 +35,8 @@ const list = {
         { name: 'Mobile In Image With Inread Video', value: 'in-inread', type: 'mobile' },
         { name: 'Mobile On Image', value: 'on-image-mb', type: 'mobile' },
         { name: 'Mobile 3D Post Carousel', value: '3d-post-carousel', type: 'mobile' },
+        { name: 'Mobile IAB Medium Rectangle (300x250)', value: 'iab-medium-rectangle', type: 'mobile' },
+        { name: 'Mobile IAB Half Page (300x600)', value: 'iab-half-page', type: 'mobile' },
+
     ],
 }

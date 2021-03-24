@@ -1,53 +1,28 @@
 let urlParams = new URLSearchParams(window.location.search);
 let bannerURL = urlParams.get('b');
 let formatURL = urlParams.get('f');
-
 let fileDirectory;
 let adPlacement = null;
-
-function removeClass (placementBalloon, placementBottomUp) {
-	placementBalloon = document.getElementById('ads-balloon');
-	placementBalloon.remove();
-	placementBottomUp = document.getElementById('ads-bottom-up');
-	placementBottomUp.remove();
-}
-
 if(bannerURL && formatURL) {
 	//Get fireDirectory name from file directories
 	const fileName = {
-		masthead: '../../deliveries/masthead.js',
-		 billboard: '../../deliveries/billboard.js',
-			 balloon: '../../deliveries/balloon.js',
-			 bottomUp: '../../deliveries/bottomUp.js',
-				inpage: '../../deliveries/inpage.js',
-			   firstview: '../../deliveries/firstview.js',
-					footer: '../../deliveries/footer.js',
-	 	threeDPostCarousel: '../../deliveries/3dPostCarousel.js',
-				 takeover: '../../deliveries/inImageTakeover.js',
-			  withInread: '../../deliveries/inImageInread.js',
-		   withCarousel: '../../deliveries/inImageCarousel.js',
-			 onImagePc: '../../deliveries/onImagePc.js',
-			onImageMb: '../../deliveries/onImagePc.js',
-	}
-
+			masthead: '../../../deliveries/masthead.js',
+				 inpage: '../../../deliveries/inpage.js',
+				firstview: '../../../deliveries/firstview.js',
+					 footer: '../../../deliveries/footer.js',
+		   threeDPostCarousel: '../../../deliveries/3dPostCarousel.js',
+		   		inImageTakeover: '../../../deliveries/inImageTakeover.js',
+					   inImageWithInread: '../../../deliveries/inImageInread.js',
+					   inImageCarousel: '../../../deliveries/inImageCarousel.js',
+						    onImageMb: '../../../deliveries/onImagePc.js',
+							 iab300x250: '../../../deliveries/iab300x250.js',
+							   iab300x600: '../../../deliveries/iab300x600.js',
+		}
 	//Switching cases
 	switch(formatURL) {
 		case 'masthead-mb':
-			document.title = "Mobile Masthead";
+			document.title = "Masthead Mobile";
 			fileDirectory = fileName.masthead;
-			removeClass();
-			adPlacement = document.getElementById('ads-billboard');
-			//Replace div id with script source
-			var scriptPlacement = document.createElement('script');
-			scriptPlacement.src = fileDirectory;
-			//Append script to div id
-			adPlacement.appendChild(scriptPlacement);		
-			break;
-		
-		case 'billboard':
-			document.title = "Display Masthead (Billboard)";
-			fileDirectory = fileName.billboard;
-			removeClass();
 			adPlacement = document.getElementById('ads-billboard');
 			//Replace div id with script source
 			var scriptPlacement = document.createElement('script');
@@ -56,42 +31,9 @@ if(bannerURL && formatURL) {
 			adPlacement.appendChild(scriptPlacement);		
 			break;
 
-		case 'balloon':
-			document.title = "Display Balloon";
-			//Replace div id with link banner source
-			adBalloon = document.getElementById('ads-balloon').src = `${bannerURL}?pid=104`;
-			//Get file javascript
-			fileDirectory = fileName.balloon;
-			placementBottomUp = document.getElementById('ads-bottom-up');
-			placementBottomUp.remove();		
-			adPlacement = document.getElementById('yomedia-destination-197');
-			//Replace div id with script source
-			var scriptPlacement = document.createElement('script');
-			scriptPlacement.src = fileDirectory;
-			//Append script to div id
-			adPlacement.appendChild(scriptPlacement);
-			break;
-		
-		case 'bottom-up':
-			document.title = "Display Bottom Up";
-			//Replace div id with link banner source
-			adBalloon = document.getElementById('ads-bottom-up').src = `${bannerURL}?pid=104&ord=12`;
-			//Get file javascript
-			fileDirectory = fileName.bottomUp;
-			adPlacement = document.getElementById('yomedia-destination-197');
-			placementBalloon = document.getElementById('ads-balloon');
-			placementBalloon.remove();		
-			//Replace div id with script source
-			var scriptPlacement = document.createElement('script');
-			scriptPlacement.src = fileDirectory;
-			//Append script to div id
-			adPlacement.appendChild(scriptPlacement);
-			break;
-			
 		case 'inpage':
 			document.title = "Mobile Interscroller (Inpage)";
 			fileDirectory = fileName.inpage;
-			removeClass();
 			adPlacement = document.getElementById('ads-inpage');
 			//Replace div id with script source
 			var scriptPlacement = document.createElement('script');
@@ -100,10 +42,9 @@ if(bannerURL && formatURL) {
 			adPlacement.appendChild(scriptPlacement);	
 			break;
 
-		case 'firstview':
+			case 'firstview':
 			document.title = "Mobile Interstitial (Firstview)";
 			fileDirectory = fileName.firstview;
-			removeClass();
 			//Replace div id with script source
 			var scriptPlacement = document.createElement('script');
 			scriptPlacement.src = fileDirectory;
@@ -114,7 +55,6 @@ if(bannerURL && formatURL) {
 		case 'footer':
 			document.title = "Mobile Footer";
 			fileDirectory = fileName.footer;
-			removeClass();
 			//Replace div id with script source
 			var scriptPlacement = document.createElement('script');
 			scriptPlacement.src = fileDirectory;
@@ -125,7 +65,6 @@ if(bannerURL && formatURL) {
 		case '3d-post-carousel':
 			document.title = "3D Post Carousel";
 			fileDirectory = fileName.threeDPostCarousel;
-			removeClass();
 			adPlacement = document.getElementById('ads-3d-post-carousel');
 			//Replace div id with script source
 			var scriptPlacement = document.createElement('script');
@@ -136,8 +75,7 @@ if(bannerURL && formatURL) {
 
 		case 'in-native':
 			document.title = "In Image Native";
-			fileDirectory = fileName.takeover;
-			removeClass();
+			fileDirectory = fileName.inImageTakeover;
 			//Replace div id with script source
 			var scriptPlacement = document.createElement('script');
 			scriptPlacement.src = fileDirectory;
@@ -147,8 +85,7 @@ if(bannerURL && formatURL) {
 
 		case 'in-takeover':
 			document.title = "In Image Takeover";
-			fileDirectory = fileName.takeover;
-			removeClass();
+			fileDirectory = fileName.inImageTakeover;
 			//Replace div id with script source
 			var scriptPlacement = document.createElement('script');
 			scriptPlacement.src = fileDirectory;
@@ -158,8 +95,7 @@ if(bannerURL && formatURL) {
 		
 		case 'in-inread':
 			document.title = "In Image With Video Inread";
-			fileDirectory = fileName.withInread;
-			removeClass();
+			fileDirectory = fileName.inImageWithInread;
 			//Replace div id with script source
 			var scriptPlacement = document.createElement('script');
 			scriptPlacement.src = fileDirectory;
@@ -169,37 +105,45 @@ if(bannerURL && formatURL) {
 
 		case 'in-carousel':
 			document.title = "In Image Carousel";
-			fileDirectory = fileName.withCarousel;
-			removeClass();
+			fileDirectory = fileName.inImageCarousel;
 			//Replace div id with script source
 			var scriptPlacement = document.createElement('script');
 			scriptPlacement.src = fileDirectory;
 			//Append script to body
 			document.body.appendChild(scriptPlacement);
 			break;
-		
-		case 'on-image-pc':
-			document.title = "Display On Image";
-			fileDirectory = fileName.onImagePc;
-			removeClass();
-			adPlacement = document.getElementById('ads-on-image');
-			//Replace div id with script source
-			var scriptPlacement = document.createElement('script');
-			scriptPlacement.src = fileDirectory;
-			//Append script to div id
-			adPlacement.appendChild(scriptPlacement);	
-			break;
 			
 		case 'on-image-mb':
 			document.title = "Mobile On Image";
 			fileDirectory = fileName.onImageMb;
-			// removeClass();
 			adPlacement = document.getElementById('ads-on-image');
 			//Replace div id with script source
 			var scriptPlacement = document.createElement('script');
 			scriptPlacement.src = fileDirectory;
 			//Append script to div id
 			adPlacement.appendChild(scriptPlacement);
+			break;
+		
+		case 'iab-medium-rectangle':
+			document.title = "IAB Medium Rectangle (300x250)";
+			fileDirectory = fileName.iab300x250;
+			adPlacement = document.getElementById('ads-iab');
+			//Replace div id with script source
+			var scriptPlacement = document.createElement('script');
+			scriptPlacement.src = fileDirectory;
+			//Append script to div id
+			adPlacement.appendChild(scriptPlacement);	
+			break;
+		
+		case 'iab-half-page':
+			document.title = "IAB Half Page (300x600)";
+			fileDirectory = fileName.iab300x600;
+			adPlacement = document.getElementById('ads-iab');
+			//Replace div id with script source
+			var scriptPlacement = document.createElement('script');
+			scriptPlacement.src = fileDirectory;
+			//Append script to div id
+			adPlacement.appendChild(scriptPlacement);	
 			break;
 	}
 }

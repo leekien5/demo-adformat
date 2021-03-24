@@ -17,17 +17,19 @@ if(bannerURL && formatURL) {
 	const fileName = {
 		masthead: '../../deliveries/masthead.js',
 		 billboard: '../../deliveries/billboard.js',
-			 balloon: '../../deliveries/balloon.js',
-			 bottomUp: '../../deliveries/bottomUp.js',
-				inpage: '../../deliveries/inpage.js',
-			   firstview: '../../deliveries/firstview.js',
-					footer: '../../deliveries/footer.js',
-	 	threeDPostCarousel: '../../deliveries/3dPostCarousel.js',
-				 takeover: '../../deliveries/inImageTakeover.js',
-			  withInread: '../../deliveries/inImageInread.js',
-		   withCarousel: '../../deliveries/inImageCarousel.js',
-			 onImagePc: '../../deliveries/onImagePc.js',
-			onImageMb: '../../deliveries/onImagePc.js',
+		     balloon: '../../deliveries/balloon.js',
+		      bottomUp: '../../deliveries/bottomUp.js',
+		          inpage: '../../deliveries/inpage.js',
+		         firstview: '../../deliveries/firstview.js',
+		           footer: '../../deliveries/footer.js',
+	  threeDPostCarousel: '../../deliveries/3dPostCarousel.js',
+	  inImageTakeover: '../../deliveries/inImageTakeover.js',
+		    inImageWithInread: '../../deliveries/inImageInread.js',
+		    inImageCarousel: '../../deliveries/inImageCarousel.js',
+		         onImagePc: '../../deliveries/onImagePc.js',
+		           onImageMb: '../../deliveries/onImagePc.js',
+		            iab300x250: '../../deliveries/iab300x250.js',
+		              iab300x600: '../../deliveries/iab300x600.js',
 	}
 
 	//Switching cases
@@ -135,7 +137,7 @@ if(bannerURL && formatURL) {
 
 		case 'in-native':
 			document.title = "In Image Native";
-			fileDirectory = fileName.takeover;
+			fileDirectory = fileName.inImageTakeover;
 			removeClass();
 			//Replace div id with script source
 			var scriptPlacement = document.createElement('script');
@@ -146,7 +148,7 @@ if(bannerURL && formatURL) {
 
 		case 'in-takeover':
 			document.title = "In Image Takeover";
-			fileDirectory = fileName.takeover;
+			fileDirectory = fileName.inImageTakeover;
 			removeClass();
 			//Replace div id with script source
 			var scriptPlacement = document.createElement('script');
@@ -157,7 +159,7 @@ if(bannerURL && formatURL) {
 		
 		case 'in-inread':
 			document.title = "In Image With Video Inread";
-			fileDirectory = fileName.withInread;
+			fileDirectory = fileName.inImageWithInread;
 			removeClass();
 			//Replace div id with script source
 			var scriptPlacement = document.createElement('script');
@@ -168,7 +170,7 @@ if(bannerURL && formatURL) {
 
 		case 'in-carousel':
 			document.title = "In Image Carousel";
-			fileDirectory = fileName.withCarousel;
+			fileDirectory = fileName.inImageCarousel;
 			removeClass();
 			//Replace div id with script source
 			var scriptPlacement = document.createElement('script');
@@ -199,6 +201,30 @@ if(bannerURL && formatURL) {
 			scriptPlacement.src = fileDirectory;
 			//Append script to div id
 			adPlacement.appendChild(scriptPlacement);
+			break;
+		
+		case 'iab-medium-rectangle':
+			document.title = "IAB Medium Rectangle (300x250)";
+			fileDirectory = fileName.iab300x250;
+			removeClass();
+			adPlacement = document.getElementById('ads-iab');
+			//Replace div id with script source
+			var scriptPlacement = document.createElement('script');
+			scriptPlacement.src = fileDirectory;
+			//Append script to div id
+			adPlacement.appendChild(scriptPlacement);	
+			break;
+		
+		case 'iab-half-page':
+			document.title = "IAB Half Page (300x600)";
+			fileDirectory = fileName.iab300x600;
+			removeClass();
+			adPlacement = document.getElementById('ads-iab');
+			//Replace div id with script source
+			var scriptPlacement = document.createElement('script');
+			scriptPlacement.src = fileDirectory;
+			//Append script to div id
+			adPlacement.appendChild(scriptPlacement);	
 			break;
 	}
 }
