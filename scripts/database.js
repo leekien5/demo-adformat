@@ -15,8 +15,8 @@ const list = {
     ],
     adformats : [
         { name: 'Display Masthead (Billboard)', value: 'billboard', type: 'display' },
-        { name: 'Display Balloon Expandable', value: 'balloon', type: 'display' },
-        { name: 'Display Bottom Up Expandable', value: 'bottom-up', type: 'display' },
+        { name: 'Display Balloon', value: 'balloon', type: 'display' },
+        { name: 'Display Bottom Up', value: 'bottom-up', type: 'display' },
         { name: 'Display In Image', value: 'in-native', type: 'display' },
         { name: 'Display In Image Takeover', value: 'in-takeover', type: 'display' },
         { name: 'Display In Image Carousel', value: 'in-carousel', type: 'display' },

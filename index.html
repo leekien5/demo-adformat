@@ -63,7 +63,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group" id="template">
                                         <label for="optTemplates">Template</label>
-                                        <select class="chosen-select form-control"  id="optTemplates">
+                                        <select class="chosen-select form-control" id="optTemplates">
                                             <option value="">None</option>
                                         </select>
                                     </div>
@@ -208,6 +208,15 @@
                 });
             }
         });
+
+        function sortArray() {
+            var options = $(".option");
+            options.sort(function(a,b) {
+                if (a.text > b.text) return 1;
+                else if (a.text < b.text) return -1;
+                else return 0
+            });
+        }
         //Show Device select option
         $.each(list.devices, function (idx, obj) {
             $("#optTypes").append('<option type="' + obj.type + '" value="' + obj.value + '">' + obj.name + '</option>');
