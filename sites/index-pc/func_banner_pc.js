@@ -78,8 +78,9 @@ if(bannerURL && formatURL) {
 			adBalloon = document.getElementById('ads-bottom-up').src = `${bannerURL}?pid=104&ord=12`;
 			//Get file javascript
 			fileDirectory = fileName.bottomUp;
-			removeClass();
 			adPlacement = document.getElementById('yomedia-destination-197');
+			placementBalloon = document.getElementById('ads-balloon');
+			placementBalloon.remove();		
 			//Replace div id with script source
 			var scriptPlacement = document.createElement('script');
 			scriptPlacement.src = fileDirectory;
