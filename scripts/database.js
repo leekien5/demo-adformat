@@ -7,10 +7,12 @@ const list = {
         { name: 'Dân Trí', value: 'dantri-pc', type: 'display' },
         { name: 'Phụ Nữ Today', value: 'phunutoday-pc', type: 'display' },
         { name: 'Thể Thao 247', value: 'thethao247-pc', type: 'display' },
+        { name: 'Phụ Nữ Online', value: 'phunuonline-pc', type: 'display' },
         { name: 'Full Format (Index)', value: 'index-pc', type: 'display' },
         { name: 'Dân Trí', value: 'dantri-mb', type: 'mobile' },
         { name: 'Phụ Nữ Today', value: 'phunutoday-mb', type: 'mobile' },
         { name: 'Thể Thao 247', value: 'thethao247-mb', type: 'mobile' },
+        { name: 'Phụ Nữ Online', value: 'phunuonline-mb', type: 'mobile' },
         { name: 'Full Format (Index)', value: 'index-mb', type: 'mobile' },
     ],
     adformats : [

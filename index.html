@@ -253,7 +253,10 @@
         $("#optAdformats").change(function() {
         selectedType = $(this).val();
             switch (selectedType) {
-                case 'billboard': case 'balloon': case '3d-post-carousel': case 'masthead-mb': case 'inpage': case 'firstview': case 'footer': case 'on-image-mb':
+                case 'billboard': case 'balloon': case '3d-post-carousel': 
+                case 'masthead-mb': case 'inpage': case 'firstview': 
+                case 'footer': case 'on-image-mb': case 'iab-medium-rectangle': 
+                case 'iab-half-page':
                     $("#mainSource").show();
                     $("#secondSource").hide();
                     $("#videoSource").hide();
