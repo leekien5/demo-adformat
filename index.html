@@ -40,7 +40,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group" id="type">
                                         <label for="optTypes">Ad View</label>
-                                        <select id="optTypes" class="chosen-select form-control">
+                                        <select id="optTypes" class="chosen-select form-control" data-placeholder="Choose a type...">
                                             <option value=""></option>
                                         </select>
                                     </div>
@@ -48,8 +48,8 @@
                                 <div class="col-md-6">
                                     <div class="form-group" id="template">
                                         <label for="optTemplates">Template</label>
-                                        <select class="chosen-select form-control" id="optTemplates">
-                                            <option value="">None</option>
+                                        <select class="chosen-select form-control" id="optTemplates" data-placeholder="Choose a template...">
+                                            <option value=""></option>
                                         </select>
                                     </div>
                                 </div>
@@ -58,8 +58,8 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="optAdformats">Ad Format</label>
-                                        <select class="chosen-select form-control" id="optAdformats">
-                                            <option value="">None</option>
+                                        <select class="chosen-select form-control" id="optAdformats" data-placeholder="Choose an ad format...">
+                                            <option value=""></option>
                                         </select>
                                     </div>
                                 </div>
@@ -191,7 +191,7 @@
             $("#optTypes").append('<option type="' + obj.type + '" value="' + obj.value + '">' + obj.name + '</option>');
         });
 
-        $("#optTemplates, #optAdformats").trigger("list:updated");
+        $("#optTemplates, #optAdformats").trigger("lizst:updated");
         $("#optTemplates, #optAdformats").chosen();
 
         $("#optTemplates, #optAdformats, #optTypes").chosen({search_contains: true});

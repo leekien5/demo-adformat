@@ -11,16 +11,16 @@ function isValidURL(str) {
 (function () {
     var YoAds = (function (t) {
         var e = {};
-        function r(i) {
-            if (e[i]) return e[i].exports;
-            var n = (e[i] = { i: i, l: !1, exports: {} });
-            return t[i].call(n.exports, n, n.exports, r), (n.l = !0), n.exports;
+        function r(n) {
+            if (e[n]) return e[n].exports;
+            var i = (e[n] = { i: n, l: !1, exports: {} });
+            return t[n].call(i.exports, i, i.exports, r), (i.l = !0), i.exports;
         }
         return (
             (r.m = t),
             (r.c = e),
-            (r.d = function (t, e, i) {
-                r.o(t, e) || Object.defineProperty(t, e, { enumerable: !0, get: i });
+            (r.d = function (t, e, n) {
+                r.o(t, e) || Object.defineProperty(t, e, { enumerable: !0, get: n });
             }),
             (r.r = function (t) {
                 "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(t, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(t, "__esModule", { value: !0 });
@@ -28,17 +28,17 @@ function isValidURL(str) {
             (r.t = function (t, e) {
                 if ((1 & e && (t = r(t)), 8 & e)) return t;
                 if (4 & e && "object" == typeof t && t && t.__esModule) return t;
-                var i = Object.create(null);
-                if ((r.r(i), Object.defineProperty(i, "default", { enumerable: !0, value: t }), 2 & e && "string" != typeof t))
-                    for (var n in t)
+                var n = Object.create(null);
+                if ((r.r(n), Object.defineProperty(n, "default", { enumerable: !0, value: t }), 2 & e && "string" != typeof t))
+                    for (var i in t)
                         r.d(
-                            i,
                             n,
+                            i,
                             function (e) {
                                 return t[e];
-                            }.bind(null, n)
+                            }.bind(null, i)
                         );
-                return i;
+                return n;
             }),
             (r.n = function (t) {
                 var e =
@@ -69,7 +69,7 @@ function isValidURL(str) {
                 isEmpty: (t) => (t.constructor === Object ? 0 === Object.keys(t).length : t.constructor === Array && 0 === t.length),
                 createElement(t, e = {}) {
                     var r = document.createElement(t);
-                    if (!this.isEmpty(e)) for (var i in e) r.setAttribute(i, e[i]);
+                    if (!this.isEmpty(e)) for (var n in e) r.setAttribute(n, e[n]);
                     return r;
                 },
                 loadImage(t) {
@@ -80,53 +80,53 @@ function isValidURL(str) {
                 getYRatio(t) {
                     if (t) return window.innerHeight / t;
                 },
-                addEventListenerHandle(t, e, r, i) {
-                    (i = i || !1), "addEventListener" in t ? t.addEventListener(e, r, i) : "attachEvent" in obj && t.attachEvent("on" + e, r);
+                addEventListenerHandle(t, e, r, n) {
+                    (n = n || !1), "addEventListener" in t ? t.addEventListener(e, r, n) : "attachEvent" in obj && t.attachEvent("on" + e, r);
                 },
                 parseMessage(t) {
                     try {
                         if ("object" == typeof t && void 0 !== t.data) {
                             let t = JSON.parse(event.data);
-                            const { pid: e, act: r, des: i, bid: n } = t;
-                            return { pid: e, bid: n, act: r, des: i };
+                            const { pid: e, act: r, des: n, bid: i } = t;
+                            return { pid: e, bid: i, act: r, des: n };
                         }
                         return null;
                     } catch (t) {
                         return null;
                     }
                 },
-                generateUrlAd(t, e, r, i, n, a = "") {
-                    var o = (e = (e = (e = (e = (e = e.replace(/\[timestamp\]/g, Date.now())).replace(/\[yo_pid\]/g, r)).replace(/\[yo_bid\]/g, i.id)).replace(/\[yo_aid\]/g, a)).replace(/\[yo_ref\]/g, encodeURIComponent(n.purl))).indexOf(
+                generateUrlAd(t, e, r, n, i, a = "") {
+                    var o = (e = (e = (e = (e = (e = e.replace(/\[timestamp\]/g, Date.now())).replace(/\[yo_pid\]/g, r)).replace(/\[yo_bid\]/g, n.id)).replace(/\[yo_aid\]/g, a)).replace(/\[yo_ref\]/g, encodeURIComponent(i.purl))).indexOf(
                         "//"
                     );
-                    if (o < 0 || o > 6) (e = `${t}/${e}?pid=${r}&bid=${i.id}`), a && (e = e + "&aid=" + a);
+                    if (o < 0 || o > 6) (e = `${t}/${e}?pid=${r}&bid=${n.id}`), a && (e = e + "&aid=" + a);
                     else {
                         var s = "?";
-                        e.match(/.*\?((.*)(&?))+/g) && (s = "&"), (e = `${e}${s}pid=${r}&bid=${i.id}`);
+                        e.match(/.*\?((.*)(&?))+/g) && (s = "&"), (e = `${e}${s}pid=${r}&bid=${n.id}`);
                     }
-                    if (i.ldp.length > 0) {
+                    if (n.ldp.length > 0) {
                         var c = "?";
-                        -1 !== e.indexOf("?") && (c = "&"), (e += `${c}clk=${encodeURIComponent(i.ldp)}`);
+                        -1 !== e.indexOf("?") && (c = "&"), (e += `${c}clk=${encodeURIComponent(n.ldp)}`);
                     }
                     return e;
                 },
-                setRect(t, e, r, i, n) {
-                    t.style.clip = `rect(${e}px, ${r}px, ${i}px, ${n}px)`;
+                setRect(t, e, r, n, i) {
+                    t.style.clip = `rect(${e}px, ${r}px, ${n}px, ${i}px)`;
                 },
-                easingYomedia(t, e, r, i) {
+                easingYomedia(t, e, r, n) {
                     try {
-                        var n = this;
+                        var i = this;
                         if (!e) return;
                         var a = e.style.height;
                         (a = (a = a.replace("px", "")).replace("%", "")), (a = parseFloat(a));
                         var o = r - a,
                             s = o > 0 ? a + Math.ceil(o / 5) : a + Math.floor(o / 5);
-                        if (((e.style.height = s + "px"), s <= 0 && "function" == typeof i && i(), (r = r > 0 ? Math.ceil(r) : Math.floor(r)), 0 == o)) return void clearTimeout(t);
+                        if (((e.style.height = s + "px"), s <= 0 && "function" == typeof n && n(), (r = r > 0 ? Math.ceil(r) : Math.floor(r)), 0 == o)) return void clearTimeout(t);
                         t = setTimeout(function () {
-                            n.easingYomedia(t, e, r, i);
+                            i.easingYomedia(t, e, r, n);
                         }, 20);
                     } catch (e) {
-                        "function" == typeof i && i();
+                        "function" == typeof n && n();
                     }
                 },
                 getCurrentScript() {
@@ -139,46 +139,46 @@ function isValidURL(str) {
                 },
                 renderBackup(t, e, r) {
                     if (r) {
-                        var i = this.createElement("div", { id: "yomedia-backup-" + t }),
-                            n = document.getElementById("yomedia-delivery-" + t);
-                        n || (n = this.getCurrentScript()), this.insertAfter(i, n), r && (r.replace(/\[yo_cb\]/g, Date.now()), postscribe("#yomedia-backup-" + t, r.replace(/\[yo_cb\]/g, Date.now()).replace(/\[yo_page_url\]/g, e.purl)));
+                        var n = this.createElement("div", { id: "yomedia-backup-" + t }),
+                            i = document.getElementById("yomedia-delivery-" + t);
+                        i || (i = this.getCurrentScript()), this.insertAfter(n, i), r && (r.replace(/\[yo_cb\]/g, Date.now()), postscribe("#yomedia-backup-" + t, r.replace(/\[yo_cb\]/g, Date.now()).replace(/\[yo_page_url\]/g, e.purl)));
                     }
                 },
                 insertAdsByConfig(t, e, r) {
-                    var i,
-                        n = "after",
+                    var n,
+                        i = "after",
                         a = null;
                     if ("object" == typeof e && "object" == typeof e.pl && "object" == typeof e.pl.pls && void 0 !== e.pl.pls.selector) {
                         var o = e.pl.pls.selector;
-                        (i = document.querySelector(o)), (n = e.pl.pls.pst_type ? e.pl.pls.pst_type : "after"), (a = e.pl.pls.pst_value ? e.pl.pls.pst_value : null);
+                        (n = document.querySelector(o)), (i = e.pl.pls.pst_type ? e.pl.pls.pst_type : "after"), (a = e.pl.pls.pst_value ? e.pl.pls.pst_value : null);
                     }
-                    switch ((i || ((i = document.getElementById("yomedia-delivery-" + t) ? document.getElementById("yomedia-delivery-" + t) : this.getCurrentScript()), (n = "after")), n)) {
+                    switch ((n || ((n = document.getElementById("yomedia-delivery-" + t) ? document.getElementById("yomedia-delivery-" + t) : this.getCurrentScript()), (i = "after")), i)) {
                         case "after":
-                            this.insertAfter(r, i);
+                            this.insertAfter(r, n);
                             break;
                         case "before":
-                            i.parentNode ? i.parentNode.insertBefore(r, i) : i.appendChild(r);
+                            n.parentNode ? n.parentNode.insertBefore(r, n) : n.appendChild(r);
                             break;
                         case "first":
-                            i.firstChild ? i.insertBefore(r, i.firstChild) : i.appendChild(r);
+                            n.firstChild ? n.insertBefore(r, n.firstChild) : n.appendChild(r);
                             break;
                         case "middle":
-                            this.findAndInsertPosition(r, i, 0, i.clientHeight, 50);
+                            this.findAndInsertPosition(r, n, 0, n.clientHeight, 50);
                             break;
                         case "last":
-                            i.appendChild(r);
+                            n.appendChild(r);
                             break;
                         case "content":
-                            null !== a ? this.findAndInsertPosition(r, i, 0, i.clientHeight, parseInt(a)) : this.findAndInsertPosition(r, i, 0, i.clientHeight, 50);
+                            null !== a ? this.findAndInsertPosition(r, n, 0, n.clientHeight, parseInt(a)) : this.findAndInsertPosition(r, n, 0, n.clientHeight, 50);
                     }
                 },
-                findAndInsertPosition(t, e, r, i, n) {
+                findAndInsertPosition(t, e, r, n, i) {
                     var a,
                         o = e.childNodes;
                     if (o.length > 0) {
                         for (var s = 0; s < o.length; s++) {
                             var c = o[s];
-                            if (c.clientHeight > 0 && (((r += c.clientHeight) + c.clientHeight) / i) * 100 > n) {
+                            if (c.clientHeight > 0 && (((r += c.clientHeight) + c.clientHeight) / n) * 100 > i) {
                                 a = c;
                                 break;
                             }
@@ -189,18 +189,18 @@ function isValidURL(str) {
             };
         },
         function (t, e, r) {
-            const i = r(0),
-                n = r(2).default,
+            const n = r(0),
+                i = r(2).default,
                 a = r(4);
             t.exports = {
                 showAds(t, e) {
                     var r = this,
-                        i = !1,
-                        n = 0;
+                        n = !1,
+                        i = 0;
                     const { pid: a, bnr: o, web: s } = t;
                     var c = setInterval(function () {
                         try {
-                            if (!i) {
+                            if (!n) {
                                 var l;
                                 if ("object" == typeof s && "object" == typeof s.pl && void 0 !== s.pl.pls) {
                                     var u = s.pl.pls.selector;
@@ -215,54 +215,57 @@ function isValidURL(str) {
                                             break;
                                         }
                                     }
-                                    p && ((i = !0), p.parentNode && "A" === p.parentNode.nodeName && (p = p.parentNode), r.renderAds(p, t, e), clearInterval(c));
+                                    p && ((n = !0), p.parentNode && "A" === p.parentNode.nodeName && (p = p.parentNode), r.renderAds(p, t, e), clearInterval(c));
                                 }
                             }
-                            (n += 10) > 5e3 && !i && (r.renderBackup(a, s, e), clearInterval(c));
-                        } catch (t) {
-                            console.log(t);
-                        }
+                            (i += 10) > 5e3 && !n && (r.renderBackup(a, s, e), clearInterval(c));
+                        } catch (t) {}
                     }, 10);
                 },
                 renderAds(t, e, r) {
                     const { pid: a, bnr: o, trk: s, cli: c, web: l, camp: u, advi: p, mdom: d } = e;
-                    var h = getComputedStyle(t),
-                        f = i.createElement("div", { id: "zones-ads-" + a, style: `position: relative; display: inline-block; width: auto; height: auto; margin: ${h.margin || "auto"}; padding: ${h.padding || "0px"};` });
-                    h.maxWidth && (f.style.maxWidth = h.maxWidth);
-                    var m = i.createElement("div", { id: "wrapper-ads-" + a, style: `position: relative; display: inline-block; width: ${t.clientWidth}px; height: auto; margin: 0px;` }),
-                        g = t.cloneNode(!0);
-                    f.appendChild(g), f.appendChild(m);
-                    var y = {
-                            src: i.generateUrlAd(d, o.ctv.source, a, o, l),
+                    var h = t.clientWidth,
+                        f = t.clientHeight,
+                        m = getComputedStyle(t),
+                        g = h / (o.ctv.min_width / o.ctv.min_height),
+                        y = n.createElement("div", { id: "zones-ads-" + a, style: "position: relative; display: inline-block; text-align: center; width: auto; height: auto;" }),
+                        v = n.createElement("div", { id: "wrapper-ads-" + a, style: `position: relative; display: block; margin: 0px; width: 100%; height: ${g}px;` });
+                    y.appendChild(v);
+                    var _ = "";
+                    f >= h && void 0 !== o.ctv.portrait_source && o.ctv.portrait_source.length > 0
+                        ? ((_ = n.generateUrlAd(d, o.ctv.portrait_source, a, o, l)), (g = h / (o.ctv.portrait_min_width / o.ctv.portrait_min_height)))
+                        : (_ = n.generateUrlAd(d, o.ctv.source, a, o, l));
+                    var T = {
+                            src: _,
                             id: a,
-                            style: `width: ${t.clientWidth}px; height: ${t.clientHeight}px; border: none; z-index: 2; position: absolute; margin: auto; left: 0px; right: 0px; bottom: 0px;`,
+                            style: `width: 100%; height: ${f + g}px; border: none; z-index: 2; position: absolute; transition: height 1s ease-out 0s; overflow: hidden; top: 0px; left: 0px; right: 0px; clip: rect(0px, ${h}px, ${g}px, 0px)`,
                         },
-                        v = i.createElement("iframe", y);
-                    m.appendChild(v);
-                    var _ = i.generateUrlAd(d, o.ctv.video_source, a, o, l),
-                        T = t.clientWidth / (o.ctv.video_width / o.ctv.video_height),
-                        k = { src: _, id: "video-ads-" + a, style: `width: ${t.clientWidth}px; height: ${T}px; border: none; z-index: 2; position: reletive; margin-top: 20px;` },
-                        b = i.createElement("iframe", k);
-                    f.appendChild(b), t.parentNode.replaceChild(f, t);
-                    const { dom: x, evs: w, ttr: S } = s;
-                    var E = new n(x, p, w, S, c, l, u, o, { element: v, duration: 1e3, margin: "0px" });
-                    i.addEventListenerHandle(v, "load", function () {
-                        E.impression(), E.viewability();
+                        k = n.createElement("iframe", T);
+                    (k.style.margin = m.margin), v.appendChild(k);
+                    var b = t.cloneNode(!0);
+                    y.appendChild(b), t.parentNode.replaceChild(y, t);
+                    const { dom: w, evs: x, ttr: S } = s;
+                    var E = new i(w, p, x, S, c, l, u, o, { element: v, duration: 1e3, margin: "0px" });
+                    n.addEventListenerHandle(k, "load", function () {
+                        (k.style.height = Math.max(y.clientHeight, b.clientHeight) + "px"), (k.style.width = b.clientWidth + "px"), (k.style.margin = getComputedStyle(b).margin), E.impression(), E.viewability();
                     }),
-                        this.processedAds(a, E, o);
+                        this.processedAds(a, E, o, h, g, h, y.clientHeight + 2);
                 },
-                processedAds(t, e, r) {
-                    const n = this;
-                    i.addEventListenerHandle(window, "message", function (a) {
+                processedAds(t, e, r, i, a, o, s) {
+                    const c = this;
+                    n.addEventListenerHandle(window, "message", function (i) {
                         try {
-                            var o = i.parseMessage(a);
-                            if (o.pid == t && o.bid == r.id)
-                                switch (o.act) {
-                                    case "yomedia_close_ads":
-                                        n.closeAds(t);
+                            var s = n.parseMessage(i);
+                            if (s.pid == t && s.bid == r.id)
+                                switch (s.act) {
+                                    case "yomedia_collapse_ads":
+                                        c.colapseAds(t, o, a);
                                         break;
-                                    case "yomedia_close_video_ads":
-                                        n.closeVideoAds(t);
+                                    case "yomedia_expand_ads":
+                                        c.expandAds(t, o, document.getElementById("zones-ads-" + t).clientHeight);
+                                        break;
+                                    case "yomedia_close_ads":
+                                        c.closeAds(t);
                                         break;
                                     case "yomedia_click_ads":
                                         e.click();
@@ -305,54 +308,57 @@ function isValidURL(str) {
                 },
                 renderBackup(t, e, r) {
                     if (r) {
-                        var n = i.createElement("div", { id: "yomedia-backup-" + t }),
+                        var i = n.createElement("div", { id: "yomedia-backup-" + t }),
                             o = document.getElementById("yomedia-delivery-" + t);
-                        o || (o = i.getCurrentScript()), i.insertAfter(n, o), r && (r.replace(/\[yo_cb\]/g, Date.now()), a("#yomedia-backup-" + t, r.replace(/\[yo_cb\]/g, Date.now()).replace(/\[yo_page_url\]/g, e.purl)));
+                        o || (o = n.getCurrentScript()), n.insertAfter(i, o), r && (r.replace(/\[yo_cb\]/g, Date.now()), a("#yomedia-backup-" + t, r.replace(/\[yo_cb\]/g, Date.now()).replace(/\[yo_page_url\]/g, e.purl)));
                     }
                 },
-                closeAds(t) {
-                    document.getElementById(t) && ((document.getElementById(t).style.display = "none"), (document.getElementById(t).style.width = "0px;"), (document.getElementById(t).style.height = "0px;"));
+                colapseAds(t, e, r) {
+                    n.setRect(document.getElementById("" + t), 0, e, r, 0);
                 },
-                closeVideoAds(t) {
-                    document.getElementById("video-ads-" + t) &&
-                        i.easingYomedia(void 0, document.getElementById("video-ads-" + t), 0, function () {
-                            document.getElementById("video-ads-" + t).style.display = "none";
-                        });
+                expandAds(t, e, r) {
+                    n.setRect(document.getElementById("" + t), 0, e, r, 0);
+                },
+                closeAds(t) {
+                    n.easingYomedia(void 0, document.getElementById("wrapper-ads-" + t), 0, function () {
+                        document.getElementById(t) && ((document.getElementById(t).style.display = "none"), (document.getElementById(t).style.width = "0px;"), (document.getElementById(t).style.height = "0px;")),
+                            document.getElementById("wrapper-ads-" + t) && (document.getElementById("wrapper-ads-" + t).style.display = "none");
+                    });
                 },
             };
         },
         function (t, e, r) {
             "use strict";
             r.r(e);
-            const i = r(0),
-                n = r(3).default;
-            e.default = class extends n {
-                constructor(t, e, r, i = {}, n = {}, a = {}, o = {}, s = {}, c = {}) {
+            const n = r(0),
+                i = r(3).default;
+            e.default = class extends i {
+                constructor(t, e, r, n = {}, i = {}, a = {}, o = {}, s = {}, c = {}) {
                     var { element: l, duration: u, margin: p } = c;
                     super(l, u || 100, p || "0px"),
                         (this.domain = t),
                         (this.adview = e),
                         (this.events = r),
-                        (this.third_party_trackings = i),
-                        (this.client = n),
+                        (this.third_party_trackings = n),
+                        (this.client = i),
                         (this.website = a),
                         (this.campaign = o),
                         (this.banner = s),
                         (this.mapping_events = {
-                            impression: "EVT_IMPRESSION",
-                            start: "EVT_START",
-                            firstQuartile: "EVT_FIRST",
-                            midpoint: "EVT_MID",
-                            thirdQuartile: "EVT_THIRD",
-                            complete: "EVT_COMPLETE",
-                            viewable: "EVT_VIEWABLE",
-                            click: "EVT_CLICK",
-                            mute: "EVT_MUTE",
-                            unmute: "EVT_UNMUTE",
-                            pause: "EVT_PAUSE",
-                            play: "EVT_PLAY",
-                            resume: "EVT_RESUME",
-                            skip: "EVT_SKIP",
+                            impression: "",
+                            start: "",
+                            firstQuartile: "",
+                            midpoint: "",
+                            thirdQuartile: "",
+                            complete: "",
+                            viewable: "",
+                            click: "",
+                            mute: "",
+                            unmute: "",
+                            pause: "",
+                            play: "",
+                            resume: "",
+                            skip: "",
                         });
                 }
                 generateUrl(t) {
@@ -367,7 +373,7 @@ function isValidURL(str) {
                     return null;
                 }
                 executeTracking(t) {
-                    i.loadImage(t);
+                    n.loadImage(t);
                 }
                 replaceMacro(t) {
                     return (
@@ -378,7 +384,7 @@ function isValidURL(str) {
                     );
                 }
                 executeTracking3rd(t) {
-                    if (!i.isEmpty(this.third_party_trackings) && void 0 !== this.third_party_trackings[t]) {
+                    if (!n.isEmpty(this.third_party_trackings) && void 0 !== this.third_party_trackings[t]) {
                         let e = this.third_party_trackings[t];
                         for (let t = 0; t < e.length; t++) this.executeTracking(this.replaceMacro(e[t]));
                     }
@@ -491,47 +497,38 @@ function isValidURL(str) {
             };
         },
         function (t, e, r) {
-            /**
-             * @file postscribe
-             * @description Asynchronously write javascript, even with document.write.
-             * @version v2.0.8
-             * @see {@link https://krux.github.io/postscribe}
-             * @license MIT
-             * @author Derek Brans
-             * @copyright 2016 Krux Digital, Inc
-             */
-            var i;
-            (i = function () {
+            var n;
+            (n = function () {
                 return (function (t) {
                     var e = {};
-                    function r(i) {
-                        if (e[i]) return e[i].exports;
-                        var n = (e[i] = { exports: {}, id: i, loaded: !1 });
-                        return t[i].call(n.exports, n, n.exports, r), (n.loaded = !0), n.exports;
+                    function r(n) {
+                        if (e[n]) return e[n].exports;
+                        var i = (e[n] = { exports: {}, id: n, loaded: !1 });
+                        return t[n].call(i.exports, i, i.exports, r), (i.loaded = !0), i.exports;
                     }
                     return (r.m = t), (r.c = e), (r.p = ""), r(0);
                 })([
                     function (t, e, r) {
                         "use strict";
-                        var i = (function (t) {
+                        var n = (function (t) {
                             return t && t.__esModule ? t : { default: t };
                         })(r(1));
-                        t.exports = i.default;
+                        t.exports = n.default;
                     },
                     function (t, e, r) {
                         "use strict";
                         e.__esModule = !0;
-                        var i =
+                        var n =
                             Object.assign ||
                             function (t) {
                                 for (var e = 1; e < arguments.length; e++) {
                                     var r = arguments[e];
-                                    for (var i in r) Object.prototype.hasOwnProperty.call(r, i) && (t[i] = r[i]);
+                                    for (var n in r) Object.prototype.hasOwnProperty.call(r, n) && (t[n] = r[n]);
                                 }
                                 return t;
                             };
                         e.default = h;
-                        var n = (function (t) {
+                        var i = (function (t) {
                                 return t && t.__esModule ? t : { default: t };
                             })(r(2)),
                             a = (function (t) {
@@ -571,13 +568,13 @@ function isValidURL(str) {
                             }
                         }
                         function d(t, e, r) {
-                            ((u = new n.default(t, r)).id = c++), (u.name = r.name || u.id), (h.streams[u.name] = u);
+                            ((u = new i.default(t, r)).id = c++), (u.name = r.name || u.id), (h.streams[u.name] = u);
                             var a = t.ownerDocument,
                                 s = { close: a.close, open: a.open, write: a.write, writeln: a.writeln };
                             function l(t) {
                                 (t = r.beforeWrite(t)), u.write(t), r.afterWrite(t);
                             }
-                            i(a, {
+                            n(a, {
                                 close: o,
                                 open: o,
                                 write: function () {
@@ -591,11 +588,11 @@ function isValidURL(str) {
                             });
                             var d = u.win.onerror || o;
                             return (
-                                (u.win.onerror = function (t, e, i) {
-                                    r.error({ msg: t + " - " + e + ": " + i }), d.apply(u.win, [t, e, i]);
+                                (u.win.onerror = function (t, e, n) {
+                                    r.error({ msg: t + " - " + e + ": " + n }), d.apply(u.win, [t, e, n]);
                                 }),
                                 u.write(e, function () {
-                                    i(a, s), (u.win.onerror = d), r.done(), (u = null), p();
+                                    n(a, s), (u.win.onerror = d), r.done(), (u = null), p();
                                 }),
                                 u
                             );
@@ -604,34 +601,34 @@ function isValidURL(str) {
                             if (a.isFunction(r)) r = { done: r };
                             else if ("clear" === r) return (l = []), (u = null), void (c = 0);
                             r = a.defaults(r, s);
-                            var i = [(t = /^#/.test(t) ? window.document.getElementById(t.substr(1)) : t.jquery ? t[0] : t), e, r];
+                            var n = [(t = /^#/.test(t) ? window.document.getElementById(t.substr(1)) : t.jquery ? t[0] : t), e, r];
                             return (
                                 (t.postscribe = {
                                     cancel: function () {
-                                        i.stream ? i.stream.abort() : (i[1] = o);
+                                        n.stream ? n.stream.abort() : (n[1] = o);
                                     },
                                 }),
-                                r.beforeEnqueue(i),
-                                l.push(i),
+                                r.beforeEnqueue(n),
+                                l.push(n),
                                 u || p(),
                                 t.postscribe
                             );
                         }
-                        i(h, { streams: {}, queue: l, WriteStream: n.default });
+                        n(h, { streams: {}, queue: l, WriteStream: i.default });
                     },
                     function (t, e, r) {
                         "use strict";
                         e.__esModule = !0;
-                        var i =
+                        var n =
                                 Object.assign ||
                                 function (t) {
                                     for (var e = 1; e < arguments.length; e++) {
                                         var r = arguments[e];
-                                        for (var i in r) Object.prototype.hasOwnProperty.call(r, i) && (t[i] = r[i]);
+                                        for (var n in r) Object.prototype.hasOwnProperty.call(r, n) && (t[n] = r[n]);
                                     }
                                     return t;
                                 },
-                            n = (function (t) {
+                            i = (function (t) {
                                 return t && t.__esModule ? t : { default: t };
                             })(r(3)),
                             a = (function (t) {
@@ -645,13 +642,13 @@ function isValidURL(str) {
                         }
                         function s(t, e) {
                             var r = "data-ps-" + e,
-                                i = t.getAttribute(r);
-                            return a.existy(i) ? String(i) : i;
+                                n = t.getAttribute(r);
+                            return a.existy(n) ? String(n) : n;
                         }
                         function c(t, e) {
                             var r = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : null,
-                                i = "data-ps-" + e;
-                            a.existy(r) && "" !== r ? t.setAttribute(i, r) : t.removeAttribute(i);
+                                n = "data-ps-" + e;
+                            a.existy(r) && "" !== r ? t.setAttribute(n, r) : t.removeAttribute(n);
                         }
                         var l = (function () {
                             function t(e) {
@@ -661,7 +658,7 @@ function isValidURL(str) {
                                     (this.options = r),
                                     (this.doc = e.ownerDocument),
                                     (this.win = this.doc.defaultView || this.doc.parentWindow),
-                                    (this.parser = new n.default("", { autoFix: r.autoFix })),
+                                    (this.parser = new i.default("", { autoFix: r.autoFix })),
                                     (this.actuals = [e]),
                                     (this.proxyHistory = ""),
                                     (this.proxyRoot = this.doc.createElement(e.nodeName)),
@@ -683,34 +680,34 @@ function isValidURL(str) {
                                 }),
                                 (t.prototype._writeImpl = function (t) {
                                     this.parser.append(t);
-                                    for (var e = void 0, r = void 0, i = void 0, n = []; (e = this.parser.readToken()) && !(r = a.isScript(e)) && !(i = a.isStyle(e)); ) (e = this.options.beforeWriteToken(e)) && n.push(e);
-                                    n.length > 0 && this._writeStaticTokens(n), r && this._handleScriptToken(e), i && this._handleStyleToken(e);
+                                    for (var e = void 0, r = void 0, n = void 0, i = []; (e = this.parser.readToken()) && !(r = a.isScript(e)) && !(n = a.isStyle(e)); ) (e = this.options.beforeWriteToken(e)) && i.push(e);
+                                    i.length > 0 && this._writeStaticTokens(i), r && this._handleScriptToken(e), n && this._handleStyleToken(e);
                                 }),
                                 (t.prototype._writeStaticTokens = function (t) {
                                     var e = this._buildChunk(t);
                                     return e.actual ? ((e.html = this.proxyHistory + e.actual), (this.proxyHistory += e.proxy), (this.proxyRoot.innerHTML = e.html), this._walkChunk(), e) : null;
                                 }),
                                 (t.prototype._buildChunk = function (t) {
-                                    for (var e = this.actuals.length, r = [], i = [], n = [], a = t.length, o = 0; o < a; o++) {
+                                    for (var e = this.actuals.length, r = [], n = [], i = [], a = t.length, o = 0; o < a; o++) {
                                         var s = t[o],
                                             c = s.toString();
                                         if ((r.push(c), s.attrs)) {
                                             if (!/^noscript$/i.test(s.tagName)) {
                                                 var l = e++;
-                                                i.push(c.replace(/(\/?>)/, " data-ps-id=" + l + " $1")),
-                                                    "ps-script" !== s.attrs.id && "ps-style" !== s.attrs.id && n.push("atomicTag" === s.type ? "" : "<" + s.tagName + " data-ps-proxyof=" + l + (s.unary ? " />" : ">"));
+                                                n.push(c.replace(/(\/?>)/, " data-ps-id=" + l + " $1")),
+                                                    "ps-script" !== s.attrs.id && "ps-style" !== s.attrs.id && i.push("atomicTag" === s.type ? "" : "<" + s.tagName + " data-ps-proxyof=" + l + (s.unary ? " />" : ">"));
                                             }
-                                        } else i.push(c), n.push("endTag" === s.type ? c : "");
+                                        } else n.push(c), i.push("endTag" === s.type ? c : "");
                                     }
-                                    return { tokens: t, raw: r.join(""), actual: i.join(""), proxy: n.join("") };
+                                    return { tokens: t, raw: r.join(""), actual: n.join(""), proxy: i.join("") };
                                 }),
                                 (t.prototype._walkChunk = function () {
                                     for (var t = void 0, e = [this.proxyRoot]; a.existy((t = e.shift())); ) {
                                         var r = 1 === t.nodeType;
                                         if (!r || !s(t, "proxyof")) {
                                             r && ((this.actuals[s(t, "id")] = t), c(t, "id"));
-                                            var i = t.parentNode && s(t.parentNode, "proxyof");
-                                            i && this.actuals[i].appendChild(t);
+                                            var n = t.parentNode && s(t.parentNode, "proxyof");
+                                            n && this.actuals[n].appendChild(t);
                                         }
                                         e.unshift.apply(e, a.toArray(t.childNodes));
                                     }
@@ -759,20 +756,20 @@ function isValidURL(str) {
                                 }),
                                 (t.prototype._writeScriptToken = function (t, e) {
                                     var r = this._buildScript(t),
-                                        i = this._shouldRelease(r),
-                                        n = this.options.afterAsync;
+                                        n = this._shouldRelease(r),
+                                        i = this.options.afterAsync;
                                     t.src &&
                                         ((r.src = t.src),
                                         this._scriptLoadHandler(
                                             r,
-                                            i
-                                                ? n
+                                            n
+                                                ? i
                                                 : function () {
-                                                      e(), n();
+                                                      e(), i();
                                                   }
                                         ));
                                     try {
-                                        this._insertCursor(r, "ps-script"), (r.src && !i) || e();
+                                        this._insertCursor(r, "ps-script"), (r.src && !n) || e();
                                     } catch (t) {
                                         this.options.error(t), e();
                                     }
@@ -791,12 +788,12 @@ function isValidURL(str) {
                                     function r() {
                                         t = t.onload = t.onreadystatechange = t.onerror = null;
                                     }
-                                    var n = this.options.error;
+                                    var i = this.options.error;
                                     function a() {
                                         r(), null != e && e(), (e = null);
                                     }
                                     function o(t) {
-                                        r(), n(t), null != e && e(), (e = null);
+                                        r(), i(t), null != e && e(), (e = null);
                                     }
                                     function s(t, e) {
                                         var r = t["on" + e];
@@ -804,7 +801,7 @@ function isValidURL(str) {
                                     }
                                     s(t, "load"),
                                         s(t, "error"),
-                                        i(t, {
+                                        n(t, {
                                             onload: function () {
                                                 if (t._onload)
                                                     try {
@@ -837,38 +834,29 @@ function isValidURL(str) {
                         e.default = l;
                     },
                     function (t, e, r) {
-                        /**
-                         * @file prescribe
-                         * @description Tiny, forgiving HTML parser
-                         * @version vundefined
-                         * @see {@link https://github.com/krux/prescribe/}
-                         * @license MIT
-                         * @author Derek Brans
-                         * @copyright 2016 Krux Digital, Inc
-                         */
-                        var i;
-                        (i = function () {
+                        var n;
+                        (n = function () {
                             return (function (t) {
                                 var e = {};
-                                function r(i) {
-                                    if (e[i]) return e[i].exports;
-                                    var n = (e[i] = { exports: {}, id: i, loaded: !1 });
-                                    return t[i].call(n.exports, n, n.exports, r), (n.loaded = !0), n.exports;
+                                function r(n) {
+                                    if (e[n]) return e[n].exports;
+                                    var i = (e[n] = { exports: {}, id: n, loaded: !1 });
+                                    return t[n].call(i.exports, i, i.exports, r), (i.loaded = !0), i.exports;
                                 }
                                 return (r.m = t), (r.c = e), (r.p = ""), r(0);
                             })([
                                 function (t, e, r) {
                                     "use strict";
-                                    var i = (function (t) {
+                                    var n = (function (t) {
                                         return t && t.__esModule ? t : { default: t };
                                     })(r(1));
-                                    t.exports = i.default;
+                                    t.exports = n.default;
                                 },
                                 function (t, e, r) {
                                     "use strict";
                                     e.__esModule = !0;
-                                    var i = s(r(2)),
-                                        n = s(r(3)),
+                                    var n = s(r(2)),
+                                        i = s(r(3)),
                                         a = (function (t) {
                                             return t && t.__esModule ? t : { default: t };
                                         })(r(6)),
@@ -887,11 +875,11 @@ function isValidURL(str) {
                                             function t() {
                                                 var e = this,
                                                     r = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : "",
-                                                    n = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
+                                                    i = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
                                                 c(this, t), (this.stream = r);
                                                 var o = !1,
                                                     s = {};
-                                                for (var l in i) i.hasOwnProperty(l) && (n.autoFix && (s[l + "Fix"] = !0), (o = o || s[l + "Fix"]));
+                                                for (var l in n) n.hasOwnProperty(l) && (i.autoFix && (s[l + "Fix"] = !0), (o = o || s[l + "Fix"]));
                                                 o
                                                     ? ((this._readToken = (0, a.default)(this, s, function () {
                                                           return e._readTokenImpl();
@@ -915,7 +903,7 @@ function isValidURL(str) {
                                                 (t.prototype._peekTokenImpl = function () {
                                                     for (var t in l)
                                                         if (l.hasOwnProperty(t) && l[t].test(this.stream)) {
-                                                            var e = n[t](this.stream);
+                                                            var e = i[t](this.stream);
                                                             if (e) return "startTag" === e.type && /script|style/i.test(e.tagName) ? null : ((e.text = this.stream.substr(0, e.length)), e);
                                                         }
                                                 }),
@@ -947,33 +935,33 @@ function isValidURL(str) {
                                         for (var r in t) t.hasOwnProperty(r) && (e[r] = (0, o.escapeQuotes)(t[r], null));
                                         return e;
                                     }),
-                                    (u.supports = i),
-                                    i))
-                                        i.hasOwnProperty(p) && (u.browserHasFlaw = u.browserHasFlaw || (!i[p] && p));
+                                    (u.supports = n),
+                                    n))
+                                        n.hasOwnProperty(p) && (u.browserHasFlaw = u.browserHasFlaw || (!n[p] && p));
                                 },
                                 function (t, e) {
                                     "use strict";
                                     e.__esModule = !0;
                                     var r = !1,
-                                        i = !1,
-                                        n = window.document.createElement("div");
+                                        n = !1,
+                                        i = window.document.createElement("div");
                                     try {
                                         var a = "<P><I></P></I>";
-                                        (n.innerHTML = a), (e.tagSoup = r = n.innerHTML !== a);
+                                        (i.innerHTML = a), (e.tagSoup = r = i.innerHTML !== a);
                                     } catch (t) {
                                         e.tagSoup = r = !1;
                                     }
                                     try {
-                                        (n.innerHTML = "<P><i><P></P></i></P>"), (e.selfClose = i = 2 === n.childNodes.length);
+                                        (i.innerHTML = "<P><i><P></P></i></P>"), (e.selfClose = n = 2 === i.childNodes.length);
                                     } catch (t) {
-                                        e.selfClose = i = !1;
+                                        e.selfClose = n = !1;
                                     }
-                                    (n = null), (e.tagSoup = r), (e.selfClose = i);
+                                    (i = null), (e.tagSoup = r), (e.selfClose = n);
                                 },
                                 function (t, e, r) {
                                     "use strict";
                                     e.__esModule = !0;
-                                    var i =
+                                    var n =
                                         "function" == typeof Symbol && "symbol" == typeof Symbol.iterator
                                             ? function (t) {
                                                   return typeof t;
@@ -983,11 +971,11 @@ function isValidURL(str) {
                                               };
                                     (e.comment = function (t) {
                                         var e = t.indexOf("--\x3e");
-                                        if (e >= 0) return new n.CommentToken(t.substr(4, e - 1), e + 3);
+                                        if (e >= 0) return new i.CommentToken(t.substr(4, e - 1), e + 3);
                                     }),
                                         (e.chars = function (t) {
                                             var e = t.indexOf("<");
-                                            return new n.CharsToken(e >= 0 ? e : t.length);
+                                            return new i.CharsToken(e >= 0 ? e : t.length);
                                         }),
                                         (e.startTag = o),
                                         (e.atomicTag = function (t) {
@@ -995,16 +983,16 @@ function isValidURL(str) {
                                             if (e) {
                                                 var r = t.slice(e.length);
                                                 if (r.match(new RegExp("</\\s*" + e.tagName + "\\s*>", "i"))) {
-                                                    var i = r.match(new RegExp("([\\s\\S]*?)</\\s*" + e.tagName + "\\s*>", "i"));
-                                                    if (i) return new n.AtomicTagToken(e.tagName, i[0].length + e.length, e.attrs, e.booleanAttrs, i[1]);
+                                                    var n = r.match(new RegExp("([\\s\\S]*?)</\\s*" + e.tagName + "\\s*>", "i"));
+                                                    if (n) return new i.AtomicTagToken(e.tagName, n[0].length + e.length, e.attrs, e.booleanAttrs, n[1]);
                                                 }
                                             }
                                         }),
                                         (e.endTag = function (t) {
                                             var e = t.match(a.endTag);
-                                            if (e) return new n.EndTagToken(e[1], e[0].length);
+                                            if (e) return new i.EndTagToken(e[1], e[0].length);
                                         });
-                                    var n = r(4),
+                                    var i = r(4),
                                         a = {
                                             startTag: /^<([\-A-Za-z0-9_]+)((?:\s+[\w\-]+(?:\s*=?\s*(?:(?:"[^"]*")|(?:'[^']*')|[^>\s]+))?)*)\s*(\/?)>/,
                                             endTag: /^<\/([\-A-Za-z0-9_]+)[^>]*>/,
@@ -1020,16 +1008,16 @@ function isValidURL(str) {
                                                     ((e = {}),
                                                     (r = {}),
                                                     (o = s[2]),
-                                                    s[2].replace(a.attr, function (t, i) {
+                                                    s[2].replace(a.attr, function (t, n) {
                                                         arguments[2] || arguments[3] || arguments[4] || arguments[5]
                                                             ? arguments[5]
                                                                 ? ((e[arguments[5]] = ""), (r[arguments[5]] = !0))
-                                                                : (e[i] = arguments[2] || arguments[3] || arguments[4] || (a.fillAttr.test(i) && i) || "")
-                                                            : (e[i] = ""),
+                                                                : (e[n] = arguments[2] || arguments[3] || arguments[4] || (a.fillAttr.test(n) && n) || "")
+                                                            : (e[n] = ""),
                                                             (o = o.replace(t, ""));
                                                     }),
-                                                    { v: new n.StartTagToken(s[1], s[0].length, e, r, !!s[3], o.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, "")) });
-                                                if ("object" === (void 0 === c ? "undefined" : i(c))) return c.v;
+                                                    { v: new i.StartTagToken(s[1], s[0].length, e, r, !!s[3], o.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, "")) });
+                                                if ("object" === (void 0 === c ? "undefined" : n(c))) return c.v;
                                             }
                                         }
                                     }
@@ -1037,16 +1025,16 @@ function isValidURL(str) {
                                 function (t, e, r) {
                                     "use strict";
                                     (e.__esModule = !0), (e.EndTagToken = e.AtomicTagToken = e.StartTagToken = e.TagToken = e.CharsToken = e.CommentToken = e.Token = void 0);
-                                    var i = r(5);
-                                    function n(t, e) {
+                                    var n = r(5);
+                                    function i(t, e) {
                                         if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
                                     }
                                     (e.Token = function t(e, r) {
-                                        n(this, t), (this.type = e), (this.length = r), (this.text = "");
+                                        i(this, t), (this.type = e), (this.length = r), (this.text = "");
                                     }),
                                         (e.CommentToken = (function () {
                                             function t(e, r) {
-                                                n(this, t), (this.type = "comment"), (this.length = r || (e ? e.length : 0)), (this.text = ""), (this.content = e);
+                                                i(this, t), (this.type = "comment"), (this.length = r || (e ? e.length : 0)), (this.text = ""), (this.content = e);
                                             }
                                             return (
                                                 (t.prototype.toString = function () {
@@ -1057,7 +1045,7 @@ function isValidURL(str) {
                                         })()),
                                         (e.CharsToken = (function () {
                                             function t(e) {
-                                                n(this, t), (this.type = "chars"), (this.length = e), (this.text = "");
+                                                i(this, t), (this.type = "chars"), (this.length = e), (this.text = "");
                                             }
                                             return (
                                                 (t.prototype.toString = function () {
@@ -1067,18 +1055,18 @@ function isValidURL(str) {
                                             );
                                         })());
                                     var a = (e.TagToken = (function () {
-                                        function t(e, r, i, a, o) {
-                                            n(this, t), (this.type = e), (this.length = i), (this.text = ""), (this.tagName = r), (this.attrs = a), (this.booleanAttrs = o), (this.unary = !1), (this.html5Unary = !1);
+                                        function t(e, r, n, a, o) {
+                                            i(this, t), (this.type = e), (this.length = n), (this.text = ""), (this.tagName = r), (this.attrs = a), (this.booleanAttrs = o), (this.unary = !1), (this.html5Unary = !1);
                                         }
                                         return (
                                             (t.formatTag = function (t) {
                                                 var e = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : null,
                                                     r = "<" + t.tagName;
-                                                for (var n in t.attrs)
-                                                    if (t.attrs.hasOwnProperty(n)) {
-                                                        r += " " + n;
-                                                        var a = t.attrs[n];
-                                                        (void 0 !== t.booleanAttrs && void 0 !== t.booleanAttrs[n]) || (r += '="' + (0, i.escapeQuotes)(a) + '"');
+                                                for (var i in t.attrs)
+                                                    if (t.attrs.hasOwnProperty(i)) {
+                                                        r += " " + i;
+                                                        var a = t.attrs[i];
+                                                        (void 0 !== t.booleanAttrs && void 0 !== t.booleanAttrs[i]) || (r += '="' + (0, n.escapeQuotes)(a) + '"');
                                                     }
                                                 return t.rest && (r += " " + t.rest), t.unary && !t.html5Unary ? (r += "/>") : (r += ">"), null != e && (r += e + "</" + t.tagName + ">"), r;
                                             }),
@@ -1086,8 +1074,8 @@ function isValidURL(str) {
                                         );
                                     })());
                                     (e.StartTagToken = (function () {
-                                        function t(e, r, i, a, o, s) {
-                                            n(this, t), (this.type = "startTag"), (this.length = r), (this.text = ""), (this.tagName = e), (this.attrs = i), (this.booleanAttrs = a), (this.html5Unary = !1), (this.unary = o), (this.rest = s);
+                                        function t(e, r, n, a, o, s) {
+                                            i(this, t), (this.type = "startTag"), (this.length = r), (this.text = ""), (this.tagName = e), (this.attrs = n), (this.booleanAttrs = a), (this.html5Unary = !1), (this.unary = o), (this.rest = s);
                                         }
                                         return (
                                             (t.prototype.toString = function () {
@@ -1097,13 +1085,13 @@ function isValidURL(str) {
                                         );
                                     })()),
                                         (e.AtomicTagToken = (function () {
-                                            function t(e, r, i, a, o) {
-                                                n(this, t),
+                                            function t(e, r, n, a, o) {
+                                                i(this, t),
                                                     (this.type = "atomicTag"),
                                                     (this.length = r),
                                                     (this.text = ""),
                                                     (this.tagName = e),
-                                                    (this.attrs = i),
+                                                    (this.attrs = n),
                                                     (this.booleanAttrs = a),
                                                     (this.unary = !1),
                                                     (this.html5Unary = !1),
@@ -1118,7 +1106,7 @@ function isValidURL(str) {
                                         })()),
                                         (e.EndTagToken = (function () {
                                             function t(e, r) {
-                                                n(this, t), (this.type = "endTag"), (this.length = r), (this.text = ""), (this.tagName = e);
+                                                i(this, t), (this.type = "endTag"), (this.length = r), (this.text = ""), (this.tagName = e);
                                             }
                                             return (
                                                 (t.prototype.toString = function () {
@@ -1163,34 +1151,34 @@ function isValidURL(str) {
                                                 })(),
                                                 s = {
                                                     startTag: function (r) {
-                                                        var n = r.tagName;
-                                                        "TR" === n.toUpperCase() && o.lastTagNameEq("TABLE")
+                                                        var i = r.tagName;
+                                                        "TR" === i.toUpperCase() && o.lastTagNameEq("TABLE")
                                                             ? (t.prepend("<TBODY>"), c())
-                                                            : e.selfCloseFix && i.test(n) && o.containsTagName(n)
-                                                            ? o.lastTagNameEq(n)
+                                                            : e.selfCloseFix && n.test(i) && o.containsTagName(i)
+                                                            ? o.lastTagNameEq(i)
                                                                 ? a(t, o)
                                                                 : (t.prepend("</" + r.tagName + ">"), c())
                                                             : r.unary || o.push(r);
                                                     },
-                                                    endTag: function (i) {
-                                                        o.last() ? (e.tagSoupFix && !o.lastTagNameEq(i.tagName) ? a(t, o) : o.pop()) : e.tagSoupFix && (r(), c());
+                                                    endTag: function (n) {
+                                                        o.last() ? (e.tagSoupFix && !o.lastTagNameEq(n.tagName) ? a(t, o) : o.pop()) : e.tagSoupFix && (r(), c());
                                                     },
                                                 };
                                             function c() {
                                                 var e = (function (t, e) {
                                                     var r = t.stream,
-                                                        i = n(e());
-                                                    return (t.stream = r), i;
+                                                        n = i(e());
+                                                    return (t.stream = r), n;
                                                 })(t, r);
                                                 e && s[e.type] && s[e.type](e);
                                             }
                                             return function () {
-                                                return c(), n(r());
+                                                return c(), i(r());
                                             };
                                         });
                                     var r = /^(AREA|BASE|BASEFONT|BR|COL|FRAME|HR|IMG|INPUT|ISINDEX|LINK|META|PARAM|EMBED)$/i,
-                                        i = /^(COLGROUP|DD|DT|LI|OPTIONS|P|TD|TFOOT|TH|THEAD|TR)$/i;
-                                    function n(t) {
+                                        n = /^(COLGROUP|DD|DT|LI|OPTIONS|P|TD|TFOOT|TH|THEAD|TR)$/i;
+                                    function i(t) {
                                         return t && "startTag" === t.type && ((t.unary = r.test(t.tagName) || t.unary), (t.html5Unary = !/\/>$/.test(t.text))), t;
                                     }
                                     function a(t, e) {
@@ -1200,7 +1188,7 @@ function isValidURL(str) {
                                 },
                             ]);
                         }),
-                            (t.exports = i());
+                            (t.exports = n());
                     },
                     function (t, e) {
                         "use strict";
@@ -1213,31 +1201,31 @@ function isValidURL(str) {
                                 : function (t) {
                                       return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t;
                                   };
-                        function i(t) {
+                        function n(t) {
                             return null != t;
                         }
-                        function n(t, e, r) {
-                            var i = void 0,
-                                n = (t && t.length) || 0;
-                            for (i = 0; i < n; i++) e.call(r, t[i], i);
+                        function i(t, e, r) {
+                            var n = void 0,
+                                i = (t && t.length) || 0;
+                            for (n = 0; n < i; n++) e.call(r, t[n], n);
                         }
                         function a(t, e, r) {
-                            for (var i in t) t.hasOwnProperty(i) && e.call(r, i, t[i]);
+                            for (var n in t) t.hasOwnProperty(n) && e.call(r, n, t[n]);
                         }
                         function o(t, e) {
                             return !(!t || ("startTag" !== t.type && "atomicTag" !== t.type) || !("tagName" in t) || !~t.tagName.toLowerCase().indexOf(e));
                         }
-                        (e.existy = i),
+                        (e.existy = n),
                             (e.isFunction = function (t) {
                                 return "function" == typeof t;
                             }),
-                            (e.each = n),
+                            (e.each = i),
                             (e.eachKey = a),
                             (e.defaults = function (t, e) {
                                 return (
                                     (t = t || {}),
                                     a(e, function (e, r) {
-                                        i(t[e]) || (t[e] = r);
+                                        n(t[e]) || (t[e] = r);
                                     }),
                                     t
                                 );
@@ -1247,14 +1235,14 @@ function isValidURL(str) {
                                     return Array.prototype.slice.call(t);
                                 } catch (a) {
                                     var e =
-                                        ((i = []),
-                                        n(t, function (t) {
-                                            i.push(t);
+                                        ((n = []),
+                                        i(t, function (t) {
+                                            n.push(t);
                                         }),
-                                        { v: i });
+                                        { v: n });
                                     if ("object" === (void 0 === e ? "undefined" : r(e))) return e.v;
                                 }
-                                var i;
+                                var n;
                             }),
                             (e.last = function (t) {
                                 return t[t.length - 1];
@@ -1269,67 +1257,54 @@ function isValidURL(str) {
                     },
                 ]);
             }),
-                (t.exports = i());
+                (t.exports = n());
         },
     ]);
 
+
+///// banner info
+
     let urlParams = new URLSearchParams(window.location.search);
-    let bannerURL = urlParams.get('b');
-    let videoURL = urlParams.get('c');
-    if(bannerURL || videoURL){
-        if(isValidURL( bannerURL || videoURL )) {
+    let bannerNgangURL = urlParams.get('b');
+    let bannerDocURL = urlParams.get('c');
+    if(bannerNgangURL || bannerDocURL){
+        if(isValidURL(bannerNgangURL || bannerDocURL)) {
             YoAds.showAds(
                 {
-                    pid: "c9ebf62ffb614239b0353f4ec9185d23",
-                    aid: "858dde9b624b41e0a3026f5522c032a3",
+                    pid: "c4f1148d092a4effb9670aa9fb16fe25",
+                    aid: "2783916f1a8f4a86b6701b266083f322",
                     web: {
                         id: "b8f28f0e65dd47509d931f9850f7cbf6",
-                        purl: "https://demo.yomedia.vn/",
-                        spurl: "https://demo.yomedia.vn/",
-                        pl: { pls: { min_width: "1", min_height: "1", max_width: "1", max_height: "1", selector: "#newsDetail > div > main > div > div > div.post_details.stickydetails > div > div" }, plt: "display" },
+                        purl: "",
+                        spurl: "",
+                        pl: { pls: { min_width: "1", min_height: "1", max_width: "1", max_height: "1" }, plt: "display" },
                         cat: [
                            
                         ],
                     },
                     camp: {
-                        fid: "0c1b148aef204d36954195f034104179",
-                        fln: "In Image Inread Testing",
-                        aid: "858dde9b624b41e0a3026f5522c032a3",
-                        cat: { num_id: "99", category_name: "Arts & Entertainment", iab: "IAB1", mobile_comscore_id: "2016070110000000001", pc_comscore_id: "2016070110000000001" },
                     },
                     trk: {
-                        dom: "https://tracking.yomedia.vn",
-                        evs: {
-                           
-                        },
-                        ttr: {},
+                       
                     },
-                    cli: { u: "83d157703201c2c829975747e78db277" },
+                    cli: { u: "6c6ed3eccc6fc00d9421bfa77dada963" },
                     advi: "display",
                     bnr: {
-                        id: "9a684be2b6b144e7bc439084e095d921",
+                        id: "2b0ea03a896947a9991fdbc6fc8ebabc",
                         ctv: {
-                            source: `${bannerURL}`,
-                            video_source: `${videoURL}`,
-                            video_width: "600",
-                            video_height: "430",
-                            content_min_width: "100",
-                            content_min_height: "120",
+                            source: `${bannerNgangURL}`,
+                            min_width: "600",
+                            min_height: "125",
+                            portrait_source: `${bannerDocURL}`,
+                            portrait_min_width: "600",
+                            portrait_min_height: "125",
+                            content_min_width: "300",
+                            content_min_height: "200",
                         },
-                        ldp: "https://yomedia.vn/",
+                        ldp: "https://yomedia.vn",
                     },
-                    gtr: [],
-                    mdom: "https://demo.yomedia.vn",
-                    ddom: "https://delivery.yomedia.vn",
-                    aut: "3676a522-3cc6-4e44-b4d1-581fca353c4a",
-                    asc: "async",
                 },
-                ""
             );
-        } else{
-            console.log('Wrong URL, please check again.');
         }
-    }else{
-        alert('Empty banner, please add one!');
     }
 })();

@@ -1,4 +1,4 @@
-getTrackingYomedia('https://tracking.adsrv.io/api/user-sync/yomedia?uuid=4c92323787194eb89fd1782ecaa0d2e0&ord=1565776044486');
+getTrackingYomedia('');
 var advId_26ae6e3c7c164aa08c839f0720c8839e = '5814c24020f6496d86d486d9ba2323bd';
 var campId_26ae6e3c7c164aa08c839f0720c8839e = '4886170abcf2452993f34a1ee83e71d2';
 var pubId_26ae6e3c7c164aa08c839f0720c8839e = '5565e302fb2e489cae28103f6c66db12';
@@ -568,14 +568,9 @@ if(portraitBanner){
     portraitBanner.addEventListener("touchstart", videoStart_26ae6e3c7c164aa08c839f0720c8839e, false);
 }
 function impressionTrackingYomedia_26ae6e3c7c164aa08c839f0720c8839e() {
-    getTrackingYomedia('https://tracking.yomedia.vn/mobile?evt=002&token=a4ea0a9289c5e3c7cccf0b38dba249c98814d3c09e&ord=1565776044486' + Date.now());
-    if (typeof _YoImp != 'undefined' && avlHelperModule.validateUrl(_YoImp)) {
-        getTrackingYomedia(_YoImp);
-    }
 }
 
 function viewableTrackingYomedia_26ae6e3c7c164aa08c839f0720c8839e() {
-    getTrackingYomedia('https://tracking.yomedia.vn/mobile?evt=008&token=a4ea0a9289c5e3c7cccf0b38dba249c9881473b0df&ord=1565776044486' + Date.now());
 }
 
 function clickTrackingYomedia_26ae6e3c7c164aa08c839f0720c8839e() {
@@ -597,19 +592,15 @@ function clickTracking3rdYomedia_26ae6e3c7c164aa08c839f0720c8839e() {
 }
 
 function startTrackingYomedia_26ae6e3c7c164aa08c839f0720c8839e(){
-    getTrackingYomedia('https://tracking.yomedia.vn/mobile?evt=003&token=a4ea0a9289c5e3c7cccf0b38dba249c988147f6974&ord=1565776044486' + Date.now());
 }
 
 function firstQuartileTrackingYomedia_26ae6e3c7c164aa08c839f0720c8839e(){
-    getTrackingYomedia('https://tracking.yomedia.vn/mobile?evt=004&token=a4ea0a9289c5e3c7cccf0b38dba249c98814019e6e&ord=1565776044486' + Date.now());
 }
 
 function midpointTrackingYomedia_26ae6e3c7c164aa08c839f0720c8839e(){
-    getTrackingYomedia('https://tracking.yomedia.vn/mobile?evt=005&token=a4ea0a9289c5e3c7cccf0b38dba249c988146e8fbd&ord=1565776044486' + Date.now());
 }
 
 function thirdQuartileTrackingYomedia_26ae6e3c7c164aa08c839f0720c8839e(){
-    getTrackingYomedia('https://tracking.yomedia.vn/mobile?evt=006&token=a4ea0a9289c5e3c7cccf0b38dba249c9881444ce65&ord=1565776044486' + Date.now());
 }
 
 function completeTrackingYomedia_26ae6e3c7c164aa08c839f0720c8839e(){

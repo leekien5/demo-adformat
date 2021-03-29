@@ -6,18 +6,18 @@ let adPlacement = null;
 if(bannerURL && formatURL) {
 	//Get fireDirectory name from file directories
 	const fileName = {
-			masthead: '../../../deliveries/masthead.js',
-				 inpage: '../../../deliveries/inpage.js',
-				firstview: '../../../deliveries/firstview.js',
-					 footer: '../../../deliveries/footer.js',
-		   threeDPostCarousel: '../../../deliveries/3dPostCarousel.js',
-		   		inImageTakeover: '../../../deliveries/inImageTakeover.js',
-					   inImageWithInread: '../../../deliveries/inImageInread.js',
-					   inImageCarousel: '../../../deliveries/inImageCarousel.js',
-						    onImageMb: '../../../deliveries/onImagePc.js',
-							 iab300x250: '../../../deliveries/iab300x250.js',
-							   iab300x600: '../../../deliveries/iab300x600.js',
-		}
+		masthead: '../../../deliveries/masthead.js',
+		inpage: '../../../deliveries/inpage.js',
+		firstview: '../../../deliveries/firstview.js',
+		footer: '../../../deliveries/footer.js',
+		threeDPostCarousel: '../../../deliveries/3dPostCarousel.js',
+		inImageTakeover: '../../../deliveries/inImageTakeover.js',
+		inImageWithInread: '../../../deliveries/inImageInread.js',
+		inImageCarousel: '../../../deliveries/inImageCarousel.js',
+		onImageMb: '../../../deliveries/onImage.js',
+		iab300x250: '../../../deliveries/iab300x250.js',
+		iab300x600: '../../../deliveries/iab300x600.js',
+	}
 	//Switching cases
 	switch(formatURL) {
 		case 'masthead-mb':

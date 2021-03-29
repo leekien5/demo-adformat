@@ -1279,17 +1279,11 @@ function isValidURL(str) {
                     aid: "2f327cc5217b45f897799dd72c2af650",
                     web: {
                         id: "b8f28f0e65dd47509d931f9850f7cbf6",
-                        purl: "https://demo.yomedia.vn/",
-                        spurl: "https://demo.yomedia.vn/",
+                        purl: "",
+                        spurl: "",
                         pl: { pls: { min_width: "1", min_height: "1", max_width: "1", max_height: "1", selector: "#newsDetail > div > main > div > div > div.post_details.stickydetails > div > div" }, plt: "display" },
                         cat: [
                         ],
-                    },
-                    camp: {
-                        fid: "7f26543512c44de68d3bfef9f039a74c",
-                        fln: "In Image Carousel Testing",
-                        aid: "2f327cc5217b45f897799dd72c2af650",
-                        cat: { num_id: "99", category_name: "Arts & Entertainment", iab: "IAB1", mobile_comscore_id: "2016070110000000001", pc_comscore_id: "2016070110000000001" },
                     },
                     trk: {
                         dom: "",

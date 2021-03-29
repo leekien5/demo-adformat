@@ -1,4 +1,4 @@
-getTrackingYomedia('https://tracking.adsrv.io/api/user-sync/yomedia?uuid=95cffcb9c10117479c56c215d5310af5&ord=1559727236803');
+getTrackingYomedia('');
 var advId_d05d05051d9b48ad9451562f5edac04f = 'c23b9c109f7a4f89a3cb23f694f1d7cb';
 var campId_d05d05051d9b48ad9451562f5edac04f = 'd6692db2a2dd441c9ab9741ee05b127d';
 var pubId_d05d05051d9b48ad9451562f5edac04f = '5565e302fb2e489cae28103f6c66db12';
@@ -147,12 +147,7 @@ function showBannerYomedia_d05d05051d9b48ad9451562f5edac04f(s) {
             }  
             resizeYomedia_d05d05051d9b48ad9451562f5edac04f();
             impressionTrackingYomedia_d05d05051d9b48ad9451562f5edac04f();
-        }else {
-            console.log('Wrong URL, please check again.');
         }
-    }else {
-        console.log('Empty banner, please add one!');
-
     }
 }
 
@@ -422,15 +417,9 @@ if (window!=window.top) {
 }
 
 function impressionTrackingYomedia_d05d05051d9b48ad9451562f5edac04f() {
-    getTrackingYomedia('https://tracking.yomedia.vn/mobile?evt=002&token=c7fcfc54efdb9f3a834af054e655248122285820f5&ord=1559727236803' + Date.now());
-    if (typeof _YoImp != 'undefined' && avlHelperModule.validateUrl(_YoImp)) {
-        getTrackingYomedia(_YoImp);
-    }
-    getTrackingYomedia('https://tracking.yomedia.vn/ias?cpid=d6692db2a2dd441c9ab9741ee05b127d&pid=d05d05051d9b48ad9451562f5edac04f&advid=c23b9c109f7a4f89a3cb23f694f1d7cb&chid=3d58e13cbef3493682fe6107ac13e262&wid=b8f28f0e65dd47509d931f9850f7cbf6&ord=1559727236803' + Date.now());
 }
 
 function viewableTrackingYomedia_d05d05051d9b48ad9451562f5edac04f() {
-    getTrackingYomedia('https://tracking.yomedia.vn/mobile?evt=008&token=c7fcfc54efdb9f3a834af054e6552481222809d144&ord=1559727236803' + Date.now());
 }
 
 function clickTrackingYomedia_d05d05051d9b48ad9451562f5edac04f() {
@@ -445,23 +434,18 @@ function clickTrackingYomedia_d05d05051d9b48ad9451562f5edac04f() {
 }
 
 function startTrackingYomedia_d05d05051d9b48ad9451562f5edac04f(){
-    getTrackingYomedia('https://tracking.yomedia.vn/mobile?evt=003&token=c7fcfc54efdb9f3a834af054e65524812228988205&ord=1559727236803' + Date.now());
 }
 
 function firstQuartileTrackingYomedia_d05d05051d9b48ad9451562f5edac04f(){
-    getTrackingYomedia('https://tracking.yomedia.vn/mobile?evt=004&token=c7fcfc54efdb9f3a834af054e65524812228583217&ord=1559727236803' + Date.now());
 }
 
 function midpointTrackingYomedia_d05d05051d9b48ad9451562f5edac04f(){
-    getTrackingYomedia('https://tracking.yomedia.vn/mobile?evt=005&token=c7fcfc54efdb9f3a834af054e655248122283dd44d&ord=1559727236803' + Date.now());
 }
 
 function thirdQuartileTrackingYomedia_d05d05051d9b48ad9451562f5edac04f(){
-    getTrackingYomedia('https://tracking.yomedia.vn/mobile?evt=006&token=c7fcfc54efdb9f3a834af054e6552481222855234b&ord=1559727236803' + Date.now());
 }
 
 function completeTrackingYomedia_d05d05051d9b48ad9451562f5edac04f(){
-    getTrackingYomedia('https://tracking.yomedia.vn/mobile?evt=007&token=c7fcfc54efdb9f3a834af054e6552481222890d974&ord=1559727236803' + Date.now());
 }
 
 function getClickTagYomedia_d05d05051d9b48ad9451562f5edac04f() {
@@ -491,9 +475,4 @@ function iFrameListener_d05d05051d9b48ad9451562f5edac04f(event){
 var fn_d05d05051d9b48ad9451562f5edac04f='';
 addAnEventListener_d05d05051d9b48ad9451562f5edac04f(window,'message',iFrameListener_d05d05051d9b48ad9451562f5edac04f);
 
-// (function() {
-//     var u="https://ss.yomedia.vn/js/1/258/ads.js";
-//     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-//     g.type='text/javascript'; g.async=true; g.defer=true; g.src=u; s.parentNode.insertBefore(g,s);
-// })();
-getTrackingYomedia('https://analytics.yomedia.vn/col?ref=http%3A%2F%2Fdemo.yomedia.vn%2Fkimyen%2Ffull-format%2F&ord=1559727236803');
+getTrackingYomedia('');
