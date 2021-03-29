@@ -579,7 +579,6 @@ function clickTrackingYomedia_26ae6e3c7c164aa08c839f0720c8839e() {
     }
     var landingPage = 'https://yomedia.vn';
     var isMac = /Mac|iPhone|iPod|iPad/.test(navigator.userAgent) && /\sSafari\//.test(navigator.userAgent);
-    console.log(isMac);
     if (!isMac) {
         window.open(landingPage, '_blank');
     }

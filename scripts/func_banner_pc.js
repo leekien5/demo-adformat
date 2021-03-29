@@ -80,8 +80,9 @@ if(bannerURL && formatURL) {
 			adBalloon = document.getElementById('ads-bottom-up').src = `${bannerURL}?pid=104&ord=12`;
 			//Get file javascript
 			fileDirectory = fileName.bottomUp;
-			// removeClass();
 			adPlacement = document.getElementById('yomedia-destination-197');
+			placementBalloon = document.getElementById('ads-balloon');
+			placementBalloon.remove();		
 			//Replace div id with script source
 			var scriptPlacement = document.createElement('script');
 			scriptPlacement.src = fileDirectory;
@@ -126,7 +127,7 @@ if(bannerURL && formatURL) {
 		case '3d-post-carousel':
 			document.title = "3D Post Carousel";
 			fileDirectory = fileName.threeDPostCarousel;
-			// removeClass();
+			removeClass();
 			adPlacement = document.getElementById('ads-3d-post-carousel');
 			//Replace div id with script source
 			var scriptPlacement = document.createElement('script');
@@ -194,7 +195,7 @@ if(bannerURL && formatURL) {
 		case 'on-image-mb':
 			document.title = "Mobile On Image";
 			fileDirectory = fileName.onImageMb;
-			// removeClass();
+			removeClass();
 			adPlacement = document.getElementById('ads-on-image');
 			//Replace div id with script source
 			var scriptPlacement = document.createElement('script');

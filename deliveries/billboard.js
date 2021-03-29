@@ -131,9 +131,12 @@ function showBannerYomedia_82e237b1f272486587de2dbd5c9478c0(s) {
                     document.body.appendChild(banner);
                     break;
             }
+        }else {
+            console.log('Please enter valid URL');
         }
+    }else{
+        alert('Empty banner, please add one!');
     }
-
     impressionTrackingYomedia_82e237b1f272486587de2dbd5c9478c0();
     banner.addEventListener("load", viewableBannerYomedia_82e237b1f272486587de2dbd5c9478c0.bind(banner), false);
     if (window!=window.top) {
@@ -352,27 +355,46 @@ if (window!=window.top) {
     document.addEventListener("scroll", viewBannerYomedia_82e237b1f272486587de2dbd5c9478c0, false);
 }
 function impressionTrackingYomedia_82e237b1f272486587de2dbd5c9478c0() {
+    getTrackingYomedia('');
+    if (typeof _YoImp != 'undefined' && avlHelperModule.validateUrl(_YoImp)) {
+        getTrackingYomedia(_YoImp);
+    }
+    getTrackingYomedia('');
 }
 
 function viewableTrackingYomedia_82e237b1f272486587de2dbd5c9478c0() {
+    getTrackingYomedia('');
 }
 
 function clickTrackingYomedia_82e237b1f272486587de2dbd5c9478c0() {
+    if (typeof _YoClick != 'undefined' && avlHelperModule.validateUrl(_YoClick)) {
+        getTrackingYomedia(_YoClick);
+    }
+        var landingPage = 'https://yomedia.vn';
+        var isMac = /Mac|iPhone|iPod|iPad/.test(navigator.userAgent) && /\sSafari\//.test(navigator.userAgent);
+        if (!isMac) {
+            window.open(landingPage, '_blank');
+        }
 }
 
 function startTrackingYomedia_82e237b1f272486587de2dbd5c9478c0(){
+    getTrackingYomedia('');
 }
 
 function firstQuartileTrackingYomedia_82e237b1f272486587de2dbd5c9478c0(){
+    getTrackingYomedia('');
 }
 
 function midpointTrackingYomedia_82e237b1f272486587de2dbd5c9478c0(){
+    getTrackingYomedia('');
 }
 
 function thirdQuartileTrackingYomedia_82e237b1f272486587de2dbd5c9478c0(){
+    getTrackingYomedia('');
 }
 
 function completeTrackingYomedia_82e237b1f272486587de2dbd5c9478c0(){
+    getTrackingYomedia('');
 }
 
 function getClickTagYomedia_82e237b1f272486587de2dbd5c9478c0() {

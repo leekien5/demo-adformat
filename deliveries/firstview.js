@@ -123,15 +123,6 @@ function fullscreenTrackingYomedia_ab1f7103e5354124a9d557162785eeb5(){
 }
 
 function embedThirdTracking_ab1f7103e5354124a9d557162785eeb5(event) {
-    var third_trackings = JSON.parse('{"f73030357f9c462a862d6bec278fb8fd":{"tracking_source":"http:\/\/serving.ad.org.vn\/impression.gif?b=810&p=312&c=163&imh=3f0b38550650b683b56534a7252e0c0e&u=","tracking_event":"impression"}}');
-    var date = new Date();
-    var time = date.getTime();
-    for (var index in third_trackings) {
-        if (event === third_trackings[index].tracking_event) {
-            var url = third_trackings[index].tracking_source.replace('[timestamp]', time);
-            avlHelperModule.embedTracking(url);
-        }
-    }
 }
 
 function getClickTagYomedia_ab1f7103e5354124a9d557162785eeb5() {
