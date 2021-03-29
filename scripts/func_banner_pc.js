@@ -30,6 +30,7 @@ if(bannerURL && formatURL) {
 		onImageMb: '../../deliveries/onImage.js',
 		iab300x250: '../../deliveries/iab300x250.js',
 		iab300x600: '../../deliveries/iab300x600.js',
+		outstream: '../../deliveries/outstream.js',
 	}
 
 	//Switching cases
@@ -221,6 +222,18 @@ if(bannerURL && formatURL) {
 			fileDirectory = fileName.iab300x600;
 			removeClass();
 			adPlacement = document.getElementById('ads-iab');
+			//Replace div id with script source
+			var scriptPlacement = document.createElement('script');
+			scriptPlacement.src = fileDirectory;
+			//Append script to div id
+			adPlacement.appendChild(scriptPlacement);	
+			break;
+
+		case 'outstream':
+			document.title = "Display Video Outstream (Inread)";
+			fileDirectory = fileName.outstream;
+			removeClass();
+			adPlacement = document.getElementById('ads-outstream');
 			//Replace div id with script source
 			var scriptPlacement = document.createElement('script');
 			scriptPlacement.src = fileDirectory;

@@ -230,7 +230,8 @@ function isValidURL(str) {
                         g = h / (o.ctv.min_width / o.ctv.min_height),
                         y = n.createElement("div", { id: "zones-ads-" + a, style: "position: relative; display: inline-block; text-align: center; width: auto; height: auto;" }),
                         v = n.createElement("div", { id: "wrapper-ads-" + a, style: `position: relative; display: block; margin: 0px; width: 100%; height: ${g}px;` });
-                    y.appendChild(v);
+                    console.log(g);
+                        y.appendChild(v);
                     var _ = "";
                     f >= h && void 0 !== o.ctv.portrait_source && o.ctv.portrait_source.length > 0
                         ? ((_ = n.generateUrlAd(d, o.ctv.portrait_source, a, o, l)), (g = h / (o.ctv.portrait_min_width / o.ctv.portrait_min_height)))
@@ -238,7 +239,8 @@ function isValidURL(str) {
                     var T = {
                             src: _,
                             id: a,
-                            style: `width: 100%; height: ${f + g}px; border: none; z-index: 2; position: absolute; transition: height 1s ease-out 0s; overflow: hidden; top: 0px; left: 0px; right: 0px; clip: rect(0px, ${h}px, ${g}px, 0px)`,
+                            style: `width: 100%; height: ${f + g}px; border: none; z-index: 2; position: absolute; transition: height 1s ease-out 0s; overflow: hidden; top: 0px; left: 0px; right: 0px`,
+                        // clip: rect(0px, ${h}px, ${g}px, 0px)
                         },
                         k = n.createElement("iframe", T);
                     (k.style.margin = m.margin), v.appendChild(k);
