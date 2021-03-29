@@ -67,6 +67,14 @@ function getBannerURL() {
       case 'on-image-mb':
         document.title = "Mobile On Image";
         break;
+
+      case 'iab-medium-rectangle':
+          document.title = "IAB Medium Rectangle (300x250)";
+          break;
+
+      case 'iab-half-page':
+        document.title = "IAB Half Page (300x600)";
+        break;
     }
   }
 }
