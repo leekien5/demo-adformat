@@ -1,5 +1,5 @@
 // avlInteractModule.innerHTMLAds('104', '<iframe id=\"YoMediaBalloon\" name=\"banner\" style=\"width:1200px; height:600px;bottom:0px;display:block;line-height:normal;overflow:hidden;position:fixed;z-index:2000!important;border:0;margin-left: auto;margin-right: auto;left: 0;right: 0;clip: rect(0px 1200px 600px 0px);\"></iframe>', 'popup');
-avlHelperModule.embedTracking("https://yomedia.vn?evt=impression&aid=2151&fpid=22351&zid=104&rt=1&cs=");
+avlHelperModule.embedTracking("");
 //Minimize popup
 function minYoMediaPopupAd_104() {
     var sPos = 'right-bottom';
@@ -35,20 +35,20 @@ function clickTrackingYomedia_104() {
 }
 
 function startTrackingYomedia_104(){
-    avlHelperModule.embedTracking("https://yomedia.vn?evt=start&aid=2151&fpid=22351&zid=104&rt=1&cs=");
-    }
+
+}
 function firstQuartileTrackingYomedia_104(){
-    avlHelperModule.embedTracking("https://yomedia.vn?evt=firstQuartile&aid=2151&fpid=22351&zid=104&rt=1&cs=");
-    }
+
+}
 function midpointTrackingYomedia_104(){
-    avlHelperModule.embedTracking("https://yomedia.vn?evt=midpoint&aid=2151&fpid=22351&zid=104&rt=1&cs=");
-    }
+
+}
 function thirdQuartileTrackingYomedia_104(){
-    avlHelperModule.embedTracking("https://yomedia.vn?evt=thirdQuartile&aid=2151&fpid=22351&zid=104&rt=1&cs=");
-    }
+
+}
 function completeTrackingYomedia_104(){
-    avlHelperModule.embedTracking("https://yomedia.vn?evt=complete&aid=2151&fpid=22351&zid=104&rt=1&cs=");
-    }
+    
+}
 
 function addAnEventListener_104(obj,evt,func){
     if ('addEventListener' in obj){

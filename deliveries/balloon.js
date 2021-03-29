@@ -1,5 +1,5 @@
-avlHelperModule.embedTracking("https://demo.yomedia.vn/tracking.gif?evt=impression");
-avlHelperModule.embedTracking("https://bs.serving-sys.com/serving/adServer.bs?cn=display&c=19&mc=imp&pli=24912381&PluID=0&ord=[timestamp]&rtu=-1");    
+avlHelperModule.embedTracking("");
+avlHelperModule.embedTracking("");    
 //Minimize popup
 function minYoMediaPopupAd_104() {
     var sPos = 'right-bottom';
@@ -27,25 +27,25 @@ function closeYoMediaPopupAd_104() {
 }
 
 function clickTrackingYomedia_104() {
-	var clickTag = 'http://www.pinetech.vn/';
+	var clickTag = 'https://yomedia.vn';
 	window.open(clickTag);
 }
 
 function startTrackingYomedia_104(){
-    avlHelperModule.embedTracking("http://demo.yomedia.vn/tracking.gif?evt=start");
-    }
+
+}
 function firstQuartileTrackingYomedia_104(){
-    avlHelperModule.embedTracking("http://demo.yomedia.vn/tracking.gif?evt=firstQuartile");
-    }
+
+}
 function midpointTrackingYomedia_104 (){
-    avlHelperModule.embedTracking("http://demo.yomedia.vn/tracking.gif?evt=midpoint");
-    }
+
+}
 function thirdQuartileTrackingYomedia_104(){
-    avlHelperModule.embedTracking("http://demo.yomedia.vn/tracking.gif?evt=thirdQuartile");
-    }
+
+}
 function completeTrackingYomedia_104(){
-    avlHelperModule.embedTracking("http://demo.yomedia.vn/tracking.gif?evt=complete");
-    }
+
+}
 
 function addAnEventListener_104(obj,evt,func){
     if ('addEventListener' in obj){

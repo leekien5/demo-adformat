@@ -1,4 +1,4 @@
-getTrackingYomedia('https://tracking.adsrv.io/api/user-sync/yomedia?uuid=95cffcb9c10117479c56c215d5310af5&ord=1559720889905');
+getTrackingYomedia('');
 var advId_82e237b1f272486587de2dbd5c9478c0 = 'c23b9c109f7a4f89a3cb23f694f1d7cb';
 var campId_82e237b1f272486587de2dbd5c9478c0 = 'd6692db2a2dd441c9ab9741ee05b127d';
 var pubId_82e237b1f272486587de2dbd5c9478c0 = '5565e302fb2e489cae28103f6c66db12';
@@ -131,13 +131,9 @@ function showBannerYomedia_82e237b1f272486587de2dbd5c9478c0(s) {
                     document.body.appendChild(banner);
                     break;
             }
-        }else {
-            console.log('Please enter valid URL');
         }
-    }else{
-        console.log('Empty banner, please add one!');
-
     }
+
     impressionTrackingYomedia_82e237b1f272486587de2dbd5c9478c0();
     banner.addEventListener("load", viewableBannerYomedia_82e237b1f272486587de2dbd5c9478c0.bind(banner), false);
     if (window!=window.top) {
@@ -356,51 +352,32 @@ if (window!=window.top) {
     document.addEventListener("scroll", viewBannerYomedia_82e237b1f272486587de2dbd5c9478c0, false);
 }
 function impressionTrackingYomedia_82e237b1f272486587de2dbd5c9478c0() {
-    getTrackingYomedia('https://tracking.yomedia.vn/display?evt=002&token=14664796f10ac47efc858082f0e2d89b18927938ea&ord=1559720889906' + Date.now());
-    if (typeof _YoImp != 'undefined' && avlHelperModule.validateUrl(_YoImp)) {
-        getTrackingYomedia(_YoImp);
-    }
-    getTrackingYomedia('https://tracking.yomedia.vn/ias?cpid=d6692db2a2dd441c9ab9741ee05b127d&pid=82e237b1f272486587de2dbd5c9478c0&advid=c23b9c109f7a4f89a3cb23f694f1d7cb&chid=3d58e13cbef3493682fe6107ac13e262&wid=b8f28f0e65dd47509d931f9850f7cbf6&ord=1559720889906' + Date.now());
 }
 
 function viewableTrackingYomedia_82e237b1f272486587de2dbd5c9478c0() {
-    getTrackingYomedia('https://tracking.yomedia.vn/display?evt=008&token=14664796f10ac47efc858082f0e2d89b18926b28b7&ord=1559720889906' + Date.now());
 }
 
 function clickTrackingYomedia_82e237b1f272486587de2dbd5c9478c0() {
-    if (typeof _YoClick != 'undefined' && avlHelperModule.validateUrl(_YoClick)) {
-        getTrackingYomedia(_YoClick);
-    }
-        var landingPage = 'https://www.pinetech.vn';
-        var isMac = /Mac|iPhone|iPod|iPad/.test(navigator.userAgent) && /\sSafari\//.test(navigator.userAgent);
-        if (!isMac) {
-            window.open(landingPage, '_blank');
-        }
 }
 
 function startTrackingYomedia_82e237b1f272486587de2dbd5c9478c0(){
-    getTrackingYomedia('https://tracking.yomedia.vn/display?evt=003&token=14664796f10ac47efc858082f0e2d89b1892c0c4a9&ord=1559720889906' + Date.now());
 }
 
 function firstQuartileTrackingYomedia_82e237b1f272486587de2dbd5c9478c0(){
-    getTrackingYomedia('https://tracking.yomedia.vn/display?evt=004&token=14664796f10ac47efc858082f0e2d89b18921de034&ord=1559720889906' + Date.now());
 }
 
 function midpointTrackingYomedia_82e237b1f272486587de2dbd5c9478c0(){
-    getTrackingYomedia('https://tracking.yomedia.vn/display?evt=005&token=14664796f10ac47efc858082f0e2d89b18921fb142&ord=1559720889906' + Date.now());
 }
 
 function thirdQuartileTrackingYomedia_82e237b1f272486587de2dbd5c9478c0(){
-    getTrackingYomedia('https://tracking.yomedia.vn/display?evt=006&token=14664796f10ac47efc858082f0e2d89b1892785089&ord=1559720889906' + Date.now());
 }
 
 function completeTrackingYomedia_82e237b1f272486587de2dbd5c9478c0(){
-    getTrackingYomedia('https://tracking.yomedia.vn/display?evt=007&token=14664796f10ac47efc858082f0e2d89b189237bae5&ord=1559720889906' + Date.now());
 }
 
 function getClickTagYomedia_82e237b1f272486587de2dbd5c9478c0() {
     var landingPage = '';
-    landingPage = 'https://www.pinetech.vn';
+    landingPage = 'https://yomedia.vn';
     return landingPage;
 }
 

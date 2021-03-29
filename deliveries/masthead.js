@@ -437,7 +437,7 @@ function clickTrackingYomedia_d05d05051d9b48ad9451562f5edac04f() {
     if (typeof _YoClick != 'undefined' && avlHelperModule.validateUrl(_YoClick)) {
         getTrackingYomedia(_YoClick);
     }
-        var landingPage = 'https://www.pinetech.vn';
+        var landingPage = 'https://yomedia.vn';
         var isMac = /Mac|iPhone|iPod|iPad/.test(navigator.userAgent) && /\sSafari\//.test(navigator.userAgent);
         if (!isMac) {
             window.open(landingPage, '_blank');
@@ -466,7 +466,7 @@ function completeTrackingYomedia_d05d05051d9b48ad9451562f5edac04f(){
 
 function getClickTagYomedia_d05d05051d9b48ad9451562f5edac04f() {
     var landingPage = '';
-    landingPage = 'https://www.pinetech.vn';
+    landingPage = 'https://yomedia.vn';
     return landingPage;
 }
 

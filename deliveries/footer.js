@@ -413,16 +413,9 @@ function handleTrackingViewability_e3d1135c1d184a47b09388aed33c4dfa(el) {
     }
 }showBannerYomedia_e3d1135c1d184a47b09388aed33c4dfa(1);
 function impressionTrackingYomedia_e3d1135c1d184a47b09388aed33c4dfa() {
-    getTrackingYomedia('https://tracking.yomedia.vn/mobile?evt=002&token=2d785a0e1f17b769969177d83d51d4af61607ecdb6&ord=1600828545058' + Date.now());
-    if (typeof _YoImp != 'undefined' && avlHelperModule.validateUrl(_YoImp)) {
-        getTrackingYomedia(_YoImp);
-    } else if (typeof _YoImpCallback_e3d1135c1d184a47b09388aed33c4dfa === 'function') {
-        _YoImpCallback_e3d1135c1d184a47b09388aed33c4dfa();
-    }
 }
 
 function viewableTrackingYomedia_e3d1135c1d184a47b09388aed33c4dfa() {
-    getTrackingYomedia('https://tracking.yomedia.vn/mobile?evt=008&token=2d785a0e1f17b769969177d83d51d4af61603fd1ea&ord=1600828545058' + Date.now());
 }
 
 function clickTrackingYomedia_e3d1135c1d184a47b09388aed33c4dfa() {
@@ -454,9 +447,6 @@ function clickTracking3rdYomedia_e3d1135c1d184a47b09388aed33c4dfa() {
 }
 
 function getClickTagYomedia_e3d1135c1d184a47b09388aed33c4dfa() {
-    var landingPage = '';
-    landingPage = 'https://tracking.yomedia.vn/mobile?evt=009&token=2d785a0e1f17b769969177d83d51d4af6160cbba57&to=https%3A%2F%2Fwww.pinetech.vn%2F&ord=1600828545058' + Date.now();
-    return landingPage;
 }
 
 function addAnEventListener_e3d1135c1d184a47b09388aed33c4dfa(obj,evt,func){
@@ -476,12 +466,6 @@ function iFrameListener_e3d1135c1d184a47b09388aed33c4dfa(event){
 }
 addAnEventListener_e3d1135c1d184a47b09388aed33c4dfa(window,'message',iFrameListener_e3d1135c1d184a47b09388aed33c4dfa);
 // http
-
-/*(function() {
-    var u="//ss.yomedia.vn/js/1/258/ads.js";
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u; s.parentNode.insertBefore(g,s);
-})();*/
 
 //flight: Yomedia Service Testing MB Footer
 function createTrackingIframe_e3d1135c1d184a47b09388aed33c4dfa(id, src) {

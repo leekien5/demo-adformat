@@ -34,7 +34,7 @@ function showBannerYomedia_ab1f7103e5354124a9d557162785eeb5(s) {
 
             var close_btn = document.createElement('div');
             close_btn.setAttribute('id', 'yomedia-close-btn-ab1f7103e5354124a9d557162785eeb5');
-            close_btn.style.cssText = 'width: 60px;height: 60px;background-image: url("https://media.yomedia.vn/images/close_40x40-3.png");position: fixed;top: 0;right: 0px;z-index: 50000;';
+            close_btn.style.cssText = 'width: 40px;height: 40px;background-image: url("../../../resource/images/close_40x40-2.png");position: fixed;top: 0;right: 0px;z-index: 50000;';
 
             domWrapper.appendChild(iframe_banner);
             domWrapper.appendChild(close_btn);
@@ -42,12 +42,7 @@ function showBannerYomedia_ab1f7103e5354124a9d557162785eeb5(s) {
             document.body.style.overflow = 'hidden';
             close_btn.addEventListener("click", closeYoMediaPopupAd_ab1f7103e5354124a9d557162785eeb5, false);
             impressionTrackingYomedia_ab1f7103e5354124a9d557162785eeb5();
-        }else {
-            console.log('Wrong URL, please check again.');
-        }      
-    }else{
-        console.log('Empty banner, please add one!');
-
+        }
     }
 }
 
@@ -58,7 +53,7 @@ function closeYoMediaPopupAd_ab1f7103e5354124a9d557162785eeb5() {
 
 showBannerYomedia_ab1f7103e5354124a9d557162785eeb5(1);
 function impressionTrackingYomedia_ab1f7103e5354124a9d557162785eeb5() {
-    avlHelperModule.embedTracking('http://demo.yomedia.vn/tracking.gif?evt=impression');
+    avlHelperModule.embedTracking('');
     embedThirdTracking_ab1f7103e5354124a9d557162785eeb5('impression');
     if (typeof _YoImp != 'undefined' && avlHelperModule.validateUrl(_YoImp)) {
         avlHelperModule.embedTracking(_YoImp);
@@ -68,9 +63,9 @@ function impressionTrackingYomedia_ab1f7103e5354124a9d557162785eeb5() {
 function clickTrackingYomedia_ab1f7103e5354124a9d557162785eeb5() {
     var date = new Date();
     var time = date.getTime();
-    var landing_page = 'http://www.pinetech.vn/';
+    var landing_page = 'https://www.yomedia.vn/';
     landing_page = landing_page.replace('[timestamp]', time);
-    avlHelperModule.embedTracking('http://demo.yomedia.vn/tracking.gif?evt=click');
+    avlHelperModule.embedTracking('');
 
     embedThirdTracking_ab1f7103e5354124a9d557162785eeb5('click');
     if (typeof _YoClick != 'undefined' && avlHelperModule.validateUrl(_YoClick)) {
@@ -83,47 +78,47 @@ function clickTrackingYomedia_ab1f7103e5354124a9d557162785eeb5() {
 }
 
 function startTrackingYomedia_ab1f7103e5354124a9d557162785eeb5(){
-    avlHelperModule.embedTracking('http://demo.yomedia.vn/tracking.gif?evt=start');
+    avlHelperModule.embedTracking('');
     embedThirdTracking_ab1f7103e5354124a9d557162785eeb5('start');
 }
 
 function firstQuartileTrackingYomedia_ab1f7103e5354124a9d557162785eeb5(){
-    avlHelperModule.embedTracking('http://demo.yomedia.vn/tracking.gif?evt=firstQuartile');
+    avlHelperModule.embedTracking('');
     embedThirdTracking_ab1f7103e5354124a9d557162785eeb5('firstQuartile');
 }
 
 function midpointTrackingYomedia_ab1f7103e5354124a9d557162785eeb5(){
-    avlHelperModule.embedTracking('http://demo.yomedia.vn/tracking.gif?evt=midpoint');
+    avlHelperModule.embedTracking('');
     embedThirdTracking_ab1f7103e5354124a9d557162785eeb5('midpoint');
 }
 
 function thirdQuartileTrackingYomedia_ab1f7103e5354124a9d557162785eeb5(){
-    avlHelperModule.embedTracking('http://demo.yomedia.vn/tracking.gif?evt=thirdQuartile');
+    avlHelperModule.embedTracking('');
     embedThirdTracking_ab1f7103e5354124a9d557162785eeb5('thirdQuartile');
 }
 
 function completeTrackingYomedia_ab1f7103e5354124a9d557162785eeb5(){
-    avlHelperModule.embedTracking('http://demo.yomedia.vn/tracking.gif?evt=complete');
+    avlHelperModule.embedTracking('');
     embedThirdTracking_ab1f7103e5354124a9d557162785eeb5('complete');
 }
 
 function muteTrackingYomedia_ab1f7103e5354124a9d557162785eeb5(){
-    avlHelperModule.embedTracking('http://demo.yomedia.vn/tracking.gif?evt=mute');
+    avlHelperModule.embedTracking('');
     embedThirdTracking_ab1f7103e5354124a9d557162785eeb5('mute');
 }
 
 function unmuteTrackingYomedia_ab1f7103e5354124a9d557162785eeb5(){
-    avlHelperModule.embedTracking('http://demo.yomedia.vn/tracking.gif?evt=unmute');
+    avlHelperModule.embedTracking('');
     embedThirdTracking_ab1f7103e5354124a9d557162785eeb5('unmute');
 }
 
 function pauseTrackingYomedia_ab1f7103e5354124a9d557162785eeb5(){
-    avlHelperModule.embedTracking('http://demo.yomedia.vn/tracking.gif?evt=pause');
+    avlHelperModule.embedTracking('');
     embedThirdTracking_ab1f7103e5354124a9d557162785eeb5('pause');
 }
 
 function fullscreenTrackingYomedia_ab1f7103e5354124a9d557162785eeb5(){
-    avlHelperModule.embedTracking('http://demo.yomedia.vn/tracking.gif?evt=fullscreen');
+    avlHelperModule.embedTracking('');
     embedThirdTracking_ab1f7103e5354124a9d557162785eeb5('fullscreen');
 }
 
@@ -140,7 +135,7 @@ function embedThirdTracking_ab1f7103e5354124a9d557162785eeb5(event) {
 }
 
 function getClickTagYomedia_ab1f7103e5354124a9d557162785eeb5() {
-    var landing_page = 'http://www.pinetech.vn/';
+    var landing_page = 'https://yomedia.vn';
     return landing_page;
 
 }
@@ -162,22 +157,3 @@ function iFrameListener_ab1f7103e5354124a9d557162785eeb5(event){
 
 var fn_ab1f7103e5354124a9d557162785eeb5='';
 addAnEventListener_ab1f7103e5354124a9d557162785eeb5(window,'message',iFrameListener_ab1f7103e5354124a9d557162785eeb5);
-
-// comScore
-var _comscore = _comscore || [];
-_comscore.push({ c1: "8", c2: "18889311" ,c3: "2016070110000000012" });
-(function() {
-var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
-s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
-el.parentNode.insertBefore(s, el);
-})();
-
-// comScore all
-var _comscore = _comscore || [];
-_comscore.push({ c1: "8", c2: "18889311" ,c3: "2016070110000000025" });
-(function() {
-var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
-s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
-el.parentNode.insertBefore(s, el);
-})();
-;

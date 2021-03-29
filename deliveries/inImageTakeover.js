@@ -326,20 +326,20 @@ function isValidURL(str) {
                         (this.campaign = o),
                         (this.banner = s),
                         (this.mapping_events = {
-                            impression: "EVT_IMPRESSION",
-                            start: "EVT_START",
-                            firstQuartile: "EVT_FIRST",
-                            midpoint: "EVT_MID",
-                            thirdQuartile: "EVT_THIRD",
-                            complete: "EVT_COMPLETE",
-                            viewable: "EVT_VIEWABLE",
-                            click: "EVT_CLICK",
-                            mute: "EVT_MUTE",
-                            unmute: "EVT_UNMUTE",
-                            pause: "EVT_PAUSE",
-                            play: "EVT_PLAY",
-                            resume: "EVT_RESUME",
-                            skip: "EVT_SKIP",
+                            impression: "",
+                            start: "",
+                            firstQuartile: "",
+                            midpoint: "",
+                            thirdQuartile: "",
+                            complete: "",
+                            viewable: "",
+                            click: "",
+                            mute: "",
+                            unmute: "",
+                            pause: "",
+                            play: "",
+                            resume: "",
+                            skip: "",
                         });
                 }
                 generateUrl(t) {
@@ -1277,13 +1277,9 @@ function isValidURL(str) {
                         ],
                     },
                     camp: {
-                        fid: "783063d2c8074b148f5d1b7687a9a920",
-                        fln: "In Image Takeover Testing",
-                        aid: "72ad2d5120034aceb51de63c8d4fc043",
-                        cat: { num_id: "99", category_name: "Arts & Entertainment", iab: "IAB1", mobile_comscore_id: "2016070110000000001", pc_comscore_id: "2016070110000000001" },
                     },
                     trk: {
-                        dom: "https://tracking.yomedia.vn",
+                        dom: "",
                         evs: {
                             
                         },
@@ -1294,21 +1290,11 @@ function isValidURL(str) {
                     bnr: {
                         id: "63f12b2efbf34818a40687efd6fca920",
                         ctv: { source: `${bannerURL}`, portrait_source: "", content_min_width: "150", content_min_height: "150" },
-                        ldp: "https://www.pinetech.vn/",
+                        ldp: "https://yomedia.vn/",
                     },
-                    gtr: [],
-                    mdom: "https://demo.yomedia.vn",
-                    ddom: "https://delivery.yomedia.vn",
-                    aut: "6ae9983b-c0af-4895-a4b4-a93dd1021b48",
-                    asc: "async",
                 },
                 ""
             );
-        } else{
-            console.log('Wrong URL, please check again.');
-        }
-    }else{
-        console.log('Empty banner, please add one!');
-
+        } 
     }
 })();

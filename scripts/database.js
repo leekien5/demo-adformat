@@ -30,7 +30,7 @@ const list = {
         { name: 'Mobile Masthead', value: 'masthead-mb', type: 'mobile' },
         { name: 'Mobile Interscroller (Inpage)', value: 'inpage', type: 'mobile' },
         { name: 'Mobile Interstitial (Firstview)', value: 'firstview', type: 'mobile' },
-        { name: 'Mobile Footer Expandable', value: 'footer', type: 'mobile' },
+        { name: 'Mobile Footer', value: 'footer', type: 'mobile' },
         { name: 'Mobile In Image', value: 'in-native', type: 'mobile' },
         { name: 'Mobile In Image Takeover', value: 'in-takeover', type: 'mobile' },
         { name: 'Mobile In Image Carousel', value: 'in-carousel', type: 'mobile' },

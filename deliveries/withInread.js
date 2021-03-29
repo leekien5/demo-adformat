@@ -1316,7 +1316,7 @@ function isValidURL(str) {
                             content_min_width: "100",
                             content_min_height: "120",
                         },
-                        ldp: "https://www.pinetech.vn/",
+                        ldp: "https://yomedia.vn/",
                     },
                     gtr: [],
                     mdom: "https://demo.yomedia.vn",

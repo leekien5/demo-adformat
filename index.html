@@ -11,6 +11,10 @@
         <link href="resource/css/chosen.min.css" rel="stylesheet" type="text/css" />
         <link href="resource/css/compiled.min.css" rel="stylesheet" type="text/css" />
         <link href="resource/css/jquery.toast.css" rel="stylesheet" type="text/css" />
+        <link href="resource/css/fontawesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="resource/css/solid.css" rel="stylesheet" type="text/css" />
+        <link href="resource/css/brands.css" rel="stylesheet" type="text/css" />
+
     </head>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -21,25 +25,6 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Adformats
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="https://yomedia.vn/case-studies/" target="_blank">Case Studies</a>
-                            <a class="dropdown-item" href="https://yomedia.vn/demos/" target="_blank">Showcases</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
         </nav>
     </header>
     <body>
@@ -55,7 +40,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group" id="type">
                                         <label for="optTypes">Ad View</label>
-                                        <select id="optTypes" name="optTypes" class="chosen-select form-control">
+                                        <select id="optTypes" class="chosen-select form-control">
                                             <option value=""></option>
                                         </select>
                                     </div>
@@ -73,26 +58,23 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="optAdformats">Ad Format</label>
-                                        <select id="optAdformats" name="optAdformats" class="form-control">
+                                        <select class="chosen-select form-control" id="optAdformats">
                                             <option value="">None</option>
                                         </select>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-12" id="mainSource">
+                                <div class="col-md-12" id="source">
                                     <div class="form-group">
                                         <label for="basic-url">Source</label>
                                         <div class="input-group mb-3">
-                                            <div class="input-group-prepend" id="domain" style="height: 35px;">
+                                            <div class="input-group-prepend" id="domain">
                                                 <span class="input-group-text">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 16 16">
-                                                        <path d="M4.715 6.542L3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.001 1.001 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/>
-                                                        <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 0 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 0 0-4.243-4.243L6.586 4.672z"/>
-                                                      </svg>
+                                                    <i class="fas fa-link"></i>
                                                 </span>
                                             </div>
-                                            <input class="form-control" type="input" id="txtSource" placeholder="Source here ..." rows="2" data-error="Banner link is required."></input>
+                                            <input class="form-control" type="input" id="source_field" placeholder="source here ..."></input>
                                         </div>
                                     </div>
                                     <div class="form-group" id="secondSource">
@@ -100,13 +82,10 @@
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend" id="domain" style="height: 35px;">
                                                 <span class="input-group-text">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 16 16">
-                                                        <path d="M4.715 6.542L3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.001 1.001 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/>
-                                                        <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 0 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 0 0-4.243-4.243L6.586 4.672z"/>
-                                                      </svg>
+                                                    <i class="fas fa-link"></i>
                                                 </span>
                                             </div>
-                                            <input class="form-control" type="input" id="txtSource2" placeholder="Source here ..." rows="2" data-error="Banner link is required."></input>
+                                            <input class="form-control" type="input" id="addition_source_field" placeholder="source here ..."></input>
                                         </div>
                                     </div>
                                     <div class="form-group" id="videoSource">
@@ -114,13 +93,10 @@
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend" id="domain" style="height: 35px;">
                                                 <span class="input-group-text">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 16 16">
-                                                        <path d="M4.715 6.542L3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.001 1.001 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/>
-                                                        <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 0 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 0 0-4.243-4.243L6.586 4.672z"/>
-                                                      </svg>
+                                                    <i class="fas fa-link"></i>
                                                 </span>
                                             </div>
-                                            <input class="form-control" type="input" id="txtSourceVideo" placeholder="Source here ..." rows="2" data-error="Banner link is required."></input>
+                                            <input class="form-control" type="input" id="video_source_field" placeholder="source here ..."></input>
                                         </div>
                                     </div>
                                 </div>
@@ -128,21 +104,25 @@
                             <div class="docs-pills border">
                                 <div class="d-flex justify-content-between py-2" style="padding-left: .6rem;">
                                     <ul class="nav nav-pills">
-                                        <li class="nav-item"><label class="nav-link active show">Output Source</label></li>
+                                        <li class="nav-item">
+                                            <label class="nav-link active show">
+                                                <i class="fas fa-external-link-alt"></i> Output Source
+                                            </label>
+                                        </li>
                                     </ul>
                                 </div>
                                 <div class="tab-content" id="output">
-                                    <div class="tab-pane fade active show" id="" role="tabpanel">
+                                    <div class="tab-pane fade active show" role="tabpanel">
                                         <div class="code-toolbar">
                                             <div class="toolbar">
                                                 <div class="toolbar-item">
-                                                    <button class="btn-copy-code btn btn-dark btn-sm" id="btnCopy" data-clipboard-target="#txtOutput" style="right: 165px;">Copy</button>
+                                                    <button class="btn-copy-code btn btn-success btn-sm " id="btnCopy" data-clipboard-target="#output_source_field" style="right: 175px;"><i class="fas fa-copy"></i> Copy</button>
                                                 </div>
                                                 <div class="toolbar-item">
-                                                    <button class="btn-copy-code btn btn-dark btn-sm" id="btnOpen">Open in Browser</button>
+                                                    <button class="btn-copy-code btn btn-dark btn-sm" id="btnOpen"><i class="fas fa-sign-out-alt"></i> Open in Browser</button>
                                                 </div>
                                             </div>
-                                            <textarea class="form-control" style="border-style: none" id="txtOutput" readonly></textarea>
+                                            <textarea class="form-control" style="border-style: none" id="output_source_field" readonly></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -152,8 +132,12 @@
                     </form>
                 </div>
                     <div class="col-xl-8 offset-xl-2 pt-3">
-                        <button type="button" id="btnSave" onclick="$('#frmCreateSource').submit();" class="btn btn-success btn-send">Submit</button>
-                        <button type="button" id="btnReset" class="ml-2 btn btn-warning btn-send">Reset</button>
+                        <a class="btn btn-success btn-send" id="btnSave" style="color: #fff !important;" onclick="$('#frmCreateSource').submit();">
+                            <i class="fas fa-paper-plane"></i> Submit
+                        </a>
+                        <a class="ml-2 btn btn-warning btn-send" id="btnReset" style="color: #fff !important;">
+                            <i class="fas fa-redo"></i> Reset
+                        </a>
                     </div>
                 </div>
             </div>
@@ -167,6 +151,7 @@
     <script type="text/javascript" src="resource/js/chosen.jquery.min.js"></script>
     <script type="text/javascript" src="resource/js/jquery.toast.js"></script>
     <script type="text/javascript" src="scripts/database.js"></script>
+    <!-- Scripts  -->
     <script type="text/javascript">
     $("#secondSource").hide();
     $("#videoSource").hide();
@@ -182,41 +167,25 @@
             event.preventDefault(); 
             resetForm();
         });
+        $("input[type='input']").click(function () {
+            $(this).select();
+        });
         $('#btnCopy').on('click', function() {
             event.preventDefault(); 
-            if( $('#txtOutput').val().length === 0 ) {
-                //Notification: error
-                $.toast({
-                    heading: 'Warning',
-                    text: 'There is nothing to copy, please try again!',
-                    position: 'top-right',
-                    showHideTransition: 'fade',
-                    icon: 'warning'
-                })
+            var outputValue = $('#output_source_field').val();
+            if( outputValue.length === 0) {
+                $.toast({ heading:"Warning", text:"There is nothing to copy, please try again!", position:"top-right", showHideTransition:"fade", icon:"warning"});
             } else {
-                //get a reference to the JQUERY object of the current button
-                let theButton = $(this);
+                var theButton = $(this);
                 var clipboard = new ClipboardJS('#btnCopy');
-
                 clipboard.on('success', function(e) {
-                    //use the .text method of the Jquery object
-                    theButton.text('Copied');
+                    $.toast({ heading: 'Success', text: 'Copied successfully!', position: 'top-right', showHideTransition: 'slide', icon: 'success' });
                     setTimeout(function() {
-                    //same again
-                    theButton.text('Copy');
                     }, 2000);
+                    clipboard.destroy();
                 });
             }
         });
-
-        function sortArray() {
-            var options = $(".option");
-            options.sort(function(a,b) {
-                if (a.text > b.text) return 1;
-                else if (a.text < b.text) return -1;
-                else return 0
-            });
-        }
         //Show Device select option
         $.each(list.devices, function (idx, obj) {
             $("#optTypes").append('<option type="' + obj.type + '" value="' + obj.value + '">' + obj.name + '</option>');
@@ -257,23 +226,23 @@
                 case 'masthead-mb': case 'inpage': case 'firstview': 
                 case 'footer': case 'on-image-mb': case 'iab-medium-rectangle': 
                 case 'iab-half-page':
-                    $("#mainSource").show();
+                    $("#source").show();
                     $("#secondSource").hide();
                     $("#videoSource").hide();
                     break;
                 
                 case 'in-native': case 'in-takeover': case 'in-carousel': case 'on-image-pc':
-                    $("#mainSource").show();
+                    $("#source").show();
                     $("#secondSource").show();
                     $("#videoSource").hide();
-                    $("#txtSourceVideo").val('');                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+                    $("#video_source_field").val('');                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
                     break;
 
                 case 'in-inread':
-                    $("#mainSource").show();
+                    $("#source").show();
                     $("#videoSource").show();
                     $("#secondSource").hide();
-                    $("#txtSource2").val('');
+                    $("#addition_source_field").val('');
                     break;
             }
         });
@@ -281,40 +250,32 @@
 
     //Reset Form
     function resetForm() {
-        //Notification: success
-        $.toast({
-                heading: 'Success',
-                text: 'Reset successful!',
-                position: 'top-right',
-                showHideTransition: 'slide',
-                icon: 'success'
-        });
+        var selectedType = $('#optTypes').val();
+        var selectedTemplate = $('#optTemplates').val();
+        var selectedAdformat = $('#optAdformats').val();
 
-        $('#frmCreateSource').trigger("reset");
-        $('#optTypes, #optTemplates, #optAdformats').prop('selectedIndex',0);
-        $('#optTemplates, #optAdformats').empty();
-        $('#optTemplates, #optAdformats, #optTypes').val('').trigger('chosen:updated');
-        $('.chosen').trigger('chosen:updated');
-        $("#secondSource").hide();
-        $("#videoSource").hide();
-        $('#txtOutput').empty();
+        if( selectedType.length === 0 || selectedTemplate.length === 0 || selectedAdformat.length === 0) {
+                $.toast({ heading: 'Warning', text: 'Nothing to reset, please select all options!', position: 'top-right', showHideTransition: 'slide', icon: 'warning' });
+        } else {
+            $.toast({ heading: 'Success', text: 'Reset successfully!', position: 'top-right', showHideTransition: 'slide', icon: 'success' });
+            $('#frmCreateSource').trigger("reset");
+            $('#optTypes, #optTemplates, #optAdformats').prop('selectedIndex',0);
+            $('#optTemplates, #optAdformats').empty();
+            $('#optTemplates, #optAdformats, #optTypes').val('').trigger('chosen:updated');
+            $('.chosen').trigger('chosen:updated');
+            $("#secondSource").hide();
+            $("#videoSource").hide();
+            $('#output_source_field').empty();
+        }
     };
 
     //Open function for btnOpen
     function openFunction() {
-        if( $('#txtOutput').val().length === 0 ) {
-            //Notification: error
-            $.toast({
-                heading: 'Warning',
-                text: 'There is nothing to open, please try again!',
-                position: 'top-right',
-                showHideTransition: 'fade',
-                icon: 'warning'
-            })
+        var outputValue = $('#output_source_field').val();
+        if( outputValue.length === 0 ) {
+            $.toast({ heading:"Warning", text:"There is nothing to open, please try again!", position:"top-right", showHideTransition:"fade", icon:"warning"});
         } else {
-            var textURL = document.getElementById("txtOutput");
-            textURL.select();
-            window.open(textURL.value);
+            window.open(outputValue);
         }
     };
 
@@ -332,49 +293,35 @@
     $('#frmCreateSource').submit(function(e) {
         e.preventDefault();
         let adformatURL = '' ; 
-        var template = $("#optTemplates").val();
-        var format = $("#optAdformats").val();
-        var sourceURL = $("#txtSource").val();
-        var additionSourceURL = $("#txtSource2").val();
-        var videoSourceURL = $("#txtSourceVideo").val();
+        var selectedTemplate = $("#optTemplates").val();
+        var selectedFormat = $("#optAdformats").val();
+        var sourceURL = $("#source_field").val();
+        var additionSourceURL = $("#addition_source_field").val();
+        var videoSourceURL = $("#video_source_field").val();
         var url = window.location.href;
-        var p = url.search("index.");
         var prefix = "https://demo.yomedia.vn/"
+        var p = url.search("index.");
 
         if (p != -1) {
             url = url.substring(0, p);
         }
-        if(!template || !format) {
-                //Notification: error
-                $.toast({
-                heading: 'Error',
-                text: 'Please choose an Ad View, Template or Ad Format before submitting!',
-                position: 'top-right',
-                showHideTransition: 'fade',
-                icon: 'error'
-            });
+        if(!selectedTemplate || !selectedFormat || !sourceURL) {
+            $.toast({ heading:"Error", text:"Please choose an Ad View, Template or Ad Format before submitting!", position:"top-right", showHideTransition:"fade", icon:"error"});
             return;
         }
         if(isValidURL(sourceURL || additionSourceURL || videoSourceURL)) {
-            adformatURL = url + 'sites/'  + template + '/index.html' + `?f=${format}&b=` + `${sourceURL}`;
+            adformatURL = url + 'sites/'  + selectedTemplate + '/index.html' + `?f=${selectedFormat}&b=` + `${sourceURL}`;
             additionSourceURL ? adformatURL = adformatURL + '&c=' + `${additionSourceURL}` : adformatURL;
             videoSourceURL ? adformatURL = adformatURL + '&c=' + `${videoSourceURL}` : adformatURL;
         } else {
-            adformatURL = url + 'sites/'  + template + '/index.html' + `?f=${format}&b=` + prefix + `${sourceURL}`;
+            adformatURL = url + 'sites/'  + selectedTemplate + '/index.html' + `?f=${selectedFormat}&b=` + prefix + `${sourceURL}`;
             additionSourceURL ? adformatURL = adformatURL + '&c=' + prefix + `${additionSourceURL}` : adformatURL;
             videoSourceURL ? adformatURL = adformatURL + '&c=' + prefix + `${videoSourceURL}` : adformatURL;
         }
-        $("#txtOutput").empty();
-        $("#txtOutput").append(adformatURL);
+        $("#output_source_field").empty();
+        $("#output_source_field").append(adformatURL);
         
-        //Notification: success
-        $.toast({
-            heading: 'Success',
-            text: 'Ad format demo link generated!',
-            position: 'top-right',
-            showHideTransition: 'slide',
-            icon: 'success'
-        })
+        $.toast({heading:"Success",text:"Ad format demo link generated successfully!",position:"top-right",showHideTransition:"slide",icon:"success"});
     });
     </script>
 </html>

@@ -1399,7 +1399,7 @@ function isValidURL(str) {
                     bnr: {
                         id: "63f12b2efbf34818a40687efd6fca920",
                         ctv: { source: `${bannerURL}`, portrait_source: "", content_min_width: "300", content_min_height: "250" },
-                        ldp: "https://www.pinetech.vn/",
+                        ldp: "https://yomedia.vn/",
                     },
                     gtr: [],
                     mdom: "https://demo.yomedia.vn",
