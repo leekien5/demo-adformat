@@ -455,10 +455,7 @@ function viewFullBannerYomedia_5feec6f890d3485bb6f43576f47714ac(obj) {
         elementY = getOffsetYYomedia_5feec6f890d3485bb6f43576f47714ac(obj);
     elementHeight = obj.clientHeight;
     ybottom = elementY + elementHeight;
-    endViewPort = vpH + windowY;
-    
-    return !(elementY > endViewPort || ybottom < windowY);
-}
+    endViewPort = vpH + windowY;hả
 
 function getViewPortHeightYomedia_5feec6f890d3485bb6f43576f47714ac() {
     var de = document.documentElement;

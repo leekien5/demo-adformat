@@ -3,15 +3,9 @@
    Note: Fluid media requires that you remove the media's height and width attributes from the HTML
    http://www.alistapart.com/articles/fluid-images/ 
 */
-::-webkit-scrollbar {
-	display: none;
-}
-::-webkit-scrollbar-button {
-	display: none;
-}
-
 img, object, embed, video {
 	max-width: 100%;
+	max-height: 100%;
 }
 
 /* IE 6 does not support max-width so default to width 100% */
@@ -23,34 +17,19 @@ body {
 	background-color: #ececec;
 }
 
-/*
-	Dreamweaver Fluid Grid Properties
-	----------------------------------
-	dw-num-cols-mobile:		4;
-	dw-num-cols-tablet:		8;
-	dw-num-cols-desktop:	12;
-	dw-gutter-percentage:	25;
-	
-	Inspiration from "Responsive Web Design" by Ethan Marcotte 
-	http://www.alistapart.com/articles/responsive-web-design
-	
-	and Golden Grid System by Joni Korpi
-	http://goldengridsystem.com/
-*/
-
 .highlight_home {
 	background-color: #9e9e9e;
 	background-image: linear-gradient(to right, #9e9e9e 0%, #9e9e9e 100%);
 	line-height: 1.5em;
 }
 .highlight {
-	background-color: #e7e8ea;
-	background-image: linear-gradient(to right, #e7e8ea 0%, #e7e8ea 100%);
+	background-color: #DDDDDD !important;
+	background-image: linear-gradient(to right, #DDDDDD 0%, #DDDDDD 100%);
 	line-height: 1.5em;
 }
 .main_content span{
-	background-color: #e7e8ea;
-	background-image: linear-gradient(to right, #e7e8ea 0%, #e7e8ea 100%);
+	background-color: #DDDDDD;
+	background-image: linear-gradient(to right, #DDDDDD 0%, #DDDDDD 100%);
 }
 
 .fluid {
@@ -152,16 +131,20 @@ section.fluid {
 #galleryArea {
 	background-color: #FFFFFF;
 	border-radius: 5px;
-	color: #e7e8ea;
+	color: #DDDDDD !important;
 }
 #contentArticle{
 	width:100%;																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																											
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #DDDDDD !important;
 }
 .main_content {
 	border-radius: 1px 1px 1px 1px !important;
 	border-bottom: 1px solid #F0F0F0;
 	background-color: #FFFFFF;
-	color: #e7e8ea;
+	color: #DDDDDD;
 	font-size: 0.8em;
 	font-weight: bold;
 	padding: 8px 15px;
@@ -191,7 +174,7 @@ section.fluid {
 	margin-left: 0;
 	background-color: #FFFFFF;
 	border-radius: 5px;
-	color: #e7e8ea;
+	color: #DDDDDD;
 	padding:9px 1px;
 }
 #videoContent {
@@ -199,7 +182,7 @@ section.fluid {
 	margin-left: 0;
 	background-color: #FFFFFF;
 	border-radius: 5px;
-	color: #e7e8ea;
+	color: #DDDDDD;
 	padding:9px;
 }
 #tvContent {
@@ -207,7 +190,7 @@ section.fluid {
 	margin-left: 0;
 	background-color: #FFFFFF;
 	border-radius: 5px;
-	color: #e7e8ea;
+	color: #DDDDDD;
 	padding:9px;
 }
 #popularContent {
@@ -215,7 +198,7 @@ section.fluid {
 	margin-left: 0;
 	background-color:#FFF;
 	border-radius: 5px;
-	color: #e7e8ea;
+	color: #DDDDDD;
 	padding:9px;
 }
 #wsky {
@@ -467,7 +450,7 @@ p.small_meta > *{
 }
 .num{
 	border-left:none !important;
-	color:#e7e8ea;
+	color:#DDDDDD;
 	width:30px !important;
 	font-size:18px;
 	margin:0 !important;
@@ -781,4 +764,11 @@ font: normal normal normal 14px/1 FontAwesome;font-size: inherit;text-rendering:
 	display:inline-block;
 	right:0;
 	bottom:50px;
+}
+
+::-webkit-scrollbar {
+	display: none;
+}
+::-webkit-scrollbar-button {
+	display: none;
 }
