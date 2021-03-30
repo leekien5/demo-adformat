@@ -239,7 +239,7 @@ function isValidURL(str) {
                     var T = {
                             src: _,
                             id: a,
-                            style: `width: 100%; height: ${f + g}px; border: none; z-index: 2; position: absolute; transition: height 1s ease-out 0s; overflow: hidden; top: 0px; left: 0px; right: 0px`,
+                            style: `width: 100%; height: ${f + g}px; border: none; z-index: 2; position: absolute; transition: height 1s ease-out 0s; overflow: hidden; top: 0px; left: 0px; right: 0px; clip: rect(0px, ${h}px, ${g}px, 0px)`,
                         // clip: rect(0px, ${h}px, ${g}px, 0px)
                         },
                         k = n.createElement("iframe", T);

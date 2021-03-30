@@ -40,7 +40,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group" id="type">
                                         <label for="optTypes">Ad View</label>
-                                        <select id="optTypes" class="chosen-select form-control" data-placeholder="Choose a type..." required="required">
+                                        <select id="optTypes" class="chosen-select form-control">
                                             <option value=""></option>
                                         </select>
                                     </div>
@@ -48,8 +48,8 @@
                                 <div class="col-md-6">
                                     <div class="form-group" id="template">
                                         <label for="optTemplates">Template</label>
-                                        <select class="chosen-select form-control" id="optTemplates" data-placeholder="Choose a template..." required="required">
-                                            <option value=""></option>
+                                        <select class="chosen-select form-control" id="optTemplates">
+                                            <option value="">None</option>
                                         </select>
                                     </div>
                                 </div>
@@ -58,8 +58,8 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="optAdformats">Ad Format</label>
-                                        <select class="chosen-select form-control" id="optAdformats" data-placeholder="Choose an ad format..." required="required">
-                                            <option value=""></option>
+                                        <select class="chosen-select form-control" id="optAdformats">
+                                            <option value="">None</option>
                                         </select>
                                     </div>
                                 </div>
@@ -77,7 +77,7 @@
                                             <input class="form-control" type="input" name="source" id="source_field" placeholder="source here ..."></input>
                                         </div>
                                     </div>
-                                    <div class="form-group" id="secondSource">
+                                    <div class="form-group" id="addition_source">
                                         <label for="basic-url">Addition Source</label>
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend" id="domain" style="height: 35px;">
@@ -88,7 +88,7 @@
                                             <input class="form-control" type="input" id="addition_source_field" placeholder="source here ..."></input>
                                         </div>
                                     </div>
-                                    <div class="form-group" id="videoSource">
+                                    <div class="form-group" id="video_source">
                                         <label for="basic-url">Video Source</label>
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend" id="domain" style="height: 35px;">
@@ -152,8 +152,8 @@
     <script type="text/javascript" src="scripts/database.js"></script>
     <!-- Scripts  -->
     <script type="text/javascript">
-    $("#secondSource").hide();
-    $("#videoSource").hide();
+    $("#addition_source").hide();
+    $("#video_source").hide();
 
     $(function () {
         //Buttons area
@@ -190,12 +190,11 @@
             $("#optTypes").append('<option type="' + obj.type + '" value="' + obj.value + '">' + obj.name + '</option>');
         });
 
-        $("#optTemplates, #optAdformats").trigger("lizst:updated");
-        $("#optTemplates, #optAdformats").chosen();
-
-        $("#optTemplates, #optAdformats, #optTypes").chosen({search_contains: true});
-        $("#optTemplates, #optAdformats, #optTypes").chosen({max_selected_options:10, search_contains: true});
-
+        $("#optTemplates, #optAdformats, #optTypes").chosen({
+            no_results_text: "Oops, nothing found!",
+            placeholder_text_single: "Please select an option ...",
+        });
+        
         //Type Device on change
         $("#optTypes").change(function(){
             var type = $(this).find(":selected").val();
@@ -205,16 +204,23 @@
             var adformats = list.adformats.filter(function(adformat) {
                 return adformat.type === type;
             });
+
             $('#optTemplates').empty();
             $.each(templates, function (idx, obj) {
                 $('#optTemplates').append(`<option type="${obj.type}" value="${obj.value}">${obj.name}</option>`)            
             });
+            $("#optTemplates").html($("#optTemplates option").sort(function (a, b) {
+                return a.text == b.text ? 0 : a.text < b.text ? -1 : 1
+            }));
+
             $('#optAdformats').empty();
             $.each(adformats, function (idx, obj) {
                 $('#optAdformats').append(`<option type="${obj.type}" value="${obj.value}">${obj.name}</option>`)            
             });
-            $('#optTemplates').trigger('chosen:updated');
-            $('#optAdformats').trigger('chosen:updated');
+            $("#optAdformats").html($("#optAdformats option").sort(function (a, b) {
+                return a.text == b.text ? 0 : a.text < b.text ? -1 : 1
+            }));
+            $('#optTemplates, #optAdformats').trigger('chosen:updated');
         });
 
         //Ad Format on change
@@ -226,21 +232,21 @@
                 case 'footer': case 'on-image-mb': case 'iab-medium-rectangle': 
                 case 'iab-half-page': case 'outstream': case 'instream':
                     $("#source").show();
-                    $("#secondSource").hide();
-                    $("#videoSource").hide();
+                    $("#addition_source").hide();
+                    $("#video_source").hide();
                     break;
-                
+        
                 case 'in-native': case 'in-takeover': case 'in-carousel': case 'on-image-pc':
                     $("#source").show();
-                    $("#secondSource").show();
-                    $("#videoSource").hide();
+                    $("#addition_source").show();
+                    $("#video_source").hide();
                     $("#video_source_field").val('');                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
                     break;
 
                 case 'in-inread':
                     $("#source").show();
-                    $("#videoSource").show();
-                    $("#secondSource").hide();
+                    $("#video_source").show();
+                    $("#addition_source").hide();
                     $("#addition_source_field").val('');
                     break;
             }
@@ -262,8 +268,8 @@
             $('#optTemplates, #optAdformats').empty();
             $('#optTemplates, #optAdformats, #optTypes').val('').trigger('chosen:updated');
             $('.chosen').trigger('chosen:updated');
-            $("#secondSource").hide();
-            $("#videoSource").hide();
+            $("#addition_source").hide();
+            $("#video_source").hide();
             $('#output_source_field').empty();
         }
     };
@@ -296,7 +302,7 @@
         var selectedFormat = $("#optAdformats").val();
         var sourceURL = $("#source_field").val();
         var additionSourceURL = $("#addition_source_field").val();
-        var videoSourceURL = $("#video_source_field").val();
+        var video_sourceURL = $("#video_source_field").val();
         var url = window.location.href;
         var prefix = "https://demo.yomedia.vn"
         var p = url.search("index.");
@@ -311,14 +317,14 @@
             }
             return;
         }
-        if(isValidURL(sourceURL || additionSourceURL || videoSourceURL)) {
+        if(isValidURL(sourceURL || additionSourceURL || video_sourceURL)) {
             adformatURL = `${url}sites/${selectedTemplate}/index.html?f=${selectedFormat}&b=${sourceURL}`;
             additionSourceURL ? adformatURL = `${adformatURL}&c=${additionSourceURL}` : adformatURL;
-            videoSourceURL ? adformatURL = adformatURL + '&c=' + `${videoSourceURL}` : adformatURL;
+            video_sourceURL ? adformatURL = adformatURL + '&c=' + `${video_sourceURL}` : adformatURL;
         } else {
             adformatURL = `${url}sites/${selectedTemplate}/index.html?f=${selectedFormat}&b=${prefix}/${sourceURL}`;
             additionSourceURL ? adformatURL = `${adformatURL}&c=${prefix}/${additionSourceURL}` : adformatURL;
-            videoSourceURL ? adformatURL = `${adformatURL}&c=${prefix}/${videoSourceURL}` : adformatURL;
+            video_sourceURL ? adformatURL = `${adformatURL}&c=${prefix}/${video_sourceURL}` : adformatURL;
         }
         $("#output_source_field").empty();
         $("#output_source_field").append(adformatURL);
