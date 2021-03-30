@@ -69,7 +69,7 @@ function showBannerYomedia_5feec6f890d3485bb6f43576f47714ac() {
     domWrapper.style.cssText = 'display: block; overflow: hidden;background: transparent; width: 100%; height: 0px; right: 0px; left: 0px; margin-left: auto; margin-right: auto; padding: 0px; border: none;';
     var contentAds = document.createElement('iframe');
     contentAds.setAttribute('id', content_ads_5feec6f890d3485bb6f43576f47714ac);
-    contentAds.style.cssText = 'display: block; overflow: hidden;background: transparent; width: 100%; height:' + _yoHeight + 'px; right: 0px; left: 0px; margin-left: auto; margin-right: auto; padding: 0px; position: relative; z-index: 2347483647; border: none;';
+    contentAds.style.cssText = 'display: block; overflow: hidden;background: transparent; width: 100%; height:' + _yoHeight + 'px; right: 0px; left: 0px; margin-left: auto; margin-right: auto; padding: 0px; position: relative; z-index: 3; border: none;';
     domWrapper.appendChild(contentAds);
 
     switch (positionInsert_5feec6f890d3485bb6f43576f47714ac) {
@@ -237,7 +237,7 @@ function viewBannerYomedia_5feec6f890d3485bb6f43576f47714ac() {
     if (domWrapper) {
         if (view90BannerYomedia_5feec6f890d3485bb6f43576f47714ac(domWrapper)) {
             if (expanded_5feec6f890d3485bb6f43576f47714ac && state_5feec6f890d3485bb6f43576f47714ac === 'adPlay' && contentAds.style.position === 'fixed') {
-                contentAds.style.cssText = 'display: block; overflow: hidden;background: transparent; width: 100%; height:' + _yoHeight + 'px; right: 0px; left: 0px; margin-left: auto; margin-right: auto; padding: 0px; position: relative; z-index: 2347483647; border: none;';
+                contentAds.style.cssText = 'display: block; overflow: hidden;background: transparent; width: 100%; height:' + _yoHeight + 'px; right: 0px; left: 0px; margin-left: auto; margin-right: auto; padding: 0px; position: relative; z-index: 3; border: none;';
             }
             if (state_5feec6f890d3485bb6f43576f47714ac === 'idle' || state_5feec6f890d3485bb6f43576f47714ac === 'adPause') {
                 setTimeout(function() {                    
