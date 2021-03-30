@@ -77,74 +77,108 @@ jwplayer.key = "XYS/ica6YQUMq9rC6J2E77obUFoIPLeM";
 						<div id="player"></div>
 						<script type="text/javascript">
 						let urlParams = new URLSearchParams(window.location.search);
-						let bannerURL = urlParams.get("b");
-						jwplayer("player").setup({
-							advertising: {
-								"autoplayadsmuted": true,
-								client: "vast",
-								//skipoffset: 5,
-								"adschedule": {
-									"myPreroll": {
-										"offset": "pre",
-										"tag": `${bannerURL}`,
-									},
-									"myPostroll": {
-										"offset": "post",
+						let bannerURL = urlParams.get('b');
+						let formatURL = urlParams.get('f');
+						
+						if(formatURL !== "instream") {
+							jwplayer("player").setup({
+								width: '100%',
+								height: 'auto',
+								autostart: true,
+								mute: true,
+								sources: [{
+									file: "../../resource/videos/video.mp4",
+									type: "mp4",
+									"label": "720p"
+								}],
+							});
+						} else {
+							document.title = "Display Video Instream (Preroll)";
+							jwplayer("player").setup({
+								advertising: {
+									"autoplayadsmuted": true,
+									client: "vast",
+									//skipoffset: 5,
+									"adschedule": {
+										"myPreroll": {
+											"offset": "pre",
+											"tag": `${bannerURL}`,
+										},
+										"myPostroll": {
+											"offset": "post",
+										}
 									}
-								}
-							},
-							width: '100%',
-							height: 'auto',
-							autostart: true,
-							mute: true,
-							sources: [{
-								file: "../../resource/videos/video.mp4",
-								type: "mp4",
-								"label": "720p"
-							}],
-						});
+								},
+								width: '100%',
+								height: 'auto',
+								autostart: true,
+								mute: true,
+								sources: [{
+									file: "../../resource/videos/video.mp4",
+									type: "mp4",
+									"label": "720p"
+								}],
+							});
+						}
 						</script>
 					</div>
 					<br />
 					<br />
-					<p> <span class="highlight">
-                                Ne aperiri bonorum pri, officiis consequat ex mea, nulla congue albucius in vix. Aliquyam perfecto nam ut, eu novum veniam probatus mel, summo graeci recteque nam at. Exerci quidam oportere pri in, vis labore
-                                malorum lucilius at. No vis electram percipitur sadipscing, feugiats vix cu, dolor tantas expetenda has an. In principes posidonium consectetuer qui, in qui dicit primis comprehensam, per id tota expetendis.
-                                full story.
-                            </span> </p>
+					<p> 
+						<span class="highlight">
+                            Ne aperiri bonorum pri, officiis consequat ex mea, nulla congue albucius in vix.
+                        </span>
+						<span class="highlight">
+							Aliquyam perfecto nam ut, eu novum veniam probatus mel, summo graeci recteque nam at. 
+						</span> 
+						<span class="highlight">
+							No vis electram percipitur sadipscing, feugiats vix cu, dolor tantas expetenda has an. In principes posidonium consectetuer qui, in qui dicit primis comprehensam, per id tota expetendis.
+							full story.
+						</span> 
+					</p>
 					<div align="center"> </div>
-					<p> <span class="highlight">
-                                    Praesent dui. Aenean non dolor. Proin dapibus scelerisque neque. Nunc sollicitudin lorem at odio. Quisque eget erat. Pellentesque augue justo, fermentum sit amet, sollicitudin ut, vestibulum vel, nunc.
-                                    Nam in ipsum. Nulla leo. Praesent ligula nunc, semper sit amet, pretium facilisis, aliquet at, lectus. Aliquam sit amet urna. Etiam iaculis ligula.
-                                </span> </p>
+					<div id="ads-outstream" style="width: 99%;"></div>
+					<p> 
+						<span class="highlight">
+							Praesent dui. Aenean non dolor. Proin dapibus scelerisque neque.
+						</span>
+						<span class="highlight">
+							Nunc sollicitudin lorem at odio. Quisque eget erat. Pellentesque augue justo, fermentum sit amet, sollicitudin ut, vestibulum vel, nunc.
+						</span>
+						<span class="highlight">
+							Nam in ipsum. Nulla leo. Praesent ligula nunc, semper sit amet, pretium facilisis, aliquet at, lectus. Aliquam sit amet urna. Etiam iaculis ligula.
+						</span>  
+ 
+					</p>
 					</span>
 					<br /> <img src="resources/img/blank.png" />
 					<br />
 					<br />
-					<p> <span class="highlight">
-                                Nunc massa. In a lorem in dolor porta euismod. Aliquam tortor dui, dictum a, dictum eget, laoreet at, tortor. Nulla facilisi. Suspendisse pulvinar. Morbi sagittis sapien ut ante. Pellentesque sagittis, quam
-                                at pretium dictum, arcu sapien vulputate est, sed aliquet metus justo id purus. Morbi ultrices. Proin urna quam, faucibus vitae, ultricies sit amet, aliquet vel, leo. Morbi felis sapien, molestie egestas,
-                                posuere a, aliquam eu, urna. Aliquam at diam. Aliquam erat volutpat. Vestibulum eget est eget justo rhoncus mattis. Vestibulum aliquam metus ut lacus. Nam diam mi, dignissim ut, dictum bibendum, mollis id,
-                                est. Morbi odio. Vestibulum urna eros, elementum quis, accumsan non, dignissim sed, neque. Nullam risus. Fusce porttitor, sem a aliquet pellentesque, dolor ligula posuere erat, consectetur ornare dolor risus
-                                in libero.
-                            </span> </p>
-					<h1 class="demo_title nomargin"><span class="highlight">15 aperiri bonorum pri, officiis consequat ex mea.</span></h1>
-					<br />
-					<p> <span class="highlight">
+					<p> 
+						<span class="highlight">
+							Nunc massa. In a lorem in dolor porta euismod. Aliquam tortor dui, dictum a, dictum eget, laoreet at, tortor. 
+                        </span>
+						<span class="highlight">
+							Nulla facilisi. Suspendisse pulvinar. Morbi sagittis sapien ut ante. 
+						</span>
+						<span class="highlight">
+							Pellentesque sagittis, quam at pretium dictum, arcu sapien vulputate est, sed aliquet metus justo id purus. Morbi ultrices. Proin urna quam, faucibus vitae, ultricies sit amet, aliquet vel, leo. Morbi felis sapien, molestie egestas,
+							posuere a, aliquam eu, urna.
+						</span>
+					</p>
+					<p> 
+						<span class="highlight">
                                 Aliquam eros turpis, tincidunt et, interdum at, fringilla eu, arcu. Aenean iaculis porttitor magna. Duis in lectus at dolor tristique tristique. Sed tellus. Pellentesque sit amet nisl. Fusce interdum. Nunc
                                 lobortis. Vivamus id erat at ipsum consequat auctor. Suspendisse potenti. Donec sed lorem. Nulla facilisi. Aliquam arcu.
-                            </span> </p>
-					<p> <span class="highlight">
-                                Nunc massa. In a lorem in dolor porta euismod. Aliquam tortor dui, dictum a, dictum eget, laoreet at, tortor. Nulla facilisi. Suspendisse pulvinar. Morbi sagittis sapien ut ante. Pellentesque sagittis, quam
-                                at pretium dictum, arcu sapien vulputate est, sed aliquet metus justo id purus. Morbi ultrices. Proin urna quam, faucibus vitae, ultricies sit amet, aliquet vel, leo. Morbi felis sapien, molestie egestas,
-                                posuere a, aliquam eu, urna. Aliquam at diam. Aliquam erat volutpat. Vestibulum eget est eget justo rhoncus mattis. Vestibulum aliquam metus ut lacus. Nam diam mi, dignissim ut, dictum bibendum, mollis id,
+                        </span> 
+					</p>
+					<p> 
+						<span class="highlight">
+                                Aliquam at diam. Aliquam erat volutpat. Vestibulum eget est eget justo rhoncus mattis. Vestibulum aliquam metus ut lacus. Nam diam mi, dignissim ut, dictum bibendum, mollis id,
                                 est. Morbi odio. Vestibulum urna eros, elementum quis, accumsan non, dignissim sed, neque. Nullam risus. Fusce porttitor, sem a aliquet pellentesque, dolor ligula posu ere erat, consectetur ornare dolor risus
                                 in libero.
-                            </span> </p>
-					<p> <span class="highlight">
-                                Aliquam eros turpis, tincidunt et, interdum at, fringilla eu, arcu. Aenean iaculis porttitor magna. Duis in lectus at dolor tristique tristique. Sed tellus. Pellentesque sit amet nisl. Fusce interdum. Nunc
-                                lobortis. Vivamus id erat at ipsum consequat auctor. Suspendisse potenti. Donec sed lorem. Nulla facilisi. Aliquam arcu.
-                            </span> </p>
+                        </span> 
+					</p>
 					<ul class="demo_list">
 						<li><span class="highlight">Aaaaaa aaaaaaa aaaa aaaaaaaaaaaa aaaaaaaaaaaa</span></li>
 						<li><span class="highlight">Aaaaaaaaaaaa aaaaaaaa aaaaaaaa aaaaaaaa aaaaaaaa</span></li>
@@ -269,5 +303,22 @@ jwplayer.key = "XYS/ica6YQUMq9rC6J2E77obUFoIPLeM";
 		</nav>
 	</footer>
 </body>
+<script>
+let fileDirectory;
+let adPlacement = null;
 
+if(bannerURL && formatURL) {
+	const fileName = {
+		outstream: '../../deliveries/outstream.js',
+	}
+	if(formatURL === "outstream") {
+		document.title = "Display Video Outstream (Inread)";
+		fileDirectory = fileName.outstream;
+		adPlacement = document.getElementById('ads-outstream');
+		var scriptPlacement = document.createElement('script');
+		scriptPlacement.src = fileDirectory;
+		adPlacement.appendChild(scriptPlacement);	
+	}
+}
+</script>
 </html>

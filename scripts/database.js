@@ -2,7 +2,7 @@ const list = {
     devices : [
         { name: 'Display', value: 'display' },
         { name: 'Mobile', value: 'mobile' },
-        { name: 'Preroll', value: 'preroll' },
+        { name: 'Video', value: 'video' },
     ],
     templates : [
         { name: 'Dân Trí', value: 'dantri-pc', type: 'display' },
@@ -15,7 +15,7 @@ const list = {
         { name: 'Thể Thao 247', value: 'thethao247-mb', type: 'mobile' },
         { name: 'Phụ Nữ Online', value: 'phunuonline-mb', type: 'mobile' },
         { name: 'Default', value: 'index-mb', type: 'mobile' },
-        { name: 'Default', value: 'index', type: 'preroll' },
+        { name: 'Default', value: 'index', type: 'video' },
     ],
     adformats : [
         { name: 'Display Masthead (Billboard)', value: 'billboard', type: 'display' },
@@ -30,7 +30,8 @@ const list = {
         { name: 'Display IAB Medium Rectangle (300x250)', value: 'iab-medium-rectangle', type: 'display' },
         { name: 'Display IAB Half Page (300x600)', value: 'iab-half-page', type: 'display' },
         { name: 'Video Outstream (Inread)', value: 'outstream', type: 'display' },
-        { name: 'Video Instream (Preroll)', value: 'instream', type: 'preroll' },
+        { name: 'Video Outstream (Inread)', value: 'outstream', type: 'video' },
+        { name: 'Video Instream (Preroll)', value: 'instream', type: 'video' },
         { name: 'Mobile Masthead', value: 'masthead-mb', type: 'mobile' },
         { name: 'Mobile Interscroller (Inpage)', value: 'inpage', type: 'mobile' },
         { name: 'Mobile Interstitial (Firstview)', value: 'firstview', type: 'mobile' },
