@@ -5,22 +5,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>YOMEDIA | Ad Format Demo</title>
         <link rel="icon" href="favicon.ico" type="image/gif" sizes="16x16" />
-        <link rel="stylesheet" href="resource/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="resources/css/bootstrap.min.css" />
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css" />
-        <link href="resource/css/style.css" rel="stylesheet" type="text/css" />
-        <link href="resource/css/chosen.min.css" rel="stylesheet" type="text/css" />
-        <link href="resource/css/compiled.min.css" rel="stylesheet" type="text/css" />
-        <link href="resource/css/jquery.toast.css" rel="stylesheet" type="text/css" />
-        <link href="resource/css/fontawesome.min.css" rel="stylesheet" type="text/css" />
-        <link href="resource/css/solid.css" rel="stylesheet" type="text/css" />
-        <link href="resource/css/brands.css" rel="stylesheet" type="text/css" />
+        <link href="resources/css/style.css" rel="stylesheet" type="text/css" />
+        <link href="resources/css/chosen.min.css" rel="stylesheet" type="text/css" />
+        <link href="resources/css/compiled.min.css" rel="stylesheet" type="text/css" />
+        <link href="resources/css/jquery.toast.css" rel="stylesheet" type="text/css" />
+        <link href="resources/css/fontawesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="resources/css/solid.css" rel="stylesheet" type="text/css" />
+        <link href="resources/css/brands.css" rel="stylesheet" type="text/css" />
 
     </head>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand"></a>
             <a href="https://yomedia.vn" target="_blank">
-                <img class="logo-yomedia" src="./resource/images/logo-yomedia.png" alt="" />
+                <img class="logo-yomedia" src="./resources/images/logo-yomedia.png" alt="" />
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -143,12 +143,12 @@
             </div>
         </div>
     </body>
-    <script type="text/javascript" src="resource/js/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript" src="resource/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="resource/js/popper.min.js"></script>
+    <script type="text/javascript" src="resources/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="resources/js/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script>
-    <script type="text/javascript" src="resource/js/chosen.jquery.min.js"></script>
-    <script type="text/javascript" src="resource/js/jquery.toast.js"></script>
+    <script type="text/javascript" src="resources/js/chosen.jquery.min.js"></script>
+    <script type="text/javascript" src="resources/js/jquery.toast.js"></script>
     <script type="text/javascript" src="scripts/database.js"></script>
     <!-- Scripts  -->
     <script type="text/javascript">
@@ -234,6 +234,8 @@
                     $("#source").show();
                     $("#addition_source").hide();
                     $("#video_source").hide();
+                    $("#addition_source_field").val('');                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+                    $("#video_source_field").val('');                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
                     break;
         
                 case 'in-native': case 'in-takeover': case 'in-carousel': case 'on-image-pc':
@@ -305,8 +307,7 @@
         var video_sourceURL = $("#video_source_field").val();
         var url = window.location.href;
         var prefix = "https://demo.yomedia.vn"
-        var p = url.search("index.");
-
+        var p = url.search("form/");
         if (p != -1) {
             url = url.substring(0, p);
         }

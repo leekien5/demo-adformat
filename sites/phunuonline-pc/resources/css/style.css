@@ -496,7 +496,7 @@ a.btnblue:hover{background:#063;color:#FFF!important}
 .icoemail{background-position:-230px -27px;width:16px;height:11px;margin:0 5px 0 0;display:inline-block}
 .content-fck{line-height:20px;font-size:14px;font-family:"Roboto";margin-top:0;padding-top:0!important}
 .content-fck p{margin-bottom:10px;max-width:100%;width:100%!important}
-.content-fck img{text-align:center;padding:5px 10px;max-width:100%!important;height:auto!important}
+.content-fck img{text-align:center;max-width:100%!important;height:auto!important}
 .content-fck p img{text-align:center}
 .content-fck table{margin:5px;width:100%!important;}
 .content-fck .t-tbr,.content-fck .t-tbl{width:180px!important;}

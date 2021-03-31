@@ -15,22 +15,21 @@ function removeClass (placementBalloon, placementBottomUp) {
 if(bannerURL && formatURL) {
 	//Get fireDirectory name from file directories
 	const fileName = {
-		masthead: '../../deliveries/masthead.js',
-		billboard: '../../deliveries/billboard.js',
-		balloon: '../../deliveries/balloon.js',
-		bottomUp: '../../deliveries/bottomUp.js',
-		inpage: '../../deliveries/inpage.js',
-		firstview: '../../deliveries/firstview.js',
-		footer: '../../deliveries/footer.js',
-		threeDPostCarousel: '../../deliveries/3dPostCarousel.js',
-		inImageTakeover: '../../deliveries/inImageTakeover.js',
-		inImageWithInread: '../../deliveries/inImageInread.js',
-		inImageCarousel: '../../deliveries/inImageCarousel.js',
-		onImagePc: '../../deliveries/onImage.js',
-		onImageMb: '../../deliveries/onImage.js',
-		iab300x250: '../../deliveries/iab300x250.js',
-		iab300x600: '../../deliveries/iab300x600.js',
-		outstream: '../../deliveries/outstream.js',
+		masthead: '../../form/deliveries/masthead.js',
+		billboard: '../../form/deliveries/billboard.js',
+		balloon: '../../form/deliveries/balloon.js',
+		bottomUp: '../../form/deliveries/bottomUp.js',
+		inpage: '../../form/deliveries/inpage.js',
+		firstview: '../../form/deliveries/firstview.js',
+		footer: '../../form/deliveries/footer.js',
+		threeDPostCarousel: '../../form/deliveries/3dPostCarousel.js',
+		inImageTakeover: '../../form/deliveries/inImageTakeover.js',
+		inImageWithInread: '../../form/deliveries/inImageInread.js',
+		inImageCarousel: '../../form/deliveries/inImageCarousel.js',
+		onImagePc: '../../form/deliveries/onImage.js',
+		onImageMb: '../../form/deliveries/onImage.js',
+		iab300x250: '../../form/deliveries/iab300x250.js',
+		iab300x600: '../../form/deliveries/iab300x600.js',
 	}
 
 	//Switching cases
@@ -222,18 +221,6 @@ if(bannerURL && formatURL) {
 			fileDirectory = fileName.iab300x600;
 			removeClass();
 			adPlacement = document.getElementById('ads-iab');
-			//Replace div id with script source
-			var scriptPlacement = document.createElement('script');
-			scriptPlacement.src = fileDirectory;
-			//Append script to div id
-			adPlacement.appendChild(scriptPlacement);	
-			break;
-
-		case 'outstream':
-			document.title = "Display Video Outstream (Inread)";
-			fileDirectory = fileName.outstream;
-			removeClass();
-			adPlacement = document.getElementById('ads-outstream');
 			//Replace div id with script source
 			var scriptPlacement = document.createElement('script');
 			scriptPlacement.src = fileDirectory;

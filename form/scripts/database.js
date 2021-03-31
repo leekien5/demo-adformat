@@ -16,6 +16,7 @@ const list = {
         { name: 'Phụ Nữ Online', value: 'phunuonline-mb', type: 'mobile' },
         { name: 'Default', value: 'index-mb', type: 'mobile' },
         { name: 'Default', value: 'index', type: 'video' },
+        { name: 'Bóng Đá 24h', value: 'bongda24h', type: 'video' },
     ],
     adformats : [
         { name: 'Display Balloon', value: 'balloon', type: 'display' },
@@ -29,7 +30,6 @@ const list = {
         { name: 'Display 3D Post Carousel', value: '3d-post-carousel', type: 'display' },
         { name: 'Display IAB Medium Rectangle (300x250)', value: 'iab-medium-rectangle', type: 'display' },
         { name: 'Display IAB Half Page (300x600)', value: 'iab-half-page', type: 'display' },
-        { name: 'Display Video Outstream (Inread)', value: 'outstream', type: 'display' },
         { name: 'Video Outstream (Inread)', value: 'outstream', type: 'video' },
         { name: 'Video Instream (Preroll)', value: 'instream', type: 'video' },
         { name: 'Mobile Masthead', value: 'masthead-mb', type: 'mobile' },
@@ -44,6 +44,5 @@ const list = {
         { name: 'Mobile 3D Post Carousel', value: '3d-post-carousel', type: 'mobile' },
         { name: 'Mobile IAB Medium Rectangle (300x250)', value: 'iab-medium-rectangle', type: 'mobile' },
         { name: 'Mobile IAB Half Page (300x600)', value: 'iab-half-page', type: 'mobile' },
-        { name: 'Mobile Video Outstream (Inread)', value: 'outstream', type: 'mobile' },
     ],
 }

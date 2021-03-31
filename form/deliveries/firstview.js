@@ -34,7 +34,7 @@ function showBannerYomedia_ab1f7103e5354124a9d557162785eeb5(s) {
 
             var close_btn = document.createElement('div');
             close_btn.setAttribute('id', 'yomedia-close-btn-ab1f7103e5354124a9d557162785eeb5');
-            close_btn.style.cssText = 'width: 40px;height: 40px;background-image: url("../../../resource/images/close_40x40-2.png");position: fixed;top: 0;right: 0px;z-index: 50000;';
+            close_btn.style.cssText = 'width: 40px;height: 40px;background-image: url("../../../resources/images/close_40x40-2.png");position: fixed;top: 0;right: 0px;z-index: 50000;';
 
             domWrapper.appendChild(iframe_banner);
             domWrapper.appendChild(close_btn);

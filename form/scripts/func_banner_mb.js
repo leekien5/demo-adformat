@@ -6,18 +6,17 @@ let adPlacement = null;
 if(bannerURL && formatURL) {
 	//Get fireDirectory name from file directories
 	const fileName = {
-		masthead: '../../../deliveries/masthead.js',
-		inpage: '../../../deliveries/inpage.js',
-		firstview: '../../../deliveries/firstview.js',
-		footer: '../../../deliveries/footer.js',
-		threeDPostCarousel: '../../../deliveries/3dPostCarousel.js',
-		inImageTakeover: '../../../deliveries/inImageTakeover.js',
-		inImageWithInread: '../../../deliveries/inImageInread.js',
-		inImageCarousel: '../../../deliveries/inImageCarousel.js',
-		onImageMb: '../../../deliveries/onImage.js',
-		iab300x250: '../../../deliveries/iab300x250.js',
-		iab300x600: '../../../deliveries/iab300x600.js',
-		outstream: '../../../deliveries/outstream.js',
+		masthead: '../../../form/deliveries/masthead.js',
+		inpage: '../../../form/deliveries/inpage.js',
+		firstview: '../../../form/deliveries/firstview.js',
+		footer: '../../../form/deliveries/footer.js',
+		threeDPostCarousel: '../../../form/deliveries/3dPostCarousel.js',
+		inImageTakeover: '../../../form/deliveries/inImageTakeover.js',
+		inImageWithInread: '../../../form/deliveries/inImageInread.js',
+		inImageCarousel: '../../../form/deliveries/inImageCarousel.js',
+		onImageMb: '../../../form/deliveries/onImage.js',
+		iab300x250: '../../../form/deliveries/iab300x250.js',
+		iab300x600: '../../../form/deliveries/iab300x600.js',
 	}
 	//Switching cases
 	switch(formatURL) {
@@ -140,17 +139,6 @@ if(bannerURL && formatURL) {
 			document.title = "IAB Half Page (300x600)";
 			fileDirectory = fileName.iab300x600;
 			adPlacement = document.getElementById('ads-iab');
-			//Replace div id with script source
-			var scriptPlacement = document.createElement('script');
-			scriptPlacement.src = fileDirectory;
-			//Append script to div id
-			adPlacement.appendChild(scriptPlacement);	
-			break;
-
-		case 'outstream':
-			document.title = "Mobile Video Outstream (Inread)";
-			fileDirectory = fileName.outstream;
-			adPlacement = document.getElementById('ads-outstream');
 			//Replace div id with script source
 			var scriptPlacement = document.createElement('script');
 			scriptPlacement.src = fileDirectory;
