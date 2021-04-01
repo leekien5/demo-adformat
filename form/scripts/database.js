@@ -5,20 +5,25 @@ const list = {
         { name: 'Video', value: 'video' },
     ],
     templates : [
+        //Display Templates
         { name: 'Dân Trí', value: 'dantri-pc', type: 'display' },
         { name: 'Phụ Nữ Today', value: 'phunutoday-pc', type: 'display' },
         { name: 'Thể Thao 247', value: 'thethao247-pc', type: 'display' },
         { name: 'Phụ Nữ Online', value: 'phunuonline-pc', type: 'display' },
         { name: 'Default', value: 'index-pc', type: 'display' },
+        //Mobile Templates
         { name: 'Dân Trí', value: 'dantri-mb', type: 'mobile' },
         { name: 'Phụ Nữ Today', value: 'phunutoday-mb', type: 'mobile' },
         { name: 'Thể Thao 247', value: 'thethao247-mb', type: 'mobile' },
         { name: 'Phụ Nữ Online', value: 'phunuonline-mb', type: 'mobile' },
         { name: 'Default', value: 'index-mb', type: 'mobile' },
-        { name: 'Default', value: 'index', type: 'video' },
-        { name: 'Bóng Đá 24h', value: 'bongda24h', type: 'video' },
+        //Video Templates
+        { name: 'Default', value: 'index-vd', type: 'video' },
+        { name: 'Bóng Đá 24h', value: 'bongda24h-vd', type: 'video' },
+        { name: 'Tiin', value: 'tiin-vd', type: 'video' },
     ],
     adformats : [
+        //Display Adformats
         { name: 'Display Balloon', value: 'balloon', type: 'display' },
         { name: 'Display Masthead (Billboard)', value: 'billboard', type: 'display' },
         { name: 'Display Bottom Up', value: 'bottom-up', type: 'display' },
@@ -30,8 +35,7 @@ const list = {
         { name: 'Display 3D Post Carousel', value: '3d-post-carousel', type: 'display' },
         { name: 'Display IAB Medium Rectangle (300x250)', value: 'iab-medium-rectangle', type: 'display' },
         { name: 'Display IAB Half Page (300x600)', value: 'iab-half-page', type: 'display' },
-        { name: 'Video Outstream (Inread)', value: 'outstream', type: 'video' },
-        { name: 'Video Instream (Preroll)', value: 'instream', type: 'video' },
+        //Mobile Adformats
         { name: 'Mobile Masthead', value: 'masthead-mb', type: 'mobile' },
         { name: 'Mobile Interscroller (Inpage)', value: 'inpage', type: 'mobile' },
         { name: 'Mobile Interstitial (Firstview)', value: 'firstview', type: 'mobile' },
@@ -44,5 +48,8 @@ const list = {
         { name: 'Mobile 3D Post Carousel', value: '3d-post-carousel', type: 'mobile' },
         { name: 'Mobile IAB Medium Rectangle (300x250)', value: 'iab-medium-rectangle', type: 'mobile' },
         { name: 'Mobile IAB Half Page (300x600)', value: 'iab-half-page', type: 'mobile' },
+        //Video Adformats
+        { name: 'Video Outstream (Inread)', value: 'outstream', type: 'video' },
+        { name: 'Video Instream (Preroll)', value: 'instream', type: 'video' },
     ],
 }

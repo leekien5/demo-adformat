@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Tiin.vn</title>
+	<link rel="shortcut icon" href="../../resources/images/favicon.ico" />
+	<link rel="stylesheet" href="resources/css/index.css">
+	<script type="text/javascript" src="https://media.yomedia.vn/lib/jwplayer/jwplayer.js"></script>
+	<script>
+		jwplayer.key = "XYS/ica6YQUMq9rC6J2E77obUFoIPLeM";
+	</script>
+	<style type="text/css">
+	#player {
+		height: 354px !important;
+		float: left;
+		margin-bottom: 25px !important;
+	}
+
+	@media only screen and (max-width: 768px) {
+		#player {
+			width: 100% !important;
+			left: 0px;
+			right: 0px;
+			margin: auto;
+			height: 100% !important;
+		}
+	}
+	
+	body {
+		overflow: visible
+	}
+	
+	#player {
+		height: 354px !important;
+		width: 100% !important;
+	}
+	
+	.sticky #player {
+		height: 170px;
+	}
+	
+	</style>
+	<link rel="stylesheet" href="resources/css/bootstrap.min.css">
+	<title> Clip: Những khoảnh khắc siêu vi diệu của thiên nhiên </title>
+</head>
+<body>
+	<div id="app" class="wrap-1100 mx-auto">
+		<div class="container" style="background-image: url('resources/images/flash033044277685200.png'); background-size: 100% 96px; background-repeat: no-repeat">
+			<div class="row justify-content-between align-items-center" style="padding: 20px 0">
+				<div class="col-md-2 mb-0">
+					<a href="#" title="Trang tin tức tổng hợp giới trẻ - Tiin.vn"> <img src="resources/images/logo.svg" class="" alt="Trang tin tức tổng hợp giới trẻ - Tiin.vn"> </a>
+				</div>
+			</div>
+		</div>
+		<div class="menu-header container">
+			<div class="container-menu position-relative h-100 d-flex align-items-center">
+				<div class="mr-auto">
+					<div class="item" style="display: table-cell"> <a class="title d-block" href="#">Sao</a>	
+					</div>
+					<div class="item" style="display: table-cell"> <a class="title d-block" href="#">Sống</a>
+					</div>
+					<div class="item" style="display: table-cell"> <a class="title d-block" href="#">Phim</a>
+					</div>
+					<div class="item" style="display: table-cell"> <a class="title d-block" href="#">Xgaming</a>
+					</div>
+					<div class="item" style="display: table-cell"> <a class="title d-block" href="#">Yêu</a>
+					</div>
+					<div class="item" style="display: table-cell"> <a class="title d-block" href="#">Nhạc</a>
+					</div>
+					<div class="item" style="display: table-cell"> <a class="title d-block" href="#">Học</a>
+					</div>
+					<div class="item" style="display: table-cell"> <a class="title d-block" href="#">24H</a>
+					</div>
+					<div class="item" style="display: table-cell"> <a class="title d-block" href="#">Đẹp</a>
+					</div>
+					<div class="item" style="display: table-cell"> <a class="title d-block" href="#">Nghiệm</a>
+					</div>
+					<div class="item" style="display: table-cell"> <a class="title d-block" href="#">Video</a>
+					</div>
+					<div class="item" style="display: table-cell"> <a class="title d-block" href="#">Sành</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="position-relative">
+			<div class="sticky position-absolute sticky--left" style="top: 0; left:0"> </div>
+		</div>
+		<div class="container video-page">
+			<nav class="container navbar navbar-expand-lg navbar-sub-cate">
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav">
+						<li class="nav-item"> <a class="nav-link p-0" href="#">VIDEO
+                    <div class="underline"></div>
+                </a> </li>
+						<li class="nav-item"> <a class="nav-link p-0 " href="#">Đời sống
+                            <div class="underline active-94"></div>
+                        </a> </li>
+						<li class="nav-item"> <a class="nav-link p-0 " href="#">Giải trí
+                            <div class="underline active-94"></div>
+                        </a> </li>
+						<li class="nav-item"> <a class="nav-link p-0 " href="#">Xã hội
+                            <div class="underline active-94"></div>
+                        </a> </li>
+						<li class="nav-item"> <a class="nav-link p-0 " href="#">Quickview
+                            <div class="underline active-94"></div>
+                        </a> </li>
+						<li class="nav-item"> <a class="nav-link p-0 " href="#">Hài hước
+                            <div class="underline active-94"></div>
+                        </a> </li>
+						<li class="nav-item"> <a class="nav-link p-0 " href="#">Thể thao
+                            <div class="underline active-94"></div>
+                        </a> </li>
+					</ul>
+				</div>
+			</nav>
+			<div class="row mt-2">
+				<div class="col-md-7 top">
+					<div class="video-player-detail">
+						<div class="player-videojs" style="position: relative;">
+							<div id="player"></div>
+							<script type="text/javascript">
+							let urlParams = new URLSearchParams(window.location.search);
+							let bannerURL = urlParams.get('b');
+							let formatURL = urlParams.get('f');
+							
+							if(formatURL !== "instream") {
+								jwplayer("player").setup({
+									width: '100%',
+									height: 'auto',
+									autostart: true,
+									mute: true,
+									sources: [{
+										file: "../../resources/videos/video.mp4",
+										type: "mp4",
+										"label": "720p"
+									}],
+								});
+							} else {
+								document.title = "Display Video Instream (Preroll)";
+								jwplayer("player").setup({
+									advertising: {
+										"autoplayadsmuted": true,
+										client: "vast",
+										//skipoffset: 5,
+										"adschedule": {
+											"myPreroll": {
+												"offset": "pre",
+												"tag": `${bannerURL}`,
+											},
+											"myPostroll": {
+												"offset": "post",
+											}
+										}
+									},
+									width: '100%',
+									height: 'auto',
+									autostart: true,
+									mute: true,
+									sources: [{
+										file: "../../resources/videos/video.mp4",
+										type: "mp4",
+										"label": "720p"
+									}],
+								});
+							}
+							</script>
+						</div>
+					</div>
+					<h1 class="title" id="title">
+                        Clip: Những khoảnh khắc siêu vi diệu của thiên nhiên
+                    </h1>
+					<p class="publish-time"> 25/10/2020 09:25 </p>
+					<h2 class="lead" id="sapo">
+                        Sấm chớp và cầu vồng xuất hiện cùng lúc, một thứ thì biểu tượng cho hòa bình và tình yêu, một thứ thì biểu tượng cho sức mạnh và uy quyền.
+                    </h2>
+					<div id="ads-outstream"></div>
+					<div class="source-comp position-relative"> <span id="author">Theo Duy Lê</span> <img src="resources/images/source.svg">
+						<div class="position-absolute link-source">
+							<div class="clearfix">
+								<p class="float-left link--source-title">Link báo gốc:</p>
+								<p class="float-right copy--link pointer" "> <img src="https://tiin.vn/images/copy_link.svg"> Copy link </p>
+							</div>
+							<p class="link mb-0" id="sourceLink"> </p>
+						</div>
+					</div>
+					<div class="mt-3 clearfix">
+						<div class="float-left">
+							<div class="share-comp">
+								<a href="#" target="_blank" class="facebook-share" data-toggle="tooltip" title="Chia sẻ qua facebook">
+									<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<circle cx="16" cy="16" r="16" fill="#ECEDEE" />
+										<path d="M19.814 17.125L20.3139 13.8674H17.1881V11.7535C17.1881 10.8623 17.6248 9.99355 19.0247 9.99355H20.4457V7.22008C20.4457 7.22008 19.1562 7 17.9233 7C15.3491 7 13.6665 8.56023 13.6665 11.3847V13.8674H10.8052V17.125H13.6665V25H17.1881V17.125H19.814Z" fill="#979797" /> </svg>
+								</a>
+								<a class="copy-link pointer" data-toggle="tooltip" title="Copy link">
+									<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<circle cx="16" cy="16" r="16" fill="#ECEDEE" />
+										<path d="M7.8707 16C7.8707 14.29 9.2607 12.9 10.9707 12.9H14.9707V11L10.9707 11C8.2107 11 5.9707 13.24 5.9707 16C5.9707 18.76 8.2107 21 10.9707 21H14.9707V19.1H10.9707C9.2607 19.1 7.8707 17.71 7.8707 16ZM11.9707 17H19.9707V15L11.9707 15V17ZM20.9707 11H16.9707V12.9H20.9707C22.6807 12.9 24.0707 14.29 24.0707 16C24.0707 17.71 22.6807 19.1 20.9707 19.1H16.9707V21H20.9707C23.7307 21 25.9707 18.76 25.9707 16C25.9707 13.24 23.7307 11 20.9707 11Z" fill="#979797" /> </svg>
+								</a>
+							</div>
+						</div>
+						<div class="float-right" id="template-feedback">
+							<feedback title="Clip: Những khoảnh khắc siêu vi diệu của thiên nhiên"></feedback>
+						</div>
+					</div>
+					<div class="detail">
+						<div class="tag-relate d-flex">
+							<a class="d-block" style="margin-top: 20px"><img class="" src="resources/images/tag.svg"></a>
+							<ul class="list p-0 mb-0">
+								<a href="#">
+									<li class="item d-inline-block hover-pink"> thiên nhiên </li>
+								</a>
+								<a href="#">
+									<li class="item d-inline-block hover-pink"> kì diệu </li>
+								</a>
+								<a href="#">
+									<li class="item d-inline-block hover-pink"> clip thiên nhiên </li>
+								</a>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<script>
+				let itemVideos = [];
+				</script>
+				<div class="col-md-5 top-right">
+					<div class="d-flex justify-content-between px-1 mb-2">
+						<div> Tự động phát </div>
+						<div class="auto-play">
+							<label class="switch">
+								<input type="checkbox" checked> <span class="slider round"></span> </label>
+						</div>
+					</div>
+					<ul class="list p-0">
+						<li class="item row mt-0">
+							<a class="d-block col-md-5 position-relative" href="#">
+								<div class="wrap-img-16-9"> <img src="resources/images/thumb00_102847459737489.jpg" class=" img-16-9"> </div> <img src="resources/images/play_video.svg" class=" position-absolute video-icon" style="width: 30px"> </a> <a class="d-block col-md-7 title">
+                        HOT: Hàn Quốc vừa điểm 0h ngày 1/4, rộ tin RM (BTS) hẹn hò Wendy (Red Velvet)?
+                    </a> </li>
+						<li class="item row ">
+							<a class="d-block col-md-5 position-relative" href="#">
+								<div class="wrap-img-16-9"> <img src="resources/images/thumb00_093618310054920.jpg" class=" img-16-9"> </div> <img src="resources/images/play_video.svg" class=" position-absolute video-icon" style="width: 30px"> </a> <a class="d-block col-md-7 title">
+                        Cường Đô La sắm siêu xe tiền tỷ cho con gái chưa đầy 1 tuổi
+                    </a> </li>
+						<li class="item row ">
+							<a class="d-block col-md-5 position-relative" href="#">
+								<div class="wrap-img-16-9"> <img src="resources/images/thumb00_091429184023808.jpg" class=" img-16-9"> </div> <img src="resources/images/play_video.svg" class=" position-absolute video-icon" style="width: 30px"> </a> <a class="d-block col-md-7 title">
+                        Trò chuyện cùng Trương Thế Vinh về vai diễn đóng cùng Nhã Phương trong phim Song Song
+                    </a> </li>
+						<li class="item row ">
+							<a class="d-block col-md-5 position-relative" href="#">
+								<div class="wrap-img-16-9"> <img src="resources/images/thumb00_083630811067358.jpg" class=" img-16-9"> </div> <img src="resources/images/play_video.svg" class=" position-absolute video-icon" style="width: 30px"> </a> <a class="d-block col-md-7 title">
+                        Rò rỉ khoảnh khắc được cho là Jack quay MV mới
+                    </a> </li>
+						<li class="item row ">
+							<a class="d-block col-md-5 position-relative" href="#">
+								<div class="wrap-img-16-9"> <img src="resources/images/thumb00_08242495874868.jpg" class=" img-16-9"> </div> <img src="resources/images/play_video.svg" class=" position-absolute video-icon" style="width: 30px"> </a> <a class="d-block col-md-7 title">
+                        Netizen bất ngờ ghép đôi Thiều Bảo Trâm với Tuấn Trần
+                    </a> </li>
+						<li class="item row ">
+							<a class="d-block col-md-5 position-relative" href="#">
+								<div class="wrap-img-16-9"> <img src="resources/images/thumb00_082204266964194.jpg" class=" img-16-9"> </div> <img src="resources/images/play_video.svg" class=" position-absolute video-icon" style="width: 30px"> </a> <a class="d-block col-md-7 title">
+                        Á hậu Tường San lộ bụng bầu to tại sự kiện
+                    </a> </li>
+			</div>
+			<div class="video-other">
+				<h6 class="title-box p-0">Video khác
+                    <div class="underline"></div>
+                </h6>
+				<div class="row list">
+					<div class="col-md-3 item">
+						<a href="#" class="position-relative d-block"> <img src="resources/images/thumb00_100905213637543.jpg" class=" img-fluid"> <img src="resources/images/play_video.svg" class=" video-icon" style="width: 40px"> </a> <a class="title d-block">
+                                Ngọc Trinh đăng status dài kể ly kỳ chuyện vụ mất trộm BST đồng hồ hơn 10 tỷ đồng
+                            </a> </div>
+					<div class="col-md-3 item">
+						<a href="#" class="position-relative d-block"> <img src="resources/images/thumb00_023949119277651.jpg" class=" img-fluid"> <img src="resources/images/play_video.svg" class=" video-icon" style="width: 40px"> </a> <a class="title d-block">
+                                MV &#039;Em gì ơi&#039; cán mốc 300 triệu view nhưng Jack và K-ICM đều hững hờ
+                            </a> </div>
+					<div class="col-md-3 item">
+						<a href="#" class="position-relative d-block"> <img src="https://newsmd1fr.keeng.net/tiin/archive/imageslead/372/202103/20210330/thumb00_020035620440821.jpg" class=" img-fluid"> <img src="resources/images/play_video.svg" class=" video-icon" style="width: 40px"> </a> <a class="title d-block">
+                                Lê Bống gây phẫn nộ khi mặc váy xẻ tà cao, tạo dáng hớ hênh khi đi chùa
+                            </a> </div>
+					<div class="col-md-3 item">
+						<a href="#" class="position-relative d-block"> <img src="https://newsmd1fr.keeng.net/tiin/archive/imageslead/372/202103/20210330/thumb00_015810484188370.jpg" class=" img-fluid"> <img src="resources/images/play_video.svg" class=" video-icon" style="width: 40px"> </a> <a class="title d-block">
+                                Trong cơn &#039;ngáo đá&#039;, gọi điện báo Công an mình đang tàng trữ ma túy
+                            </a> </div>
+					<div class="col-md-3 item">
+						<a href="#" class="position-relative d-block"> <img src="https://newsmd1fr.keeng.net/tiin/archive/imageslead/372/202103/20210330/thumb00_01564415820205.jpg" class=" img-fluid"> <img src="resources/images/play_video.svg" class=" video-icon" style="width: 40px"> </a> <a class="title d-block">
+                                &#039;Giấu&#039; người yêu kiểu &#039;hớ hênh&#039; như Diệu Nhi
+                            </a> </div>
+					<div class="col-md-3 item">
+						<a href="#" class="position-relative d-block"> <img src="resources/images/thumb00_012321660932431.jpg" class=" img-fluid"> <img src="resources/images/play_video.svg" class=" video-icon" style="width: 40px"> </a> <a class="title d-block">
+                                Ngọc Trinh bất ngờ tiết lộ trong quá khứ đã từng bị người yêu &#039;cắm sừng&#039;
+                            </a> </div>
+					<div class="col-md-3 item">
+						<a href="#" class="position-relative d-block"> <img src="resources/images/thumb00_112547931249376.jpg" class=" img-fluid"> <img src="resources/images/play_video.svg" class=" video-icon" style="width: 40px"> </a> <a class="title d-block">
+                                Fan xúi bậy Công Vinh &#039;người như anh xứng đáng có 2 vợ&#039;, Thuỷ Tiên liền có phản ứng
+                            </a> </div>
+					<div class="col-md-3 item">
+						<a href="#" class="position-relative d-block"> <img src="resources/images/thumb00_10050417457373.jpg" class=" img-fluid"> <img src="resources/images/play_video.svg" class=" video-icon" style="width: 40px"> </a> <a class="title d-block">
+                                Chi Pu: &#039;Nếu thấy mình hát thảm họa thì đã không trở thành ca sĩ&#039;
+                            </a> </div>
+				</div>
+			</div>
+		</div>
+		<div class="footer container" id="footer">
+			<div class="row" style="padding-bottom: 35px; border-bottom: 1px solid #ECEDEE;">
+				<div class="col-md-4">
+					<a href="#"> <img class=" img-fluid" src="resources/images/logo.png"> </a>
+					<p class="text-undertone mt-3"> Trang tin tổng hợp giới trẻ. </p>
+					<p class="text-undertone"> GP: 354/GP-TTĐT do Sở TT&TT Hà Nội cấp ngày 25/01/2017 </p>
+					<p class="text-bold"> Một sản phẩm của Viettel Media </p>
+				</div>
+				<div class="col-md-4">
+					<p class="text-title"> chịu trách nhiệm nội dung </p>
+					<p class="text-undertone"> Ông Võ Thanh Hải </p>
+					<p class="text-title"> Cơ quan chủ quản </p>
+					<p class="text-undertone mb-0"> Công ty Truyền thông Viettel (Viettel Media) </p>
+					<p class="text-undertone"> Tầng 4, Tòa nhà The Light, Tố Hữu, Nam Từ Liêm, Hà Nội </p>
+					<div class="service"> <a href="#">Liên hệ</a> <a href="#">Quy định sử dụng</a> </div>
+				</div>
+				<div class="col-md-4">
+					<p class="text-title">liên hệ quảng cáo</p>
+					<p class="text-undertone mb-0">Điện thoại: 0969.16.17.18</p>
+					<p class="text-undertone">Email: hoptac@viettel.com.vn </p>
+					<p class="text-undertone" style="padding-top: 15px">Hotline: 0982.11.22.55 - CSKH: 198 (Miễn phí)</p>
+					<a href="#"> <img src="resources/images/BCT.png" class=""> </a>
+				</div>
+			</div>
+		</div>
+		<script src="resources/js/lazysizes.min.js"></script>
+		<script src="resources/js/jquery-3.5.1.slim.min.js"></script>
+	</div>
+</body>
+<script>
+let fileDirectory;
+let adPlacement = null;
+
+if(bannerURL && formatURL) {
+	const fileName = {
+		outstream: '../../form/deliveries/outstream.js',
+	}
+	if(formatURL === "outstream") {
+		document.title = "Display Video Outstream (Inread)";
+		fileDirectory = fileName.outstream;
+		adPlacement = document.getElementById('ads-outstream');
+		var scriptPlacement = document.createElement('script');
+		scriptPlacement.src = fileDirectory;
+		adPlacement.appendChild(scriptPlacement);	
+	}
+}
+</script>
+</html>
