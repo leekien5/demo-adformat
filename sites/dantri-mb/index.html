@@ -2,7 +2,6 @@
 <html lang="vi">
 <link href="../../resources/images/favicon.ico" type="image/x-icon" rel="shortcut icon" />
 <html>
-
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>Báo Dân Trí</title>
@@ -13,68 +12,49 @@
       height: 0px;
     }
 
-    #menu-demo_list {
-      float: left;
-      position: relative;
-      margin-left: 100px;
-      clear: left;
-    }
-
-    h2 {
-      float: left;
-      position: relative;
-      margin-left: 100px;
-    }
-
-    #menu-demo_list a {
-      color: rgb(185, 38, 177);
-    }
-
-    #menu-demo_list a.active {
-      color: red;
-    }
-
-    .btn {
-      background: #3498db;
-      background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
-      background-image: -moz-linear-gradient(top, #3498db, #2980b9);
-      background-image: -ms-linear-gradient(top, #3498db, #2980b9);
-      background-image: -o-linear-gradient(top, #3498db, #2980b9);
-      background-image: linear-gradient(to bottom, #3498db, #2980b9);
-      -webkit-border-radius: 28;
-      -moz-border-radius: 28;
-      border-radius: 28px;
-      font-family: Arial;
-      color: #ffffff;
-      font-size: 14px;
-      padding: 10px 20px 10px 20px;
-      text-decoration: none;
-      float: left;
-      position: absolute;
-      margin-left: -160px;
-      margin-top: 100px;
-    }
-
-    .btn:hover {
-      background: #3cb0fd;
-      background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
-      background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
-      background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
-      background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
-      background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
-      text-decoration: none;
-    }
-
-    .header-wrapper {
-      width: 100%;
+    #qr-code {
       background-color: #fff;
-      border-bottom: 1px solid #ccc;
-      height: 43px;
+      position: fixed;
+      display: inline-block;
+      left: 15px;
+      bottom: 15px;
+      font-family: 'Quicksand', Arial, sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      color: #fff;
+      text-align: center;
+      overflow: hidden;
+      z-index: 1000;
+      padding: 10px 10px 0px 10px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
     }
 
-    .header-logo img {
-      width: 110px;
+    #qr-code:after {
+      text-transform: uppercase;
+      font-weight: 600;
+      color:#999999;
+      display:block;
+      width:200px;
+      padding:8px 0;
+      content:'Scan the QR Code to see more on mobile';
+    }
+
+    .logo-yomedia {
+      position: relative;
+      width: 105px;
+      height: 6%;
       margin-left: 10px;
+      position: fixed;
+      display: inline-block;
+      color: #fff;
+      overflow: hidden;
+      z-index: 1000;
+    }
+
+    .logo-yomedia:hover {
+        -webkit-transform: scale(1.1);
+        -webkit-transition: all 0.3s ease-in-out;
     }
   </style>
   <script type="text/javascript">
@@ -107,37 +87,36 @@
   </script>
 </head>
 <body>
+  <header>
+    <nav class="nav-yomedia">
+        <a href="https://yomedia.vn" title="Yomedia.vn" target="_blank">
+            <img class="logo-yomedia" src="../../resources/images/logo-yomedia.png" alt="" />
+        </a>
+    </nav>
+</header>
   <div id="about" class="nano">
-    <!--a class="btn" href="landscape.html">Switch to landscape view</a-->
     <div>   
     </div>
     <div class="nano-content" style="
       position: relative;
       background: url('images/dienthoai1.png') no-repeat center;
       width: 1300px;
-      height: 950px; 
+      height: 780px; 
       margin: auto;">
       <span style="position:relative;">
         <iframe id="iframe_content" style="
-                  margin: 144px 28px 160px 491.3px;
+                  padding: 60px 0px 0px 0px;
+                  margin: 0px 0px 0px 491.3px;
                   border: none;
                   width: 333.1px;
                   height: 684px;
-                  border-radius: 0px 0px 32px 32px;             " 
+                  border-radius: 0px 0px 32px 32px;" 
                   src="mobile/index.html">
         </iframe>
       </span>
     </div>
   </div>
-  <div id="qr-code" style="position: absolute;
-    top: 50%;transform: translateY(-50%);
-    left: 20px;
-    width: 200px;
-    height: 200px;
-    padding: 10px 10px 10px 10px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background: #fff;">
+  <div id="qr-code" >
   </div>
   <script src="https://showroom.adform.com/media/uploads/preview/handheld/mobile/qrcode.min.js"></script>
   <script>
