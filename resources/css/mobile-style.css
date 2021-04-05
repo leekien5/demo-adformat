@@ -1,0 +1,92 @@
+html, body {
+	width: 100%;
+	height: 100%;
+    background-color: #f4f4f4;
+}
+
+body {
+	margin: 0;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+}
+
+#container {
+	position: relative;
+	width: 1300px;
+	height: 1080px;
+	margin: 0 auto;
+	background: url('../images/mobile_hands.png') no-repeat center;	
+}
+
+#qr-code {
+    background-color: transparent;
+    position: fixed;
+    display: inline-block;
+    left: 15px;
+    bottom: 15px;
+    font-family: 'Quicksand', Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+    z-index: 1000;
+    padding: 10px 10px 0px 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+#qr-code:after {
+    text-transform: uppercase;
+    font-weight: 600;
+    color:#999999;
+    display:block;
+    width:200px;
+    padding:8px 0;
+    content:'Scan the QR Code to see more on mobile';
+}
+
+.logo-yomedia {
+    position: fixed;
+    width: 5%;
+    height: 4%;
+    margin-left: 10px;
+    position: fixed;
+    display: inline-block;          
+    color: #fff;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.logo-yomedia:hover {
+    -webkit-transform: scale(1.1);
+    -webkit-transition: all 0.3s ease-in-out;
+}
+
+iframe {
+	border-radius: 0px 0px 36px 36px;
+    position: absolute;
+    top: 200px;
+    left: 472px;
+    width: 351px;
+    height: 717px;
+    border: 0;
+    overflow-y: hidden;
+}
+
+.format-info {
+    position: fixed;
+    width: 250px;
+    margin: 15px 25px;
+    font-family: 'Quicksand', Arial, sans-serif;
+    font-size: 32px;
+    letter-spacing: 0.5px;
+    line-height: 34px;
+    font-weight: bold;
+    font-style: normal;
+    color: #c6d0d8;
+    left: 0px;
+    top: 0px;
+    box-sizing: border-box;
+}
+

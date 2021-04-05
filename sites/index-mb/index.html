@@ -1,129 +1,32 @@
 <!DOCTYPE html>
-<html lang="vi">
-<link href="../../resources/images/favicon.ico" type="image/x-icon" rel="shortcut icon" />
-<html>
+<html lang="en">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>Default</title>
-  <style type="text/css">
-    /* Let's get this party started */
-    #iframe_content::-webkit-scrollbar {
-      width: 0px;
-      height: 0px;
-    }
-
-    #qr-code {
-      background-color: #fff;
-      position: fixed;
-      display: inline-block;
-      left: 15px;
-      bottom: 15px;
-      font-family: 'Quicksand', Arial, sans-serif;
-      font-size: 12px;
-      font-weight: bold;
-      color: #fff;
-      text-align: center;
-      overflow: hidden;
-      z-index: 1000;
-      padding: 10px 10px 0px 10px;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-    }
-
-    #qr-code:after {
-      text-transform: uppercase;
-      font-weight: 600;
-      color:#999999;
-      display:block;
-      width:200px;
-      padding:8px 0;
-      content:'Scan the QR Code to see more on mobile';
-    }
-
-    .logo-yomedia {
-      position: relative;
-      width: 105px;
-      height: 6%;
-      margin-left: 10px;
-      position: fixed;
-      display: inline-block;
-      color: #fff;
-      overflow: hidden;
-      z-index: 1000;
-    }
-
-    .logo-yomedia:hover {
-        -webkit-transform: scale(1.1);
-        -webkit-transition: all 0.3s ease-in-out;
-    }
-  </style>
-  <script type="text/javascript">
-    function detectmob() {
-      if (navigator.userAgent.match(/Android/i) ||
-          navigator.userAgent.match(/webOS/i) ||
-          navigator.userAgent.match(/iPhone/i) ||
-          navigator.userAgent.match(/iPad/i) ||
-          navigator.userAgent.match(/iPod/i) ||
-          navigator.userAgent.match(/BlackBerry/i) ||
-          navigator.userAgent.match(/Windows Phone/i)
-      ) {
-          var url = window.location.href;
-          let urlParams = new URLSearchParams(window.location.search);
-
-          let bannerURL = urlParams.get("b");
-          let formatURL = urlParams.get("f");
-          let addBannerURL = urlParams.get("c");
-
-          if (bannerURL && formatURL || addBannerURL) {
-              var p = url.search("index.html?f=");
-              url = url.substring(0, p);
-              window.location = url + 'mobile/index.html' + '?f=' + `${formatURL}` + '&b=' + `${bannerURL}` + '&c=' + `${addBannerURL}`;
-          } else {
-              return false;
-          }
-      }
-  }
-  detectmob();
-  </script>
+	<title>Yomedia Preview</title>
+	<meta charset="utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<link rel="icon" href="../../resources/images/favicon.ico" type="image/gif" sizes="16x16" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../../resources/css/mobile-style.css"> </script>
 </head>
+
 <body>
-  <header>
-    <nav class="nav-yomedia">
-        <a href="https://yomedia.vn" title="Yomedia.vn" target="_blank">
-            <img class="logo-yomedia" src="../../resources/images/logo-yomedia.png" alt="" />
-        </a>
-    </nav>
-</header>
-  <div id="about" class="nano">
-    <div>   
-    </div>
-    <div class="nano-content" style="
-      position: relative;
-      background: url('images/dienthoai1.png') no-repeat center;
-      width: 1300px;
-      height: 780px; 
-      margin: auto;">
-      <span style="position:relative;">
-        <iframe id="iframe_content" style="
-                  padding: 60px 0px 0px 0px;
-                  margin: 0px 0px 0px 491.3px;
-                  border: none;
-                  width: 333.1px;
-                  height: 684px;
-                  border-radius: 0px 0px 32px 32px;" 
-                  src="mobile/index.html">
-        </iframe>
-      </span>
-    </div>
-  </div>
-  <div id="qr-code" >
-  </div>
-  <script src="https://showroom.adform.com/media/uploads/preview/handheld/mobile/qrcode.min.js"></script>
-  <script>
-    var qrcode = new QRCode('qr-code', { text: window.location.href, width: 200, height: 200 });
-  </script>
-  <script src="../../form/scripts/custom.js"></script>
+	<div id="container">
+		<iframe id="iframe_content" class="desktop" src="mobile/index.html"></iframe>
+	</div>
+	<div class="format-info"> <span id="format-info" class="format-name unselectable"></span> </div>
+	<div id="qr-code"></div>
+	<script src="../../resources/js/qrcode.min.js"></script>
+	<script>
+	var qrcode = new QRCode('qr-code', {
+		text: window.location.href,
+		width: 200,
+		height: 200
+	});
+	
+	</script>
+	<script src="../../resources/js/detect-mob.js"></script>
+	<script src="../../resources/js/custom.js"></script>
 </body>
 
 </html>

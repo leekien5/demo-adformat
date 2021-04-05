@@ -28,9 +28,8 @@
     </header>
     <body>
         <div class="container">
-            <div class="">
-                <div class="card-body">
-                    <div class="col-xl-8 offset-xl-2 pt-2 pb-2 pr-3 pl-3">
+            <div class="row">
+                    <div class="col-xl-8 offset-xl-2 pt-5 pb-2">
                         <h1>Ad Formats Demo Form</h1>
                         <p class="lead">Choose required options to generate an ad format demo link.</p>
                         <form id="frmCreateSource" name="create_source" method="get" action="#" role="form">
@@ -122,14 +121,13 @@
                             <div class="hidden"><input type="submit"></div>
                         </form>
                     </div>
-                    <div class="col-xl-8 offset-xl-2 pt-3 pb-4">
+                    <div class="col-xl-8 offset-xl-2 pt-3">
                             <a class="btn btn-success btn-send btn-kien" id="btnSave" title="Submit" style="color: #fff !important;" onclick="$('#frmCreateSource').submit();">
                                 <i class="fas fa-paper-plane"></i> Submit
                             </a>
                             <a class="ml-2 btn btn-warning btn-send btn-kien" id="btnReset" title="Reset all inputs and options" style="color: #fff !important;">
                                 <i class="fas fa-redo"></i> Reset
                             </a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -140,7 +138,7 @@
     <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script>
     <script type="text/javascript" src="resources/js/chosen.jquery.min.js"></script>
     <script type="text/javascript" src="resources/js/jquery.toast.js"></script>
-    <script type="text/javascript" src="scripts/database.js"></script>
+    <script type="text/javascript" src="../resources/js/database.js"></script>
     <!-- Scripts  -->
     <script type="text/javascript">
     $("#addition_source").hide();
@@ -232,7 +230,6 @@
         $("#optTemplates, #optAdformats, #optTypes").chosen({
             no_results_text: "Oops, nothing found!",
             placeholder_text_single: "Please select an option ...",
-            allow_single_deselect: true,
         });
 
         //Ad Format on change
