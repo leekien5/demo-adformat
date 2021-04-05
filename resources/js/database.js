@@ -6,21 +6,21 @@ const list = {
     ],
     templates : [
         //Display Templates
-        { name: 'Dân Trí', value: 'dantri-pc', type: 'display' },
-        { name: 'Phụ Nữ Today', value: 'phunutoday-pc', type: 'display' },
-        { name: 'Thể Thao 247', value: 'thethao247-pc', type: 'display' },
-        { name: 'Phụ Nữ Online', value: 'phunuonline-pc', type: 'display' },
-        { name: 'Default', value: 'index-pc', type: 'display' },
+        { name: 'Dân Trí', value: 'dantri-pc', type: 'display', img: '../resources/images/backgrounds/dantripc.jpg' },
+        { name: 'Phụ Nữ Today', value: 'phunutoday-pc', type: 'display', img: '../resources/images/backgrounds/phunutodaypc.jpg' },
+        { name: 'Thể Thao 247', value: 'thethao247-pc', type: 'display', img: '../resources/images/backgrounds/thethao247pc.jpg' },
+        { name: 'Phụ Nữ Online', value: 'phunuonline-pc', type: 'display', img: '../resources/images/backgrounds/phunuonlinepc.jpg' },
+        { name: 'Default', value: 'index-pc', type: 'display', img: '../resources/images/backgrounds/defaultpc.jpg' },
         //Mobile Templates
-        { name: 'Dân Trí', value: 'dantri-mb', type: 'mobile' },
-        { name: 'Phụ Nữ Today', value: 'phunutoday-mb', type: 'mobile' },
-        { name: 'Thể Thao 247', value: 'thethao247-mb', type: 'mobile' },
-        { name: 'Phụ Nữ Online', value: 'phunuonline-mb', type: 'mobile' },
-        { name: 'Default', value: 'index-mb', type: 'mobile' },
+        { name: 'Dân Trí', value: 'dantri-mb', type: 'mobile', img: '../resources/images/backgrounds/dantrimb.jpg' },
+        { name: 'Phụ Nữ Today', value: 'phunutoday-mb', type: 'mobile', img: '../resources/images/backgrounds/phunutodaymb.jpg' },
+        { name: 'Thể Thao 247', value: 'thethao247-mb', type: 'mobile', img: '../resources/images/backgrounds/thethao247mb.jpg' },
+        { name: 'Phụ Nữ Online', value: 'phunuonline-mb', type: 'mobile', img: '../resources/images/backgrounds/phunuonlinemb.jpg' },
+        { name: 'Default', value: 'index-mb', type: 'mobile', img: '../resources/images/backgrounds/defaultmb.jpg' },
         //Video Templates
-        { name: 'Default', value: 'index-vd', type: 'video' },
-        { name: 'Bóng Đá 24h', value: 'bongda24h-vd', type: 'video' },
-        { name: 'Tiin', value: 'tiin-vd', type: 'video' },
+        { name: 'Default', value: 'index-vd', type: 'video', img: '../resources/images/backgrounds/defaultvd.jpg' },
+        { name: 'Bóng Đá 24h', value: 'bongda24h-vd', type: 'video', img: '../resources/images/backgrounds/bongda24hvd.jpg' },
+        { name: 'Tiin', value: 'tiin-vd', type: 'video', img: '../resources/images/backgrounds/tiinvd.jpg' },
     ],
     adformats : [
         //Display Adformats
