@@ -46,13 +46,13 @@
                                     <div class="form-group" id="template">
                                         <label for="optTemplates">Template</label>
                                         <select class="chosen-select form-control" id="optTemplates">
-                                            <option value="">None</option>
+                                            <option value="none">None</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="optAdformats">Ad Format</label>
                                         <select class="chosen-select form-control" id="optAdformats">
-                                            <option value="">None</option>
+                                            <option value="none">None</option>
                                         </select>
                                     </div>
                                 </div>
@@ -60,7 +60,7 @@
                                     <div class="form-group" id="preview">
                                         <label for="preview">Template Preview</label>
                                         <div id="img-wrapper" class="img-wrapper">
-                                           <img id="item-img" src="" class="item-img" />
+                                           <img src="../resources/images/backgrounds/nocontent.jpg" value="none" title="No Preview Available" class="item-static-img" />
                                         </div>
                                     </div>
                                 </div>
@@ -108,10 +108,10 @@
                                         <div class="code-toolbar">
                                             <div class="toolbar">
                                                 <div class="toolbar-item">
-                                                    <button class="btn-copy-code btn btn-success btn-sm btn-kien" id="btnCopy" title="Copy to clipboard" data-clipboard-target="#output_source_field" style="right: 175px;"><i class="fas fa-copy"></i> Copy</button>
+                                                    <button class="btn-copy-code btn btn-sm" id="btnCopy" title="Copy to clipboard" data-clipboard-target="#output_source_field" style="right: 175px;"><i class="fas fa-copy"></i> Copy</button>
                                                 </div>
                                                 <div class="toolbar-item">
-                                                    <button class="btn-copy-code btn btn-dark btn-sm btn-kien" id="btnOpen" title="Open in new tab"><i class="fas fa-sign-out-alt"></i> Open in new tab</button>
+                                                    <button class="btn-copy-code btn btn-sm" id="btnOpen" title="Open in new tab"><i class="fas fa-sign-out-alt"></i> Open in new tab</button>
                                                 </div>
                                             </div>
                                             <textarea class="form-control" style="border-style: none" id="output_source_field" readonly></textarea>
@@ -123,11 +123,11 @@
                         <div class="hidden"><input type="submit"></div>
                     </form>
                 </div>
-                <div class="col-xl-8 offset-xl-2 pt-3">
-                    <a class="btn btn-success btn-send btn-kien" id="btnSave" title="Submit" style="color: #fff !important;" onclick="$('#frmCreateSource').submit();">
+                <div class="col-xl-8 offset-xl-2 pt-3 pb-5">
+                    <a class="btn btn-primary" id="btnSave" title="Submit" style="color: #fff !important;" onclick="$('#frmCreateSource').submit();">
                         <i class="fas fa-paper-plane"></i> Submit
                     </a>
-                    <a class="ml-2 btn btn-warning btn-send btn-kien" id="btnReset" title="Reset all inputs and options" style="color: #fff !important;">
+                    <a class="ml-2 btn btn-success" id="btnReset" title="Reset all inputs and options" style="color: #fff !important;">
                         <i class="fas fa-redo"></i> Reset
                     </a>
                 </div>
@@ -146,7 +146,6 @@
     $("#addition_source").hide();
     $("#video_source_name").hide();
     $("#video_tag_source_name").hide();
-    $("#preview").hide();
 
     $(function () {
         $('#btnOpen').on('click', function () {
@@ -191,21 +190,7 @@
 
         //Ad view on change
         $("#optTypes").change(function(){
-            $("#preview").show();
             var type = $(this).find(":selected").val();
-            switch(type) {
-                case 'display': case 'mobile':
-                    $("#source_name").show();
-                    $("#addition_source, #video_tag_source_name").hide();
-                    $("#source_field, #addition_source_field").val('');
-                    break;
-
-                case 'video':
-                    $("#video_tag_source_name").show();
-                    $("#addition_source, #source_name").hide();
-                    $("#source_field, #addition_source_field").val('');
-                    break;
-            }
             //Get filter Templates by Ad view
             var templates = list.templates.filter(function(template) {
                 return template.type === type;
@@ -220,8 +205,7 @@
             //Appends Templates by Type to Chosen Select Options
             $('#optTemplates').empty();
             $.each(templates, function (idx, obj) {
-                $('#optTemplates').append(`
-                <option type="${obj.type}" value="${obj.value}"">${obj.name}</option>`)            
+                $('#optTemplates').append(`<option type="${obj.type}" value="${obj.value}"">${obj.name}</option>`)            
             });
             //Appends Adformats by Type to Chosen Select Options
             $('#optAdformats').empty();
@@ -229,15 +213,45 @@
                 $('#optAdformats').append(`<option type="${obj.type}" value="${obj.value}">${obj.name}</option>`)            
             });
 
+            //Get Templates current value
             selectedTemplate = $('#optTemplates').val();
+            //Get Preview Image by Templates current value
             var templateImages = list.templates.filter(function(template) {
                 return template.value === selectedTemplate;
-            });        
-            $('#img-wrapper').empty();
-            $.each(templateImages, function (idx, obj) {
-                $('#img-wrapper').append(`<img id="item-img" src="${obj.img}" class="item-img" />`)            
             });
+            $('#img-wrapper').empty();
 
+            switch(type) {
+                case 'display':
+                    $("#source_name").show();
+                    $("#addition_source, #video_tag_source_name").hide();
+                    $("#source_field, #addition_source_field").val('');
+                    //Append preview photo by type 'Display'
+                    $.each(templateImages, function (idx, obj) {
+                        $('#img-wrapper').append(`<img id="item-img" src="${obj.img}" class="item-img" />`)            
+                    });
+                    break;
+
+                case 'mobile': 
+                    $("#source_name").show();
+                    $("#addition_source, #video_tag_source_name").hide();
+                    $("#source_field, #addition_source_field").val('');
+                    //Append preview photo by type 'Mobile'
+                    $.each(templateImages, function (idx, obj) {
+                        $('#img-wrapper').append(`<img id="item-img" src="${obj.img}" class="item-static-img" />`)            
+                    });
+                    break;
+
+                case 'video':
+                    $("#video_tag_source_name").show();
+                    $("#addition_source, #source_name").hide();
+                    $("#source_field, #addition_source_field").val('');
+                    //Append preview photo by type 'Video'
+                    $.each(templateImages, function (idx, obj) {
+                        $('#img-wrapper').append(`<img id="item-img" src="${obj.img}" class="item-img" />`)            
+                    });
+                    break;
+            }
             //Update new data to Chosen Select Options
             $('#optTemplates, #optAdformats').trigger('chosen:updated');
         });
@@ -281,14 +295,24 @@
         });
 
         $("#optTemplates").change(function() {
-            selectedTemplate = $(this).val();
+            var type = $('#optTypes').val();
+            var selectedTemplate = $(this).val();    
             var templateImages = list.templates.filter(function(template) {
                 return template.value === selectedTemplate;
             });        
             $('#img-wrapper').empty();
-            $.each(templateImages, function (idx, obj) {
-                $('#img-wrapper').append(`<img id="item-img" src="${obj.img}" class="item-img" />`)            
-            });
+            switch(type) {
+                case 'display': case 'video':
+                    $.each(templateImages, function (idx, obj) {
+                        $('#img-wrapper').append(`<img id="item-img" src="${obj.img}" class="item-img" />`)            
+                    });
+                    break;
+                case 'mobile':
+                    $.each(templateImages, function (idx, obj) {
+                        $('#img-wrapper').append(`<img id="item-img" src="${obj.img}" class="item-static-img" />`)            
+                    });
+                    break;
+            }
         });
     });
 
@@ -306,9 +330,9 @@
             $('#frmCreateSource').trigger("reset");
             $('#optTypes, #optTemplates, #optAdformats').prop('selectedIndex',0);
             $('#optTemplates, #optAdformats, #output_source_field').empty();
-            $('#optTemplates, #optAdformats, #optTypes').val('').trigger('chosen:updated');
+            $('#optTemplates, #optAdformats, #optTypes, #preview').val('').trigger('chosen:updated');
             $('.chosen').trigger('chosen:updated');
-            $("#addition_source, #video_source, #video_tag_source_name, #preview").hide();
+            $("#addition_source, #video_source, #video_tag_source_name").hide();
             $("#source_name").show();
         }
     };
