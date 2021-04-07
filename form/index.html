@@ -29,105 +29,107 @@
     <body>
         <div class="container">
             <div class="row">
-                    <div class="col-xl-8 offset-xl-2 pt-5 pb-2">
-                        <h1>Ad Formats Demo Form</h1>
-                        <p class="lead">Choose required options to generate an ad format demo link.</p>
-                        <form id="frmCreateSource" name="create_source" method="get" action="#" role="form">
-                            <div class="messages"></div>
-                            <div class="controls">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group" id="type">
-                                            <label for="optTypes">Ad View</label>
-                                            <select id="optTypes" class="chosen-select form-control">
-                                                <option value=""></option>
-                                            </select>
-                                        </div>
+                <div class="col-xl-8 offset-xl-2 pt-5 pb-2">
+                    <h1>Ad Formats Demo Form</h1>
+                    <p class="lead">Choose required options to generate an ad format demo link.</p>
+                    <form id="frmCreateSource" name="create_source" method="get" action="#" role="form">
+                        <div class="messages"></div>
+                        <div class="controls">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group" id="type">
+                                        <label for="optTypes">Ad View</label>
+                                        <select id="optTypes" class="chosen-select form-control">
+                                            <option value=""></option>
+                                        </select>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group" id="template">
-                                            <label for="optTemplates">Template</label>
-                                            <select class="chosen-select form-control" id="optTemplates">
-                                                <option value="">None</option>
-                                            </select>
-                                        </div>
+                                    <div class="form-group" id="template">
+                                        <label for="optTemplates">Template</label>
+                                        <select class="chosen-select form-control" id="optTemplates">
+                                            <option value="none">None</option>
+                                        </select>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="optAdformats">Ad Format</label>
-                                            <select class="chosen-select form-control" id="optAdformats">
-                                                <option value="">None</option>
-                                            </select>
-                                        </div>
+                                    <div class="form-group">
+                                        <label for="optAdformats">Ad Format</label>
+                                        <select class="chosen-select form-control" id="optAdformats">
+                                            <option value="none">None</option>
+                                        </select>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-12" id="source">
-                                        <div class="form-group">
-                                            <label id="source_name">Source</label>
-                                            <label id="video_tag_source_name">Video Tag Source</label>
-                                            <div class="input-group mb-3">
-                                                <div class="input-group-prepend" id="domain">
-                                                    <span class="input-group-text">
-                                                        <i class="fas fa-link"></i>
-                                                    </span>
-                                                </div>
-                                                <input class="form-control" type="input" name="source" id="source_field" placeholder="source here ..."></input>
-                                            </div>
-                                        </div>
-                                        <div class="form-group" id="addition_source">
-                                            <label id="addition_source_name">Addition Source</label>
-                                            <label id="video_source_name">Video Source</label>
-                                            <div class="input-group mb-3">
-                                                <div class="input-group-prepend" id="domain" style="height: 35px;">
-                                                    <span class="input-group-text">
-                                                        <i class="fas fa-link"></i>
-                                                    </span>
-                                                </div>
-                                                <input class="form-control" type="input" id="addition_source_field" placeholder="source here ..."></input>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="docs-pills border">
-                                    <div class="d-flex justify-content-between py-2" style="padding-left: .6rem;">
-                                        <ul class="nav nav-pills">
-                                            <li class="nav-item">
-                                                <label class="nav-link active show">
-                                                    <i class="fas fa-external-link-alt"></i> Output Source
-                                                </label>
-                                            </li>
-                                      </ul>
-                                    </div>
-                                    <div class="tab-content" id="output">
-                                        <div class="tab-pane fade active show" role="tabpanel">
-                                            <div class="code-toolbar">
-                                                <div class="toolbar">
-                                                    <div class="toolbar-item">
-                                                        <button class="btn-copy-code btn btn-success btn-sm btn-kien" id="btnCopy" title="Copy to clipboard" data-clipboard-target="#output_source_field" style="right: 175px;"><i class="fas fa-copy"></i> Copy</button>
-                                                    </div>
-                                                    <div class="toolbar-item">
-                                                        <button class="btn-copy-code btn btn-dark btn-sm btn-kien" id="btnOpen" title="Open in new tab"><i class="fas fa-sign-out-alt"></i> Open in new tab</button>
-                                                    </div>
-                                                </div>
-                                                <textarea class="form-control" style="border-style: none" id="output_source_field" readonly></textarea>
-                                            </div>
+                                <div class="col-md-6">
+                                    <div class="form-group" id="preview">
+                                        <label for="preview">Template Preview</label>
+                                        <div id="img-wrapper" class="img-wrapper">
+                                           <img src="../resources/images/backgrounds/nocontent.jpg" value="none" title="No Preview Available" class="item-static-img" />
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="hidden"><input type="submit"></div>
-                        </form>
-                    </div>
-                    <div class="col-xl-8 offset-xl-2 pt-3">
-                            <a class="btn btn-success btn-send btn-kien" id="btnSave" title="Submit" style="color: #fff !important;" onclick="$('#frmCreateSource').submit();">
-                                <i class="fas fa-paper-plane"></i> Submit
-                            </a>
-                            <a class="ml-2 btn btn-warning btn-send btn-kien" id="btnReset" title="Reset all inputs and options" style="color: #fff !important;">
-                                <i class="fas fa-redo"></i> Reset
-                            </a>
+                            <div class="row">
+                                <div class="col-md-12" id="source">
+                                    <div class="form-group">
+                                        <label id="source_name">Source</label>
+                                        <label id="video_tag_source_name">Video Tag Source</label>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend" id="domain">
+                                                <span class="input-group-text">
+                                                    <i class="fas fa-link"></i>
+                                                </span>
+                                            </div>
+                                            <input class="form-control" type="input" name="source" id="source_field" placeholder="source here ..."></input>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" id="addition_source">
+                                        <label id="addition_source_name">Addition Source</label>
+                                        <label id="video_source_name">Video Source</label>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend" id="domain" style="height: 35px;">
+                                                <span class="input-group-text">
+                                                    <i class="fas fa-link"></i>
+                                                </span>
+                                            </div>
+                                            <input class="form-control" type="input" id="addition_source_field" placeholder="source here ..."></input>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="docs-pills border">
+                                <div class="d-flex justify-content-between py-2" style="padding-left: .6rem;">
+                                    <ul class="nav nav-pills">
+                                        <li class="nav-item">
+                                            <label class="nav-link active show">
+                                                <i class="fas fa-external-link-alt"></i> Output Source
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tab-content" id="output">
+                                    <div class="tab-pane fade active show" role="tabpanel">
+                                        <div class="code-toolbar">
+                                            <div class="toolbar">
+                                                <div class="toolbar-item">
+                                                    <button class="btn-copy-code btn btn-sm" id="btnCopy" title="Copy to clipboard" data-clipboard-target="#output_source_field" style="right: 175px;"><i class="fas fa-copy"></i> Copy</button>
+                                                </div>
+                                                <div class="toolbar-item">
+                                                    <button class="btn-copy-code btn btn-sm" id="btnOpen" title="Open in new tab"><i class="fas fa-sign-out-alt"></i> Open in new tab</button>
+                                                </div>
+                                            </div>
+                                            <textarea class="form-control" style="border-style: none" id="output_source_field" readonly></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden"><input type="submit"></div>
+                    </form>
+                </div>
+                <div class="col-xl-8 offset-xl-2 pt-3 pb-5">
+                    <a class="btn btn-primary" id="btnSave" title="Submit" style="color: #fff !important;" onclick="$('#frmCreateSource').submit();">
+                        <i class="fas fa-paper-plane"></i> Submit
+                    </a>
+                    <a class="ml-2 btn btn-success" id="btnReset" title="Reset all inputs and options" style="color: #fff !important;">
+                        <i class="fas fa-redo"></i> Reset
+                    </a>
                 </div>
             </div>
         </div>
@@ -189,19 +191,6 @@
         //Ad view on change
         $("#optTypes").change(function(){
             var type = $(this).find(":selected").val();
-            switch(type) {
-                case 'display': case 'mobile':
-                    $("#source_name").show();
-                    $("#addition_source, #video_tag_source_name").hide();
-                    $("#source_field, #addition_source_field").val('');
-                    break;
-
-                case 'video':
-                    $("#video_tag_source_name").show();
-                    $("#addition_source, #source_name").hide();
-                    $("#source_field, #addition_source_field").val('');
-                    break;
-            }
             //Get filter Templates by Ad view
             var templates = list.templates.filter(function(template) {
                 return template.type === type;
@@ -216,13 +205,53 @@
             //Appends Templates by Type to Chosen Select Options
             $('#optTemplates').empty();
             $.each(templates, function (idx, obj) {
-                $('#optTemplates').append(`<option type="${obj.type}" value="${obj.value}">${obj.name}</option>`)            
+                $('#optTemplates').append(`<option type="${obj.type}" value="${obj.value}"">${obj.name}</option>`)            
             });
             //Appends Adformats by Type to Chosen Select Options
             $('#optAdformats').empty();
             $.each(adformats, function (idx, obj) {
                 $('#optAdformats').append(`<option type="${obj.type}" value="${obj.value}">${obj.name}</option>`)            
             });
+
+            //Get Templates current value
+            selectedTemplate = $('#optTemplates').val();
+            //Get Preview Image by Templates current value
+            var templateImages = list.templates.filter(function(template) {
+                return template.value === selectedTemplate;
+            });
+            $('#img-wrapper').empty();
+
+            switch(type) {
+                case 'display':
+                    $("#source_name").show();
+                    $("#addition_source, #video_tag_source_name").hide();
+                    $("#source_field, #addition_source_field").val('');
+                    //Append preview photo by type 'Display'
+                    $.each(templateImages, function (idx, obj) {
+                        $('#img-wrapper').append(`<img id="item-img" src="${obj.img}" class="item-img" />`)            
+                    });
+                    break;
+
+                case 'mobile': 
+                    $("#source_name").show();
+                    $("#addition_source, #video_tag_source_name").hide();
+                    $("#source_field, #addition_source_field").val('');
+                    //Append preview photo by type 'Mobile'
+                    $.each(templateImages, function (idx, obj) {
+                        $('#img-wrapper').append(`<img id="item-img" src="${obj.img}" class="item-static-img" />`)            
+                    });
+                    break;
+
+                case 'video':
+                    $("#video_tag_source_name").show();
+                    $("#addition_source, #source_name").hide();
+                    $("#source_field, #addition_source_field").val('');
+                    //Append preview photo by type 'Video'
+                    $.each(templateImages, function (idx, obj) {
+                        $('#img-wrapper').append(`<img id="item-img" src="${obj.img}" class="item-img" />`)            
+                    });
+                    break;
+            }
             //Update new data to Chosen Select Options
             $('#optTemplates, #optAdformats').trigger('chosen:updated');
         });
@@ -234,7 +263,7 @@
 
         //Ad Format on change
         $("#optAdformats").change(function() {
-        selectedType = $(this).val();
+            selectedType = $(this).val();
             switch (selectedType) {
                 case 'billboard': case 'balloon': case '3d-post-carousel': 
                 case 'masthead-mb': case 'inpage': case 'firstview': 
@@ -264,6 +293,27 @@
                     break;
             }
         });
+
+        $("#optTemplates").change(function() {
+            var type = $('#optTypes').val();
+            var selectedTemplate = $(this).val();    
+            var templateImages = list.templates.filter(function(template) {
+                return template.value === selectedTemplate;
+            });        
+            $('#img-wrapper').empty();
+            switch(type) {
+                case 'display': case 'video':
+                    $.each(templateImages, function (idx, obj) {
+                        $('#img-wrapper').append(`<img id="item-img" src="${obj.img}" class="item-img" />`)            
+                    });
+                    break;
+                case 'mobile':
+                    $.each(templateImages, function (idx, obj) {
+                        $('#img-wrapper').append(`<img id="item-img" src="${obj.img}" class="item-static-img" />`)            
+                    });
+                    break;
+            }
+        });
     });
 
     //Reset Form
@@ -280,7 +330,7 @@
             $('#frmCreateSource').trigger("reset");
             $('#optTypes, #optTemplates, #optAdformats').prop('selectedIndex',0);
             $('#optTemplates, #optAdformats, #output_source_field').empty();
-            $('#optTemplates, #optAdformats, #optTypes').val('').trigger('chosen:updated');
+            $('#optTemplates, #optAdformats, #optTypes, #preview').val('').trigger('chosen:updated');
             $('.chosen').trigger('chosen:updated');
             $("#addition_source, #video_source, #video_tag_source_name").hide();
             $("#source_name").show();

@@ -418,9 +418,6 @@ pre.line-numbers {
     margin: 0 5px
 }
 
-.docs-pills .nav-item .active {
-    background-color: #616161 !important
-}
 
 .docs-pills .tab-content {
     padding: 0
@@ -432,15 +429,8 @@ pre.line-numbers {
     top: 9px;
     right: 8px;
     color: #fff !important;
-    background-color: #1abc9c !important;
+    background-color: #487eb0 !important;
     padding: 6px 15px !important
-}
-
-
-.btn-copy-code:hover {
-    -webkit-transform: scale(1.1);
-    -webkit-transition: all 0.3s ease-in-out;
-    background: #31708f;
 }
 
 .docs-pills {
@@ -17893,10 +17883,9 @@ fieldset:disabled .btn-group-vertical {
 
 .nav-pills .nav-link.active,
 .nav-pills .show>.nav-link {
-    color: #fff;
-    background-color: #1266f1;
-    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .2), 0 2px 10px 0 rgba(0, 0, 0, .1);
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .2), 0 2px 10px 0 rgba(0, 0, 0, .1)
+    border: 1px solid #bdbdbd;
+    color: #696969;
+    background-color: #fff;
 }
 
 .navbar {
