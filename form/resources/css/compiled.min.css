@@ -5007,47 +5007,6 @@ fieldset:disabled .btn {
     align-items: center
 }
 
-.navbar-toggler {
-    padding: .25rem .75rem;
-    font-size: 1.25rem;
-    line-height: 1;
-    background-color: transparent;
-    border: 1px solid transparent;
-    border-radius: .25rem;
-    -webkit-transition: -webkit-box-shadow .15s ease-in-out;
-    transition: -webkit-box-shadow .15s ease-in-out;
-    transition: box-shadow .15s ease-in-out;
-    transition: box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out
-}
-
-@media(prefers-reduced-motion:reduce) {
-    .navbar-toggler {
-        -webkit-transition: none;
-        transition: none
-    }
-}
-
-.navbar-toggler:hover {
-    text-decoration: none
-}
-
-.navbar-toggler:focus {
-    text-decoration: none;
-    outline: 0;
-    -webkit-box-shadow: 0 0 0 .25rem;
-    box-shadow: 0 0 0 .25rem
-}
-
-.navbar-toggler-icon {
-    display: inline-block;
-    width: 1.5em;
-    height: 1.5em;
-    vertical-align: middle;
-    background-repeat: no-repeat;
-    background-position: 50%;
-    background-size: 100%
-}
-
 .navbar-nav-scroll {
     max-height: var(--bs-scroll-height, 75vh);
     overflow-y: auto
@@ -5084,9 +5043,6 @@ fieldset:disabled .btn {
         -ms-flex-preferred-size: auto;
         flex-basis: auto
     }
-    .navbar-expand-sm .navbar-toggler {
-        display: none
-    }
 }
 
 @media(min-width:768px) {
@@ -5119,9 +5075,6 @@ fieldset:disabled .btn {
         display: flex !important;
         -ms-flex-preferred-size: auto;
         flex-basis: auto
-    }
-    .navbar-expand-md .navbar-toggler {
-        display: none
     }
 }
 
@@ -5156,9 +5109,6 @@ fieldset:disabled .btn {
         -ms-flex-preferred-size: auto;
         flex-basis: auto
     }
-    .navbar-expand-lg .navbar-toggler {
-        display: none
-    }
 }
 
 @media(min-width:1200px) {
@@ -5192,9 +5142,6 @@ fieldset:disabled .btn {
         -ms-flex-preferred-size: auto;
         flex-basis: auto
     }
-    .navbar-expand-xl .navbar-toggler {
-        display: none
-    }
 }
 
 @media(min-width:1400px) {
@@ -5227,9 +5174,6 @@ fieldset:disabled .btn {
         display: flex !important;
         -ms-flex-preferred-size: auto;
         flex-basis: auto
-    }
-    .navbar-expand-xxl .navbar-toggler {
-        display: none
     }
 }
 
@@ -5269,10 +5213,6 @@ fieldset:disabled .btn {
     flex-basis: auto
 }
 
-.navbar-expand .navbar-toggler {
-    display: none
-}
-
 .navbar-light .navbar-brand,
 .navbar-light .navbar-brand:focus,
 .navbar-light .navbar-brand:hover {
@@ -5295,15 +5235,6 @@ fieldset:disabled .btn {
 .navbar-light .navbar-nav .nav-link.active,
 .navbar-light .navbar-nav .show>.nav-link {
     color: rgba(0, 0, 0, .9)
-}
-
-.navbar-light .navbar-toggler {
-    color: rgba(0, 0, 0, .55);
-    border-color: rgba(0, 0, 0, .1)
-}
-
-.navbar-light .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(0, 0, 0, 0.55)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E")
 }
 
 .navbar-light .navbar-text {
@@ -5338,15 +5269,6 @@ fieldset:disabled .btn {
 .navbar-dark .navbar-nav .nav-link.active,
 .navbar-dark .navbar-nav .show>.nav-link {
     color: #fff
-}
-
-.navbar-dark .navbar-toggler {
-    color: hsla(0, 0%, 100%, .55);
-    border-color: hsla(0, 0%, 100%, .1)
-}
-
-.navbar-dark .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 0.55)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E")
 }
 
 .navbar-dark .navbar-text {
@@ -17894,20 +17816,6 @@ fieldset:disabled .btn-group-vertical {
     padding-top: .5625rem
 }
 
-.navbar-toggler {
-    border: 0
-}
-
-.navbar-toggler:focus {
-    -webkit-box-shadow: none;
-    box-shadow: none
-}
-
-.navbar-dark .navbar-toggler,
-.navbar-light .navbar-toggler {
-    border: 0
-}
-
 .navbar-brand {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -17923,11 +17831,6 @@ fieldset:disabled .btn-group-vertical {
 
 .navbar-nav .dropdown-menu {
     position: absolute
-}
-
-.navbar-dark .navbar-toggler-icon,
-.navbar-light .navbar-toggler-icon {
-    background-image: none
 }
 
 .card {
