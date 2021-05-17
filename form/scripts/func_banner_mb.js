@@ -10,6 +10,7 @@ if(bannerURL && formatURL) {
 		inpage: '../../../form/deliveries/inpage.js',
 		firstview: '../../../form/deliveries/firstview.js',
 		footer: '../../../form/deliveries/footer.js',
+		bottomUpMb: '../../../form/deliveries/bottomUpMb.js',
 		threeDPostCarousel: '../../../form/deliveries/3dPostCarousel.js',
 		inImageTakeover: '../../../form/deliveries/inImageTakeover.js',
 		inImageWithInread: '../../../form/deliveries/inImageInread.js',
@@ -55,6 +56,16 @@ if(bannerURL && formatURL) {
 		case 'footer':
 			document.title = "Mobile Footer";
 			fileDirectory = fileName.footer;
+			//Replace div id with script source
+			var scriptPlacement = document.createElement('script');
+			scriptPlacement.src = fileDirectory;
+			//Append script to body
+			document.body.appendChild(scriptPlacement);
+			break;
+
+		case 'bottom-up-mb':
+			document.title = "Mobile Bottom Up";
+			fileDirectory = fileName.bottomUpMb;
 			//Replace div id with script source
 			var scriptPlacement = document.createElement('script');
 			scriptPlacement.src = fileDirectory;

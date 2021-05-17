@@ -1,3 +1,4 @@
+// This is a customization for page name title
 function getBannerURL() {
   let urlParams = new URLSearchParams(window.location.search);
   let bannerURL = urlParams.get("b");
@@ -97,6 +98,12 @@ function getBannerURL() {
 
       case 'iab-half-page':
         var info = "IAB Half Page (300x600)";
+        document.title = info;
+        document.getElementById('format-info').innerHTML = info;
+        break;
+
+      case 'bottom-up-mb':
+        var info = "Mobile Bottom Up";
         document.title = info;
         document.getElementById('format-info').innerHTML = info;
         break;
