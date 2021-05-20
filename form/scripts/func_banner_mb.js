@@ -43,7 +43,7 @@ if(bannerURL && formatURL) {
 			adPlacement.appendChild(scriptPlacement);	
 			break;
 
-			case 'firstview':
+		case 'firstview':
 			document.title = "Mobile Interstitial (Firstview)";
 			fileDirectory = fileName.firstview;
 			//Replace div id with script source
