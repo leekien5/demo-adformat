@@ -1277,45 +1277,43 @@ function isValidURL(str) {
     let bannerURL = urlParams.get('b');
     let videoURL = urlParams.get('c');
     if(bannerURL || videoURL){
-        if(isValidURL( bannerURL || videoURL )) {
-            YoAds.showAds(
-                {
-                    pid: "c9ebf62ffb614239b0353f4ec9185d23",
-                    aid: "858dde9b624b41e0a3026f5522c032a3",
-                    web: {
-                        id: "b8f28f0e65dd47509d931f9850f7cbf6",
-                        purl: "",
-                        spurl: "",
-                        pl: { pls: { min_width: "1", min_height: "1", max_width: "1", max_height: "1", selector: "#newsDetail > div > main > div > div > div.post_details.stickydetails > div > div" }, plt: "display" },
-                        cat: [
-                           
-                        ],
-                    },
-                    camp: {
-                    },
-                    trk: {
-                        dom: "",
-                        evs: {
-                        },
-                        ttr: {},
-                    },
-                    cli: { u: "83d157703201c2c829975747e78db277" },
-                    advi: "display",
-                    bnr: {
-                        id: "9a684be2b6b144e7bc439084e095d921",
-                        ctv: {
-                            source: `${bannerURL}`,
-                            video_source: `${videoURL}`,
-                            video_width: "600",
-                            video_height: "430",
-                            content_min_width: "300",
-                            content_min_height: "200",
-                        },
-                        ldp: "https://yomedia.vn/",
-                    },
+        YoAds.showAds(
+            {
+                pid: "c9ebf62ffb614239b0353f4ec9185d23",
+                aid: "858dde9b624b41e0a3026f5522c032a3",
+                web: {
+                    id: "b8f28f0e65dd47509d931f9850f7cbf6",
+                    purl: "",
+                    spurl: "",
+                    pl: { pls: { min_width: "1", min_height: "1", max_width: "1", max_height: "1", selector: "#newsDetail > div > main > div > div > div.post_details.stickydetails > div > div" }, plt: "display" },
+                    cat: [
+                        
+                    ],
                 },
-                ""
-            );
-        }
+                camp: {
+                },
+                trk: {
+                    dom: "",
+                    evs: {
+                    },
+                    ttr: {},
+                },
+                cli: { u: "83d157703201c2c829975747e78db277" },
+                advi: "display",
+                bnr: {
+                    id: "9a684be2b6b144e7bc439084e095d921",
+                    ctv: {
+                        source: `https://demo.yomedia.vn/${bannerURL}`,
+                        video_source: `https://demo.yomedia.vn/${videoURL}`,
+                        video_width: "600",
+                        video_height: "430",
+                        content_min_width: "300",
+                        content_min_height: "200",
+                    },
+                    ldp: "https://yomedia.vn/",
+                },
+            },
+            ""
+        );
     }
 })();

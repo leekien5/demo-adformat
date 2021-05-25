@@ -61,7 +61,7 @@ if(bannerURL && formatURL) {
 		case 'balloon':
 			document.title = "Display Balloon";
 			//Replace div id with link banner source
-			adBalloon = document.getElementById('ads-balloon').src = `${bannerURL}?pid=104`;
+			adBalloon = document.getElementById('ads-balloon').src = `https://demo.yomedia.vn/` + `${bannerURL}?pid=104`;
 			//Get file javascript
 			fileDirectory = fileName.balloon;
 			placementBottomUp = document.getElementById('ads-bottom-up');
@@ -77,7 +77,7 @@ if(bannerURL && formatURL) {
 		case 'bottom-up':
 			document.title = "Display Bottom Up";
 			//Replace div id with link banner source
-			adBalloon = document.getElementById('ads-bottom-up').src = `${bannerURL}?pid=104&ord=12`;
+			adBalloon = document.getElementById('ads-bottom-up').src = `https://demo.yomedia.vn/` + `${bannerURL}?pid=104&ord=12`;
 			//Get file javascript
 			fileDirectory = fileName.bottomUp;
 			adPlacement = document.getElementById('yomedia-destination-197');

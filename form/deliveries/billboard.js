@@ -16,16 +16,6 @@ var positionType_82e237b1f272486587de2dbd5c9478c0 = '';
 var positionName_82e237b1f272486587de2dbd5c9478c0 = '';
 var positionIndex_82e237b1f272486587de2dbd5c9478c0 = '';
 
-function isValidURL(str) {
-    var regex = /(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
-    if(!regex .test(str)) {
-        alert("Please enter valid URL.");
-        return false;
-    } else {
-        return true;
-    }
-}
-
 function showBannerYomedia_82e237b1f272486587de2dbd5c9478c0(s) {
     if (document.getElementById(yomediaId_82e237b1f272486587de2dbd5c9478c0)) {
         return false;
@@ -36,103 +26,99 @@ function showBannerYomedia_82e237b1f272486587de2dbd5c9478c0(s) {
     let urlParams = new URLSearchParams(window.location.search);
     let bannerURL = urlParams.get('b');
     if(bannerURL){
-        if(isValidURL(bannerURL)) {
-            creative_src = `${bannerURL}?pid=82e237b1f272486587de2dbd5c9478c0&aid=944a0f2763134baca174c4efaafb33f2&fid=174e7ea2ae2c44b3b0f75df5ee60e4f5&advId=c23b9c109f7a4f89a3cb23f694f1d7cb&campId=d6692db2a2dd441c9ab9741ee05b127d&pubId=5565e302fb2e489cae28103f6c66db12&chanId=3d58e13cbef3493682fe6107ac13e262&clk=${clickTag}`;
-            banner.setAttribute('src', creative_src);
-            banner.setAttribute('id', yomediaId_82e237b1f272486587de2dbd5c9478c0);
-            banner.setAttribute('allowFullScreen', '');
-            banner.style.cssText = 'left:0px;right:0px;margin:10px auto;display:block;line-height:normal;overflow:hidden;position:relative;border:0;width:970px !important;height:250px !important;';
-            banner.width = '970';
-            banner.height = '250';
-            var mainContain;
-            if (positionInsert_82e237b1f272486587de2dbd5c9478c0 === '') {
-                positionInsert_82e237b1f272486587de2dbd5c9478c0 = 'after';
-            }
-            if (positionType_82e237b1f272486587de2dbd5c9478c0 === '') {
-                positionType_82e237b1f272486587de2dbd5c9478c0 = 'id';
-            }
-            if (positionType_82e237b1f272486587de2dbd5c9478c0 === 'class') {
-                if (positionIndex_82e237b1f272486587de2dbd5c9478c0 === '') {
-                    positionIndex_82e237b1f272486587de2dbd5c9478c0 = 0;
-                } else {
-                    positionIndex_82e237b1f272486587de2dbd5c9478c0 = parseInt(positionIndex_82e237b1f272486587de2dbd5c9478c0);
-                }        
-                mainContain = document.getElementsByClassName(positionName_82e237b1f272486587de2dbd5c9478c0)[positionIndex_82e237b1f272486587de2dbd5c9478c0];
+        creative_src = `https://demo.yomedia.vn/${bannerURL}?pid=82e237b1f272486587de2dbd5c9478c0&aid=944a0f2763134baca174c4efaafb33f2&fid=174e7ea2ae2c44b3b0f75df5ee60e4f5&advId=c23b9c109f7a4f89a3cb23f694f1d7cb&campId=d6692db2a2dd441c9ab9741ee05b127d&pubId=5565e302fb2e489cae28103f6c66db12&chanId=3d58e13cbef3493682fe6107ac13e262&clk=${clickTag}`;
+        banner.setAttribute('src', creative_src);
+        banner.setAttribute('id', yomediaId_82e237b1f272486587de2dbd5c9478c0);
+        banner.setAttribute('allowFullScreen', '');
+        banner.style.cssText = 'left:0px;right:0px;margin:10px auto;display:block;line-height:normal;overflow:hidden;position:relative;border:0;width:970px !important;height:250px !important;';
+        banner.width = '970';
+        banner.height = '250';
+        var mainContain;
+        if (positionInsert_82e237b1f272486587de2dbd5c9478c0 === '') {
+            positionInsert_82e237b1f272486587de2dbd5c9478c0 = 'after';
+        }
+        if (positionType_82e237b1f272486587de2dbd5c9478c0 === '') {
+            positionType_82e237b1f272486587de2dbd5c9478c0 = 'id';
+        }
+        if (positionType_82e237b1f272486587de2dbd5c9478c0 === 'class') {
+            if (positionIndex_82e237b1f272486587de2dbd5c9478c0 === '') {
+                positionIndex_82e237b1f272486587de2dbd5c9478c0 = 0;
             } else {
-                mainContain = document.getElementById(positionName_82e237b1f272486587de2dbd5c9478c0);
-            }
-            if (!mainContain) {
-                mainContain =  document.currentScript || (function() {
-                    var script = null;
-                    Array.prototype.slice.call(document.getElementsByTagName("script")).forEach(function(a) {
-                        null === script && 0 <= a.src.indexOf("delivery.yomedia.vn") && 0 <= a.src.indexOf("pid=82e237b1f272486587de2dbd5c9478c0") && (script = a)
-                    });
-                    return script;
-                })();
-            }
-            switch (positionInsert_82e237b1f272486587de2dbd5c9478c0) {
-                case 'before':
-                    mainContain.parentNode.insertBefore(banner, mainContain);
-                    break;
-                case 'first_child':
-                    var firstChild = mainContain.firstChild;
-                    if (firstChild) {
-                        mainContain.insertBefore(banner, firstChild);
-                    } else {
-                        mainContain.appendChild(banner);
-                    }
-                    break;
-                case 'middle_child':
-                    var childNodes = mainContain.childNodes;
-                    if ( childNodes.length > 0) {
-                        var p = 0;
-                        for (var i = 0; i < childNodes.length; i++) {
-                            if (childNodes[i].clientHeight > 0) {
-                                p = p + childNodes[i].clientHeight;
-                            }
-                            if (p >= (mainContain.clientHeight / 2)) {
-                                if (typeof(mainContain.childNodes[i + 1]) != 'undefined') {
-                                    var eleToInsert = i + 1;
-                                } else {
-                                    var eleToInsert = i;
-                                }            
-                                mainContain.childNodes[eleToInsert].parentNode.insertBefore(banner, mainContain.childNodes[eleToInsert].nextSibling);
-                                break;
-                            }
-                        }
-                        if (!document.getElementById(yomediaId_82e237b1f272486587de2dbd5c9478c0)) {
-                            mainContain.childNodes[Math.ceil(childNodes.length/2)].parentNode.insertBefore(banner, mainContain.childNodes[Math.ceil(childNodes.length/2)].nextSibling);
-                        }
-                    } else {
-                        mainContain.appendChild(banner);
-                    }
-                    break;
-                case 'last_child':
+                positionIndex_82e237b1f272486587de2dbd5c9478c0 = parseInt(positionIndex_82e237b1f272486587de2dbd5c9478c0);
+            }        
+            mainContain = document.getElementsByClassName(positionName_82e237b1f272486587de2dbd5c9478c0)[positionIndex_82e237b1f272486587de2dbd5c9478c0];
+        } else {
+            mainContain = document.getElementById(positionName_82e237b1f272486587de2dbd5c9478c0);
+        }
+        if (!mainContain) {
+            mainContain =  document.currentScript || (function() {
+                var script = null;
+                Array.prototype.slice.call(document.getElementsByTagName("script")).forEach(function(a) {
+                    null === script && 0 <= a.src.indexOf("delivery.yomedia.vn") && 0 <= a.src.indexOf("pid=82e237b1f272486587de2dbd5c9478c0") && (script = a)
+                });
+                return script;
+            })();
+        }
+        switch (positionInsert_82e237b1f272486587de2dbd5c9478c0) {
+            case 'before':
+                mainContain.parentNode.insertBefore(banner, mainContain);
+                break;
+            case 'first_child':
+                var firstChild = mainContain.firstChild;
+                if (firstChild) {
+                    mainContain.insertBefore(banner, firstChild);
+                } else {
                     mainContain.appendChild(banner);
-                    break;
-                case 'after':
-                    var nextNode = mainContain.nextSibling;
-                    if (nextNode) {
-                        nextNode.parentNode.insertBefore(banner, nextNode);
-                    } else {
-                        mainContain.parentNode.appendChild(banner);
+                }
+                break;
+            case 'middle_child':
+                var childNodes = mainContain.childNodes;
+                if ( childNodes.length > 0) {
+                    var p = 0;
+                    for (var i = 0; i < childNodes.length; i++) {
+                        if (childNodes[i].clientHeight > 0) {
+                            p = p + childNodes[i].clientHeight;
+                        }
+                        if (p >= (mainContain.clientHeight / 2)) {
+                            if (typeof(mainContain.childNodes[i + 1]) != 'undefined') {
+                                var eleToInsert = i + 1;
+                            } else {
+                                var eleToInsert = i;
+                            }            
+                            mainContain.childNodes[eleToInsert].parentNode.insertBefore(banner, mainContain.childNodes[eleToInsert].nextSibling);
+                            break;
+                        }
                     }
-                    break;
-                case 'random':
-                    var childNodes = mainContain.childNodes;
-                    if ( childNodes.length > 0) {
-                        var randomIndex= Math.floor(Math.random() * childNodes.length);
-                        mainContain.insertBefore(banner, mainContain.childNodes[randomIndex]);
-                    } else {
-                        mainContain.appendChild(banner);
+                    if (!document.getElementById(yomediaId_82e237b1f272486587de2dbd5c9478c0)) {
+                        mainContain.childNodes[Math.ceil(childNodes.length/2)].parentNode.insertBefore(banner, mainContain.childNodes[Math.ceil(childNodes.length/2)].nextSibling);
                     }
-                    break;
-                default:
-                    document.body.appendChild(banner);
-                    break;
-            }
-        }else {
-            console.log('Please enter valid URL');
+                } else {
+                    mainContain.appendChild(banner);
+                }
+                break;
+            case 'last_child':
+                mainContain.appendChild(banner);
+                break;
+            case 'after':
+                var nextNode = mainContain.nextSibling;
+                if (nextNode) {
+                    nextNode.parentNode.insertBefore(banner, nextNode);
+                } else {
+                    mainContain.parentNode.appendChild(banner);
+                }
+                break;
+            case 'random':
+                var childNodes = mainContain.childNodes;
+                if ( childNodes.length > 0) {
+                    var randomIndex= Math.floor(Math.random() * childNodes.length);
+                    mainContain.insertBefore(banner, mainContain.childNodes[randomIndex]);
+                } else {
+                    mainContain.appendChild(banner);
+                }
+                break;
+            default:
+                document.body.appendChild(banner);
+                break;
         }
     }else{
         alert('Empty banner, please add one!');

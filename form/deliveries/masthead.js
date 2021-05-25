@@ -74,80 +74,78 @@ function showBannerYomedia_d05d05051d9b48ad9451562f5edac04f(s) {
     let bannerURL = urlParams.get('b');
 
     if(bannerURL){
-        if (isValidURL(bannerURL)) {
-            creative_src = `${bannerURL}?pid=d05d05051d9b48ad9451562f5edac04f&aid=6f4dcddae70e4dc3977e34c341727fba&fid=1f97d1e992ff495589e97eb0571f54bb&advId=c23b9c109f7a4f89a3cb23f694f1d7cb&campId=d6692db2a2dd441c9ab9741ee05b127d&pubId=5565e302fb2e489cae28103f6c66db12&chanId=3d58e13cbef3493682fe6107ac13e262&clk=${clickTag}`;
-            portraitBanner.setAttribute('src', creative_src);
-            portraitBanner.setAttribute('scrolling','no');
-            portraitBanner.setAttribute('id', yomediaPortraitId_d05d05051d9b48ad9451562f5edac04f);
-            portraitBanner.setAttribute('allowFullScreen', '');
-            portraitBanner.style.cssText = 'left:0px; right:0px; margin: 0px auto; display:block; overflow: hidden; border: 0;';
-            
-            domWrapper.appendChild(portraitBanner);
+        creative_src = `https://demo.yomedia.vn/${bannerURL}?pid=d05d05051d9b48ad9451562f5edac04f&aid=6f4dcddae70e4dc3977e34c341727fba&fid=1f97d1e992ff495589e97eb0571f54bb&advId=c23b9c109f7a4f89a3cb23f694f1d7cb&campId=d6692db2a2dd441c9ab9741ee05b127d&pubId=5565e302fb2e489cae28103f6c66db12&chanId=3d58e13cbef3493682fe6107ac13e262&clk=${clickTag}`;
+        portraitBanner.setAttribute('src', creative_src);
+        portraitBanner.setAttribute('scrolling','no');
+        portraitBanner.setAttribute('id', yomediaPortraitId_d05d05051d9b48ad9451562f5edac04f);
+        portraitBanner.setAttribute('allowFullScreen', '');
+        portraitBanner.style.cssText = 'left:0px; right:0px; margin: 0px auto; display:block; overflow: hidden; border: 0;';
+        
+        domWrapper.appendChild(portraitBanner);
 
-            switch (positionInsert_d05d05051d9b48ad9451562f5edac04f) {
-                case 'before':
-                    mainContain.parentNode.insertBefore(domWrapper, mainContain);
-                    break;
-                case 'first_child':
-                    var firstChild = mainContain.firstChild;
-                    if (firstChild) {
-                        mainContain.insertBefore(domWrapper, firstChild);
-                    } else {
-                        mainContain.appendChild(domWrapper);
-                    }
-                    break;
-                case 'middle_child':
-                    var childNodes = mainContain.childNodes;
-                    if ( childNodes.length > 0) {
-                        var p = 0;
-                        for (var i = 0; i < childNodes.length; i++) {
-                            if (childNodes[i].clientHeight > 0) {
-                                p = p + childNodes[i].clientHeight;
-                            }
-                            if (p >= (mainContain.clientHeight / 2)) {
-                                if (typeof(mainContain.childNodes[i + 1]) != 'undefined') {
-                                    var eleToInsert = i + 1;
-                                } else {
-                                    var eleToInsert = i;
-                                }            
-                                mainContain.childNodes[eleToInsert].parentNode.insertBefore(domWrapper, mainContain.childNodes[eleToInsert].nextSibling);
-                                break;
-                            }
-                        }
-                        if (!document.getElementById(yomediaId_d05d05051d9b48ad9451562f5edac04f)) {
-                            mainContain.childNodes[Math.ceil(childNodes.length/2)].parentNode.insertBefore(domWrapper, mainContain.childNodes[Math.ceil(childNodes.length/2)].nextSibling);
-                        }
-                    } else {
-                        mainContain.appendChild(domWrapper);
-                    }
-                    break;
-                case 'last_child':
+        switch (positionInsert_d05d05051d9b48ad9451562f5edac04f) {
+            case 'before':
+                mainContain.parentNode.insertBefore(domWrapper, mainContain);
+                break;
+            case 'first_child':
+                var firstChild = mainContain.firstChild;
+                if (firstChild) {
+                    mainContain.insertBefore(domWrapper, firstChild);
+                } else {
                     mainContain.appendChild(domWrapper);
-                    break;
-                case 'after':
-                    var nextNode = mainContain.nextSibling;
-                    if (nextNode) {
-                        nextNode.parentNode.insertBefore(domWrapper, nextNode);
-                    } else {
-                        mainContain.parentNode.appendChild(domWrapper);
+                }
+                break;
+            case 'middle_child':
+                var childNodes = mainContain.childNodes;
+                if ( childNodes.length > 0) {
+                    var p = 0;
+                    for (var i = 0; i < childNodes.length; i++) {
+                        if (childNodes[i].clientHeight > 0) {
+                            p = p + childNodes[i].clientHeight;
+                        }
+                        if (p >= (mainContain.clientHeight / 2)) {
+                            if (typeof(mainContain.childNodes[i + 1]) != 'undefined') {
+                                var eleToInsert = i + 1;
+                            } else {
+                                var eleToInsert = i;
+                            }            
+                            mainContain.childNodes[eleToInsert].parentNode.insertBefore(domWrapper, mainContain.childNodes[eleToInsert].nextSibling);
+                            break;
+                        }
                     }
-                    break;
-                case 'random':
-                    var childNodes = mainContain.childNodes;
-                    if ( childNodes.length > 0) {
-                        var randomIndex= Math.floor(Math.random() * childNodes.length);
-                        mainContain.insertBefore(domWrapper, mainContain.childNodes[randomIndex]);
-                    } else {
-                        mainContain.appendChild(domWrapper);
+                    if (!document.getElementById(yomediaId_d05d05051d9b48ad9451562f5edac04f)) {
+                        mainContain.childNodes[Math.ceil(childNodes.length/2)].parentNode.insertBefore(domWrapper, mainContain.childNodes[Math.ceil(childNodes.length/2)].nextSibling);
                     }
-                    break;
-                default:
-                    document.body.appendChild(domWrapper);
-                    break;
-            }  
-            resizeYomedia_d05d05051d9b48ad9451562f5edac04f();
-            impressionTrackingYomedia_d05d05051d9b48ad9451562f5edac04f();
-        }
+                } else {
+                    mainContain.appendChild(domWrapper);
+                }
+                break;
+            case 'last_child':
+                mainContain.appendChild(domWrapper);
+                break;
+            case 'after':
+                var nextNode = mainContain.nextSibling;
+                if (nextNode) {
+                    nextNode.parentNode.insertBefore(domWrapper, nextNode);
+                } else {
+                    mainContain.parentNode.appendChild(domWrapper);
+                }
+                break;
+            case 'random':
+                var childNodes = mainContain.childNodes;
+                if ( childNodes.length > 0) {
+                    var randomIndex= Math.floor(Math.random() * childNodes.length);
+                    mainContain.insertBefore(domWrapper, mainContain.childNodes[randomIndex]);
+                } else {
+                    mainContain.appendChild(domWrapper);
+                }
+                break;
+            default:
+                document.body.appendChild(domWrapper);
+                break;
+        }  
+        resizeYomedia_d05d05051d9b48ad9451562f5edac04f();
+        impressionTrackingYomedia_d05d05051d9b48ad9451562f5edac04f();
     }
 }
 

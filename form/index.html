@@ -366,7 +366,6 @@
         var sourceURL = $("#source_field").val();
         var additionSourceURL = $("#addition_source_field").val();
         var url = window.location.href;
-        var prefix = "https://demo.yomedia.vn"
         var p = url.search("form/");
         if (p != -1) {
             url = url.substring(0, p);
@@ -379,14 +378,9 @@
             }
             return;
         }
-        //If has Source or Addition Source
-        if(isValidURL(sourceURL || additionSourceURL)) {
-            adformatURL = `${url}sites/${selectedTemplate}/index.html?f=${selectedFormat}&b=${sourceURL}`;
-            additionSourceURL ? adformatURL = `${adformatURL}&c=${additionSourceURL}` : adformatURL;
-        } else {
-            adformatURL = `${url}sites/${selectedTemplate}/index.html?f=${selectedFormat}&b=${prefix}/${sourceURL}`;
-            additionSourceURL ? adformatURL = `${adformatURL}&c=${prefix}/${additionSourceURL}` : adformatURL;
-        }
+        adformatURL = `${url}site/${selectedTemplate}/index.html?f=${selectedFormat}&b=` + encodeURIComponent(`${sourceURL}`);
+        additionSourceURL ? adformatURL = `${adformatURL}&c=` + encodeURIComponent(`${additionSourceURL}`) : adformatURL;
+
         $("#output_source_field").empty();
         $("#output_source_field").append(adformatURL);
         

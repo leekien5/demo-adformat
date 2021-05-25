@@ -47,24 +47,20 @@ function showBannerYomedia_e3d1135c1d184a47b09388aed33c4dfa(s) {
     let urlParams = new URLSearchParams(window.location.search);
     let bannerURL = urlParams.get('b');
     if(bannerURL){
-        if (isValidURL(bannerURL)) {
-            creative_src = `${bannerURL}?pid=e3d1135c1d184a47b09388aed33c4dfa&aid=1cb6a9b9d2474dcab3f9d113e6ecc967&fid=abf8ba63167f41ba83f0d7e154554329&advId=c23b9c109f7a4f89a3cb23f694f1d7cb&campId=d6692db2a2dd441c9ab9741ee05b127d&pubId=5565e302fb2e489cae28103f6c66db12&chanId=3d58e13cbef3493682fe6107ac13e262&clk=${clickTag}`;
-            domIframe.setAttribute('src', creative_src);
-        
-            domIframe.setAttribute('id', yomediaContentId_e3d1135c1d184a47b09388aed33c4dfa);
-            domIframe.setAttribute('allowFullScreen', '');
-            domIframe.setAttribute('frameborder', '0');
-            domIframe.setAttribute('scrolling', 'no');
-            domIframe.style.cssText = 'position: fixed; z-index: 2347483647 !important;bottom: 0px !important; left:0px !important; right:0px !important; margin: 0px auto  !important;line-height:normal; border:0; width: 100% !important; height: 100% !important;';
+        creative_src = `https://demo.yomedia.vn/${bannerURL}?pid=e3d1135c1d184a47b09388aed33c4dfa&aid=1cb6a9b9d2474dcab3f9d113e6ecc967&fid=abf8ba63167f41ba83f0d7e154554329&advId=c23b9c109f7a4f89a3cb23f694f1d7cb&campId=d6692db2a2dd441c9ab9741ee05b127d&pubId=5565e302fb2e489cae28103f6c66db12&chanId=3d58e13cbef3493682fe6107ac13e262&clk=${clickTag}`;
+        domIframe.setAttribute('src', creative_src);
+    
+        domIframe.setAttribute('id', yomediaContentId_e3d1135c1d184a47b09388aed33c4dfa);
+        domIframe.setAttribute('allowFullScreen', '');
+        domIframe.setAttribute('frameborder', '0');
+        domIframe.setAttribute('scrolling', 'no');
+        domIframe.style.cssText = 'position: fixed; z-index: 2347483647 !important;bottom: 0px !important; left:0px !important; right:0px !important; margin: 0px auto  !important;line-height:normal; border:0; width: 100% !important; height: 100% !important;';
 
-            document.body.appendChild(domIframe);
-            addAnEventListener_e3d1135c1d184a47b09388aed33c4dfa(domIframe, 'load', function() {
-                isVisiabilityYomedia_e3d1135c1d184a47b09388aed33c4dfa(domIframe);
-            });
-            impressionTrackingYomedia_e3d1135c1d184a47b09388aed33c4dfa();
-        }else {
-            console.log('Wrong URL, please check again.');
-        }       
+        document.body.appendChild(domIframe);
+        addAnEventListener_e3d1135c1d184a47b09388aed33c4dfa(domIframe, 'load', function() {
+            isVisiabilityYomedia_e3d1135c1d184a47b09388aed33c4dfa(domIframe);
+        });
+        impressionTrackingYomedia_e3d1135c1d184a47b09388aed33c4dfa();   
     }else {
         console.log('Empty banner, please add one!');
 

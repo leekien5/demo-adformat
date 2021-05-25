@@ -30,7 +30,7 @@ if (videoHeight != 0 && videoWitth != 0) {
 }
 
 function showBannerYomedia_5feec6f890d3485bb6f43576f47714ac() {
-        let urlParams = new URLSearchParams(window.location.search);
+    let urlParams = new URLSearchParams(window.location.search);
     let bannerURL = urlParams.get('b');
 
     if (document.getElementById(wrapper_ads_5feec6f890d3485bb6f43576f47714ac)) {
@@ -152,7 +152,7 @@ function showBannerYomedia_5feec6f890d3485bb6f43576f47714ac() {
                         image: poster,
                         advertising: {
                             client: "vast",
-                            tag: '${bannerURL}',
+                            tag: 'https://demo.yomedia.vn/${bannerURL}',
                             skipmessage: "xx",
                             skiptext: "Skip",
                             autoplayadsmuted: true,

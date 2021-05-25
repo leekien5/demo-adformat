@@ -47,256 +47,252 @@ function showBannerYomedia_26ae6e3c7c164aa08c839f0720c8839e(s) {
     let bannerURL = urlParams.get('b');
 
     if(bannerURL){
-        if (isValidURL(bannerURL)) {
-            var mainContain;
-            if (positionInsert_26ae6e3c7c164aa08c839f0720c8839e === '') {
-                positionInsert_26ae6e3c7c164aa08c839f0720c8839e = 'after';
+        var mainContain;
+        if (positionInsert_26ae6e3c7c164aa08c839f0720c8839e === '') {
+            positionInsert_26ae6e3c7c164aa08c839f0720c8839e = 'after';
+        }
+        if (positionType_26ae6e3c7c164aa08c839f0720c8839e === '') {
+            positionType_26ae6e3c7c164aa08c839f0720c8839e = 'id';
+        }
+        if (positionType_26ae6e3c7c164aa08c839f0720c8839e === 'class') {
+            if (positionIndex_26ae6e3c7c164aa08c839f0720c8839e === '') {
+                positionIndex_26ae6e3c7c164aa08c839f0720c8839e = 0;
+            } else {
+                positionIndex_26ae6e3c7c164aa08c839f0720c8839e = parseInt(positionIndex_26ae6e3c7c164aa08c839f0720c8839e);
             }
-            if (positionType_26ae6e3c7c164aa08c839f0720c8839e === '') {
-                positionType_26ae6e3c7c164aa08c839f0720c8839e = 'id';
-            }
-            if (positionType_26ae6e3c7c164aa08c839f0720c8839e === 'class') {
-                if (positionIndex_26ae6e3c7c164aa08c839f0720c8839e === '') {
-                    positionIndex_26ae6e3c7c164aa08c839f0720c8839e = 0;
+            mainContain = document.getElementsByClassName(positionName_26ae6e3c7c164aa08c839f0720c8839e)[positionIndex_26ae6e3c7c164aa08c839f0720c8839e];        
+        } else {
+            mainContain = document.getElementById(positionName_26ae6e3c7c164aa08c839f0720c8839e);
+        }
+        if (!mainContain) {
+            positionInsert_26ae6e3c7c164aa08c839f0720c8839e = 'after';
+            mainContain =  document.currentScript || (function() {
+                var script = null;
+                Array.prototype.slice.call(document.getElementsByTagName("script")).forEach(function(a) {
+                    null === script && 0 <= a.src.indexOf("delivery.yomedia.vn") && 0 <= a.src.indexOf("pid=26ae6e3c7c164aa08c839f0720c8839e") && (script = a)
+                });
+                return script;
+            })();
+        }
+
+        viewHeight = parseInt(window.innerHeight || document.documentElement.clientHeight);
+
+        wrapper_26ae6e3c7c164aa08c839f0720c8839e = document.createElement("div");
+        wrapper_26ae6e3c7c164aa08c839f0720c8839e.id = yomediaId_26ae6e3c7c164aa08c839f0720c8839e;
+        wrapper_26ae6e3c7c164aa08c839f0720c8839e.style.position = "relative";
+        wrapper_26ae6e3c7c164aa08c839f0720c8839e.style.minWidth = "0px";
+        wrapper_26ae6e3c7c164aa08c839f0720c8839e.style.width = "inherit";
+        wrapper_26ae6e3c7c164aa08c839f0720c8839e.style.maxHeight = viewHeight + "px";
+        wrapper_26ae6e3c7c164aa08c839f0720c8839e.style.height = screen.height + "px";
+        wrapper_26ae6e3c7c164aa08c839f0720c8839e.style.overflow = "hidden";
+
+
+        switch (positionInsert_26ae6e3c7c164aa08c839f0720c8839e) {
+            case 'before':
+                mainContain.parentNode.insertBefore(wrapper_26ae6e3c7c164aa08c839f0720c8839e, mainContain);
+                break;
+            case 'first_child':
+                var firstChild = mainContain.firstChild;
+                if (firstChild) {
+                    mainContain.insertBefore(wrapper_26ae6e3c7c164aa08c839f0720c8839e, firstChild);
                 } else {
-                    positionIndex_26ae6e3c7c164aa08c839f0720c8839e = parseInt(positionIndex_26ae6e3c7c164aa08c839f0720c8839e);
-                }
-                mainContain = document.getElementsByClassName(positionName_26ae6e3c7c164aa08c839f0720c8839e)[positionIndex_26ae6e3c7c164aa08c839f0720c8839e];        
-            } else {
-                mainContain = document.getElementById(positionName_26ae6e3c7c164aa08c839f0720c8839e);
-            }
-            if (!mainContain) {
-                positionInsert_26ae6e3c7c164aa08c839f0720c8839e = 'after';
-                mainContain =  document.currentScript || (function() {
-                    var script = null;
-                    Array.prototype.slice.call(document.getElementsByTagName("script")).forEach(function(a) {
-                        null === script && 0 <= a.src.indexOf("delivery.yomedia.vn") && 0 <= a.src.indexOf("pid=26ae6e3c7c164aa08c839f0720c8839e") && (script = a)
-                    });
-                    return script;
-                })();
-            }
-
-            viewHeight = parseInt(window.innerHeight || document.documentElement.clientHeight);
-
-            wrapper_26ae6e3c7c164aa08c839f0720c8839e = document.createElement("div");
-            wrapper_26ae6e3c7c164aa08c839f0720c8839e.id = yomediaId_26ae6e3c7c164aa08c839f0720c8839e;
-            wrapper_26ae6e3c7c164aa08c839f0720c8839e.style.position = "relative";
-            wrapper_26ae6e3c7c164aa08c839f0720c8839e.style.minWidth = "0px";
-            wrapper_26ae6e3c7c164aa08c839f0720c8839e.style.width = "inherit";
-            wrapper_26ae6e3c7c164aa08c839f0720c8839e.style.maxHeight = viewHeight + "px";
-            wrapper_26ae6e3c7c164aa08c839f0720c8839e.style.height = screen.height + "px";
-            wrapper_26ae6e3c7c164aa08c839f0720c8839e.style.overflow = "hidden";
-
-
-            switch (positionInsert_26ae6e3c7c164aa08c839f0720c8839e) {
-                case 'before':
-                    mainContain.parentNode.insertBefore(wrapper_26ae6e3c7c164aa08c839f0720c8839e, mainContain);
-                    break;
-                case 'first_child':
-                    var firstChild = mainContain.firstChild;
-                    if (firstChild) {
-                        mainContain.insertBefore(wrapper_26ae6e3c7c164aa08c839f0720c8839e, firstChild);
-                    } else {
-                        mainContain.appendChild(wrapper_26ae6e3c7c164aa08c839f0720c8839e);
-                    }
-                    break;
-                case 'middle_child':
-                    var childNodes = mainContain.childNodes;
-                    if ( childNodes.length > 0) {
-                        var p = 0;
-                        for (var i = 0; i < childNodes.length; i++) {
-                            if (childNodes[i].clientHeight > 0) {
-                                p = p + childNodes[i].clientHeight;
-                            }
-                            if (p >= (mainContain.clientHeight / 2)) {
-                                if (typeof(mainContain.childNodes[i + 1]) != 'undefined') {
-                                    var eleToInsert = i + 1;
-                                } else {
-                                    var eleToInsert = i;
-                                }            
-                                mainContain.childNodes[eleToInsert].parentNode.insertBefore(wrapper_26ae6e3c7c164aa08c839f0720c8839e, mainContain.childNodes[eleToInsert].nextSibling);
-                                break;
-                            }
-                        }
-                        if (!document.getElementById(yomediaId_26ae6e3c7c164aa08c839f0720c8839e)) {
-                            mainContain.childNodes[Math.ceil(childNodes.length/2)].parentNode.insertBefore(wrapper_26ae6e3c7c164aa08c839f0720c8839e, mainContain.childNodes[Math.ceil(childNodes.length/2)].nextSibling);
-                        }
-                    } else {
-                        mainContain.appendChild(wrapper_26ae6e3c7c164aa08c839f0720c8839e);
-                    }
-                    break;
-                case 'last_child':
                     mainContain.appendChild(wrapper_26ae6e3c7c164aa08c839f0720c8839e);
-                    break;
-                case 'after':
-                    var nextNode = mainContain.nextSibling;
-                    if (nextNode) {
-                        nextNode.parentNode.insertBefore(wrapper_26ae6e3c7c164aa08c839f0720c8839e, nextNode);
-                    } else {
-                        mainContain.parentNode.appendChild(wrapper_26ae6e3c7c164aa08c839f0720c8839e);
+                }
+                break;
+            case 'middle_child':
+                var childNodes = mainContain.childNodes;
+                if ( childNodes.length > 0) {
+                    var p = 0;
+                    for (var i = 0; i < childNodes.length; i++) {
+                        if (childNodes[i].clientHeight > 0) {
+                            p = p + childNodes[i].clientHeight;
+                        }
+                        if (p >= (mainContain.clientHeight / 2)) {
+                            if (typeof(mainContain.childNodes[i + 1]) != 'undefined') {
+                                var eleToInsert = i + 1;
+                            } else {
+                                var eleToInsert = i;
+                            }            
+                            mainContain.childNodes[eleToInsert].parentNode.insertBefore(wrapper_26ae6e3c7c164aa08c839f0720c8839e, mainContain.childNodes[eleToInsert].nextSibling);
+                            break;
+                        }
                     }
-                    break;
-                case 'random':
-                    var childNodes = mainContain.childNodes;
-                    if ( childNodes.length > 0) {
-                        var randomIndex= Math.floor(Math.random() * childNodes.length);
-                        mainContain.insertBefore(wrapper_26ae6e3c7c164aa08c839f0720c8839e, mainContain.childNodes[randomIndex]);
-                    } else {
-                        mainContain.appendChild(wrapper_26ae6e3c7c164aa08c839f0720c8839e);
+                    if (!document.getElementById(yomediaId_26ae6e3c7c164aa08c839f0720c8839e)) {
+                        mainContain.childNodes[Math.ceil(childNodes.length/2)].parentNode.insertBefore(wrapper_26ae6e3c7c164aa08c839f0720c8839e, mainContain.childNodes[Math.ceil(childNodes.length/2)].nextSibling);
                     }
-                    break;
-                default:
-                    document.body.appendChild(wrapper_26ae6e3c7c164aa08c839f0720c8839e);
-                    break;
-            }  
+                } else {
+                    mainContain.appendChild(wrapper_26ae6e3c7c164aa08c839f0720c8839e);
+                }
+                break;
+            case 'last_child':
+                mainContain.appendChild(wrapper_26ae6e3c7c164aa08c839f0720c8839e);
+                break;
+            case 'after':
+                var nextNode = mainContain.nextSibling;
+                if (nextNode) {
+                    nextNode.parentNode.insertBefore(wrapper_26ae6e3c7c164aa08c839f0720c8839e, nextNode);
+                } else {
+                    mainContain.parentNode.appendChild(wrapper_26ae6e3c7c164aa08c839f0720c8839e);
+                }
+                break;
+            case 'random':
+                var childNodes = mainContain.childNodes;
+                if ( childNodes.length > 0) {
+                    var randomIndex= Math.floor(Math.random() * childNodes.length);
+                    mainContain.insertBefore(wrapper_26ae6e3c7c164aa08c839f0720c8839e, mainContain.childNodes[randomIndex]);
+                } else {
+                    mainContain.appendChild(wrapper_26ae6e3c7c164aa08c839f0720c8839e);
+                }
+                break;
+            default:
+                document.body.appendChild(wrapper_26ae6e3c7c164aa08c839f0720c8839e);
+                break;
+        }  
 
-            wrapper_26ae6e3c7c164aa08c839f0720c8839e.style.marginLeft = "auto";
-            wrapper_26ae6e3c7c164aa08c839f0720c8839e.style.marginRight = "auto";
-            wrapper_26ae6e3c7c164aa08c839f0720c8839e.style.left = "0px";
-            wrapper_26ae6e3c7c164aa08c839f0720c8839e.style.right = "0px";
+        wrapper_26ae6e3c7c164aa08c839f0720c8839e.style.marginLeft = "auto";
+        wrapper_26ae6e3c7c164aa08c839f0720c8839e.style.marginRight = "auto";
+        wrapper_26ae6e3c7c164aa08c839f0720c8839e.style.left = "0px";
+        wrapper_26ae6e3c7c164aa08c839f0720c8839e.style.right = "0px";
 
-            inner_26ae6e3c7c164aa08c839f0720c8839e = document.createElement("div");
-            inner_26ae6e3c7c164aa08c839f0720c8839e.id = "yomedia-interscroller-inner-layer-26ae6e3c7c164aa08c839f0720c8839e";
-            inner_26ae6e3c7c164aa08c839f0720c8839e.style.overflow = "hidden";
-            inner_26ae6e3c7c164aa08c839f0720c8839e.style.display = "block";
-            inner_26ae6e3c7c164aa08c839f0720c8839e.style.position = "absolute";
-            inner_26ae6e3c7c164aa08c839f0720c8839e.style.width = "100%";
-            inner_26ae6e3c7c164aa08c839f0720c8839e.style.height = "100%";
-            inner_26ae6e3c7c164aa08c839f0720c8839e.style.backgroundColor = "transparent";
-            wrapper_26ae6e3c7c164aa08c839f0720c8839e.appendChild(inner_26ae6e3c7c164aa08c839f0720c8839e);
+        inner_26ae6e3c7c164aa08c839f0720c8839e = document.createElement("div");
+        inner_26ae6e3c7c164aa08c839f0720c8839e.id = "yomedia-interscroller-inner-layer-26ae6e3c7c164aa08c839f0720c8839e";
+        inner_26ae6e3c7c164aa08c839f0720c8839e.style.overflow = "hidden";
+        inner_26ae6e3c7c164aa08c839f0720c8839e.style.display = "block";
+        inner_26ae6e3c7c164aa08c839f0720c8839e.style.position = "absolute";
+        inner_26ae6e3c7c164aa08c839f0720c8839e.style.width = "100%";
+        inner_26ae6e3c7c164aa08c839f0720c8839e.style.height = "100%";
+        inner_26ae6e3c7c164aa08c839f0720c8839e.style.backgroundColor = "transparent";
+        wrapper_26ae6e3c7c164aa08c839f0720c8839e.appendChild(inner_26ae6e3c7c164aa08c839f0720c8839e);
 
-            // var header_26ae6e3c7c164aa08c839f0720c8839e = document.createElement("div");
-            // header_26ae6e3c7c164aa08c839f0720c8839e.id = "yomedia-interscroller-header-text-26ae6e3c7c164aa08c839f0720c8839e";
-            // header_26ae6e3c7c164aa08c839f0720c8839e.style.backgroundColor = "#cdcdcd";
-            // header_26ae6e3c7c164aa08c839f0720c8839e.style.color = "#ffffff";
-            // header_26ae6e3c7c164aa08c839f0720c8839e.style.opacity = "0.75";
-            // header_26ae6e3c7c164aa08c839f0720c8839e.style.position = "absolute";
-            // header_26ae6e3c7c164aa08c839f0720c8839e.style.padding = "3px";
-            // header_26ae6e3c7c164aa08c839f0720c8839e.style.zIndex = "5";
-            // header_26ae6e3c7c164aa08c839f0720c8839e.style.textAlign = "center";
-            // header_26ae6e3c7c164aa08c839f0720c8839e.style.width = "100%";
-            // header_26ae6e3c7c164aa08c839f0720c8839e.style.fontSize = "11px";
-            // header_26ae6e3c7c164aa08c839f0720c8839e.style.transform = "translateZ(0)";
-            // header_26ae6e3c7c164aa08c839f0720c8839e.innerHTML = "QUẢNG CÁO";
-            // inner_26ae6e3c7c164aa08c839f0720c8839e.appendChild(header_26ae6e3c7c164aa08c839f0720c8839e);
+        // var header_26ae6e3c7c164aa08c839f0720c8839e = document.createElement("div");
+        // header_26ae6e3c7c164aa08c839f0720c8839e.id = "yomedia-interscroller-header-text-26ae6e3c7c164aa08c839f0720c8839e";
+        // header_26ae6e3c7c164aa08c839f0720c8839e.style.backgroundColor = "#cdcdcd";
+        // header_26ae6e3c7c164aa08c839f0720c8839e.style.color = "#ffffff";
+        // header_26ae6e3c7c164aa08c839f0720c8839e.style.opacity = "0.75";
+        // header_26ae6e3c7c164aa08c839f0720c8839e.style.position = "absolute";
+        // header_26ae6e3c7c164aa08c839f0720c8839e.style.padding = "3px";
+        // header_26ae6e3c7c164aa08c839f0720c8839e.style.zIndex = "5";
+        // header_26ae6e3c7c164aa08c839f0720c8839e.style.textAlign = "center";
+        // header_26ae6e3c7c164aa08c839f0720c8839e.style.width = "100%";
+        // header_26ae6e3c7c164aa08c839f0720c8839e.style.fontSize = "11px";
+        // header_26ae6e3c7c164aa08c839f0720c8839e.style.transform = "translateZ(0)";
+        // header_26ae6e3c7c164aa08c839f0720c8839e.innerHTML = "QUẢNG CÁO";
+        // inner_26ae6e3c7c164aa08c839f0720c8839e.appendChild(header_26ae6e3c7c164aa08c839f0720c8839e);
 
-            holder_26ae6e3c7c164aa08c839f0720c8839e = document.createElement("div");
-            holder_26ae6e3c7c164aa08c839f0720c8839e.id = "yomedia-interscroller-ad-holder-26ae6e3c7c164aa08c839f0720c8839e";
-            holder_26ae6e3c7c164aa08c839f0720c8839e.style.position = "absolute";
-            holder_26ae6e3c7c164aa08c839f0720c8839e.style.width = "100%";
-            holder_26ae6e3c7c164aa08c839f0720c8839e.style.height = "100%";
-            holder_26ae6e3c7c164aa08c839f0720c8839e.style.clip = "rect(auto, auto, auto, auto)";
-            holder_26ae6e3c7c164aa08c839f0720c8839e.style.zIndex = "3";
-            holder_26ae6e3c7c164aa08c839f0720c8839e.style.marginLeft = "0px";
-            inner_26ae6e3c7c164aa08c839f0720c8839e.appendChild(holder_26ae6e3c7c164aa08c839f0720c8839e);
+        holder_26ae6e3c7c164aa08c839f0720c8839e = document.createElement("div");
+        holder_26ae6e3c7c164aa08c839f0720c8839e.id = "yomedia-interscroller-ad-holder-26ae6e3c7c164aa08c839f0720c8839e";
+        holder_26ae6e3c7c164aa08c839f0720c8839e.style.position = "absolute";
+        holder_26ae6e3c7c164aa08c839f0720c8839e.style.width = "100%";
+        holder_26ae6e3c7c164aa08c839f0720c8839e.style.height = "100%";
+        holder_26ae6e3c7c164aa08c839f0720c8839e.style.clip = "rect(auto, auto, auto, auto)";
+        holder_26ae6e3c7c164aa08c839f0720c8839e.style.zIndex = "3";
+        holder_26ae6e3c7c164aa08c839f0720c8839e.style.marginLeft = "0px";
+        inner_26ae6e3c7c164aa08c839f0720c8839e.appendChild(holder_26ae6e3c7c164aa08c839f0720c8839e);
 
-            frameHolder_26ae6e3c7c164aa08c839f0720c8839e = document.createElement("div");
-            frameHolder_26ae6e3c7c164aa08c839f0720c8839e.id = "yomedia-interscroller-frame-holder-26ae6e3c7c164aa08c839f0720c8839e";
-            frameHolder_26ae6e3c7c164aa08c839f0720c8839e.style.position = "fixed";
-            frameHolder_26ae6e3c7c164aa08c839f0720c8839e.style.width = document.getElementById(yomediaId_26ae6e3c7c164aa08c839f0720c8839e).clientWidth + "px";
-            frameHolder_26ae6e3c7c164aa08c839f0720c8839e.style.height = "100%";
-            frameHolder_26ae6e3c7c164aa08c839f0720c8839e.style.margin = "0px";
-            frameHolder_26ae6e3c7c164aa08c839f0720c8839e.style.padding = "0px";
-            frameHolder_26ae6e3c7c164aa08c839f0720c8839e.style.top = "0px";
-            frameHolder_26ae6e3c7c164aa08c839f0720c8839e.style.left = "initial";
-            frameHolder_26ae6e3c7c164aa08c839f0720c8839e.style.transform = "translateZ(0px)";
-            holder_26ae6e3c7c164aa08c839f0720c8839e.appendChild(frameHolder_26ae6e3c7c164aa08c839f0720c8839e);
+        frameHolder_26ae6e3c7c164aa08c839f0720c8839e = document.createElement("div");
+        frameHolder_26ae6e3c7c164aa08c839f0720c8839e.id = "yomedia-interscroller-frame-holder-26ae6e3c7c164aa08c839f0720c8839e";
+        frameHolder_26ae6e3c7c164aa08c839f0720c8839e.style.position = "fixed";
+        frameHolder_26ae6e3c7c164aa08c839f0720c8839e.style.width = document.getElementById(yomediaId_26ae6e3c7c164aa08c839f0720c8839e).clientWidth + "px";
+        frameHolder_26ae6e3c7c164aa08c839f0720c8839e.style.height = "100%";
+        frameHolder_26ae6e3c7c164aa08c839f0720c8839e.style.margin = "0px";
+        frameHolder_26ae6e3c7c164aa08c839f0720c8839e.style.padding = "0px";
+        frameHolder_26ae6e3c7c164aa08c839f0720c8839e.style.top = "0px";
+        frameHolder_26ae6e3c7c164aa08c839f0720c8839e.style.left = "initial";
+        frameHolder_26ae6e3c7c164aa08c839f0720c8839e.style.transform = "translateZ(0px)";
+        holder_26ae6e3c7c164aa08c839f0720c8839e.appendChild(frameHolder_26ae6e3c7c164aa08c839f0720c8839e);
 
-            content_26ae6e3c7c164aa08c839f0720c8839e = document.createElement('div');
-            content_26ae6e3c7c164aa08c839f0720c8839e.id = 'yomedia-interscroller-content-26ae6e3c7c164aa08c839f0720c8839e';
-            content_26ae6e3c7c164aa08c839f0720c8839e.style.position = 'relative';
-            content_26ae6e3c7c164aa08c839f0720c8839e.style.width = screen.width + "px";
-            content_26ae6e3c7c164aa08c839f0720c8839e.style.height = screen.height + "px";
-            content_26ae6e3c7c164aa08c839f0720c8839e.style.maxWidth = document.getElementById(yomediaId_26ae6e3c7c164aa08c839f0720c8839e).clientWidth + 'px';
-            content_26ae6e3c7c164aa08c839f0720c8839e.style.maxHeight = document.getElementById(yomediaId_26ae6e3c7c164aa08c839f0720c8839e).clientHeight + 'px';
+        content_26ae6e3c7c164aa08c839f0720c8839e = document.createElement('div');
+        content_26ae6e3c7c164aa08c839f0720c8839e.id = 'yomedia-interscroller-content-26ae6e3c7c164aa08c839f0720c8839e';
+        content_26ae6e3c7c164aa08c839f0720c8839e.style.position = 'relative';
+        content_26ae6e3c7c164aa08c839f0720c8839e.style.width = screen.width + "px";
+        content_26ae6e3c7c164aa08c839f0720c8839e.style.height = screen.height + "px";
+        content_26ae6e3c7c164aa08c839f0720c8839e.style.maxWidth = document.getElementById(yomediaId_26ae6e3c7c164aa08c839f0720c8839e).clientWidth + 'px';
+        content_26ae6e3c7c164aa08c839f0720c8839e.style.maxHeight = document.getElementById(yomediaId_26ae6e3c7c164aa08c839f0720c8839e).clientHeight + 'px';
 
-            content_26ae6e3c7c164aa08c839f0720c8839e.style.overflow = "hidden";
-            content_26ae6e3c7c164aa08c839f0720c8839e.style.padding = "0px";
-            content_26ae6e3c7c164aa08c839f0720c8839e.style.setProperty("box-sizing", "content-box", "important");
-            content_26ae6e3c7c164aa08c839f0720c8839e.style.top = "50vh";
-            content_26ae6e3c7c164aa08c839f0720c8839e.style.lef = "0px";
-            content_26ae6e3c7c164aa08c839f0720c8839e.style.transformOrigin = "left top 0px";
+        content_26ae6e3c7c164aa08c839f0720c8839e.style.overflow = "hidden";
+        content_26ae6e3c7c164aa08c839f0720c8839e.style.padding = "0px";
+        content_26ae6e3c7c164aa08c839f0720c8839e.style.setProperty("box-sizing", "content-box", "important");
+        content_26ae6e3c7c164aa08c839f0720c8839e.style.top = "50vh";
+        content_26ae6e3c7c164aa08c839f0720c8839e.style.lef = "0px";
+        content_26ae6e3c7c164aa08c839f0720c8839e.style.transformOrigin = "left top 0px";
 
-            frameHolder_26ae6e3c7c164aa08c839f0720c8839e.appendChild(content_26ae6e3c7c164aa08c839f0720c8839e);
-    
-            creative_src = `${bannerURL}?pid=26ae6e3c7c164aa08c839f0720c8839e&aid=eec540016aa9422f91cd4e1add329a2e&fid=3d378f7d1ddb4e7d9563ab585d20431e&advId=5814c24020f6496d86d486d9ba2323bd&campId=4886170abcf2452993f34a1ee83e71d2&pubId=5565e302fb2e489cae28103f6c66db12&chanId=3d58e13cbef3493682fe6107ac13e262&clk=${clickTag}`;
-            banner_26ae6e3c7c164aa08c839f0720c8839e = document.createElement('iframe');
-            banner_26ae6e3c7c164aa08c839f0720c8839e.src = creative_src;
-            banner_26ae6e3c7c164aa08c839f0720c8839e.id = yomediaBannerId_26ae6e3c7c164aa08c839f0720c8839e;
+        frameHolder_26ae6e3c7c164aa08c839f0720c8839e.appendChild(content_26ae6e3c7c164aa08c839f0720c8839e);
 
-            banner_26ae6e3c7c164aa08c839f0720c8839e.setAttribute('allowfullscreen', 'true');
-            banner_26ae6e3c7c164aa08c839f0720c8839e.setAttribute('webkitallowfullscreen', 'true');
-            banner_26ae6e3c7c164aa08c839f0720c8839e.setAttribute('mozallowfullscreen', 'true');
+        creative_src = `https://demo.yomedia.vn/${bannerURL}?pid=26ae6e3c7c164aa08c839f0720c8839e&aid=eec540016aa9422f91cd4e1add329a2e&fid=3d378f7d1ddb4e7d9563ab585d20431e&advId=5814c24020f6496d86d486d9ba2323bd&campId=4886170abcf2452993f34a1ee83e71d2&pubId=5565e302fb2e489cae28103f6c66db12&chanId=3d58e13cbef3493682fe6107ac13e262&clk=${clickTag}`;
+        banner_26ae6e3c7c164aa08c839f0720c8839e = document.createElement('iframe');
+        banner_26ae6e3c7c164aa08c839f0720c8839e.src = creative_src;
+        banner_26ae6e3c7c164aa08c839f0720c8839e.id = yomediaBannerId_26ae6e3c7c164aa08c839f0720c8839e;
 
-            banner_26ae6e3c7c164aa08c839f0720c8839e.frameBorder = 0;
-            banner_26ae6e3c7c164aa08c839f0720c8839e.scrolling = 'no';
-            banner_26ae6e3c7c164aa08c839f0720c8839e.seamless = 'seamless';
-            banner_26ae6e3c7c164aa08c839f0720c8839e.height = screen.height;
-            banner_26ae6e3c7c164aa08c839f0720c8839e.width = screen.width;
-            banner_26ae6e3c7c164aa08c839f0720c8839e.style.height = screen.height + 'px';
-            banner_26ae6e3c7c164aa08c839f0720c8839e.style.width = screen.width + 'px';
-            banner_26ae6e3c7c164aa08c839f0720c8839e.style.maxWidth = document.getElementById(yomediaId_26ae6e3c7c164aa08c839f0720c8839e).clientWidth + 'px';
-            banner_26ae6e3c7c164aa08c839f0720c8839e.style.maxHeight = viewHeight+'px';
-            banner_26ae6e3c7c164aa08c839f0720c8839e.style.overflow = 'hidden';
-            banner_26ae6e3c7c164aa08c839f0720c8839e.style.position = 'relative';
-            banner_26ae6e3c7c164aa08c839f0720c8839e.style.transition = 'width 300ms ease-in-out 0s, height 300ms ease-in-out 0s';
+        banner_26ae6e3c7c164aa08c839f0720c8839e.setAttribute('allowfullscreen', 'true');
+        banner_26ae6e3c7c164aa08c839f0720c8839e.setAttribute('webkitallowfullscreen', 'true');
+        banner_26ae6e3c7c164aa08c839f0720c8839e.setAttribute('mozallowfullscreen', 'true');
 
-            var scaleCalc = getScaleValue_26ae6e3c7c164aa08c839f0720c8839e();
-            var scaleVal = "scale(" + scaleCalc + ")";
+        banner_26ae6e3c7c164aa08c839f0720c8839e.frameBorder = 0;
+        banner_26ae6e3c7c164aa08c839f0720c8839e.scrolling = 'no';
+        banner_26ae6e3c7c164aa08c839f0720c8839e.seamless = 'seamless';
+        banner_26ae6e3c7c164aa08c839f0720c8839e.height = screen.height;
+        banner_26ae6e3c7c164aa08c839f0720c8839e.width = screen.width;
+        banner_26ae6e3c7c164aa08c839f0720c8839e.style.height = screen.height + 'px';
+        banner_26ae6e3c7c164aa08c839f0720c8839e.style.width = screen.width + 'px';
+        banner_26ae6e3c7c164aa08c839f0720c8839e.style.maxWidth = document.getElementById(yomediaId_26ae6e3c7c164aa08c839f0720c8839e).clientWidth + 'px';
+        banner_26ae6e3c7c164aa08c839f0720c8839e.style.maxHeight = viewHeight+'px';
+        banner_26ae6e3c7c164aa08c839f0720c8839e.style.overflow = 'hidden';
+        banner_26ae6e3c7c164aa08c839f0720c8839e.style.position = 'relative';
+        banner_26ae6e3c7c164aa08c839f0720c8839e.style.transition = 'width 300ms ease-in-out 0s, height 300ms ease-in-out 0s';
 
-            content_26ae6e3c7c164aa08c839f0720c8839e.style.WebkitTransform = scaleVal;
-            content_26ae6e3c7c164aa08c839f0720c8839e.style.MozTransform = scaleVal;
-            content_26ae6e3c7c164aa08c839f0720c8839e.style.MsTransform = scaleVal;
-            content_26ae6e3c7c164aa08c839f0720c8839e.style.OTransform = scaleVal;
-            content_26ae6e3c7c164aa08c839f0720c8839e.style.transform = scaleVal;
+        var scaleCalc = getScaleValue_26ae6e3c7c164aa08c839f0720c8839e();
+        var scaleVal = "scale(" + scaleCalc + ")";
 
-            content_26ae6e3c7c164aa08c839f0720c8839e.appendChild(banner_26ae6e3c7c164aa08c839f0720c8839e);
+        content_26ae6e3c7c164aa08c839f0720c8839e.style.WebkitTransform = scaleVal;
+        content_26ae6e3c7c164aa08c839f0720c8839e.style.MozTransform = scaleVal;
+        content_26ae6e3c7c164aa08c839f0720c8839e.style.MsTransform = scaleVal;
+        content_26ae6e3c7c164aa08c839f0720c8839e.style.OTransform = scaleVal;
+        content_26ae6e3c7c164aa08c839f0720c8839e.style.transform = scaleVal;
 
-            content_26ae6e3c7c164aa08c839f0720c8839e.style.top = "0px";
-            content_26ae6e3c7c164aa08c839f0720c8839e.style.margin = "0px auto 0px 0px";
+        content_26ae6e3c7c164aa08c839f0720c8839e.appendChild(banner_26ae6e3c7c164aa08c839f0720c8839e);
 
-            // var footer_26ae6e3c7c164aa08c839f0720c8839e = document.createElement("div");
-            // footer_26ae6e3c7c164aa08c839f0720c8839e.id ="yomedia_interscroller_footer_text";
-            // footer_26ae6e3c7c164aa08c839f0720c8839e.style.backgroundColor = "#cdcdcd";
-            // footer_26ae6e3c7c164aa08c839f0720c8839e.style.color = "#ffffff";
-            // footer_26ae6e3c7c164aa08c839f0720c8839e.style.opacity = "0.75";
-            // footer_26ae6e3c7c164aa08c839f0720c8839e.style.position = "absolute";
-            // footer_26ae6e3c7c164aa08c839f0720c8839e.style.padding = "3px";
-            // footer_26ae6e3c7c164aa08c839f0720c8839e.style.zIndex = "4";
-            // footer_26ae6e3c7c164aa08c839f0720c8839e.style.textAlign = "center";
-            // footer_26ae6e3c7c164aa08c839f0720c8839e.style.width = "100%";
-            // footer_26ae6e3c7c164aa08c839f0720c8839e.style.bottom = "0px";
-            // footer_26ae6e3c7c164aa08c839f0720c8839e.style.fontSize = "11px";
-            // footer_26ae6e3c7c164aa08c839f0720c8839e.style.transform = "translateZ(0)";
-            // footer_26ae6e3c7c164aa08c839f0720c8839e.innerHTML = "KÉO XUỐNG ĐỂ XEM TIẾP BÀI VIẾT";
-            // inner_26ae6e3c7c164aa08c839f0720c8839e.appendChild(footer_26ae6e3c7c164aa08c839f0720c8839e);
+        content_26ae6e3c7c164aa08c839f0720c8839e.style.top = "0px";
+        content_26ae6e3c7c164aa08c839f0720c8839e.style.margin = "0px auto 0px 0px";
 
-            /*document.addEventListener('scroll', function(){
-                viewHeight = parseInt(window.innerHeight || document.documentElement.clientHeight);
-                wrapper_26ae6e3c7c164aa08c839f0720c8839e.style.height = screen.height + "px";
-            });*/
+        // var footer_26ae6e3c7c164aa08c839f0720c8839e = document.createElement("div");
+        // footer_26ae6e3c7c164aa08c839f0720c8839e.id ="yomedia_interscroller_footer_text";
+        // footer_26ae6e3c7c164aa08c839f0720c8839e.style.backgroundColor = "#cdcdcd";
+        // footer_26ae6e3c7c164aa08c839f0720c8839e.style.color = "#ffffff";
+        // footer_26ae6e3c7c164aa08c839f0720c8839e.style.opacity = "0.75";
+        // footer_26ae6e3c7c164aa08c839f0720c8839e.style.position = "absolute";
+        // footer_26ae6e3c7c164aa08c839f0720c8839e.style.padding = "3px";
+        // footer_26ae6e3c7c164aa08c839f0720c8839e.style.zIndex = "4";
+        // footer_26ae6e3c7c164aa08c839f0720c8839e.style.textAlign = "center";
+        // footer_26ae6e3c7c164aa08c839f0720c8839e.style.width = "100%";
+        // footer_26ae6e3c7c164aa08c839f0720c8839e.style.bottom = "0px";
+        // footer_26ae6e3c7c164aa08c839f0720c8839e.style.fontSize = "11px";
+        // footer_26ae6e3c7c164aa08c839f0720c8839e.style.transform = "translateZ(0)";
+        // footer_26ae6e3c7c164aa08c839f0720c8839e.innerHTML = "KÉO XUỐNG ĐỂ XEM TIẾP BÀI VIẾT";
+        // inner_26ae6e3c7c164aa08c839f0720c8839e.appendChild(footer_26ae6e3c7c164aa08c839f0720c8839e);
 
-            window.addEventListener('resize', function(){
-                resize();
-            });
+        /*document.addEventListener('scroll', function(){
+            viewHeight = parseInt(window.innerHeight || document.documentElement.clientHeight);
+            wrapper_26ae6e3c7c164aa08c839f0720c8839e.style.height = screen.height + "px";
+        });*/
 
-            viewBannerYomedia_26ae6e3c7c164aa08c839f0720c8839e();
-            impressionTrackingYomedia_26ae6e3c7c164aa08c839f0720c8839e();
-            wrapper_26ae6e3c7c164aa08c839f0720c8839e.addEventListener("load", viewableBannerYomedia_26ae6e3c7c164aa08c839f0720c8839e.bind(wrapper_26ae6e3c7c164aa08c839f0720c8839e), false);
-            if (window!=window.top) {
-                parent.document.addEventListener("touchmove", viewableBannerYomedia_26ae6e3c7c164aa08c839f0720c8839e.bind(wrapper_26ae6e3c7c164aa08c839f0720c8839e), false);
-                parent.document.addEventListener("scroll", viewableBannerYomedia_26ae6e3c7c164aa08c839f0720c8839e.bind(wrapper_26ae6e3c7c164aa08c839f0720c8839e), false);
-                parent.document.addEventListener("touchmove", resize, false);
-                parent.document.addEventListener("scroll", resize, false);
-            } else {
-                document.addEventListener("touchmove", viewableBannerYomedia_26ae6e3c7c164aa08c839f0720c8839e.bind(wrapper_26ae6e3c7c164aa08c839f0720c8839e), false);
-                document.addEventListener("scroll", viewableBannerYomedia_26ae6e3c7c164aa08c839f0720c8839e.bind(wrapper_26ae6e3c7c164aa08c839f0720c8839e), false);
-                document.addEventListener("touchmove", resize, false);
-                document.addEventListener("scroll", resize, false);
-            }
-        }else {
-            console.log('Wrong URL, please check again.');
-        }       
+        window.addEventListener('resize', function(){
+            resize();
+        });
+
+        viewBannerYomedia_26ae6e3c7c164aa08c839f0720c8839e();
+        impressionTrackingYomedia_26ae6e3c7c164aa08c839f0720c8839e();
+        wrapper_26ae6e3c7c164aa08c839f0720c8839e.addEventListener("load", viewableBannerYomedia_26ae6e3c7c164aa08c839f0720c8839e.bind(wrapper_26ae6e3c7c164aa08c839f0720c8839e), false);
+        if (window!=window.top) {
+            parent.document.addEventListener("touchmove", viewableBannerYomedia_26ae6e3c7c164aa08c839f0720c8839e.bind(wrapper_26ae6e3c7c164aa08c839f0720c8839e), false);
+            parent.document.addEventListener("scroll", viewableBannerYomedia_26ae6e3c7c164aa08c839f0720c8839e.bind(wrapper_26ae6e3c7c164aa08c839f0720c8839e), false);
+            parent.document.addEventListener("touchmove", resize, false);
+            parent.document.addEventListener("scroll", resize, false);
+        } else {
+            document.addEventListener("touchmove", viewableBannerYomedia_26ae6e3c7c164aa08c839f0720c8839e.bind(wrapper_26ae6e3c7c164aa08c839f0720c8839e), false);
+            document.addEventListener("scroll", viewableBannerYomedia_26ae6e3c7c164aa08c839f0720c8839e.bind(wrapper_26ae6e3c7c164aa08c839f0720c8839e), false);
+            document.addEventListener("touchmove", resize, false);
+            document.addEventListener("scroll", resize, false);
+        }    
     }else {
         console.log('Empty banner, please add one!');
 
