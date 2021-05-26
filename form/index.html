@@ -134,12 +134,12 @@
             </div>
         </div>
     </body>
-    <script type="text/javascript" src="resources/js/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="resources/js/popper.min.js"></script>
+    <script type="text/javascript" src="resources/js/jquery/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="resources/js/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="resources/js/popper/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script>
-    <script type="text/javascript" src="resources/js/chosen.jquery.min.js"></script>
-    <script type="text/javascript" src="resources/js/jquery.toast.js"></script>
+    <script type="text/javascript" src="resources/js/chosen.jquery/chosen.jquery.min.js"></script>
+    <script type="text/javascript" src="resources/js/jquery/jquery.toast.js"></script>
     <script type="text/javascript" src="../resources/js/database.js"></script>
     <!-- Scripts  -->
     <script type="text/javascript">
@@ -185,6 +185,7 @@
         function sortArrays(val) {
             val.sort();
             val.reverse();
+            console.log(val);
             return val;
         }
 
@@ -278,18 +279,6 @@
                     $("#source, #video_tag_source_name").show();
                     $("#addition_source, #source_name").hide();
                     $("#addition_source_field").val('');   
-                    break;
-
-                case 'in-carousel': case 'on-image-pc':
-                    $("#source, #addition_source, #addition_source_name").show();
-                    $("#video_source_name").hide();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
-                    $("#addition_source_field").val('');
-                    break;
-                
-                case 'in-inread':
-                    $("#source, #addition_source, #video_source_name").show();
-                    $("#addition_source_name").hide();
-                    $("#addition_source_field").val('');
                     break;
             }
         });
