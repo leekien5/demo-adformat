@@ -16,8 +16,8 @@ if(bannerURL && formatURL) {
 	//Get fireDirectory name from file directories
 	const fileName = {
 		masthead: '../../form/deliveries/pc_masthead.js',
-		balloon: '../../form/deliveries/balloon-pc.js',
-		bottomUp: '../../form/deliveries/bottom-up-pc.js',
+		balloon: '../../form/deliveries/pc_balloon.js',
+		bottomUp: '../../form/deliveries/pc_bottom_up.js',
 		threeDPostCarousel: '../../form/deliveries/pc_mb_3d_post_carousel.js',
 		inImageTakeover: '../../form/deliveries/pc_mb_in_image_takeover.js',
 		inImageWithInread: '../../form/deliveries/pc_mb_in_image_inread.js',
@@ -74,7 +74,7 @@ if(bannerURL && formatURL) {
 			break;
 			
 		case '3d-post-carousel-pc':
-			document.title = "3D Post Carousel";
+			document.title = "Display 3D Post Carousel";
 			fileDirectory = fileName.threeDPostCarousel;
 			removeClass();
 			adPlacement = document.getElementById('ads-3d-post-carousel');
@@ -86,7 +86,7 @@ if(bannerURL && formatURL) {
 			break;
 
 		case 'in-native-pc':
-			document.title = "In Image Native";
+			document.title = "Display In Image Native";
 			fileDirectory = fileName.inImageTakeover;
 			removeClass();
 			//Replace div id with script source
@@ -97,7 +97,7 @@ if(bannerURL && formatURL) {
 			break;
 
 		case 'in-takeover-pc':
-			document.title = "In Image Takeover";
+			document.title = "Display In Image Takeover";
 			fileDirectory = fileName.inImageTakeover;
 			removeClass();
 			//Replace div id with script source
@@ -108,7 +108,7 @@ if(bannerURL && formatURL) {
 			break;
 		
 		case 'in-inread-pc':
-			document.title = "In Image With Video Inread";
+			document.title = "Display In Image With Video Inread";
 			fileDirectory = fileName.inImageWithInread;
 			removeClass();
 			//Replace div id with script source
@@ -119,7 +119,7 @@ if(bannerURL && formatURL) {
 			break;
 
 		case 'in-carousel-pc':
-			document.title = "In Image Carousel";
+			document.title = "Display In Image Carousel";
 			fileDirectory = fileName.inImageCarousel;
 			removeClass();
 			//Replace div id with script source
@@ -142,7 +142,7 @@ if(bannerURL && formatURL) {
 			break;
 		
 		case 'medium-rectangle-pc':
-			document.title = "IAB Medium Rectangle (300x250)";
+			document.title = "Medium Rectangle (300x250)";
 			fileDirectory = fileName.iab300x250;
 			removeClass();
 			adPlacement = document.getElementById('ads-iab');
@@ -154,7 +154,7 @@ if(bannerURL && formatURL) {
 			break;
 		
 		case 'half-page-pc':
-			document.title = "IAB Half Page (300x600)";
+			document.title = "Half Page (300x600)";
 			fileDirectory = fileName.iab300x600;
 			removeClass();
 			adPlacement = document.getElementById('ads-iab');

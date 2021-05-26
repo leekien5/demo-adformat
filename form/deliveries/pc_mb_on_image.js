@@ -220,7 +220,6 @@
                         g = h / (o.ctv.min_width / o.ctv.min_height),
                         y = n.createElement("div", { id: "zones-ads-" + a, style: "position: relative; display: inline-block; text-align: center; width: auto; height: auto;" }),
                         v = n.createElement("div", { id: "wrapper-ads-" + a, style: `position: relative; display: block; margin: 0px; width: 100%; height: ${g}px;` });
-                    console.log(g);
                         y.appendChild(v);
                     var _ = "";
                     f >= h && void 0 !== o.ctv.portrait_source && o.ctv.portrait_source.length > 0

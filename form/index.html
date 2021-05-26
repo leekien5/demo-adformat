@@ -185,7 +185,6 @@
         function sortArrays(val) {
             val.sort();
             val.reverse();
-            console.log(val);
             return val;
         }
 
@@ -353,7 +352,7 @@
         var selectedTemplate = $("#optTemplates").val();
         var selectedFormat = $("#optAdformats").val();
         var sourceURL = $("#source_field").val();
-        var additionSourceURL = $("#addition_source_field").val();
+        // var additionSourceURL = $("#addition_source_field").val();
         var url = window.location.href;
         var p = url.search("form/");
         if (p != -1) {
@@ -368,7 +367,7 @@
             return;
         }
         adformatURL = `${url}site/${selectedTemplate}/index.html?f=${selectedFormat}&b=` + encodeURIComponent(`${sourceURL}`);
-        additionSourceURL ? adformatURL = `${adformatURL}&c=` + encodeURIComponent(`${additionSourceURL}`) : adformatURL;
+        // additionSourceURL ? adformatURL = `${adformatURL}&c=` + `${additionSourceURL}` : adformatURL;
 
         $("#output_source_field").empty();
         $("#output_source_field").append(adformatURL);

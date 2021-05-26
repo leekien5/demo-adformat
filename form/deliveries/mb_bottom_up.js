@@ -35,7 +35,7 @@ function showBannerYomedia_aa7c62743ab0414c9aec968895303026(s) {
     if(bannerURL){
         var banner = document.createElement('iframe');
         var clickTag = encodeURIComponent(getClickTagYomedia_aa7c62743ab0414c9aec968895303026());
-        var creative_src = `https://demo.yomedia.vn/${bannerURL}?pid=aa7c62743ab0414c9aec968895303026&aid=5f461adbb881401ca9148ff042856f5a&fid=7782039bfe2d415686491532bb53ec27&advId=2f5576e9954248b3a9acb8e73bc91cad&campId=cbed67958312425580d907d9e5cd8e65&pubId=5565e302fb2e489cae28103f6c66db12&chanId=3d58e13cbef3493682fe6107ac13e262&clk=` + clickTag;
+        var creative_src = `https://demo.yomedia.vn/${bannerURL}?pid=aa7c62743ab0414c9aec968895303026&clk=` + clickTag;
         banner.setAttribute('src', creative_src);
         banner.setAttribute('id', yomediaContentId_aa7c62743ab0414c9aec968895303026);
         banner.setAttribute('allowFullScreen', '');
@@ -416,7 +416,7 @@ function clickTrackingYomedia_aa7c62743ab0414c9aec968895303026() {
     if (typeof _YoClick != 'undefined' && avlHelperModule.validateUrl(_YoClick)) {
         getTrackingYomedia(_YoClick);
     }
-        var landingPage = 'https://www.pinetech.vn/' ;
+        var landingPage = 'https://www.yomedia.vn/' ;
         var isMac = /Mac|iPhone|iPod|iPad/.test(navigator.userAgent) && /\sSafari\//.test(navigator.userAgent);
         if (!isMac) {
             window.open(landingPage, '_blank');
@@ -428,7 +428,7 @@ function clickThroughYomedia_aa7c62743ab0414c9aec968895303026() {
     if (typeof _YoClick != 'undefined' && avlHelperModule.validateUrl(_YoClick)) {
         getTrackingYomedia(_YoClick);
     }
-        var landingPage = 'https://www.pinetech.vn/';
+        var landingPage = 'https://www.yomedia.vn/';
         window.open(landingPage, '_blank');
     window.parent.postMessage("LgTopBanner","*");
 }
@@ -442,7 +442,7 @@ function clickTracking3rdYomedia_aa7c62743ab0414c9aec968895303026() {
 
 function getClickTagYomedia_aa7c62743ab0414c9aec968895303026() {
     var landingPage = '';
-    landingPage = 'https://www.pinetech.vn/';
+    landingPage = 'https://www.yomedia.vn/';
     return landingPage;
 }
 

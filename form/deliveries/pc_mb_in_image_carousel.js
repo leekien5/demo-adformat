@@ -1261,6 +1261,12 @@
     let urlParams = new URLSearchParams(window.location.search);
     let bannerURL = urlParams.get('b');
     let sliderURL = bannerURL;
+
+    var p = sliderURL.search("index.html");
+    if (p != -1) {
+        sliderURL = sliderURL.substring(0, p);
+    }
+
     if(bannerURL){
         YoAds.showAds(
             {
@@ -1289,7 +1295,7 @@
                         source: `https://demo.yomedia.vn/${bannerURL}`,
                         width: "600",
                         height: "200",
-                        slider_source: `https://demo.yomedia.vn/${sliderURL}` + `/slider`,
+                        slider_source: `https://demo.yomedia.vn/${sliderURL}` + `/slider/index.html`,
                         slider_width: "680",
                         slider_height: "200",
                         content_min_width: "200",

@@ -22,7 +22,7 @@ if(bannerURL && formatURL) {
 	//Switching cases
 	switch(formatURL) {
 		case 'masthead-mb':
-			document.title = "Masthead Mobile";
+			document.title = "Mobile Masthead";
 			fileDirectory = fileName.masthead;
 			adPlacement = document.getElementById('ads-billboard');
 			//Replace div id with script source
@@ -104,7 +104,7 @@ if(bannerURL && formatURL) {
 			break;
 
 		case '3d-post-carousel-mb':
-			document.title = "3D Post Carousel";
+			document.title = "Mobile 3D Post Carousel";
 			fileDirectory = fileName.threeDPostCarousel;
 			adPlacement = document.getElementById('ads-3d-post-carousel');
 			//Replace div id with script source
@@ -115,7 +115,7 @@ if(bannerURL && formatURL) {
 			break;
 
 		case 'in-native-mb':
-			document.title = "In Image Native";
+			document.title = "Mobile In Image Native";
 			fileDirectory = fileName.inImageTakeover;
 			//Replace div id with script source
 			var scriptPlacement = document.createElement('script');
@@ -125,7 +125,7 @@ if(bannerURL && formatURL) {
 			break;
 
 		case 'in-takeover-mb':
-			document.title = "In Image Takeover";
+			document.title = "Mobile In Image Takeover";
 			fileDirectory = fileName.inImageTakeover;
 			//Replace div id with script source
 			var scriptPlacement = document.createElement('script');
@@ -135,7 +135,7 @@ if(bannerURL && formatURL) {
 			break;
 		
 		case 'in-inread-mb':
-			document.title = "In Image With Video Inread";
+			document.title = "Mobile In Image With Video Inread";
 			fileDirectory = fileName.inImageWithInread;
 			//Replace div id with script source
 			var scriptPlacement = document.createElement('script');
@@ -145,7 +145,7 @@ if(bannerURL && formatURL) {
 			break;
 
 		case 'in-carousel-mb':
-			document.title = "In Image Carousel";
+			document.title = "Mobile In Image Carousel";
 			fileDirectory = fileName.inImageCarousel;
 			//Replace div id with script source
 			var scriptPlacement = document.createElement('script');
@@ -166,7 +166,7 @@ if(bannerURL && formatURL) {
 			break;
 		
 		case 'medium-rectangle-mb':
-			document.title = "IAB Medium Rectangle (300x250)";
+			document.title = "Mobile Medium Rectangle (300x250)";
 			fileDirectory = fileName.iab300x250;
 			adPlacement = document.getElementById('ads-iab');
 			//Replace div id with script source
@@ -177,7 +177,7 @@ if(bannerURL && formatURL) {
 			break;
 		
 		case 'half-page-mb':
-			document.title = "IAB Half Page (300x600)";
+			document.title = "Mobile Half Page (300x600)";
 			fileDirectory = fileName.iab300x600;
 			adPlacement = document.getElementById('ads-iab');
 			//Replace div id with script source
