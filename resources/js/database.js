@@ -44,7 +44,7 @@ const list = {
         { name: 'Mobile 3D Footer', value: '3d-footer-mb', type: 'mobile' },
         { name: 'Mobile Footer', value: 'footer-mb', type: 'mobile' },
         { name: 'Mobile Card', value: 'card-mb', type: 'mobile' },
-        { name: 'Mobile Teris Footer', value: 'teris-mb', type: 'mobile' },
+        // { name: 'Mobile Teris Footer', value: 'teris-mb', type: 'mobile' },
         { name: 'Mobile In Image Native', value: 'in-native-mb', type: 'mobile' },
         { name: 'Mobile In Image Takeover', value: 'in-takeover-mb', type: 'mobile' },
         { name: 'Mobile In Image Carousel', value: 'in-carousel-mb', type: 'mobile' },
