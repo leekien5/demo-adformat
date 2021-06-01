@@ -10,6 +10,7 @@ if(bannerURL && formatURL) {
 		inpage: '../../../form/deliveries/mb_inpage.js',
 		firstview: '../../../form/deliveries/mb_firstview.js',
 		footer: '../../../form/deliveries/mb_footer.js',
+		wheel: '../../../form/deliveries/mb_footer_wheel.js',
 		bottomUpMb: '../../../form/deliveries/mb_bottom_up.js',
 		threeDPostCarousel: '../../../form/deliveries/pc_mb_3d_post_carousel.js',
 		inImageTakeover: '../../../form/deliveries/pc_mb_in_image_takeover.js',
@@ -76,6 +77,16 @@ if(bannerURL && formatURL) {
 		case 'card-mb':
 			document.title = "Mobile Card";
 			fileDirectory = fileName.footer;
+			//Replace div id with script source
+			var scriptPlacement = document.createElement('script');
+			scriptPlacement.src = fileDirectory;
+			//Append script to body
+			document.body.appendChild(scriptPlacement);
+			break;
+
+		case 'wheel-mb':
+			document.title = "Mobile Footer Wheel";
+			fileDirectory = fileName.wheel;
 			//Replace div id with script source
 			var scriptPlacement = document.createElement('script');
 			scriptPlacement.src = fileDirectory;

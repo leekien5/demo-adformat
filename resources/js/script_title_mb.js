@@ -41,6 +41,12 @@ function getBannerURL() {
         document.getElementById('format-info').innerHTML = info;
         break;
 
+      case 'wheel-mb':
+        var info = "Mobile Footer Wheel";
+        document.title = info;
+        document.getElementById('format-info').innerHTML = info;
+        break;
+
       case '3d-footer-mb':
         var info = "Mobile 3D Footer";
         document.title = info;
