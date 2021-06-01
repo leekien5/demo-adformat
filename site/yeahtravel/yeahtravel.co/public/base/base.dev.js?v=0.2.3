@@ -1,0 +1,116 @@
+jQuery(function ($) {
+    if($('#content_detail').length){
+        var width_content = $('#content_detail').width();
+        var src, width, height;
+        // $('figure').each(function(){
+        //     width = $(this).find('img').attr('width');
+        //     height = $(this).find('img').attr('height');
+        //     if(isNaN(width) || width==undefined || width==0 || isNaN(height) || height==undefined) {}
+        //     else {
+        //         var max_height = parseInt(width_content*height/width);
+        //         width = Math.min(width, width_content);
+        //         height = Math.min(height, max_height);
+        //         src = $(this).find('img').attr('data-src');
+        //         if(src==undefined) src = $(this).find('img').attr('src');
+        //         //src = src.replace("/files/", "/resize/"+width+"x"+height+"/files/");
+        //         //$(this).find('img').attr('src', src).attr('width',width).attr('height',height);
+        //         $(this).find('figcaption').width(width - 5);
+        //     }
+        //     var caption = $(this).find('figcaption h2').html();
+        //     if(caption=='&nbsp;' || caption==' ') $(this).find('figcaption').remove();
+        // });
+        
+        // $('.exp_tinyslide').each(function(){
+        //     var count_item = $(this).find('figure').size();
+        //     var html = '';
+        //     if(count_item==1) {
+        //         $(this).find('img').each(function(){
+        //             html += '<figure><img src="'+$(this).attr('src')+'" alt="'+$(this).attr('alt')+'"><figcaption><h2>'+$(this).attr('alt')+'</h2></figcaption></figure>';
+        //         });
+        //     }
+        //     else if(count_item==2) {
+        //         html = '<div class="exp_slide_two js">';
+        //         $(this).find('img').each(function(){
+        //             html += '<img src="'+$(this).attr('src')+'" alt="'+$(this).attr('alt')+'" />';
+        //         });
+        //         html += '</div>';
+        //     }
+        //     else {
+        //         html = '<div class="explus_slider"><span class="btn_left"></span><span class="btn_right"></span><div class="slider-for">';
+        //         $(this).find('.exp_wrap').children().each(function(){
+        //             if($(this).hasClass('exp_video')) html += '<div><iframe class="exp_video" src="'+$(this).attr('src')+'" width="100%" height="100%" frameborder="0" allowfullscreen="true"></iframe></div>';
+        //             else html += '<div>'+$(this).html()+'</div>';
+        //         });
+        //         html += '</div></div>';
+        //     }
+        //     $(this).html(html).show();
+        // });
+        // setTimeout(function(){
+        //     $('.exp_slide_two').twentytwenty();
+        // }, 500);
+        // if($('.explus_slider').length>0) $('head').append('<script type="text/javascript" src="/public/base/explus/jquery.touchSwipe.min.js">');
+        // $('.explus_slider').EXslider();
+        
+        if($('.cmex').length>0) {
+            $('head').append('<script type="text/javascript" src="/public/base/comment/iframeResizer.min.js">');
+            $('div.cmex').each(function(){
+                var id = $(this).attr('data-id');
+                // var type = $(this).attr('data-type');
+                var numposts = $(this).attr('data-numposts');
+                $(this).append('<iframe class="cmex" src="/api/comment/'+id+'?numposts='+numposts+'" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Explus" width="100%" src="" style="width: 100% !important; height: 55px; border: none !important; overflow: hidden !important;" horizontalscrolling="no" verticalscrolling="no"></iframe>')
+            });
+            $('iframe.cmex').removeClass('cmex').iFrameResize();
+        }
+        if($('.exp_area_vote').length>0) {
+            var s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.src = '/public/base/vote/script.dev.js';
+            $('head').append(s);
+        }
+        
+        if($('.exp_qc_share').length>0) {
+            $('head').append('<script type="text/javascript" src="/public/base/comment/jquery.cookie.min.js">');
+            $('.exp_qc_share').each(function(){
+                var id = $(this).attr('data-id');
+                var sleep = parseInt($(this).attr('data-sleep'));
+                var total = $(this).find('.exp_qc_one').size();
+                var qc = parseInt($.cookie('QC_SHARE_'+id));
+                if(!qc) qc=1; qc++; if(qc>total) qc = 1;
+                $.cookie("QC_SHARE_"+id, qc);
+                $(this).find('.exp_qc_one:eq('+(qc-1)+')').addClass('active');
+                var obj = $(this);
+                if(sleep>0) {
+                    setInterval(function(){
+                        qc++; if(qc>total) qc = 1;
+                        var next = obj.find('.exp_qc_one:eq('+(qc-1)+')');
+                        obj.find('.exp_qc_one').removeClass('active');
+                        next.addClass('active');
+                    }, sleep*1000);
+                }
+            });
+        }
+        
+        // if($('.live_info').length>0) {
+        //     var i = parseInt($('.live_info').find('b').text()); var mask = i;
+        //     var news_id = parseInt($('.live_info').find('b').attr('data-id'));
+        //     setInterval(function(){
+        //         i--;
+        //         if(i>0) $('.live_info b').text(i);
+        //         else if(i==0) {
+        //             $.ajax({
+        //         		type: "GET",
+        //         		url: "/live_content/"+news_id,
+        //         		dataType: "html",
+        //         		success: function(msg){
+        //         			$('.exp_tbllive').html(msg);
+        //                     i=mask;
+        //         		}
+        //         	});
+        //         }
+        //     }, 1000);
+        // }
+        
+        // if($('#gotolink').length>0) window.location.href = $('#gotolink').text();
+    }
+});
+//$(this).attr('src').replace(/\/([0-9]*)x([0-9]*)\//gm, "/78x70/")

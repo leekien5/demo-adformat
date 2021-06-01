@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /.well-known/*
+Sitemap: https://yeahtravel.vn/sitemap.xml
+Sitemap: https://yeahtravel.vn/sitemap-google-news.xml

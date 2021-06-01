@@ -205,7 +205,7 @@
                                             break;
                                         }
                                     }
-                                    p && ((n = !0), p.parentNode && "A" === p.parentNode.nodeName && (p = p.parentNode), r.renderAds(p, t, e), clearInterval(c));
+                                    p && (n = !0, p.parentNode && "A" === p.parentNode.nodeName && (p = p.parentNode), r.renderAds(p, t, e), clearInterval(c))
                                 }
                             }
                             (i += 10) > 5e3 && !n && (r.renderBackup(a, s, e), clearInterval(c));
@@ -219,22 +219,47 @@
                     var h = getComputedStyle(t),
                         f = n.createElement("div", { id: "zones-ads-" + a, style: `position: relative; display: inline-block; width: auto; height: auto; margin: ${h.margin || "auto"}; padding: ${h.padding || "0px"};` });
                     h.maxWidth && (f.style.maxWidth = h.maxWidth);
-                    var m = n.createElement("div", { id: "wrapper-ads-" + a, style: `position: relative; display: inline-block; width: ${t.clientWidth}px; height: auto; margin: 0px;` }),
+
+                    if ("A" === t.nodeName) {
+                        let imgTag = t.querySelector("img");
+                        var m = n.createElement("div", { id: "wrapper-ads-" + a, style: `position: relative; display: inline-block; width: ${imgTag.clientWidth}px; height: auto; margin: 0px;` }),
                         g = t.cloneNode(!0);
-                    f.appendChild(g), f.appendChild(m);
-                    var y = {
-                            src: t.clientHeight >= t.clientWidth && void 0 !== o.ctv.portrait_source && o.ctv.portrait_source.length > 0 ? n.generateUrlAd(d, o.ctv.portrait_source, a, o, l) : n.generateUrlAd(d, o.ctv.source, a, o, l),
+                        f.appendChild(g), f.appendChild(m);
+
+                        var y = {
+                            src: imgTag.clientHeight >= imgTag.clientWidth && void 0 !== o.ctv.portrait_source && o.ctv.portrait_source.length > 0 ? n.generateUrlAd(d, o.ctv.portrait_source, a, o, l) : n.generateUrlAd(d, o.ctv.source, a, o, l),
                             id: a,
-                            style: `width: ${t.clientWidth}px; height: ${t.clientHeight}px; border: none; z-index: 2; position: absolute; margin: auto; left: 0px; right: 0px; bottom: 0px;`,
+                            style: `width: ${imgTag.clientWidth}px; height: ${imgTag.clientHeight}px; border: none; z-index: 2; position: absolute; margin: auto; left: 0px; right: 0px; bottom: 0px;`,
                         },
                         v = n.createElement("iframe", y);
+                    } else {
+                        var m = n.createElement("div", { id: "wrapper-ads-" + a, style: `position: relative; display: inline-block; width: ${t.clientWidth}px; height: auto; margin: 0px;` }),
+                            g = t.cloneNode(!0);
+                        f.appendChild(g), f.appendChild(m);
+                        var y = {
+                                src: t.clientHeight >= t.clientWidth && void 0 !== o.ctv.portrait_source && o.ctv.portrait_source.length > 0 ? n.generateUrlAd(d, o.ctv.portrait_source, a, o, l) : n.generateUrlAd(d, o.ctv.source, a, o, l),
+                                id: a,
+                                style: `width: ${t.clientWidth}px; height: ${t.clientHeight}px; border: none; z-index: 2; position: absolute; margin: auto; left: 0px; right: 0px; bottom: 0px;`,
+                        },
+                        v = n.createElement("iframe", y);                       
+                    }
+
                     m.appendChild(v), t.parentNode.replaceChild(f, t);
                     const { dom: _, evs: T, ttr: k } = s;
                     var b = new i(_, p, T, k, c, l, u, o, { element: v, duration: 1e3, margin: "0px" });
-                    n.addEventListenerHandle(v, "load", function () {
-                        (v.style.height = Math.max(f.clientHeight, g.clientHeight) + "px"), (v.style.width = g.clientWidth + "px"), b.impression(), b.viewability();
-                    }),
-                        this.processedAds(a, b, o);
+
+                    if ("A" === t.nodeName) {
+                        let imgTag = g.querySelector("img");
+                        n.addEventListenerHandle(v, "load", function () {
+                            (v.style.height = Math.max(f.clientHeight, imgTag.clientHeight) + "px"), (v.style.width = imgTag.clientWidth + "px"), b.impression(), b.viewability();
+                        }),
+                            this.processedAds(a, b, o);
+                    } else {
+                        n.addEventListenerHandle(v, "load", function () {
+                            (v.style.height = Math.max(f.clientHeight, g.clientHeight) + "px"), (v.style.width = g.clientWidth + "px"), b.impression(), b.viewability();
+                        }),
+                            this.processedAds(a, b, o);
+                    }
                 },
                 processedAds(t, e, r) {
                     const i = this;

@@ -11,6 +11,7 @@ const list = {
         { name: 'Phụ Nữ Today', value: 'pntpc', type: 'display', img: '../resources/images/backgrounds/phunutodaypc.jpg' },
         { name: 'Thể Thao 247', value: 'tt247pc', type: 'display', img: '../resources/images/backgrounds/thethao247pc.jpg' },
         { name: 'Phụ Nữ Online', value: 'pnopc', type: 'display', img: '../resources/images/backgrounds/phunuonlinepc.jpg' },
+        { name: 'YeahTravel', value: 'yeahtravel/yeahtravel.co', type: 'display', img: '../resources/images/backgrounds/phunuonlinepc.jpg' },
         { name: 'Default', value: 'idpc', type: 'display', img: '../resources/images/backgrounds/defaultpc.jpg' },
         //Mobile Templates
         { name: 'Dân Trí', value: 'dtmb', type: 'mobile', img: '../resources/images/backgrounds/dantrimb.jpg' },
