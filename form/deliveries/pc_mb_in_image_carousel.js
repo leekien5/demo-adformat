@@ -1297,7 +1297,7 @@
                         height: "200",
                         slider_source: `https://demo.yomedia.vn/${sliderURL}` + `/slider/index.html`,
                         slider_width: "680",
-                        slider_height: "200",
+                        slider_height: "300",
                         content_min_width: "200",
                         content_min_height: "100",
                     },
