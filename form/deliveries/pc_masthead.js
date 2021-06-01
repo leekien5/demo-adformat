@@ -25,8 +25,10 @@ function showBannerYomedia_82e237b1f272486587de2dbd5c9478c0(s) {
 
     let urlParams = new URLSearchParams(window.location.search);
     let bannerURL = urlParams.get('b');
-    if(bannerURL){
-        creative_src = `https://demo.yomedia.vn/${bannerURL}?pid=82e237b1f272486587de2dbd5c9478c0&clk=${clickTag}`;
+    let domainURL = urlParams.get('c');
+
+    if(bannerURL && domainURL){
+        creative_src = `https://${domainURL}.yomedia.vn/${bannerURL}?pid=82e237b1f272486587de2dbd5c9478c0&clk=${clickTag}`;
         banner.setAttribute('src', creative_src);
         banner.setAttribute('id', yomediaId_82e237b1f272486587de2dbd5c9478c0);
         banner.setAttribute('allowFullScreen', '');

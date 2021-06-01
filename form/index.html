@@ -55,6 +55,11 @@
                                             <option value="none">None</option>
                                         </select>
                                     </div>
+                                    <div class="form-group">
+                                        <label for="optDomains">Domain</label>
+                                        <select class="chosen-select form-control" id="optDomains">
+                                        </select>
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group" id="preview">
@@ -178,7 +183,12 @@
         
         //Ad views append
         $.each(list.devices, function (idx, obj) {
-            $("#optTypes").append('<option type="' + obj.type + '" value="' + obj.value + '">' + obj.name + '</option>');
+            $("#optTypes").append('<option value="' + obj.value + '">' + obj.name + '</option>');
+        });
+
+        //Domains append
+        $.each(list.domains, function (idx, obj) {
+            $("#optDomains").append('<option value="' + obj.value + '">' + obj.name + '</option>');
         });
 
         //Sort reverse function
@@ -253,10 +263,16 @@
                     break;
             }
             //Update new data to Chosen Select Options
-            $('#optTemplates, #optAdformats').trigger('chosen:updated');
+            $('#optTemplates, #optAdformats, #optDomains').trigger('chosen:updated');
         });
 
-        $("#optTemplates, #optAdformats, #optTypes").chosen({
+        // $("#optDomains").change(function(){
+        //     var domain = $(this).find(":selected").val();
+        //     console.log(domain);
+        // });
+
+
+        $("#optTemplates, #optAdformats, #optTypes, #optDomains").chosen({
             no_results_text: "Oops, nothing found!",
             placeholder_text_single: "Please select an option ...",
         });
@@ -351,7 +367,9 @@
         let adformatURL = '' ; 
         var selectedTemplate = $("#optTemplates").val();
         var selectedFormat = $("#optAdformats").val();
+        var selectedDomain = $("#optDomains").val();
         var sourceURL = $("#source_field").val();
+        var prefix = ""
         // var additionSourceURL = $("#addition_source_field").val();
         var url = window.location.href;
         var p = url.search("form/");
@@ -359,14 +377,14 @@
             url = url.substring(0, p);
         }
         //If Template, Adformat or Source is empty
-        if(!selectedTemplate || !selectedFormat || !sourceURL) {
+        if(!selectedTemplate || !selectedFormat || !sourceURL || !selectedDomain) {
             $.toast({ heading:"Error", text:"Please choose an Ad View, Template or Ad Format before submitting!", position:"top-right", showHideTransition:"fade", icon:"error"});
             if(!sourceURL){
                 $('#source_field').focus();
             }
             return;
         }
-        adformatURL = `${url}site/${selectedTemplate}/index.html?f=${selectedFormat}&b=` + encodeURIComponent(`${sourceURL}`);
+        adformatURL = `${url}site/${selectedTemplate}/index.html?f=${selectedFormat}&b=` + encodeURIComponent(`${sourceURL}`) + `&c=${selectedDomain}`;
         // additionSourceURL ? adformatURL = `${adformatURL}&c=` + `${additionSourceURL}` : adformatURL;
 
         $("#output_source_field").empty();

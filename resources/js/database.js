@@ -5,6 +5,10 @@ const list = {
         { name: 'Mobile', value: 'mobile' },
         { name: 'Video', value: 'video' },
     ],
+    domains : [
+        { name: 'Demo', value: 'demo' },
+        { name: 'Media', value: 'media' },
+    ],
     templates : [
         //Display Templates
         { name: 'Dân Trí', value: 'dtpc', type: 'display', img: '../resources/images/backgrounds/dantripc.jpg' },
