@@ -1,4 +1,3 @@
-//getTrackingYomedia('http://tracking.yomedia.vn/request?evt=req&pid=5feec6f890d3485bb6f43576f47714ac&aid=8e643bcb2fe149349f5a1498fde90f04&r=0&ord=1529373534929' + Date.now());
 var advId_5feec6f890d3485bb6f43576f47714ac = 'c23b9c109f7a4f89a3cb23f694f1d7cb';
 var campId_5feec6f890d3485bb6f43576f47714ac = 'd6692db2a2dd441c9ab9741ee05b127d';
 var pubId_5feec6f890d3485bb6f43576f47714ac = '5565e302fb2e489cae28103f6c66db12';
@@ -30,8 +29,9 @@ if (videoHeight != 0 && videoWitth != 0) {
 }
 
 function showBannerYomedia_5feec6f890d3485bb6f43576f47714ac() {
-    let urlParams = new URLSearchParams(window.location.search);
-    let bannerURL = urlParams.get('b');
+    var urlParams = new URLSearchParams(window.location.search);
+    var bannerURL = urlParams.get('b');
+    var domainURL = urlParams.get('c');
 
     if (document.getElementById(wrapper_ads_5feec6f890d3485bb6f43576f47714ac)) {
         return false;
@@ -152,7 +152,7 @@ function showBannerYomedia_5feec6f890d3485bb6f43576f47714ac() {
                         image: poster,
                         advertising: {
                             client: "vast",
-                            tag: 'https://demo.yomedia.vn/${bannerURL}',
+                            tag: 'https://${domainURL}.yomedia.vn/${bannerURL}',
                             skipmessage: "xx",
                             skiptext: "Skip",
                             autoplayadsmuted: true,

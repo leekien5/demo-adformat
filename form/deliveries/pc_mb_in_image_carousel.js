@@ -1258,16 +1258,17 @@
         },
     ]);
 
-    let urlParams = new URLSearchParams(window.location.search);
-    let bannerURL = urlParams.get('b');
-    let sliderURL = bannerURL;
+    var urlParams = new URLSearchParams(window.location.search);
+    var bannerURL = urlParams.get('b');
+    var domainURL = urlParams.get('c');
+    var sliderURL = bannerURL;
 
     var p = sliderURL.search("index.html");
     if (p != -1) {
         sliderURL = sliderURL.substring(0, p);
     }
 
-    if(bannerURL){
+    if(bannerURL && domainURL){
         YoAds.showAds(
             {
                 pid: "c9ebf62ffb614239b0353f4ec9185d23",
@@ -1292,10 +1293,10 @@
                 bnr: {
                     id: "5806548769a8470480b2d3296cf1d930",
                     ctv: {
-                        source: `https://demo.yomedia.vn/${bannerURL}`,
+                        source: `https://${domainURL}.yomedia.vn/${bannerURL}`,
                         width: "600",
                         height: "200",
-                        slider_source: `https://demo.yomedia.vn/${sliderURL}` + `/slider/index.html`,
+                        slider_source: `https://${domainURL}.yomedia.vn/${sliderURL}` + `/slider/index.html`,
                         slider_width: "680",
                         slider_height: "200",
                         content_min_width: "200",

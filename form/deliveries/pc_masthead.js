@@ -23,9 +23,9 @@ function showBannerYomedia_82e237b1f272486587de2dbd5c9478c0(s) {
     var banner = document.createElement('iframe');
     var clickTag = encodeURIComponent(getClickTagYomedia_82e237b1f272486587de2dbd5c9478c0());
 
-    let urlParams = new URLSearchParams(window.location.search);
-    let bannerURL = urlParams.get('b');
-    let domainURL = urlParams.get('c');
+    var urlParams = new URLSearchParams(window.location.search);
+    var bannerURL = urlParams.get('b');
+    var domainURL = urlParams.get('c');
 
     if(bannerURL && domainURL){
         creative_src = `https://${domainURL}.yomedia.vn/${bannerURL}?pid=82e237b1f272486587de2dbd5c9478c0&clk=${clickTag}`;

@@ -60,11 +60,12 @@ function showBannerYomedia_d05d05051d9b48ad9451562f5edac04f(s) {
     var portraitBanner = document.createElement('iframe');
     var clickTag = encodeURIComponent(getClickTagYomedia_d05d05051d9b48ad9451562f5edac04f());
 
-    let urlParams = new URLSearchParams(window.location.search);
-    let bannerURL = urlParams.get('b');
+    var urlParams = new URLSearchParams(window.location.search);
+    var bannerURL = urlParams.get('b');
+    var domainURL = urlParams.get('c');
 
-    if(bannerURL){
-        creative_src = `https://demo.yomedia.vn/${bannerURL}?pid=d05d05051d9b48ad9451562f5edac04f&aid=6f4dcddae70e4dc3977e34c341727fba&fid=1f97d1e992ff495589e97eb0571f54bb&advId=c23b9c109f7a4f89a3cb23f694f1d7cb&campId=d6692db2a2dd441c9ab9741ee05b127d&pubId=5565e302fb2e489cae28103f6c66db12&chanId=3d58e13cbef3493682fe6107ac13e262&clk=${clickTag}`;
+    if(bannerURL && domainURL){
+        creative_src = `https://${domainURL}.yomedia.vn/${bannerURL}?pid=d05d05051d9b48ad9451562f5edac04f&aid=6f4dcddae70e4dc3977e34c341727fba&fid=1f97d1e992ff495589e97eb0571f54bb&advId=c23b9c109f7a4f89a3cb23f694f1d7cb&campId=d6692db2a2dd441c9ab9741ee05b127d&pubId=5565e302fb2e489cae28103f6c66db12&chanId=3d58e13cbef3493682fe6107ac13e262&clk=${clickTag}`;
         portraitBanner.setAttribute('src', creative_src);
         portraitBanner.setAttribute('scrolling','no');
         portraitBanner.setAttribute('id', yomediaPortraitId_d05d05051d9b48ad9451562f5edac04f);

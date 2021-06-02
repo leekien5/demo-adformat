@@ -29,13 +29,14 @@ function showBannerYomedia_aa7c62743ab0414c9aec968895303026(s) {
     if (document.getElementById(yomediaId_aa7c62743ab0414c9aec968895303026)) {
         return false;
     }
-    let urlParams = new URLSearchParams(window.location.search);
-    let bannerURL = urlParams.get('b');
+    var urlParams = new URLSearchParams(window.location.search);
+    var bannerURL = urlParams.get('b');
+    var domainURL = urlParams.get('c');
 
-    if(bannerURL){
+    if(bannerURL && domainURL){
         var banner = document.createElement('iframe');
         var clickTag = encodeURIComponent(getClickTagYomedia_aa7c62743ab0414c9aec968895303026());
-        var creative_src = `https://demo.yomedia.vn/${bannerURL}?pid=aa7c62743ab0414c9aec968895303026&clk=` + clickTag;
+        var creative_src = `https://${domainURL}.yomedia.vn/${bannerURL}?pid=aa7c62743ab0414c9aec968895303026&clk=` + clickTag;
         banner.setAttribute('src', creative_src);
         banner.setAttribute('id', yomediaContentId_aa7c62743ab0414c9aec968895303026);
         banner.setAttribute('allowFullScreen', '');

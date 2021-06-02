@@ -55,11 +55,6 @@
                                             <option value="none">None</option>
                                         </select>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="optDomains">Domain</label>
-                                        <select class="chosen-select form-control" id="optDomains">
-                                        </select>
-                                    </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group" id="preview">
@@ -70,34 +65,24 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-12" id="source">
-                                    <div class="form-group">
-                                        <label id="source_name">Source</label>
-                                        <label id="video_tag_source_name">Video Tag Source</label>
-                                        <div class="input-group mb-3">
-                                            <div class="input-group-prepend" id="domain">
-                                                <span class="input-group-text">
-                                                    <i class="fas fa-link"></i>
-                                                </span>
-                                            </div>
-                                            <input class="form-control" type="input" name="source" id="source_field" placeholder="source here ..."></input>
-                                        </div>
-                                    </div>
-                                    <div class="form-group" id="addition_source">
-                                        <label id="addition_source_name">Addition Source</label>
-                                        <label id="video_source_name">Video Source</label>
-                                        <div class="input-group mb-3">
-                                            <div class="input-group-prepend" id="domain" style="height: 35px;">
-                                                <span class="input-group-text">
-                                                    <i class="fas fa-link"></i>
-                                                </span>
-                                            </div>
-                                            <input class="form-control" type="input" id="addition_source_field" placeholder="source here ..."></input>
-                                        </div>
-                                    </div>
+                            <label id="source_name">Source</label>
+                            <label id="video_tag_source_name">Video Tag Source</label>
+                            <div class="form-row">
+                                <div class="form-group col-md-2">
+                                    <select class="chosen-select form-control" id="optDomains">
+                                    </select>
                                 </div>
-                            </div>
+                                <div class="form-group col-md-10">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend" id="domain">
+                                            <span class="input-group-text">
+                                                <i class="fas fa-link"></i>
+                                            </span>
+                                        </div>
+                                        <input class="form-control" type="input" name="source" id="source_field" placeholder="source here ..."></input>
+                                    </div>  
+                                </div>
+                             </div>
                             <div class="docs-pills border">
                                 <div class="d-flex justify-content-between py-2" style="padding-left: .6rem;">
                                     <ul class="nav nav-pills">
@@ -266,12 +251,6 @@
             $('#optTemplates, #optAdformats, #optDomains').trigger('chosen:updated');
         });
 
-        // $("#optDomains").change(function(){
-        //     var domain = $(this).find(":selected").val();
-        //     console.log(domain);
-        // });
-
-
         $("#optTemplates, #optAdformats, #optTypes, #optDomains").chosen({
             no_results_text: "Oops, nothing found!",
             placeholder_text_single: "Please select an option ...",
@@ -369,8 +348,6 @@
         var selectedFormat = $("#optAdformats").val();
         var selectedDomain = $("#optDomains").val();
         var sourceURL = $("#source_field").val();
-        var prefix = ""
-        // var additionSourceURL = $("#addition_source_field").val();
         var url = window.location.href;
         var p = url.search("form/");
         if (p != -1) {
