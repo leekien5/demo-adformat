@@ -6,7 +6,7 @@ const list = {
         { name: 'Video', value: 'video' },
     ],
     domains : [
-        { name: 'Demo', value: 'demo' },
+        { name: 'Demo', value: '' },
         { name: 'Media', value: 'media' },
     ],
     templates : [

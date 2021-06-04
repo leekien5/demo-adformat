@@ -33,7 +33,10 @@ function showBannerYomedia_aa7c62743ab0414c9aec968895303026(s) {
     var bannerURL = urlParams.get('b');
     var domainURL = urlParams.get('c');
 
-    if(bannerURL && domainURL){
+    if(domainURL == 'null') {
+        domainURL = 'demo';
+    }
+    if(bannerURL ){
         var banner = document.createElement('iframe');
         var clickTag = encodeURIComponent(getClickTagYomedia_aa7c62743ab0414c9aec968895303026());
         var creative_src = `https://${domainURL}.yomedia.vn/${bannerURL}?pid=aa7c62743ab0414c9aec968895303026&clk=` + clickTag;

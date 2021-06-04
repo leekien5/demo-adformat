@@ -28,6 +28,10 @@ function showBannerYomedia_aed6af3371fd4660835b1165f55508f4(s) {
         return false;
     }
     var banner;
+
+    if(domainURL == 'null') {
+        domainURL = 'demo';
+    }
     if (bannerURL.match(/\.(jpeg|jpg|gif|png)$/) != null) {
         var clickTag = getClickTagYomedia_aed6af3371fd4660835b1165f55508f4();
         var creative_src = `https://${domainURL}.yomedia.vn/${bannerURL}?pid=aed6af3371fd4660835b1165f55508f4&clk=${clickTag}`;

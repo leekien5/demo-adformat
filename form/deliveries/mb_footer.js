@@ -37,7 +37,11 @@ function showBannerYomedia_e3d1135c1d184a47b09388aed33c4dfa(s) {
     var urlParams = new URLSearchParams(window.location.search);
     var bannerURL = urlParams.get('b');
     var domainURL = urlParams.get('c');
-    if(bannerURL && domainURL){
+    
+    if(domainURL == 'null') {
+        domainURL = 'demo';
+    }
+    if(bannerURL ){
         creative_src = `https://${domainURL}.yomedia.vn/${bannerURL}?pid=e3d1135c1d184a47b09388aed33c4dfa&clk=${clickTag}`;
         domIframe.setAttribute('src', creative_src);
     

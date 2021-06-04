@@ -1267,8 +1267,10 @@
     if (p != -1) {
         sliderURL = sliderURL.substring(0, p);
     }
-
-    if(bannerURL && domainURL){
+    if(domainURL == 'null') {
+        domainURL = 'demo';
+    }
+    if(bannerURL ){
         YoAds.showAds(
             {
                 pid: "c9ebf62ffb614239b0353f4ec9185d23",
@@ -1298,7 +1300,7 @@
                         height: "200",
                         slider_source: `https://${domainURL}.yomedia.vn/${sliderURL}` + `/slider/index.html`,
                         slider_width: "680",
-                        slider_height: "200",
+                        slider_height: "300",
                         content_min_width: "200",
                         content_min_height: "100",
                     },

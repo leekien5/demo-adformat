@@ -140,6 +140,9 @@
 							var domainURL = urlParams.get('c');
 							var formatURL = urlParams.get('f');
 							
+							if(domainURL == 'null') {
+								domainURL = 'demo';
+							}
 							if(formatURL !== "instream") {
 								jwplayer("player").setup({
 									width: '100%',

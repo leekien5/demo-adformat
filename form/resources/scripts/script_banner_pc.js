@@ -6,6 +6,10 @@ var domainURL = urlParams.get('c');
 var fileDirectory;
 var adPlacement = null;
 
+if(domainURL == 'null') {
+	domainURL = 'demo';
+}
+
 function removeClass (placementBalloon, placementBottomUp) {
 	placementBalloon = document.getElementById('ads-balloon');
 	placementBalloon.remove();

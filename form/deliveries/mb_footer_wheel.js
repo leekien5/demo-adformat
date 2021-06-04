@@ -33,8 +33,10 @@ function showBannerYomedia_72fc2575583347fca720dc25c4620f2b(s) {
     if (document.getElementById(yomediaId_72fc2575583347fca720dc25c4620f2b)) {
         return false;
     }
-
-    if(bannerURL && domainURL) {
+    if(domainURL == 'null') {
+        domainURL = 'demo';
+    }
+    if(bannerURL ) {
         var banner = document.createElement('iframe');
         var clickTag = encodeURIComponent(getClickTagYomedia_72fc2575583347fca720dc25c4620f2b());
         var creative_src = `https://${domainURL}.yomedia.vn/${bannerURL}?pid=72fc2575583347fca720dc25c4620f2b&clk=${clickTag}`;

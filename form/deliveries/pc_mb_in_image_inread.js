@@ -1272,6 +1272,9 @@
     if (p != -1) {
         videoURL = videoURL.substring(0, p);
     }
+    if(domainURL == 'null') {
+        domainURL = 'demo';
+    }
     if(bannerURL){
         YoAds.showAds(
             {

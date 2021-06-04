@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>YOMEDIA | Ad Format Demo</title>
+        <title>Yomedia | Ad Format Demo</title>
         <link rel="icon" href="../resources/images/favicon.ico" type="image/gif" sizes="16x16" />
         <link rel="stylesheet" href="resources/css/bootstrap.min.css" />
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css" />
@@ -354,16 +354,19 @@
             url = url.substring(0, p);
         }
         //If Template, Adformat or Source is empty
-        if(!selectedTemplate || !selectedFormat || !sourceURL || !selectedDomain) {
+        if(!selectedTemplate || !selectedFormat || !sourceURL) {
             $.toast({ heading:"Error", text:"Please choose an Ad View, Template or Ad Format before submitting!", position:"top-right", showHideTransition:"fade", icon:"error"});
             if(!sourceURL){
                 $('#source_field').focus();
             }
             return;
         }
-        adformatURL = `${url}site/${selectedTemplate}/index.html?f=${selectedFormat}&b=` + encodeURIComponent(`${sourceURL}`) + `&c=${selectedDomain}`;
+        if(selectedDomain == '') {
+            adformatURL = `${url}site/${selectedTemplate}/index.html?f=${selectedFormat}&b=` + encodeURIComponent(`${sourceURL}`);
+        } else {
+            adformatURL = `${url}site/${selectedTemplate}/index.html?f=${selectedFormat}&b=` + encodeURIComponent(`${sourceURL}`) + `&c=${selectedDomain}`;
+        }
         // additionSourceURL ? adformatURL = `${adformatURL}&c=` + `${additionSourceURL}` : adformatURL;
-
         $("#output_source_field").empty();
         $("#output_source_field").append(adformatURL);
         

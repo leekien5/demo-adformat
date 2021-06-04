@@ -1258,6 +1258,10 @@
     var urlParams = new URLSearchParams(window.location.search);
     var bannerURL = urlParams.get('b');
     var domainURL = urlParams.get('c');
+
+    if(domainURL == 'null') {
+        domainURL = 'demo';
+    }
     if(bannerURL){
         YoAds.showAds(
             {
