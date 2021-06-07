@@ -213,9 +213,7 @@ function inViewYomedia_35bbe423812b462ab61875190345400a(el) {
 }
 
 function checkTopBanner_35bbe423812b462ab61875190345400a(entries) {
-    
     entries.forEach(function(entry) {
-        
         if (entry.isIntersecting) {
             if (entry.intersectionRatio > 0) {
                 let placementEl_ = document.getElementById(yomediaId_35bbe423812b462ab61875190345400a);

@@ -11,12 +11,11 @@ function detectmob() {
         let urlParams = new URLSearchParams(window.location.search);
         let bannerURL = urlParams.get("b");
         let formatURL = urlParams.get("f");
-        let addBannerURL = urlParams.get("c");
         let p = url.search("index.html?f=");
         url = url.substring(0, p);
 
-        if (bannerURL && formatURL || addBannerURL) {
-            window.location = `${url}mobile/index.html?f=${formatURL}&b=${bannerURL}&c=${addBannerURL}`;
+        if (bannerURL && formatURL) {
+            window.location = `${url}mobile/index.html?f=${formatURL}&b=${bannerURL}`;
         } else {
             window.location = `${url}mobile/index.html`;
         }
