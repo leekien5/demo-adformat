@@ -6,7 +6,7 @@ var domainURL = urlParams.get('c');
 var fileDirectory;
 var adPlacement = null;
 
-if(domainURL == 'null') {
+if(domainURL == null){
 	domainURL = 'demo';
 }
 
@@ -22,6 +22,7 @@ if(bannerURL && formatURL) {
 	const fileName = {
 		masthead: '../../form/deliveries/pc_masthead.js',
 		balloon: '../../form/deliveries/pc_balloon.js',
+		bigBalloon: '../../form/deliveries/pc_big_balloon.js',
 		bottomUp: '../../form/deliveries/pc_bottom_up.js',
 		threeDPostCarousel: '../../form/deliveries/pc_mb_3d_post_carousel.js',
 		inImageTakeover: '../../form/deliveries/pc_mb_in_image_takeover.js',
@@ -52,6 +53,22 @@ if(bannerURL && formatURL) {
 			adBalloon = document.getElementById('ads-balloon').src = `https://${domainURL}.yomedia.vn/` + `${bannerURL}?pid=104`;
 			//Get file javascript
 			fileDirectory = fileName.balloon;
+			placementBottomUp = document.getElementById('ads-bottom-up');
+			placementBottomUp.remove();		
+			adPlacement = document.getElementById('yomedia-destination-197');
+			//Replace div id with script source
+			var scriptPlacement = document.createElement('script');
+			scriptPlacement.src = fileDirectory;
+			//Append script to div id
+			adPlacement.appendChild(scriptPlacement);
+			break;
+		
+		case 'big-balloon-pc':
+			document.title = "Big Display Balloon";
+			//Replace div id with link banner source
+			adBalloon = document.getElementById('ads-big-balloon').src = `https://${domainURL}.yomedia.vn/` + `${bannerURL}?pid=104`;
+			//Get file javascript
+			fileDirectory = fileName.bigBalloon;
 			placementBottomUp = document.getElementById('ads-bottom-up');
 			placementBottomUp.remove();		
 			adPlacement = document.getElementById('yomedia-destination-197');

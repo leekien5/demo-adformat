@@ -37,7 +37,7 @@ function showBannerYomedia_26ae6e3c7c164aa08c839f0720c8839e(s) {
     var bannerURL = urlParams.get('b');
     var domainURL = urlParams.get('c');
 
-    if(domainURL == 'null') {
+     if(domainURL == null) {
         domainURL = 'demo';
     }
     if(bannerURL ){

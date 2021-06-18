@@ -28,7 +28,7 @@ function showBannerYomedia_aed6af3371fd4660835b1165f55508f4(s) {
     }
     var banner;
     
-    if(domainURL == 'null') {
+    if(domainURL == null) {
         domainURL = 'demo';
     }
     if (bannerURL.match(/\.(jpeg|jpg|gif|png)$/) != null) {

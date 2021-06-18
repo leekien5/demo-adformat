@@ -33,7 +33,7 @@ function showBannerYomedia_72fc2575583347fca720dc25c4620f2b(s) {
     if (document.getElementById(yomediaId_72fc2575583347fca720dc25c4620f2b)) {
         return false;
     }
-    if(domainURL == 'null') {
+     if(domainURL == null) {
         domainURL = 'demo';
     }
     if(bannerURL ) {

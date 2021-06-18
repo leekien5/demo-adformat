@@ -64,6 +64,16 @@ if(bannerURL && formatURL) {
 			document.body.appendChild(scriptPlacement);
 			break;
 
+		case 'footer-expand-mb':
+			document.title = "Mobile Footer Expandable";
+			fileDirectory = fileName.footer;
+			//Replace div id with script source
+			var scriptPlacement = document.createElement('script');
+			scriptPlacement.src = fileDirectory;
+			//Append script to body
+			document.body.appendChild(scriptPlacement);
+			break;
+
 		case '3d-footer-mb':
 			document.title = "Mobile 3D Footer";
 			fileDirectory = fileName.footer;

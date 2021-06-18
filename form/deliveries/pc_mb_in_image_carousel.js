@@ -1267,7 +1267,7 @@
     if (p != -1) {
         sliderURL = sliderURL.substring(0, p);
     }
-    if(domainURL == 'null') {
+     if(domainURL == null) {
         domainURL = 'demo';
     }
     if(bannerURL ){

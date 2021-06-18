@@ -1272,7 +1272,7 @@
     if (p != -1) {
         videoURL = videoURL.substring(0, p);
     }
-    if(domainURL == 'null') {
+     if(domainURL == null) {
         domainURL = 'demo';
     }
     if(bannerURL){
