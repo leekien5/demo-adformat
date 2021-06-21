@@ -33,10 +33,14 @@ function showBannerYomedia_26ae6e3c7c164aa08c839f0720c8839e(s) {
     }
     var clickTag = encodeURIComponent(getClickTagYomedia_26ae6e3c7c164aa08c839f0720c8839e());
 
-    let urlParams = new URLSearchParams(window.location.search);
-    let bannerURL = urlParams.get('b');
+    var urlParams = new URLSearchParams(window.location.search);
+    var bannerURL = urlParams.get('b');
+    var domainURL = urlParams.get('c');
 
-    if(bannerURL){
+    if(domainURL == null || domainURL == 'null') {
+        domainURL = 'demo';
+    }
+    if(bannerURL ){
         var mainContain;
         if (positionInsert_26ae6e3c7c164aa08c839f0720c8839e === '') {
             positionInsert_26ae6e3c7c164aa08c839f0720c8839e = 'after';
@@ -154,21 +158,6 @@ function showBannerYomedia_26ae6e3c7c164aa08c839f0720c8839e(s) {
         inner_26ae6e3c7c164aa08c839f0720c8839e.style.backgroundColor = "transparent";
         wrapper_26ae6e3c7c164aa08c839f0720c8839e.appendChild(inner_26ae6e3c7c164aa08c839f0720c8839e);
 
-        // var header_26ae6e3c7c164aa08c839f0720c8839e = document.createElement("div");
-        // header_26ae6e3c7c164aa08c839f0720c8839e.id = "yomedia-interscroller-header-text-26ae6e3c7c164aa08c839f0720c8839e";
-        // header_26ae6e3c7c164aa08c839f0720c8839e.style.backgroundColor = "#cdcdcd";
-        // header_26ae6e3c7c164aa08c839f0720c8839e.style.color = "#ffffff";
-        // header_26ae6e3c7c164aa08c839f0720c8839e.style.opacity = "0.75";
-        // header_26ae6e3c7c164aa08c839f0720c8839e.style.position = "absolute";
-        // header_26ae6e3c7c164aa08c839f0720c8839e.style.padding = "3px";
-        // header_26ae6e3c7c164aa08c839f0720c8839e.style.zIndex = "5";
-        // header_26ae6e3c7c164aa08c839f0720c8839e.style.textAlign = "center";
-        // header_26ae6e3c7c164aa08c839f0720c8839e.style.width = "100%";
-        // header_26ae6e3c7c164aa08c839f0720c8839e.style.fontSize = "11px";
-        // header_26ae6e3c7c164aa08c839f0720c8839e.style.transform = "translateZ(0)";
-        // header_26ae6e3c7c164aa08c839f0720c8839e.innerHTML = "QUẢNG CÁO";
-        // inner_26ae6e3c7c164aa08c839f0720c8839e.appendChild(header_26ae6e3c7c164aa08c839f0720c8839e);
-
         holder_26ae6e3c7c164aa08c839f0720c8839e = document.createElement("div");
         holder_26ae6e3c7c164aa08c839f0720c8839e.id = "yomedia-interscroller-ad-holder-26ae6e3c7c164aa08c839f0720c8839e";
         holder_26ae6e3c7c164aa08c839f0720c8839e.style.position = "absolute";
@@ -208,7 +197,7 @@ function showBannerYomedia_26ae6e3c7c164aa08c839f0720c8839e(s) {
 
         frameHolder_26ae6e3c7c164aa08c839f0720c8839e.appendChild(content_26ae6e3c7c164aa08c839f0720c8839e);
 
-        creative_src = `https://demo.yomedia.vn/${bannerURL}?pid=26ae6e3c7c164aa08c839f0720c8839e&aid=eec540016aa9422f91cd4e1add329a2e&fid=3d378f7d1ddb4e7d9563ab585d20431e&advId=5814c24020f6496d86d486d9ba2323bd&campId=4886170abcf2452993f34a1ee83e71d2&pubId=5565e302fb2e489cae28103f6c66db12&chanId=3d58e13cbef3493682fe6107ac13e262&clk=${clickTag}`;
+        creative_src = `https://${domainURL}.yomedia.vn/${bannerURL}?pid=26ae6e3c7c164aa08c839f0720c8839e&clk=${clickTag}`;
         banner_26ae6e3c7c164aa08c839f0720c8839e = document.createElement('iframe');
         banner_26ae6e3c7c164aa08c839f0720c8839e.src = creative_src;
         banner_26ae6e3c7c164aa08c839f0720c8839e.id = yomediaBannerId_26ae6e3c7c164aa08c839f0720c8839e;

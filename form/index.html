@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>YOMEDIA | Ad Format Demo</title>
+        <title>Yomedia | Ad Format Demo</title>
         <link rel="icon" href="../resources/images/favicon.ico" type="image/gif" sizes="16x16" />
         <link rel="stylesheet" href="resources/css/bootstrap.min.css" />
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css" />
@@ -65,34 +65,24 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-12" id="source">
-                                    <div class="form-group">
-                                        <label id="source_name">Source</label>
-                                        <label id="video_tag_source_name">Video Tag Source</label>
-                                        <div class="input-group mb-3">
-                                            <div class="input-group-prepend" id="domain">
-                                                <span class="input-group-text">
-                                                    <i class="fas fa-link"></i>
-                                                </span>
-                                            </div>
-                                            <input class="form-control" type="input" name="source" id="source_field" placeholder="source here ..."></input>
-                                        </div>
-                                    </div>
-                                    <div class="form-group" id="addition_source">
-                                        <label id="addition_source_name">Addition Source</label>
-                                        <label id="video_source_name">Video Source</label>
-                                        <div class="input-group mb-3">
-                                            <div class="input-group-prepend" id="domain" style="height: 35px;">
-                                                <span class="input-group-text">
-                                                    <i class="fas fa-link"></i>
-                                                </span>
-                                            </div>
-                                            <input class="form-control" type="input" id="addition_source_field" placeholder="source here ..."></input>
-                                        </div>
-                                    </div>
+                            <label id="source_name">Source</label>
+                            <label id="video_tag_source_name">Video Tag Source</label>
+                            <div class="form-row">
+                                <div class="form-group col-md-2">
+                                    <select class="chosen-select form-control" id="optDomains">
+                                    </select>
                                 </div>
-                            </div>
+                                <div class="form-group col-md-10">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend" id="domain">
+                                            <span class="input-group-text">
+                                                <i class="fas fa-link"></i>
+                                            </span>
+                                        </div>
+                                        <input class="form-control" type="input" name="source" id="source_field" placeholder="source here ..."></input>
+                                    </div>  
+                                </div>
+                             </div>
                             <div class="docs-pills border">
                                 <div class="d-flex justify-content-between py-2" style="padding-left: .6rem;">
                                     <ul class="nav nav-pills">
@@ -178,7 +168,12 @@
         
         //Ad views append
         $.each(list.devices, function (idx, obj) {
-            $("#optTypes").append('<option type="' + obj.type + '" value="' + obj.value + '">' + obj.name + '</option>');
+            $("#optTypes").append('<option value="' + obj.value + '">' + obj.name + '</option>');
+        });
+
+        //Domains append
+        $.each(list.domains, function (idx, obj) {
+            $("#optDomains").append('<option value="' + obj.value + '">' + obj.name + '</option>');
         });
 
         //Sort reverse function
@@ -253,10 +248,10 @@
                     break;
             }
             //Update new data to Chosen Select Options
-            $('#optTemplates, #optAdformats').trigger('chosen:updated');
+            $('#optTemplates, #optAdformats, #optDomains').trigger('chosen:updated');
         });
 
-        $("#optTemplates, #optAdformats, #optTypes").chosen({
+        $("#optTemplates, #optAdformats, #optTypes, #optDomains").chosen({
             no_results_text: "Oops, nothing found!",
             placeholder_text_single: "Please select an option ...",
         });
@@ -351,8 +346,8 @@
         let adformatURL = '' ; 
         var selectedTemplate = $("#optTemplates").val();
         var selectedFormat = $("#optAdformats").val();
+        var selectedDomain = $("#optDomains").val();
         var sourceURL = $("#source_field").val();
-        // var additionSourceURL = $("#addition_source_field").val();
         var url = window.location.href;
         var p = url.search("form/");
         if (p != -1) {
@@ -366,9 +361,12 @@
             }
             return;
         }
-        adformatURL = `${url}site/${selectedTemplate}/index.html?f=${selectedFormat}&b=` + encodeURIComponent(`${sourceURL}`);
+        if(selectedDomain == '') {
+            adformatURL = `${url}site/${selectedTemplate}/index.html?f=${selectedFormat}&b=` + encodeURIComponent(`${sourceURL}`);
+        } else {
+            adformatURL = `${url}site/${selectedTemplate}/index.html?f=${selectedFormat}&b=` + encodeURIComponent(`${sourceURL}`) + `&c=${selectedDomain}`;
+        }
         // additionSourceURL ? adformatURL = `${adformatURL}&c=` + `${additionSourceURL}` : adformatURL;
-
         $("#output_source_field").empty();
         $("#output_source_field").append(adformatURL);
         

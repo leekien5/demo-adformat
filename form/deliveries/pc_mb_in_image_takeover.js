@@ -1249,8 +1249,13 @@
                 (t.exports = n());
         },
     ]);
-    let urlParams = new URLSearchParams(window.location.search);
-    let bannerURL = urlParams.get('b'); 
+    var urlParams = new URLSearchParams(window.location.search);
+    var bannerURL = urlParams.get('b'); 
+    var domainURL = urlParams.get('c');
+    
+    if(domainURL == null || domainURL == 'null') {
+        domainURL = 'demo';
+    }
     if(bannerURL){
         YoAds.showAds(
             {
@@ -1278,7 +1283,7 @@
                 advi: "display",
                 bnr: {
                     id: "63f12b2efbf34818a40687efd6fca920",
-                    ctv: { source: `https://demo.yomedia.vn/${bannerURL}`, portrait_source: "", content_min_width: "150", content_min_height: "150" },
+                    ctv: { source: `https://${domainURL}.yomedia.vn/${bannerURL}`, portrait_source: "", content_min_width: "150", content_min_height: "150" },
                     ldp: "https://yomedia.vn/",
                 },
             },

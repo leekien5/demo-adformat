@@ -1,10 +1,28 @@
 <!doctype html>
 <html lang="en">
 <head>
+	<!-- Primary Meta Tags -->
+	<title>Yomedia — Ad Preview</title>
+	<meta name="title" content="Yomedia — Ad Preview">
+	<meta name="description" content="Advertisement format demo template">
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://demo.yomedia.vn/">
+	<meta property="og:title" content="Yomedia — Ad Preview">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://demo.yomedia.vn/">
+	<meta property="twitter:title" content="Yomedia — Ad Preview">
+	<meta name=theme-color content=#069241>
+	
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
     <meta property="og:title" content="Yomedia Ad Preview"/> 
     <meta property="og:description" content ="Template Demo"/> 
+
 	<link rel="shortcut icon" href="../../resources/images/favicon.ico" />
 	<link rel="stylesheet" href="resources/css/index.css">
 	<script type="text/javascript" src="https://media.yomedia.vn/lib/jwplayer/jwplayer.js"></script>
@@ -121,10 +139,14 @@
 						<div class="player-videojs" style="position: relative;">
 							<div id="player"></div>
 							<script type="text/javascript">
-							let urlParams = new URLSearchParams(window.location.search);
-							let bannerURL = urlParams.get('b');
-							let formatURL = urlParams.get('f');
+							var urlParams = new URLSearchParams(window.location.search);
+							var bannerURL = urlParams.get('b');
+							var domainURL = urlParams.get('c');
+							var formatURL = urlParams.get('f');
 							
+							 {
+								domainURL = 'demo';
+							}
 							if(formatURL !== "instream") {
 								jwplayer("player").setup({
 									width: '100%',
@@ -147,7 +169,7 @@
 										"adschedule": {
 											"myPreroll": {
 												"offset": "pre",
-												"tag": `https://demo.yomedia.vn/${bannerURL}`,
+												"tag": `https://${domainURL}.yomedia.vn/${bannerURL}`,
 											},
 											"myPostroll": {
 												"offset": "post",
@@ -334,12 +356,12 @@
 	</div>
 </body>
 <script>
-let fileDirectory;
-let adPlacement = null;
+var fileDirectory;
+var adPlacement = null;
 
 if(bannerURL && formatURL) {
 	const fileName = {
-		outstream: '../../form/deliveries/outstream.js',
+		outstream: '../../form/deliveries/pc_mb_outstream.js',
 	}
 	if(formatURL === "outstream") {
 		document.title = "Display Video Outstream (Inread)";

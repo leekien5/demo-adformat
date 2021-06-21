@@ -26,29 +26,38 @@ var max_w = (0 != 0)?0:screen.width;
 var max_h = (0 != 0)?0:screen.height;
 
 function showBannerYomedia_72fc2575583347fca720dc25c4620f2b(s) {
+    let urlParams = new URLSearchParams(window.location.search);
+    let bannerURL = urlParams.get('b');
+    let domainURL = urlParams.get('c');
+
     if (document.getElementById(yomediaId_72fc2575583347fca720dc25c4620f2b)) {
         return false;
     }
-
-    var banner = document.createElement('iframe');
-    var clickTag = encodeURIComponent(getClickTagYomedia_72fc2575583347fca720dc25c4620f2b());
-    var creative_src = `https://demo.yomedia.vn/${bannerURL}?pid=72fc2575583347fca720dc25c4620f2b&aid=ef1ce47ab8814a1e94ad0adad92592d8&fid=49e9095f091c4d6aa3753bcdd1e5744d&advId=2f5576e9954248b3a9acb8e73bc91cad&campId=89f481b0a7ea4004ba23d29dddf1cfe0&pubId=a01e41eaa62a41a091889abeaec0de5f&chanId=3d58e13cbef3493682fe6107ac13e262&clk=${clickTag}`;
-    banner.setAttribute('src', creative_src);
-    banner.setAttribute('id', yomediaContentId_72fc2575583347fca720dc25c4620f2b);
-    banner.setAttribute('allowFullScreen', '');
-    banner.setAttribute('frameborder', '0');
-    banner.setAttribute('scrolling', 'no');
-    banner.style.cssText = `position: fixed; z-index: 2347483647 !important;bottom: 0px !important; left:0px !important; right:0px !important; margin: 0px auto  !important;line-height:normal; border:0; width: 100% !important; height: 100%  !important;`;
-
-    document.body.appendChild(banner);
-    addAnEventListener_72fc2575583347fca720dc25c4620f2b(banner, 'load', function() {
-        isVisiabilityYomedia_72fc2575583347fca720dc25c4620f2b(banner);
-    });
-    addAnEventListener_72fc2575583347fca720dc25c4620f2b(window, 'scroll', function() {
-        var scrollTop = e=document.documentElement.scrollTop;
-        sendMessageToIframe_72fc2575583347fca720dc25c4620f2b(JSON.stringify({pid: '72fc2575583347fca720dc25c4620f2b', scrt: scrollTop}));
-    });
-    impressionTrackingYomedia_72fc2575583347fca720dc25c4620f2b();
+    if(domainURL == null || domainURL == 'null') {
+        domainURL = 'demo';
+    }
+    if(bannerURL ) {
+        var banner = document.createElement('iframe');
+        var clickTag = encodeURIComponent(getClickTagYomedia_72fc2575583347fca720dc25c4620f2b());
+        var creative_src = `https://${domainURL}.yomedia.vn/${bannerURL}?pid=72fc2575583347fca720dc25c4620f2b&clk=${clickTag}`;
+        banner.setAttribute('src', creative_src);
+        banner.setAttribute('id', yomediaContentId_72fc2575583347fca720dc25c4620f2b);
+        banner.setAttribute('allowFullScreen', '');
+        banner.setAttribute('frameborder', '0');
+        banner.setAttribute('scrolling', 'no');
+        banner.style.cssText = `position: fixed; z-index: 2347483647 !important;bottom: 0px !important; left:0px !important; right:0px !important; margin: 0px auto  !important;line-height:normal; border:0; width: 100% !important; height: 100%  !important;`;
+    
+        document.body.appendChild(banner);
+        addAnEventListener_72fc2575583347fca720dc25c4620f2b(banner, 'load', function() {
+            isVisiabilityYomedia_72fc2575583347fca720dc25c4620f2b(banner);
+        });
+        addAnEventListener_72fc2575583347fca720dc25c4620f2b(window, 'scroll', function() {
+            var scrollTop = e=document.documentElement.scrollTop;
+            sendMessageToIframe_72fc2575583347fca720dc25c4620f2b(JSON.stringify({pid: '72fc2575583347fca720dc25c4620f2b', scrt: scrollTop}));
+        });
+        impressionTrackingYomedia_72fc2575583347fca720dc25c4620f2b();
+        
+    }
 }
 
 function sendMessageToIframe_72fc2575583347fca720dc25c4620f2b($message) {

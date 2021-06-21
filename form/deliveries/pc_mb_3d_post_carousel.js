@@ -148,13 +148,17 @@ function showBannerYomedia_35bbe423812b462ab61875190345400a(s) {
     }  
     viewWidth_35bbe423812b462ab61875190345400a = domWrapper.clientWidth;   
     viewHeight_35bbe423812b462ab61875190345400a = Math.ceil(domWrapper.clientWidth/ratio_35bbe423812b462ab61875190345400a); 
-    let urlParams = new URLSearchParams(window.location.search);
-    let bannerURL = urlParams.get('b');
-
-    if(bannerURL){
+    var urlParams = new URLSearchParams(window.location.search);
+    var bannerURL = urlParams.get('b');
+    var domainURL = urlParams.get('c');
+    
+    if(domainURL == null || domainURL == 'null') {
+        domainURL = 'demo';
+    }
+    if(bannerURL ){
         var portraitBanner = document.createElement('iframe');
         var clickTag = encodeURIComponent(getClickTagYomedia_35bbe423812b462ab61875190345400a());
-        var creative_src = `https://demo.yomedia.vn/${bannerURL}?pid=35bbe423812b462ab61875190345400a&aid=21841d8067c1458d8c4595f35e1c46ea&fid=2400c5994a434822880d3319b96dcbff&advId=c23b9c109f7a4f89a3cb23f694f1d7cb&campId=d6692db2a2dd441c9ab9741ee05b127d&pubId=5565e302fb2e489cae28103f6c66db12&chanId=3d58e13cbef3493682fe6107ac13e262&clk=${clickTag}`;
+        var creative_src = `https://${domainURL}.yomedia.vn/${bannerURL}?pid=35bbe423812b462ab61875190345400a&aid=21841d8067c1458d8c4595f35e1c46ea&fid=2400c5994a434822880d3319b96dcbff&advId=c23b9c109f7a4f89a3cb23f694f1d7cb&campId=d6692db2a2dd441c9ab9741ee05b127d&pubId=5565e302fb2e489cae28103f6c66db12&chanId=3d58e13cbef3493682fe6107ac13e262&clk=${clickTag}`;
         portraitBanner.setAttribute('src', creative_src);
         portraitBanner.setAttribute('scrolling','no');
         portraitBanner.setAttribute('id', yomediaPortraitId_35bbe423812b462ab61875190345400a);
@@ -209,9 +213,7 @@ function inViewYomedia_35bbe423812b462ab61875190345400a(el) {
 }
 
 function checkTopBanner_35bbe423812b462ab61875190345400a(entries) {
-    
     entries.forEach(function(entry) {
-        
         if (entry.isIntersecting) {
             if (entry.intersectionRatio > 0) {
                 let placementEl_ = document.getElementById(yomediaId_35bbe423812b462ab61875190345400a);

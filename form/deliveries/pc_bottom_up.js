@@ -27,7 +27,7 @@ function closeYoMediaPopupAd_104() {
 }
 
 function clickTrackingYomedia_104() {
-    var clickTag = 'http://yomedia.vn';          
+    var clickTag = 'https://yomedia.vn';          
         if (typeof _YoClick != 'undefined' && avlHelperModule.validateUrl(_YoClick)) {
         avlHelperModule.embedTracking(_YoClick);
     }

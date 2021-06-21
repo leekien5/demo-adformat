@@ -5,6 +5,10 @@ const list = {
         { name: 'Mobile', value: 'mobile' },
         { name: 'Video', value: 'video' },
     ],
+    domains : [
+        { name: 'Demo', value: '' },
+        { name: 'Media', value: 'media' },
+    ],
     templates : [
         //Display Templates
         { name: 'Dân Trí', value: 'dtpc', type: 'display', img: '../resources/images/backgrounds/dantripc.jpg' },
@@ -26,6 +30,7 @@ const list = {
     adformats : [
         //Display Adformats
         { name: 'Display Balloon', value: 'balloon-pc', type: 'display' },
+        { name: 'Display Big Balloon', value: 'big-balloon-pc', type: 'display' },
         { name: 'Display Masthead (Billboard)', value: 'masthead-pc', type: 'display' },
         { name: 'Display Bottom Up', value: 'bottom-up-pc', type: 'display' },
         { name: 'Display In Image Native', value: 'in-native-pc', type: 'display' },
@@ -43,9 +48,10 @@ const list = {
         { name: 'Mobile Bottom Up', value: 'bottom-up-mb', type: 'mobile' },
         { name: 'Mobile 3D Footer', value: '3d-footer-mb', type: 'mobile' },
         { name: 'Mobile Footer', value: 'footer-mb', type: 'mobile' },
-        { name: 'Mobile Footer Wheel', value: 'wheel-mb', type: 'mobile' },
+        { name: 'Mobile Footer Expandable', value: 'footer-expand-mb', type: 'mobile' },
+        { name: 'Mobile Wheel', value: 'wheel-mb', type: 'mobile' },
         { name: 'Mobile Card', value: 'card-mb', type: 'mobile' },
-        { name: 'Mobile Teris Footer', value: 'teris-mb', type: 'mobile' },
+        { name: 'Mobile Teris', value: 'teris-mb', type: 'mobile' },
         { name: 'Mobile In Image Native', value: 'in-native-mb', type: 'mobile' },
         { name: 'Mobile In Image Takeover', value: 'in-takeover-mb', type: 'mobile' },
         { name: 'Mobile In Image Carousel', value: 'in-carousel-mb', type: 'mobile' },

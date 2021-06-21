@@ -41,6 +41,12 @@ function getBannerURL() {
         document.getElementById('format-info').innerHTML = info;
         break;
 
+      case 'footer-expand-mb':
+        var info = "Mobile Footer Expandable";
+        document.title = info;
+        document.getElementById('format-info').innerHTML = info;
+        break;
+
       case 'wheel-mb':
         var info = "Mobile Footer Wheel";
         document.title = info;

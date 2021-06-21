@@ -1255,10 +1255,14 @@
 
 ///// banner info
 
-    let urlParams = new URLSearchParams(window.location.search);
-    let bannerNgangURL = urlParams.get('b');
-    let bannerDocURL = urlParams.get('c');
-    if(bannerNgangURL || bannerDocURL){
+    var urlParams = new URLSearchParams(window.location.search);
+    var bannerURL = urlParams.get('b');
+    var domainURL = urlParams.get('c');
+
+    if(domainURL == null || domainURL == 'null') {
+        domainURL = 'demo';
+    }
+    if(bannerURL){
         YoAds.showAds(
             {
                 pid: "c4f1148d092a4effb9670aa9fb16fe25",
@@ -1282,10 +1286,10 @@
                 bnr: {
                     id: "2b0ea03a896947a9991fdbc6fc8ebabc",
                     ctv: {
-                        source: `https://demo.yomedia.vn/${bannerNgangURL}`,
+                        source: `https://${domainURL}.yomedia.vn/${bannerURL}`,
                         min_width: "600",
                         min_height: "125",
-                        portrait_source: `https://demo.yomedia.vn/${bannerDocURL}`,
+                        portrait_source: `https://${domainURL}.yomedia.vn/${bannerDocURL}`,
                         portrait_min_width: "600",
                         portrait_min_height: "125",
                         content_min_width: "300",
