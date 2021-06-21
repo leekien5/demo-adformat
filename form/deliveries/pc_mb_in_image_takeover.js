@@ -1253,7 +1253,7 @@
     var bannerURL = urlParams.get('b'); 
     var domainURL = urlParams.get('c');
     
-     if(domainURL == null) {
+    if(domainURL == null || domainURL == 'null') {
         domainURL = 'demo';
     }
     if(bannerURL){

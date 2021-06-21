@@ -6,7 +6,7 @@ var domainURL = urlParams.get('c');
 var fileDirectory;
 var adPlacement = null;
 
-if(domainURL == null){
+if(domainURL == null || domainURL == 'null') {
 	domainURL = 'demo';
 }
 
@@ -14,6 +14,8 @@ function removeClass (placementBalloon, placementBottomUp) {
 	placementBalloon = document.getElementById('ads-balloon');
 	placementBalloon.remove();
 	placementBottomUp = document.getElementById('ads-bottom-up');
+	placementBottomUp.remove();
+	placementBottomUp = document.getElementById('ads-big-balloon');
 	placementBottomUp.remove();
 }
 
@@ -55,6 +57,8 @@ if(bannerURL && formatURL) {
 			fileDirectory = fileName.balloon;
 			placementBottomUp = document.getElementById('ads-bottom-up');
 			placementBottomUp.remove();		
+			placementBigBalloon = document.getElementById('ads-big-balloon');
+			placementBigBalloon.remove();		
 			adPlacement = document.getElementById('yomedia-destination-197');
 			//Replace div id with script source
 			var scriptPlacement = document.createElement('script');
@@ -71,6 +75,8 @@ if(bannerURL && formatURL) {
 			fileDirectory = fileName.bigBalloon;
 			placementBottomUp = document.getElementById('ads-bottom-up');
 			placementBottomUp.remove();		
+			placementBalloon = document.getElementById('ads-balloon');
+			placementBalloon.remove();		
 			adPlacement = document.getElementById('yomedia-destination-197');
 			//Replace div id with script source
 			var scriptPlacement = document.createElement('script');
@@ -88,6 +94,8 @@ if(bannerURL && formatURL) {
 			adPlacement = document.getElementById('yomedia-destination-197');
 			placementBalloon = document.getElementById('ads-balloon');
 			placementBalloon.remove();		
+			placementBigBalloon = document.getElementById('ads-big-balloon');
+			placementBigBalloon.remove();		
 			//Replace div id with script source
 			var scriptPlacement = document.createElement('script');
 			scriptPlacement.src = fileDirectory;

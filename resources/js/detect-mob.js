@@ -15,7 +15,7 @@ function detectmob() {
         url = url.substring(0, p);
 
         if (bannerURL && formatURL) {
-            window.location = `${url}mobile/index.html?f=${formatURL}&b=${bannerURL}`;
+            window.location = `${url}mobile/index.html?f=${formatURL}&b=` + encodeURIComponent(`${bannerURL}`);
         } else {
             window.location = `${url}mobile/index.html`;
         }
