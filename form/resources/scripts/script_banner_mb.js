@@ -11,6 +11,7 @@ if(bannerURL && formatURL) {
 		firstview: '../../../form/deliveries/mb_firstview.js',
 		footer: '../../../form/deliveries/mb_footer.js',
 		wheel: '../../../form/deliveries/mb_footer_wheel.js',
+		windmill: '../../../form/deliveries/mb_footer_windmill.js',
 		bottomUpMb: '../../../form/deliveries/mb_bottom_up.js',
 		threeDPostCarousel: '../../../form/deliveries/pc_mb_3d_post_carousel.js',
 		inImageTakeover: '../../../form/deliveries/pc_mb_in_image_takeover.js',
@@ -107,6 +108,16 @@ if(bannerURL && formatURL) {
 		case 'teris-mb':
 			document.title = "Mobile Teris Footer";
 			fileDirectory = fileName.footer;
+			//Replace div id with script source
+			var scriptPlacement = document.createElement('script');
+			scriptPlacement.src = fileDirectory;
+			//Append script to body
+			document.body.appendChild(scriptPlacement);
+			break;
+
+		case 'windmill-mb':
+			document.title = "Mobile Footer Windmill";
+			fileDirectory = fileName.windmill;
 			//Replace div id with script source
 			var scriptPlacement = document.createElement('script');
 			scriptPlacement.src = fileDirectory;
