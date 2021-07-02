@@ -16,7 +16,6 @@ function setYoMediaExpand_104() {
     avlInteractModule.rectExpand('ads-bottom-up', 'ex', sPos, parseInt('1200'), parseInt('170'), parseInt('1200'), parseInt('600'));
 }
 
-
 function setYoMediaPre_104() {
     var sPos = 'right-bottom';
     avlInteractModule.rectExpand('ads-bottom-up', 'pre', sPos, parseInt('1200'), parseInt('170'), parseInt('1200'), parseInt('600'), 0);

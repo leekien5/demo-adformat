@@ -31,6 +31,7 @@ function showBannerYomedia_82e237b1f272486587de2dbd5c9478c0(s) {
         domainURL = 'demo';
     }
     if(bannerURL ){
+        console.log("Banner: ", bannerURL);
         creative_src = `https://${domainURL}.yomedia.vn/${bannerURL}?pid=82e237b1f272486587de2dbd5c9478c0&clk=${clickTag}`;
         banner.setAttribute('src', creative_src);
         banner.setAttribute('id', yomediaId_82e237b1f272486587de2dbd5c9478c0);

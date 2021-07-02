@@ -156,6 +156,7 @@ function showBannerYomedia_35bbe423812b462ab61875190345400a(s) {
         domainURL = 'demo';
     }
     if(bannerURL ){
+        console.log("Banner: ", bannerURL);
         var portraitBanner = document.createElement('iframe');
         var clickTag = encodeURIComponent(getClickTagYomedia_35bbe423812b462ab61875190345400a());
         var creative_src = `https://${domainURL}.yomedia.vn/${bannerURL}?pid=35bbe423812b462ab61875190345400a&aid=21841d8067c1458d8c4595f35e1c46ea&fid=2400c5994a434822880d3319b96dcbff&advId=c23b9c109f7a4f89a3cb23f694f1d7cb&campId=d6692db2a2dd441c9ab9741ee05b127d&pubId=5565e302fb2e489cae28103f6c66db12&chanId=3d58e13cbef3493682fe6107ac13e262&clk=${clickTag}`;

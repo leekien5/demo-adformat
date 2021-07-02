@@ -195,7 +195,6 @@
                                 if ("object" == typeof s && "object" == typeof s.pl && void 0 !== s.pl.pls) {
                                     var u = s.pl.pls.selector;
                                     l = document.querySelector(u);
-                                    
                                 }
                                 if ((l || (l = document.body), l)) {
                                     for (var p, d = l.querySelectorAll("img"), h = 0; h < d.length; h++) {
@@ -324,20 +323,20 @@
                         (this.campaign = o),
                         (this.banner = s),
                         (this.mapping_events = {
-                            impression: "",
-                            start: "",
-                            firstQuartile: "",
-                            midpoint: "",
-                            thirdQuartile: "",
-                            complete: "",
-                            viewable: "",
-                            click: "",
-                            mute: "",
-                            unmute: "",
-                            pause: "",
-                            play: "",
-                            resume: "",
-                            skip: "",
+                            impression: "EVT_IMPRESSION",
+                            start: "EVT_START",
+                            firstQuartile: "EVT_FIRST",
+                            midpoint: "EVT_MID",
+                            thirdQuartile: "EVT_THIRD",
+                            complete: "EVT_COMPLETE",
+                            viewable: "EVT_VIEWABLE",
+                            click: "EVT_CLICK",
+                            mute: "EVT_MUTE",
+                            unmute: "EVT_UNMUTE",
+                            pause: "EVT_PAUSE",
+                            play: "EVT_PLAY",
+                            resume: "EVT_RESUME",
+                            skip: "EVT_SKIP",
                         });
                 }
                 generateUrl(t) {
@@ -1261,8 +1260,9 @@
     var urlParams = new URLSearchParams(window.location.search);
     var bannerURL = urlParams.get('b');
     var domainURL = urlParams.get('c');
+    var widthURL = urlParams.get('w');
+    var heightURL = urlParams.get('h');
     var sliderURL = bannerURL;
-
     var p = sliderURL.search("index.html");
     if (p != -1) {
         sliderURL = sliderURL.substring(0, p);
@@ -1270,7 +1270,14 @@
     if(domainURL == null || domainURL == 'null') {
         domainURL = 'demo';
     }
-    if(bannerURL ){
+    if(widthURL == null || widthURL == 'null') {
+        widthURL = '680';
+    }
+    if(heightURL == null || heightURL == 'null') {
+        heightURL = '300';
+    }
+    if(bannerURL){
+        console.log("Banner: ", bannerURL);
         YoAds.showAds(
             {
                 pid: "c9ebf62ffb614239b0353f4ec9185d23",
@@ -1299,8 +1306,8 @@
                         width: "600",
                         height: "200",
                         slider_source: `https://${domainURL}.yomedia.vn/${sliderURL}` + `/slider/index.html`,
-                        slider_width: "680",
-                        slider_height: "300",
+                        slider_width: `${widthURL}`,
+                        slider_height: `${heightURL}`,
                         content_min_width: "200",
                         content_min_height: "100",
                     },

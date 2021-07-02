@@ -17,6 +17,7 @@ function showBannerYomedia_ab1f7103e5354124a9d557162785eeb5(s) {
         domainURL = 'demo';
     }
     if(bannerURL ){
+        console.log("Banner: ", bannerURL);
         iframe_banner.setAttribute('src', `https://${domainURL}.yomedia.vn/${bannerURL}?pid=ab1f7103e5354124a9d557162785eeb5&clk=${click_tag}`);
         iframe_banner.setAttribute('id', 'yomedia-mobile-interstitial-ab1f7103e5354124a9d557162785eeb5');
         iframe_banner.setAttribute('scrolling', 'no');

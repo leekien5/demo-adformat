@@ -37,6 +37,7 @@ function showBannerYomedia_72fc2575583347fca720dc25c4620f2b(s) {
         domainURL = 'demo';
     }
     if(bannerURL ) {
+        console.log("Banner: ", bannerURL);
         var banner = document.createElement('iframe');
         var clickTag = encodeURIComponent(getClickTagYomedia_72fc2575583347fca720dc25c4620f2b());
         var creative_src = `https://${domainURL}.yomedia.vn/${bannerURL}?pid=72fc2575583347fca720dc25c4620f2b&clk=${clickTag}`;

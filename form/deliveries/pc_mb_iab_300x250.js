@@ -32,6 +32,7 @@ function showBannerYomedia_aed6af3371fd4660835b1165f55508f4(s) {
         domainURL = 'demo';
     }
     if (bannerURL.match(/\.(jpeg|jpg|gif|png)$/) != null) {
+        console.log("Banner: ", bannerURL);
         var clickTag = getClickTagYomedia_aed6af3371fd4660835b1165f55508f4();
         var creative_src = `https://${domainURL}.yomedia.vn/${bannerURL}?pid=aed6af3371fd4660835b1165f55508f4&clk=${clickTag}`;
         banner = document.createElement('a');

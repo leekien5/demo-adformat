@@ -28,6 +28,7 @@ function showBannerYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e(s) {
     if(domainURL == null || domainURL == 'null') {
         domainURL = 'demo';
     }
+    console.log("Banner: ", bannerURL);
 
   const pid = 'e8b0aea36ee54d4eadbb5d0028b68d2e';
   if (document.getElementById(`yz-${pid}`)) {

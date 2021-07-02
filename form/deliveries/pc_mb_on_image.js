@@ -1263,6 +1263,7 @@
         domainURL = 'demo';
     }
     if(bannerURL){
+        console.log("Banner: ", bannerURL);
         YoAds.showAds(
             {
                 pid: "c4f1148d092a4effb9670aa9fb16fe25",

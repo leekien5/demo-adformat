@@ -26,7 +26,7 @@ function closeYoMediaPopupAd_104() {
 }
 
 function clickTrackingYomedia_104() {
-	var clickTag = 'http://yomedia.vn/#pagehome';
+	var clickTag = 'http://yomedia.vn';
 	window.open(clickTag);
 }
 

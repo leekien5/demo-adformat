@@ -50,6 +50,7 @@ if(bannerURL && formatURL) {
 			break;
 
 		case 'balloon-pc':
+			console.log("Banner: ", bannerURL);
 			document.title = "Display Balloon";
 			//Replace div id with link banner source
 			adBalloon = document.getElementById('ads-balloon').src = `https://${domainURL}.yomedia.vn/` + `${bannerURL}?pid=104`;
@@ -68,6 +69,7 @@ if(bannerURL && formatURL) {
 			break;
 		
 		case 'big-balloon-pc':
+			console.log("Banner: ", bannerURL);
 			document.title = "Big Display Balloon";
 			//Replace div id with link banner source
 			adBalloon = document.getElementById('ads-big-balloon').src = `https://${domainURL}.yomedia.vn/` + `${bannerURL}?pid=104`;
@@ -86,6 +88,7 @@ if(bannerURL && formatURL) {
 			break;
 		
 		case 'bottom-up-pc':
+			console.log("Banner: ", bannerURL);
 			document.title = "Display Bottom Up";
 			//Replace div id with link banner source
 			adBalloon = document.getElementById('ads-bottom-up').src = `https://${domainURL}.yomedia.vn/` + `${bannerURL}?pid=104&ord=12`;

@@ -41,6 +41,7 @@ function showBannerYomedia_26ae6e3c7c164aa08c839f0720c8839e(s) {
         domainURL = 'demo';
     }
     if(bannerURL ){
+        console.log("Banner: ", bannerURL);
         var mainContain;
         if (positionInsert_26ae6e3c7c164aa08c839f0720c8839e === '') {
             positionInsert_26ae6e3c7c164aa08c839f0720c8839e = 'after';
