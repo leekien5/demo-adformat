@@ -1,32 +1,38 @@
-var advId_aa7c62743ab0414c9aec968895303026 = '2f5576e9954248b3a9acb8e73bc91cad';
-var campId_aa7c62743ab0414c9aec968895303026 = 'cbed67958312425580d907d9e5cd8e65';
-var pubId_aa7c62743ab0414c9aec968895303026 = '5565e302fb2e489cae28103f6c66db12';
-var chanId_aa7c62743ab0414c9aec968895303026 = '3d58e13cbef3493682fe6107ac13e262';
-var placementId_aa7c62743ab0414c9aec968895303026 = 'aa7c62743ab0414c9aec968895303026';
+var advId_e8b0aea36ee54d4eadbb5d0028b68d2e = 'c23b9c109f7a4f89a3cb23f694f1d7cb';
+var campId_e8b0aea36ee54d4eadbb5d0028b68d2e = 'd6692db2a2dd441c9ab9741ee05b127d';
+var pubId_e8b0aea36ee54d4eadbb5d0028b68d2e = '5565e302fb2e489cae28103f6c66db12';
+var chanId_e8b0aea36ee54d4eadbb5d0028b68d2e = '3d58e13cbef3493682fe6107ac13e262';
+var placementId_e8b0aea36ee54d4eadbb5d0028b68d2e = 'e8b0aea36ee54d4eadbb5d0028b68d2e';
 
 var d = new Date();
 d.setTime(d.getTime() + 31536000000);
 var expires = 'expires='+ d.toUTCString();
-document.cookie = '__yoid__=5167b305748ed9a9d0142b0a3061199b;' + expires + ';path=/';
+document.cookie = '__yoid__=83d157703201c2c829975747e78db277;' + expires + ';path=/';
 if (!window.localStorage.getItem('__yoid__')) {
-	window.localStorage.setItem('__yoid__', '5167b305748ed9a9d0142b0a3061199b');
+	window.localStorage.setItem('__yoid__', '83d157703201c2c829975747e78db277');
 }
 
 function getTrackingYomedia(url) {
 	var img = new Image();
 	img.src = url;
 }
-var yomediaId_aa7c62743ab0414c9aec968895303026 = 'yomedia-wrapper-mobile-bottom-aa7c62743ab0414c9aec968895303026';
-var yomediaContentId_aa7c62743ab0414c9aec968895303026 = 'yomedia-mobile-content-bottom-aa7c62743ab0414c9aec968895303026';
-var iOS_aa7c62743ab0414c9aec968895303026 = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+var yomediaId_e8b0aea36ee54d4eadbb5d0028b68d2e = 'yomedia-wrapper-mobile-bottom-e8b0aea36ee54d4eadbb5d0028b68d2e';
+var yomediaContentId_e8b0aea36ee54d4eadbb5d0028b68d2e = 'yomedia-mobile-content-bottom-e8b0aea36ee54d4eadbb5d0028b68d2e';
+var iOS_e8b0aea36ee54d4eadbb5d0028b68d2e = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
-var min_w = (0 != 0)?0:screen.width;
-var min_h = (200 != 0)?300:screen.height;
-var max_w = (0 != 0)?0:screen.width;
-var max_h = (350 != 0)?450:screen.height;
+var min_w_e8b0aea36ee54d4eadbb5d0028b68d2e = (300 != 0)?300:screen.width;
+var min_h_e8b0aea36ee54d4eadbb5d0028b68d2e = (50 != 0)?50:screen.height;
+var max_w_e8b0aea36ee54d4eadbb5d0028b68d2e = (300 != 0)?300:screen.width;
+var max_h_e8b0aea36ee54d4eadbb5d0028b68d2e = (0 != 0)?0:screen.height;
 
-function showBannerYomedia_aa7c62743ab0414c9aec968895303026(s) {
-    if (document.getElementById(yomediaId_aa7c62743ab0414c9aec968895303026)) {
+var ratio_e8b0aea36ee54d4eadbb5d0028b68d2e = 220/660;
+// if (300 && 50) {
+//     ratio_e8b0aea36ee54d4eadbb5d0028b68d2e =  parseInt(50) / parseInt(300);
+// }
+
+
+function showBannerYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e(s) {
+    if (document.getElementById(yomediaId_e8b0aea36ee54d4eadbb5d0028b68d2e)) {
         return false;
     }
     var urlParams = new URLSearchParams(window.location.search);
@@ -36,56 +42,66 @@ function showBannerYomedia_aa7c62743ab0414c9aec968895303026(s) {
     if(domainURL == null || domainURL == 'null') {
         domainURL = 'demo';
     }
-    if(bannerURL ){
+    if(bannerURL) {
+        console.log("Banner: ", bannerURL);
         var banner = document.createElement('iframe');
-        var clickTag = encodeURIComponent(getClickTagYomedia_aa7c62743ab0414c9aec968895303026());
-        var creative_src = `https://${domainURL}.yomedia.vn/${bannerURL}?pid=aa7c62743ab0414c9aec968895303026&clk=` + clickTag;
+        var clickTag = encodeURIComponent(getClickTagYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e());
+        var creative_src = `https://${domainURL}.yomedia.vn/${bannerURL}?pid=e8b0aea36ee54d4eadbb5d0028b68d2e&aid=f9d9e173fb13401b820d6700fd05382d&fid=2c72ac5fc5014c8f8a2f701d99c23395&advId=c23b9c109f7a4f89a3cb23f694f1d7cb&campId=d6692db2a2dd441c9ab9741ee05b127d&pubId=5565e302fb2e489cae28103f6c66db12&chanId=3d58e13cbef3493682fe6107ac13e262&clk=` + clickTag;
         banner.setAttribute('src', creative_src);
-        banner.setAttribute('id', yomediaContentId_aa7c62743ab0414c9aec968895303026);
+        banner.setAttribute('id', yomediaContentId_e8b0aea36ee54d4eadbb5d0028b68d2e);
         banner.setAttribute('allowFullScreen', '');
         banner.setAttribute('frameborder', '0');
         banner.setAttribute('scrolling', 'no');
         banner.style.cssText = `position: fixed; z-index: 2347483647 !important;bottom: 0px !important; left:0px !important; right:0px !important; margin: 0px auto  !important;line-height:normal; border:0; width: 100% !important; height: 100%  !important;`;
     
         document.body.appendChild(banner);
-        addAnEventListener_aa7c62743ab0414c9aec968895303026(banner, 'load', function() {
-            isVisiabilityYomedia_aa7c62743ab0414c9aec968895303026(banner);
+        addAnEventListener_e8b0aea36ee54d4eadbb5d0028b68d2e(banner, 'load', function() {
+            isVisiabilityYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e(banner);
         });
-        addAnEventListener_aa7c62743ab0414c9aec968895303026(window, 'scroll', function() {
+        addAnEventListener_e8b0aea36ee54d4eadbb5d0028b68d2e(window, 'scroll', function() {
             var scrollTop = e=document.documentElement.scrollTop;
-            sendMessageToIframe_aa7c62743ab0414c9aec968895303026(JSON.stringify({pid: 'aa7c62743ab0414c9aec968895303026', scrt: scrollTop}));
+            sendMessageToIframe_e8b0aea36ee54d4eadbb5d0028b68d2e(JSON.stringify({pid: 'e8b0aea36ee54d4eadbb5d0028b68d2e', scrt: scrollTop}));
         });
-        impressionTrackingYomedia_aa7c62743ab0414c9aec968895303026();
+    }
+    impressionTrackingYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e();
+}
+
+function sendMessageToIframe_e8b0aea36ee54d4eadbb5d0028b68d2e($message) {
+    var banner = document.getElementById(yomediaContentId_e8b0aea36ee54d4eadbb5d0028b68d2e);
+    if(banner) {
+        banner.contentWindow.postMessage($message, '*'); 
     }
 }
 
-function sendMessageToIframe_aa7c62743ab0414c9aec968895303026($message) {
-    var banner = document.getElementById(yomediaContentId_aa7c62743ab0414c9aec968895303026);
-    banner.contentWindow.postMessage($message, '*'); 
+function minYoMediaPopupAd_e8b0aea36ee54d4eadbb5d0028b68d2e() {
+    var banner = document.getElementById(yomediaContentId_e8b0aea36ee54d4eadbb5d0028b68d2e);
+    var rect_top = Math.floor(screen.width * ratio_e8b0aea36ee54d4eadbb5d0028b68d2e);
+    banner.style.clip = 'rect(' + (screen.height - rect_top) + 'px, ' + screen.width + 'px, ' + screen.height + 'px, 0px)';
 }
 
-function minYoMediaPopupAd_aa7c62743ab0414c9aec968895303026() {
-    var banner = document.getElementById(yomediaContentId_aa7c62743ab0414c9aec968895303026);
-    banner.style.clip = 'rect(' + (screen.height - parseInt(min_h)) + 'px, ' + screen.width + 'px, ' + screen.height + 'px, 0px)';
+function setYoMediaPre_e8b0aea36ee54d4eadbb5d0028b68d2e() {
+    var banner = document.getElementById(yomediaContentId_e8b0aea36ee54d4eadbb5d0028b68d2e);
+    var rect_top = Math.floor(screen.width * ratio_e8b0aea36ee54d4eadbb5d0028b68d2e);
+    banner.style.clip = 'rect(' + (screen.height - rect_top) + 'px, ' + screen.width + 'px, ' + screen.height + 'px, 0px)';
 }
 
-function setYoMediaPre_aa7c62743ab0414c9aec968895303026() {
-    var banner = document.getElementById(yomediaContentId_aa7c62743ab0414c9aec968895303026);
-    banner.style.clip = 'rect(' + (screen.height - parseInt(min_h)) + 'px, ' + screen.width + 'px, ' + screen.height + 'px, 0px)';
+function setYoMediaExpand_e8b0aea36ee54d4eadbb5d0028b68d2e() {
+    var banner = document.getElementById(yomediaContentId_e8b0aea36ee54d4eadbb5d0028b68d2e);
+    var ra = screen.height/screen.width;
+    if (300 && 0) {
+        ra =  parseInt(0) / parseInt(300);
+    }
+    var rect_top = Math.floor(screen.width * ra);
+    banner.style.clip = 'rect(' + (screen.height - rect_top) + 'px, ' + screen.width + 'px, ' + screen.height + 'px, 0px)';
 }
 
-function setYoMediaExpand_aa7c62743ab0414c9aec968895303026() {
-    var banner = document.getElementById(yomediaContentId_aa7c62743ab0414c9aec968895303026);
-    banner.style.clip = 'rect(' + (screen.height - parseInt(max_h)) + 'px, ' + screen.width + 'px, ' + screen.height + 'px, 0px)';
+function closeYoMediaPopupAd_e8b0aea36ee54d4eadbb5d0028b68d2e() {
+    document.getElementById(yomediaContentId_e8b0aea36ee54d4eadbb5d0028b68d2e).remove();
 }
 
-function closeYoMediaPopupAd_aa7c62743ab0414c9aec968895303026() {
-    document.getElementById(yomediaContentId_aa7c62743ab0414c9aec968895303026).remove();
-}
-
-function rotateYomedia_aa7c62743ab0414c9aec968895303026() {
-    var portraitBanner = document.getElementById(yomediaContentId_aa7c62743ab0414c9aec968895303026);
-    var landscapeBanner = document.getElementById(yomediaLandscapeId_aa7c62743ab0414c9aec968895303026);
+function rotateYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e() {
+    var portraitBanner = document.getElementById(yomediaContentId_e8b0aea36ee54d4eadbb5d0028b68d2e);
+    var landscapeBanner = document.getElementById(yomediaLandscapeId_e8b0aea36ee54d4eadbb5d0028b68d2e);
 
     window.addEventListener("orientationchange", function() {
         if (readDeviceOrientation() === 'portrait') {
@@ -114,89 +130,89 @@ function readDeviceOrientation() {
     }
 }
 
-var trackingViewable_aa7c62743ab0414c9aec968895303026 = false, interval_aa7c62743ab0414c9aec968895303026 = null, timeTrackingViewable_aa7c62743ab0414c9aec968895303026 = 1000;
+var trackingViewable_e8b0aea36ee54d4eadbb5d0028b68d2e = false, interval_e8b0aea36ee54d4eadbb5d0028b68d2e = null, timeTrackingViewable_e8b0aea36ee54d4eadbb5d0028b68d2e = 1000;
 
-function viewableBannerYomedia_aa7c62743ab0414c9aec968895303026(event) {
-    if (!trackingViewable_aa7c62743ab0414c9aec968895303026) {
-        if (viewHalfBannerYomedia_aa7c62743ab0414c9aec968895303026(this)) {
-            if (interval_aa7c62743ab0414c9aec968895303026 === null) {
+function viewableBannerYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e(event) {
+    if (!trackingViewable_e8b0aea36ee54d4eadbb5d0028b68d2e) {
+        if (viewHalfBannerYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e(this)) {
+            if (interval_e8b0aea36ee54d4eadbb5d0028b68d2e === null) {
                 var time = 0;
-                interval_aa7c62743ab0414c9aec968895303026 = setInterval(function() {
+                interval_e8b0aea36ee54d4eadbb5d0028b68d2e = setInterval(function() {
                     time += 10;
-                    if (time >= timeTrackingViewable_aa7c62743ab0414c9aec968895303026) {
-                        if (!trackingViewable_aa7c62743ab0414c9aec968895303026) {
-                            viewableTrackingYomedia_aa7c62743ab0414c9aec968895303026();
-                            trackingViewable_aa7c62743ab0414c9aec968895303026 = true;
-                            clearInterval(interval_aa7c62743ab0414c9aec968895303026);
-                            interval_aa7c62743ab0414c9aec968895303026 = null;
+                    if (time >= timeTrackingViewable_e8b0aea36ee54d4eadbb5d0028b68d2e) {
+                        if (!trackingViewable_e8b0aea36ee54d4eadbb5d0028b68d2e) {
+                            viewableTrackingYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e();
+                            trackingViewable_e8b0aea36ee54d4eadbb5d0028b68d2e = true;
+                            clearInterval(interval_e8b0aea36ee54d4eadbb5d0028b68d2e);
+                            interval_e8b0aea36ee54d4eadbb5d0028b68d2e = null;
                         }
                     }
                 }, 10);
             }
         } else {
-            destroyViewableBannerYomedia_aa7c62743ab0414c9aec968895303026()
+            destroyViewableBannerYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e()
         }
     }
 }
 
-function viewableBySzieBannerYomedia_aa7c62743ab0414c9aec968895303026(obj, width, height) {
+function viewableBySzieBannerYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e(obj, width, height) {
     if (!obj) {
         return false;
     }
-    if (!trackingViewable_aa7c62743ab0414c9aec968895303026) {
-        var rect = getClientRectBannerYomedia_aa7c62743ab0414c9aec968895303026(obj);
+    if (!trackingViewable_e8b0aea36ee54d4eadbb5d0028b68d2e) {
+        var rect = getClientRectBannerYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e(obj);
         var check = true;
         if (rect && (rect.width < width || rect.height < height)) {
             check = false;
         }
         if (check && obj.offsetHeight >= height && obj.style.display != 'none' && obj.style.visibility != 'hidden') {
-            if (interval_aa7c62743ab0414c9aec968895303026 === null) {
+            if (interval_e8b0aea36ee54d4eadbb5d0028b68d2e === null) {
                 var time = 0;
-                interval_aa7c62743ab0414c9aec968895303026 = setInterval(function() {
+                interval_e8b0aea36ee54d4eadbb5d0028b68d2e = setInterval(function() {
                     time += 10;
-                    if (time >= timeTrackingViewable_aa7c62743ab0414c9aec968895303026) {
-                        if (!trackingViewable_aa7c62743ab0414c9aec968895303026) {
-                            viewableTrackingYomedia_aa7c62743ab0414c9aec968895303026();
-                            trackingViewable_aa7c62743ab0414c9aec968895303026 = true;
-                            clearInterval(interval_aa7c62743ab0414c9aec968895303026);
-                            interval_aa7c62743ab0414c9aec968895303026 = null;
+                    if (time >= timeTrackingViewable_e8b0aea36ee54d4eadbb5d0028b68d2e) {
+                        if (!trackingViewable_e8b0aea36ee54d4eadbb5d0028b68d2e) {
+                            viewableTrackingYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e();
+                            trackingViewable_e8b0aea36ee54d4eadbb5d0028b68d2e = true;
+                            clearInterval(interval_e8b0aea36ee54d4eadbb5d0028b68d2e);
+                            interval_e8b0aea36ee54d4eadbb5d0028b68d2e = null;
                         }
                     }
                 }, 10);
             }
         } else {
-            destroyViewableBannerYomedia_aa7c62743ab0414c9aec968895303026()
+            destroyViewableBannerYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e()
         }
     }
 }
 
-function destroyViewableBannerYomedia_aa7c62743ab0414c9aec968895303026() {
-    if (interval_aa7c62743ab0414c9aec968895303026 !== null) {
-        clearInterval(interval_aa7c62743ab0414c9aec968895303026);
-        interval_aa7c62743ab0414c9aec968895303026 = null;
+function destroyViewableBannerYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e() {
+    if (interval_e8b0aea36ee54d4eadbb5d0028b68d2e !== null) {
+        clearInterval(interval_e8b0aea36ee54d4eadbb5d0028b68d2e);
+        interval_e8b0aea36ee54d4eadbb5d0028b68d2e = null;
     }
 }
 
-function viewHalfBannerYomedia_aa7c62743ab0414c9aec968895303026(obj) {
+function viewHalfBannerYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e(obj) {
     if (!obj) {
         return false;
     }
     var elementHeight = obj.clientHeight;
-    var vpH = getViewPortHeightYomedia_aa7c62743ab0414c9aec968895303026(),
+    var vpH = getViewPortHeightYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e(),
         windowY = window.scroller().y, // Scroll Top
-        elementY = getOffsetYYomedia_aa7c62743ab0414c9aec968895303026(obj) + elementHeight/2;
+        elementY = getOffsetYYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e(obj) + elementHeight/2;
     ybottom = elementY + elementHeight/8;
     endViewPort = vpH + windowY;
     return !(elementY > endViewPort || ybottom < windowY);
 }
 
-function viewFullBannerYomedia_aa7c62743ab0414c9aec968895303026(obj) {
+function viewFullBannerYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e(obj) {
     if (!obj) {
         return false;
     }
-    var vpH = getViewPortHeightYomedia_aa7c62743ab0414c9aec968895303026(),
+    var vpH = getViewPortHeightYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e(),
         windowY = window.scroller().y, // Scroll Top
-        elementY = getOffsetYYomedia_aa7c62743ab0414c9aec968895303026(obj);
+        elementY = getOffsetYYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e(obj);
     elementHeight = obj.clientHeight;
     ybottom = elementY + elementHeight;
     endViewPort = vpH + windowY;
@@ -204,7 +220,7 @@ function viewFullBannerYomedia_aa7c62743ab0414c9aec968895303026(obj) {
     return !(elementY > endViewPort || ybottom < windowY);
 }
 
-function viewHalfBannerYomediaNew_aa7c62743ab0414c9aec968895303026(wd, obj) {
+function viewHalfBannerYomediaNew_e8b0aea36ee54d4eadbb5d0028b68d2e(wd, obj) {
     if (!obj) {
         return false;
     }
@@ -229,15 +245,15 @@ function viewHalfBannerYomediaNew_aa7c62743ab0414c9aec968895303026(wd, obj) {
         }
     }
     var elementHeight = obj.clientHeight;
-    var vpH = getViewPortHeightYomediaNew_aa7c62743ab0414c9aec968895303026(wd),
+    var vpH = getViewPortHeightYomediaNew_e8b0aea36ee54d4eadbb5d0028b68d2e(wd),
         windowY = wd.scroller().y,
-        elementY = getOffsetYYomedia_aa7c62743ab0414c9aec968895303026(obj) + elementHeight/2;
+        elementY = getOffsetYYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e(obj) + elementHeight/2;
     ybottom = elementY + elementHeight/8;
     endViewPort = vpH + windowY;
     return !(elementY > endViewPort || ybottom < windowY);
 }
 
-function viewFullBannerYomediaNew_aa7c62743ab0414c9aec968895303026(wd, obj) {
+function viewFullBannerYomediaNew_e8b0aea36ee54d4eadbb5d0028b68d2e(wd, obj) {
     if (!obj) {
         return false;
     }
@@ -261,9 +277,9 @@ function viewFullBannerYomediaNew_aa7c62743ab0414c9aec968895303026(wd, obj) {
             };
         }
     }
-    var vpH = getViewPortHeightYomediaNew_aa7c62743ab0414c9aec968895303026(wd),
+    var vpH = getViewPortHeightYomediaNew_e8b0aea36ee54d4eadbb5d0028b68d2e(wd),
         windowY = wd.scroller().y, // Scroll Top
-        elementY = getOffsetYYomedia_aa7c62743ab0414c9aec968895303026(obj);
+        elementY = getOffsetYYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e(obj);
     elementHeight = obj.clientHeight;
     ybottom = elementY + elementHeight;
     endViewPort = vpH + windowY;
@@ -271,7 +287,7 @@ function viewFullBannerYomediaNew_aa7c62743ab0414c9aec968895303026(wd, obj) {
     return !(elementY > endViewPort || ybottom < windowY);
 }
 
-function getViewPortHeightYomedia_aa7c62743ab0414c9aec968895303026() {
+function getViewPortHeightYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e() {
     var de = document.documentElement;
 
     if (!!window.innerWidth) {
@@ -283,7 +299,7 @@ function getViewPortHeightYomedia_aa7c62743ab0414c9aec968895303026() {
     return 0;
 }
 
-function getViewPortHeightYomediaNew_aa7c62743ab0414c9aec968895303026(wd) {
+function getViewPortHeightYomediaNew_e8b0aea36ee54d4eadbb5d0028b68d2e(wd) {
     var de = wd.document.documentElement;
 
     if (!!wd.innerWidth) {
@@ -314,7 +330,7 @@ window.scroller = function() {
     };
 }
 
-function getOffsetYYomedia_aa7c62743ab0414c9aec968895303026(obj) {
+function getOffsetYYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e(obj) {
     var y = 0;
     if (obj.offsetParent) {
         while (obj) {
@@ -327,7 +343,7 @@ function getOffsetYYomedia_aa7c62743ab0414c9aec968895303026(obj) {
     return y;
 }
 
-function getClientRectBannerYomedia_aa7c62743ab0414c9aec968895303026(obj) {
+function getClientRectBannerYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e(obj) {
     var rect = null;
     var clip = obj.style.clip;
     if (clip) {
@@ -352,75 +368,70 @@ function getClientRectBannerYomedia_aa7c62743ab0414c9aec968895303026(obj) {
     }
     return rect;
 }
-let visibleAdsYomedia_aa7c62743ab0414c9aec968895303026 = null, viewabilityIntervalID_aa7c62743ab0414c9aec968895303026, timerViewability_aa7c62743ab0414c9aec968895303026 = 0, trackedViewability_aa7c62743ab0414c9aec968895303026 = false;
-const durationViewability_aa7c62743ab0414c9aec968895303026 = 10;
+let visibleAdsYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e = null, viewabilityIntervalID_e8b0aea36ee54d4eadbb5d0028b68d2e, timerViewability_e8b0aea36ee54d4eadbb5d0028b68d2e = 0, trackedViewability_e8b0aea36ee54d4eadbb5d0028b68d2e = false;
+const durationViewability_e8b0aea36ee54d4eadbb5d0028b68d2e = 10;
 
-function isVisiabilityYomedia_aa7c62743ab0414c9aec968895303026(el) {
+function isVisiabilityYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e(el) {
     if (el) {
         try {
-            let thresholdSets_aa7c62743ab0414c9aec968895303026 = [];
+            let thresholdSets_e8b0aea36ee54d4eadbb5d0028b68d2e = [];
             for (let i=0; i<=100; i++) {
-                thresholdSets_aa7c62743ab0414c9aec968895303026.push(i/100);
+                thresholdSets_e8b0aea36ee54d4eadbb5d0028b68d2e.push(i/100);
             }
-            var adObserverVisiability_aa7c62743ab0414c9aec968895303026 = new IntersectionObserver(intersectionCallback_aa7c62743ab0414c9aec968895303026, {
+            var adObserverVisiability_e8b0aea36ee54d4eadbb5d0028b68d2e = new IntersectionObserver(intersectionCallback_e8b0aea36ee54d4eadbb5d0028b68d2e, {
                 root: null,
                 rootMargin: '0px',
-                threshold: thresholdSets_aa7c62743ab0414c9aec968895303026
+                threshold: thresholdSets_e8b0aea36ee54d4eadbb5d0028b68d2e
             });
-            viewabilityIntervalID_aa7c62743ab0414c9aec968895303026 = window.setInterval(function() {
-                handleTrackingViewability_aa7c62743ab0414c9aec968895303026(el);
-            }, durationViewability_aa7c62743ab0414c9aec968895303026);
-            adObserverVisiability_aa7c62743ab0414c9aec968895303026.observe(el);
+            viewabilityIntervalID_e8b0aea36ee54d4eadbb5d0028b68d2e = window.setInterval(function() {
+                handleTrackingViewability_e8b0aea36ee54d4eadbb5d0028b68d2e(el);
+            }, durationViewability_e8b0aea36ee54d4eadbb5d0028b68d2e);
+            adObserverVisiability_e8b0aea36ee54d4eadbb5d0028b68d2e.observe(el);
         } catch (e) {
-            if (viewabilityIntervalID_aa7c62743ab0414c9aec968895303026) {
-                window.clearInterval(viewabilityIntervalID_aa7c62743ab0414c9aec968895303026);   
+            if (viewabilityIntervalID_e8b0aea36ee54d4eadbb5d0028b68d2e) {
+                window.clearInterval(viewabilityIntervalID_e8b0aea36ee54d4eadbb5d0028b68d2e);   
             }
         }
     }
 }
 
-function intersectionCallback_aa7c62743ab0414c9aec968895303026(entries) {
+function intersectionCallback_e8b0aea36ee54d4eadbb5d0028b68d2e(entries) {
     entries.forEach(function(entry) {
         if (entry.isIntersecting) {
             if (entry.intersectionRatio >= 0.5) {
-                visibleAdsYomedia_aa7c62743ab0414c9aec968895303026 = entry.target;
+                visibleAdsYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e = entry.target;
             } else {
-                visibleAdsYomedia_aa7c62743ab0414c9aec968895303026 = null;
+                visibleAdsYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e = null;
             }
         } else {
-            visibleAdsYomedia_aa7c62743ab0414c9aec968895303026 = null;
+            visibleAdsYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e = null;
         }
     });
 }
 
-function handleTrackingViewability_aa7c62743ab0414c9aec968895303026(el) {
-    if (visibleAdsYomedia_aa7c62743ab0414c9aec968895303026 !== null && el === visibleAdsYomedia_aa7c62743ab0414c9aec968895303026) {
-        timerViewability_aa7c62743ab0414c9aec968895303026 += durationViewability_aa7c62743ab0414c9aec968895303026;
-        if (!trackedViewability_aa7c62743ab0414c9aec968895303026 && timerViewability_aa7c62743ab0414c9aec968895303026 >= 1000) {
-            trackedViewability_aa7c62743ab0414c9aec968895303026 = true;
-            viewableTrackingYomedia_aa7c62743ab0414c9aec968895303026();
-            window.clearInterval(viewabilityIntervalID_aa7c62743ab0414c9aec968895303026);
+function handleTrackingViewability_e8b0aea36ee54d4eadbb5d0028b68d2e(el) {
+    if (visibleAdsYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e !== null && el === visibleAdsYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e) {
+        timerViewability_e8b0aea36ee54d4eadbb5d0028b68d2e += durationViewability_e8b0aea36ee54d4eadbb5d0028b68d2e;
+        if (!trackedViewability_e8b0aea36ee54d4eadbb5d0028b68d2e && timerViewability_e8b0aea36ee54d4eadbb5d0028b68d2e >= 1000) {
+            trackedViewability_e8b0aea36ee54d4eadbb5d0028b68d2e = true;
+            viewableTrackingYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e();
+            window.clearInterval(viewabilityIntervalID_e8b0aea36ee54d4eadbb5d0028b68d2e);
         }
     } else {
-        timerViewability_aa7c62743ab0414c9aec968895303026 = 0;
+        timerViewability_e8b0aea36ee54d4eadbb5d0028b68d2e = 0;
     }
-}showBannerYomedia_aa7c62743ab0414c9aec968895303026(1);
-function impressionTrackingYomedia_aa7c62743ab0414c9aec968895303026() { 
-    if (typeof _YoImp != 'undefined' && avlHelperModule.validateUrl(_YoImp)) {
-        getTrackingYomedia(_YoImp);
-    } else if (typeof _YoImpCallback_aa7c62743ab0414c9aec968895303026 === 'function') {
-        _YoImpCallback_aa7c62743ab0414c9aec968895303026();
-    }
+}showBannerYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e(1);
+function impressionTrackingYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e() {
 }
 
-function viewableTrackingYomedia_aa7c62743ab0414c9aec968895303026() {
+function viewableTrackingYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e() {
 }
 
-function clickTrackingYomedia_aa7c62743ab0414c9aec968895303026() {
+function clickTrackingYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e() {
     if (typeof _YoClick != 'undefined' && avlHelperModule.validateUrl(_YoClick)) {
         getTrackingYomedia(_YoClick);
     }
-        var landingPage = 'https://www.yomedia.vn/' ;
+        var landingPage = 'https://yomedia.vn';
         var isMac = /Mac|iPhone|iPod|iPad/.test(navigator.userAgent) && /\sSafari\//.test(navigator.userAgent);
         if (!isMac) {
             window.open(landingPage, '_blank');
@@ -428,29 +439,29 @@ function clickTrackingYomedia_aa7c62743ab0414c9aec968895303026() {
     window.parent.postMessage("LgTopBanner","*");
 }
 
-function clickThroughYomedia_aa7c62743ab0414c9aec968895303026() {
+function clickThroughYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e() {
     if (typeof _YoClick != 'undefined' && avlHelperModule.validateUrl(_YoClick)) {
         getTrackingYomedia(_YoClick);
     }
-        var landingPage = 'https://www.yomedia.vn/';
+        var landingPage = 'https://yomedia.vn';
         window.open(landingPage, '_blank');
     window.parent.postMessage("LgTopBanner","*");
 }
 
-function clickTracking3rdYomedia_aa7c62743ab0414c9aec968895303026() {
+function clickTracking3rdYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e() {
     if (typeof _YoClick != 'undefined' && avlHelperModule.validateUrl(_YoClick)) {
         getTrackingYomedia(_YoClick);
     }
     window.parent.postMessage("LgTopBanner","*");
 }
 
-function getClickTagYomedia_aa7c62743ab0414c9aec968895303026() {
+function getClickTagYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e() {
     var landingPage = '';
-    landingPage = 'https://www.yomedia.vn/';
+    landingPage = 'https://yomedia.vn';
     return landingPage;
 }
 
-function addAnEventListener_aa7c62743ab0414c9aec968895303026(obj,evt,func){
+function addAnEventListener_e8b0aea36ee54d4eadbb5d0028b68d2e(obj,evt,func){
     if ('addEventListener' in obj){
         obj.addEventListener(evt,func, false);
     } else if ('attachEvent' in obj){//IE
@@ -458,20 +469,16 @@ function addAnEventListener_aa7c62743ab0414c9aec968895303026(obj,evt,func){
     }
 }
 
-function iFrameListener_aa7c62743ab0414c9aec968895303026(event){
+function iFrameListener_e8b0aea36ee54d4eadbb5d0028b68d2e(event){
     try {
-        var fn_aa7c62743ab0414c9aec968895303026 = event.data;
-        processMessage_aa7c62743ab0414c9aec968895303026(fn_aa7c62743ab0414c9aec968895303026);
+        var fn_e8b0aea36ee54d4eadbb5d0028b68d2e = event.data;
+        processMessage_e8b0aea36ee54d4eadbb5d0028b68d2e(fn_e8b0aea36ee54d4eadbb5d0028b68d2e);
     }
     catch(err) {}
 }
-addAnEventListener_aa7c62743ab0414c9aec968895303026(window,'message',iFrameListener_aa7c62743ab0414c9aec968895303026);
+addAnEventListener_e8b0aea36ee54d4eadbb5d0028b68d2e(window,'message',iFrameListener_e8b0aea36ee54d4eadbb5d0028b68d2e);
 
-
-
-//flight: Wipro Aiken Sach Khuan Tu Doi Tay MB Bottom Up Q1 2021
-
-function createTrackingIframe_aa7c62743ab0414c9aec968895303026(id, src) {
+function createTrackingIframe_e8b0aea36ee54d4eadbb5d0028b68d2e(id, src) {
 	var trackingIframe = document.createElement("iframe");
 	trackingIframe.id = 'trackIFrame-' + id;
 	trackingIframe.setAttribute('frameborder', '0');
@@ -486,62 +493,62 @@ function createTrackingIframe_aa7c62743ab0414c9aec968895303026(id, src) {
 	return trackingIframe;
 }
 
-function getRandom_aa7c62743ab0414c9aec968895303026(min, max) {
+function getRandom_e8b0aea36ee54d4eadbb5d0028b68d2e(min, max) {
   	return Math.floor(Math.random() * (max - min) + min);
 }
 
 var trackingIframes = {};
-var ga_url_aa7c62743ab0414c9aec968895303026;
-var ms_aa7c62743ab0414c9aec968895303026;
-function processMessage_aa7c62743ab0414c9aec968895303026(msg) {
+var ga_url_e8b0aea36ee54d4eadbb5d0028b68d2e;
+var ms_e8b0aea36ee54d4eadbb5d0028b68d2e;
+function processMessage_e8b0aea36ee54d4eadbb5d0028b68d2e(msg) {
     try {
-        if ('string' == typeof msg &&  msg.toLowerCase().indexOf('yomedia') >= 0 && msg.indexOf('_aa7c62743ab0414c9aec968895303026();') >= 0 ) {
+        if ('string' == typeof msg &&  msg.toLowerCase().indexOf('yomedia') >= 0 && msg.indexOf('_e8b0aea36ee54d4eadbb5d0028b68d2e();') >= 0 ) {
             msg = msg.replace('();', '');
             switch(msg) {
-                case 'minYoMediaPopupAd_aa7c62743ab0414c9aec968895303026':
-                    minYoMediaPopupAd_aa7c62743ab0414c9aec968895303026();
+                case 'minYoMediaPopupAd_e8b0aea36ee54d4eadbb5d0028b68d2e':
+                    minYoMediaPopupAd_e8b0aea36ee54d4eadbb5d0028b68d2e();
                     break;
-                case 'restoreYoMediaPopupAd_aa7c62743ab0414c9aec968895303026':
-                    restoreYoMediaPopupAd_aa7c62743ab0414c9aec968895303026();
+                case 'restoreYoMediaPopupAd_e8b0aea36ee54d4eadbb5d0028b68d2e':
+                    restoreYoMediaPopupAd_e8b0aea36ee54d4eadbb5d0028b68d2e();
                     break;
-                case 'setYoMediaExpand_aa7c62743ab0414c9aec968895303026':
-                    setYoMediaExpand_aa7c62743ab0414c9aec968895303026();
+                case 'setYoMediaExpand_e8b0aea36ee54d4eadbb5d0028b68d2e':
+                    setYoMediaExpand_e8b0aea36ee54d4eadbb5d0028b68d2e();
                     break;
-                case 'setYoMediaPre_aa7c62743ab0414c9aec968895303026':
-                    setYoMediaPre_aa7c62743ab0414c9aec968895303026();
+                case 'setYoMediaPre_e8b0aea36ee54d4eadbb5d0028b68d2e':
+                    setYoMediaPre_e8b0aea36ee54d4eadbb5d0028b68d2e();
                     break;
-                case 'closeYoMediaPopupAd_aa7c62743ab0414c9aec968895303026':
-                    closeYoMediaPopupAd_aa7c62743ab0414c9aec968895303026();
+                case 'closeYoMediaPopupAd_e8b0aea36ee54d4eadbb5d0028b68d2e':
+                    closeYoMediaPopupAd_e8b0aea36ee54d4eadbb5d0028b68d2e();
                     break;
-                case 'closeYoMediaExpand_aa7c62743ab0414c9aec968895303026':
-                    closeYoMediaExpand_aa7c62743ab0414c9aec968895303026();
+                case 'closeYoMediaExpand_e8b0aea36ee54d4eadbb5d0028b68d2e':
+                    closeYoMediaExpand_e8b0aea36ee54d4eadbb5d0028b68d2e();
                     break;
-                case 'impressionTrackingYomedia_aa7c62743ab0414c9aec968895303026':
-                    impressionTrackingYomedia_aa7c62743ab0414c9aec968895303026();
+                case 'impressionTrackingYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e':
+                    impressionTrackingYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e();
                     break;
-                case 'viewableTrackingYomedia_aa7c62743ab0414c9aec968895303026':
-                    viewableTrackingYomedia_aa7c62743ab0414c9aec968895303026();
+                case 'viewableTrackingYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e':
+                    viewableTrackingYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e();
                     break;
-                case 'clickTrackingYomedia_aa7c62743ab0414c9aec968895303026':
-                    clickTrackingYomedia_aa7c62743ab0414c9aec968895303026();
+                case 'clickTrackingYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e':
+                    clickTrackingYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e();
                     break;
-                case 'clickTracking3rdYomedia_aa7c62743ab0414c9aec968895303026':
-                    clickTracking3rdYomedia_aa7c62743ab0414c9aec968895303026();
+                case 'clickTracking3rdYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e':
+                    clickTracking3rdYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e();
                     break;
-                case 'startTrackingYomedia_aa7c62743ab0414c9aec968895303026':
-                    startTrackingYomedia_aa7c62743ab0414c9aec968895303026();
+                case 'startTrackingYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e':
+                    startTrackingYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e();
                     break;
-                case 'firstQuartileTrackingYomedia_aa7c62743ab0414c9aec968895303026':
-                    firstQuartileTrackingYomedia_aa7c62743ab0414c9aec968895303026();
+                case 'firstQuartileTrackingYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e':
+                    firstQuartileTrackingYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e();
                     break;
-                case 'midpointTrackingYomedia_aa7c62743ab0414c9aec968895303026':
-                    midpointTrackingYomedia_aa7c62743ab0414c9aec968895303026();
+                case 'midpointTrackingYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e':
+                    midpointTrackingYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e();
                     break;
-                case 'thirdQuartileTrackingYomedia_aa7c62743ab0414c9aec968895303026':
-                    thirdQuartileTrackingYomedia_aa7c62743ab0414c9aec968895303026();
+                case 'thirdQuartileTrackingYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e':
+                    thirdQuartileTrackingYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e();
                     break;
-                case 'completeTrackingYomedia_aa7c62743ab0414c9aec968895303026':
-                    completeTrackingYomedia_aa7c62743ab0414c9aec968895303026();
+                case 'completeTrackingYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e':
+                    completeTrackingYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e();
                     break;
             }
             
