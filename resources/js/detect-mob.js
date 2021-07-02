@@ -1,24 +1,29 @@
 function detectmob() {
-    if (navigator.userAgent.match(/Android/i) ||
-        navigator.userAgent.match(/webOS/i) ||
-        navigator.userAgent.match(/iPhone/i) ||
-        navigator.userAgent.match(/iPad/i) ||
-        navigator.userAgent.match(/iPod/i) ||
-        navigator.userAgent.match(/BlackBerry/i) ||
-        navigator.userAgent.match(/Windows Phone/i)
-    ) {
-        let url = window.location.href;
-        let urlParams = new URLSearchParams(window.location.search);
-        let bannerURL = urlParams.get("b");
-        let formatURL = urlParams.get("f");
-        let p = url.search("index.html?f=");
+    var url = window.location.href;
+    var urlParams = new URLSearchParams(window.location.search);
+    var bannerURL = urlParams.get("b");
+    var formatURL = urlParams.get("f");
+    var domainURL = urlParams.get("c");
+    var widthURL = urlParams.get("w");
+    var heightURL = urlParams.get("h");
+    
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+        var p = url.search("index.html?f=");
         url = url.substring(0, p);
-
         if (bannerURL && formatURL) {
-            window.location = `${url}mobile/index.html?f=${formatURL}&b=` + encodeURIComponent(`${bannerURL}`);
-        } else {
-            window.location = `${url}mobile/index.html`;
+            sourceURL = `${url}mobile/index.html?f=${formatURL}&b=` + encodeURIComponent(`${bannerURL}`);
         }
+        if (domainURL) {
+            sourceURL = `${sourceURL}&c=${domainURL}`
+        }
+        if (widthURL) {
+            sourceURL = `${sourceURL}&w=${widthURL}`
+        }
+        if (heightURL) {
+            sourceURL = `${sourceURL}&h=${heightURL}`
+        }
+        window.location = sourceURL;
     }
+       
 }
 detectmob();
