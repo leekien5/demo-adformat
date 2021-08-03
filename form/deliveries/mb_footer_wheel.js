@@ -20,10 +20,10 @@ var yomediaId_72fc2575583347fca720dc25c4620f2b = 'yomedia-wrapper-mobile-wheel-7
 var yomediaContentId_72fc2575583347fca720dc25c4620f2b = 'yomedia-mobile-content-wheel-72fc2575583347fca720dc25c4620f2b';
 var iOS_72fc2575583347fca720dc25c4620f2b = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
-var min_w = (750 != 0)?750:screen.width;
-var min_h = (300 != 0)?300:screen.height;
-var max_w = (0 != 0)?0:screen.width;
-var max_h = (0 != 0)?0:screen.height;
+var min_w = (750 != 0)?750:window.innerWidth;
+var min_h = (300 != 0)?300:window.innerHeight;
+var max_w = (0 != 0)?0:window.innerWidth;
+var max_h = (0 != 0)?0:window.innerHeight;
 
 function showBannerYomedia_72fc2575583347fca720dc25c4620f2b(s) {
     let urlParams = new URLSearchParams(window.location.search);
@@ -63,22 +63,24 @@ function showBannerYomedia_72fc2575583347fca720dc25c4620f2b(s) {
 
 function sendMessageToIframe_72fc2575583347fca720dc25c4620f2b($message) {
     var banner = document.getElementById(yomediaContentId_72fc2575583347fca720dc25c4620f2b);
-    banner.contentWindow.postMessage($message, '*'); 
+    if(banner) {
+        banner.contentWindow.postMessage($message, '*'); 
+    }
 }
 
 function minYoMediaPopupAd_72fc2575583347fca720dc25c4620f2b() {
     var banner = document.getElementById(yomediaContentId_72fc2575583347fca720dc25c4620f2b);
-    banner.style.clip = 'rect(' + (screen.height - parseInt(min_h)) + 'px, ' + screen.width + 'px, ' + screen.height + 'px, 0px)';
+    banner.style.clip = 'rect(' + (window.innerHeight - parseInt(min_h)) + 'px, ' + window.innerWidth + 'px, ' + window.innerHeight + 'px, 0px)';
 }
 
 function setYoMediaPre_72fc2575583347fca720dc25c4620f2b() {
     var banner = document.getElementById(yomediaContentId_72fc2575583347fca720dc25c4620f2b);
-    banner.style.clip = 'rect(' + (screen.height - parseInt(min_h)) + 'px, ' + screen.width + 'px, ' + screen.height + 'px, 0px)';
+    banner.style.clip = 'rect(' + (window.innerHeight - parseInt(min_h)) + 'px, ' + window.innerWidth + 'px, ' + window.innerHeight + 'px, 0px)';
 }
 
 function setYoMediaExpand_72fc2575583347fca720dc25c4620f2b() {
     var banner = document.getElementById(yomediaContentId_72fc2575583347fca720dc25c4620f2b);
-    banner.style.clip = 'rect(' + (screen.height - parseInt(max_h)) + 'px, ' + screen.width + 'px, ' + screen.height + 'px, 0px)';
+    banner.style.clip = 'rect(' + (window.innerHeight - parseInt(max_h)) + 'px, ' + window.innerWidth + 'px, ' + window.innerHeight + 'px, 0px)';
 }
 
 function closeYoMediaPopupAd_72fc2575583347fca720dc25c4620f2b() {

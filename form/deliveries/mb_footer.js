@@ -44,8 +44,7 @@ function showBannerYomedia_e3d1135c1d184a47b09388aed33c4dfa(s) {
     if(bannerURL ){
         console.log("Banner: ", bannerURL);
         creative_src = `https://${domainURL}.yomedia.vn/${bannerURL}?pid=e3d1135c1d184a47b09388aed33c4dfa&clk=${clickTag}`;
-        domIframe.setAttribute('src', creative_src);
-    
+        domIframe.setAttribute('src', creative_src);   
         domIframe.setAttribute('id', yomediaContentId_e3d1135c1d184a47b09388aed33c4dfa);
         domIframe.setAttribute('allowFullScreen', '');
         domIframe.setAttribute('frameborder', '0');

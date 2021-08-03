@@ -140,7 +140,7 @@ function showBannerYomedia_5feec6f890d3485bb6f43576f47714ac() {
     }   
     var contentHTML_5feec6f890d3485bb6f43576f47714ac = `
         <body style="padding: 0px!; margin: 0px; background-color: transparent;">
-            <div id="yomedia-player-5feec6f890d3485bb6f43576f47714ac" style="position: relative;"></div>
+            <div id="yomedia-player-5feec6f890d3485bb6f43576f47714ac" style="z-index: 10;"></div>
             <script type="text/javascript" src="https://media.yomedia.vn/lib/jwplayer/jwplayer.js"></script>
             <script type="text/javascript">
                 var pid = "5feec6f890d3485bb6f43576f47714ac";
@@ -165,7 +165,7 @@ function showBannerYomedia_5feec6f890d3485bb6f43576f47714ac() {
                         height: "100%",
                         mute: true,
                         skin : {
-                            url : "https://media.yomedia.vn/lib/jwplayer/css/outstream_player.css",
+                            url :"https://media.yomedia.vn/lib/jwplayer/css/jwplayer.css?v=2",
                             name : "myskin"
                         },
                     }
@@ -174,8 +174,8 @@ function showBannerYomedia_5feec6f890d3485bb6f43576f47714ac() {
                     window.parent.postMessage(JSON.stringify({"event": "ready", "pid": pid, "auth": "Yomedia"}), '*');
                     var dom = document.getElementById('yomedia-player-' + pid);
                     var element = dom.querySelector(".jw-controlbar.jw-background-color.jw-reset");
-                    // element.classList.remove("jw-controlbar");
-                    // element.classList.add("jw-controlbarfix");
+                    element.classList.remove("jw-controlbar");
+                    element.classList.add("jw-controlbarfix");
                     playerInstance.on('adPlay', function() {
                         window.parent.postMessage(JSON.stringify({"event": "adPlay", "pid": pid, "auth": "Yomedia"}), '*');
                     });

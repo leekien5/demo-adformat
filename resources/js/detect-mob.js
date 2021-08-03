@@ -7,7 +7,14 @@ function detectmob() {
     var widthURL = urlParams.get("w");
     var heightURL = urlParams.get("h");
     
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+    if (navigator.userAgent.match(/Android/i)
+    || navigator.userAgent.match(/webOS/i)
+    || navigator.userAgent.match(/iPhone/i)
+    || navigator.userAgent.match(/iPad/i)
+    || navigator.userAgent.match(/iPod/i)
+    || navigator.userAgent.match(/BlackBerry/i)
+    || navigator.userAgent.match(/Windows Phone/i)
+    ) {
         var p = url.search("index.html?f=");
         url = url.substring(0, p);
         if (bannerURL && formatURL) {
@@ -23,7 +30,6 @@ function detectmob() {
             sourceURL = `${sourceURL}&h=${heightURL}`
         }
         window.location = sourceURL;
-    }
-       
+    } 
 }
 detectmob();

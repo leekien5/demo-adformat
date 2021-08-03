@@ -1290,7 +1290,7 @@
                         source: `https://${domainURL}.yomedia.vn/${bannerURL}`,
                         min_width: "600",
                         min_height: "125",
-                        portrait_source: `https://${domainURL}.yomedia.vn/${bannerDocURL}`,
+                        portrait_source: `https://${domainURL}.yomedia.vn/${bannerURL}`,
                         portrait_min_width: "600",
                         portrait_min_height: "125",
                         content_min_width: "300",

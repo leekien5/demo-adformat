@@ -96,7 +96,7 @@ if(bannerURL && formatURL) {
 			break;
 
 		case 'wheel-mb':
-			document.title = "Mobile Footer Wheel";
+			document.title = "Mobile Wheel";
 			fileDirectory = fileName.wheel;
 			//Replace div id with script source
 			var scriptPlacement = document.createElement('script');
@@ -105,8 +105,18 @@ if(bannerURL && formatURL) {
 			document.body.appendChild(scriptPlacement);
 			break;
 
-		case 'teris-mb':
-			document.title = "Mobile Teris Footer";
+		case 'tetris-mb':
+			document.title = "Mobile Tetris";
+			fileDirectory = fileName.footer;
+			//Replace div id with script source
+			var scriptPlacement = document.createElement('script');
+			scriptPlacement.src = fileDirectory;
+			//Append script to body
+			document.body.appendChild(scriptPlacement);
+			break;
+
+		case 'scratcher-mb':
+			document.title = "Mobile Scratcher";
 			fileDirectory = fileName.footer;
 			//Replace div id with script source
 			var scriptPlacement = document.createElement('script');
@@ -116,7 +126,7 @@ if(bannerURL && formatURL) {
 			break;
 
 		case 'windmill-mb':
-			document.title = "Mobile Footer Windmill";
+			document.title = "Mobile Windmill";
 			fileDirectory = fileName.windmill;
 			//Replace div id with script source
 			var scriptPlacement = document.createElement('script');

@@ -45,11 +45,11 @@ function getBannerURL() {
         break;
 
       case 'wheel-mb':
-        var info = "Mobile Footer Wheel";
+        var info = "Mobile Wheel";
         break;
 
       case 'windmill-mb':
-        var info = "Mobile Footer Windmill";
+        var info = "Mobile Windmill";
         break;
 
       case '3d-footer-mb':
@@ -60,8 +60,12 @@ function getBannerURL() {
         var info = "Mobile Card";
         break;
 
-      case 'teris-mb':
-        var info = "Mobile Teris";
+      case 'tetris-mb':
+        var info = "Mobile Tetris";
+        break;
+
+      case 'scratcher-mb':
+        var info = "Mobile Scratcher";
         break;
   
       case '3d-post-carousel-mb':

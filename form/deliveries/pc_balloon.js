@@ -3,7 +3,7 @@ avlHelperModule.embedTracking("");
 //Minimize popup
 function minYoMediaPopupAd_104() {
     var sPos = 'right-bottom';
-    avlInteractModule.rectAd('ads-balloon', 'top-down', sPos, 'min', parseInt('300'), parseInt('250'), parseInt('500'), parseInt('300'), parseInt('100'));
+    avlInteractModule.rectAd('ads-balloon', 'top-down', sPos, 'min', parseInt('300'), parseInt('250'), parseInt('500'), parseInt('300'), parseInt('250'));
 }
 
 function restoreYoMediaPopupAd_104() {
