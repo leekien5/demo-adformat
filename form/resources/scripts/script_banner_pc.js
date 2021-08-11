@@ -6,7 +6,7 @@ var domainURL = urlParams.get('c');
 var fileDirectory;
 var adPlacement = null;
 
-if(domainURL == null || domainURL == 'null') {
+if (domainURL == null || domainURL == 'null') {
 	domainURL = 'demo';
 }
 
@@ -19,7 +19,7 @@ function removeClass (placementBalloon, placementBottomUp) {
 	placementBottomUp.remove();
 }
 
-if(bannerURL && formatURL) {
+if (bannerURL && formatURL) {
 	//Get fireDirectory name from file directories
 	const fileName = {
 		masthead: '../../form/deliveries/pc_masthead.js',

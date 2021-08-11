@@ -48,8 +48,6 @@
             margin-bottom: 15px;
         }
     </style>
-    <script src="vendor/js/jquery.min.js"></script>
-
     <style>
         .ads {
             width: 100%
@@ -815,68 +813,6 @@
                 </div>
             </ul>
         </section>
-        <script>
-            jQuery(document).ready(function($) {
-                jQuery('.select-font-size').click(function(event) {
-                    var fontsize = $(this).data('font');
-                    jQuery('.txt_content_detail').removeClass('font-20');
-                    jQuery('.txt_content_detail').removeClass('font-24');
-                    jQuery('.txt_content_detail').removeClass('font-28');
-                    jQuery('.txt_content_detail').addClass('font-' + fontsize);
-                });
-            });
-        </script>
-        <script type="text/javascript">
-            jQuery(document).ready(function($) {
-                var page = 2;
-                var status = 1;
-                var checkAjaxRunning = 0
-
-                function scrollAjax() {
-                    if (($('.loadmorebtn').length > 0) && (page <= 3)) {
-                        var loadmore = $('.loadmorebtn')
-                        if ($(window).scrollTop() >= loadmore.offset().top + loadmore.outerHeight() - window.innerHeight) {
-                            if (status == 1) {
-                                $('.loadmorebtn').click();
-                            }
-                        }
-                    }
-                }
-                window.onload = scrollAjax;
-                $(window).scroll(function() {
-                    scrollAjax();
-                });
-                jQuery('.loadmorebtn').click(function() {
-                    if (status == 1) {
-                        status++;
-                        jQuery.ajax({
-                            url: '/?mod=category&act=loadmore',
-                            data: {
-                                cat_id: 14,
-                                page: page
-                            },
-                            error: function() {
-
-                            },
-                            dataType: 'html',
-                            success: function(data) {
-                                //alert('za');
-                                jQuery(".list_append").append(data);
-                                status = 1;
-                                page++;
-                                if (page >= 307) {
-                                    jQuery('.loadmorebtn').hide();
-                                }
-                            },
-                            type: 'GET'
-                        });
-                    }
-
-                });
-            });
-        </script>
-        <div class="ads mb-15">
-    
         </div>
         <aside class="logo_bot_white mrtop">
             <a href="/"><img src="vendor/img/logo247-white.png" alt="247"></a>

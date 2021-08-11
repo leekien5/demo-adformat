@@ -3,7 +3,7 @@ let bannerURL = urlParams.get('b');
 let formatURL = urlParams.get('f');
 let fileDirectory;
 let adPlacement = null;
-if(bannerURL && formatURL) {
+if (bannerURL && formatURL) {
 	//Get fireDirectory name from file directories
 	const fileName = {
 		masthead: '../../../form/deliveries/mb_masthead.js',

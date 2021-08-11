@@ -1,4 +1,4 @@
-// Database name
+// Database config JSON name
 const list = {
     devices : [
         { name: 'Display', value: 'display' },
