@@ -54,6 +54,7 @@ const list = {
         { name: 'Mobile Tetris', value: 'tetris-mb', type: 'mobile' },
         { name: 'Mobile Scratcher', value: 'scratcher-mb', type: 'mobile' },
         { name: 'Mobile Windmill', value: 'windmill-mb', type: 'mobile' },
+        { name: 'Mobile Pull Ads', value: 'pull-mb', type: 'mobile' },
         { name: 'Mobile In Image Native', value: 'in-native-mb', type: 'mobile' },
         { name: 'Mobile In Image Takeover', value: 'in-takeover-mb', type: 'mobile' },
         { name: 'Mobile In Image Carousel', value: 'in-carousel-mb', type: 'mobile' },
