@@ -1,3 +1,4 @@
+/* MOBILE FOOTER - SCRATCHER */
 var advId_e8b0aea36ee54d4eadbb5d0028b68d2e = 'c23b9c109f7a4f89a3cb23f694f1d7cb';
 var campId_e8b0aea36ee54d4eadbb5d0028b68d2e = 'd6692db2a2dd441c9ab9741ee05b127d';
 var pubId_e8b0aea36ee54d4eadbb5d0028b68d2e = '5565e302fb2e489cae28103f6c66db12';
@@ -37,12 +38,21 @@ function showBannerYomedia_e8b0aea36ee54d4eadbb5d0028b68d2e(s) {
     let urlParams = new URLSearchParams(window.location.search);
     let bannerURL = urlParams.get('b');
     let domainURL = urlParams.get('c');
+    let log = {
+        style:'color: #FFFFFF; font-size: 12px; padding: 5px;',
+        info:(msg)=>{
+            console.log(`%c${msg}`,`background: #5DADE2; ${log.style}`)
+        },
+        success:(msg)=>{
+            console.log(`%c${msg}`,`background: #008000; ${log.style}`)
+        },
+    };
     
     if (domainURL == null || domainURL == 'null') {
         domainURL = 'demo';
     }
     if (bannerURL) {
-        console.log("Banner: ", bannerURL);
+        log.success(`Banner source: https://${domainURL}.yomedia.vn/${bannerURL}`);
         const zone_ads = document.createElement('div');
         zone_ads.id = `yz-e8b0aea36ee54d4eadbb5d0028b68d2e`;
         zone_ads.style.cssText = `width: 100%; height: 100vh; position: fixed; bottom: 0px; z-index: 2147483500 !important;`;

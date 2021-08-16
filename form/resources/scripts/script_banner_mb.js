@@ -9,7 +9,8 @@ if (bannerURL && formatURL) {
         masthead: '../../../form/deliveries/mobile_masthead.js',
         interscroller: '../../../form/deliveries/mobile_interscroller.js',
         firstview: '../../../form/deliveries/mb_firstview.js',
-        footer: '../../../form/deliveries/mb_footer.js',
+        footer: '../../../form/deliveries/mobile_footer_expand.js',
+        footer3dBox: '../../../form/deliveries/mobile_footer_3d_box.js',
         wheel: '../../../form/deliveries/mobile_footer_wheel.js',
         tetris: '../../../form/deliveries/mobbile_footer_tetris.js',
         windmill: '../../../form/deliveries/mobile_footer_windmill.js',
@@ -59,16 +60,6 @@ if (bannerURL && formatURL) {
             break;
 
         case 'footer-mb':
-            document.title = "Mobile Footer";
-            fileDirectory = fileName.footer;
-            //Replace div id with script source
-            var scriptPlacement = document.createElement('script');
-            scriptPlacement.src = fileDirectory;
-            //Append script to body
-            document.body.appendChild(scriptPlacement);
-            break;
-
-        case 'footer-expand-mb':
             document.title = "Mobile Footer Expandable";
             fileDirectory = fileName.footer;
             //Replace div id with script source
@@ -79,8 +70,8 @@ if (bannerURL && formatURL) {
             break;
 
         case '3d-footer-mb':
-            document.title = "Mobile 3D Footer";
-            fileDirectory = fileName.footer;
+            document.title = "Mobile Footer 3D Box Carousel";
+            fileDirectory = fileName.footer3dBox;
             //Replace div id with script source
             var scriptPlacement = document.createElement('script');
             scriptPlacement.src = fileDirectory;

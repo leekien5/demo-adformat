@@ -37,11 +37,11 @@ function getBannerURL() {
                 break;
 
             case 'footer-mb':
-                var info = "Mobile Footer";
+                var info = "Mobile Footer Expandable";
                 break;
 
-            case 'footer-expand-mb':
-                var info = "Mobile Footer Expandable";
+            case '3d-footer-mb':
+                var info = "Mobile Footer 3D Box Carousel";
                 break;
 
             case 'wheel-mb':
@@ -54,10 +54,6 @@ function getBannerURL() {
 
             case 'pull-mb':
                 var info = "Mobile Pull Ads";
-                break;
-
-            case '3d-footer-mb':
-                var info = "Mobile 3D Footer";
                 break;
 
             case 'card-mb':
