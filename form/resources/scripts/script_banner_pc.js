@@ -24,6 +24,7 @@ if(bannerURL && formatURL) {
 	const fileName = {
 		masthead: '../../form/deliveries/pc_masthead.js',
 		balloon: '../../form/deliveries/pc_balloon.js',
+		balloonPopUp: '../../form/deliveries/pc_balloon_popup.js',
 		bigBalloon: '../../form/deliveries/pc_big_balloon.js',
 		bottomUp: '../../form/deliveries/pc_bottom_up.js',
 		threeDPostCarousel: '../../form/deliveries/pc_mb_3d_post_carousel.js',
@@ -56,6 +57,29 @@ if(bannerURL && formatURL) {
 			adBalloon = document.getElementById('ads-balloon').src = `https://${domainURL}.yomedia.vn/` + `${bannerURL}?pid=104`;
 			//Get file javascript
 			fileDirectory = fileName.balloon;
+			placementBalloonPopUp = document.getElementById('ads-balloon-popup');
+			placementBalloonPopUp.remove();	
+			placementBottomUp = document.getElementById('ads-bottom-up');
+			placementBottomUp.remove();		
+			placementBigBalloon = document.getElementById('ads-big-balloon');
+			placementBigBalloon.remove();		
+			adPlacement = document.getElementById('yomedia-destination-197');
+			//Replace div id with script source
+			var scriptPlacement = document.createElement('script');
+			scriptPlacement.src = fileDirectory;
+			//Append script to div id
+			adPlacement.appendChild(scriptPlacement);
+			break;
+
+		case 'balloon-popup-pc':
+			console.log("Banner: ", bannerURL);
+			document.title = "Display Balloon Popup Expandable";
+			//Replace div id with link banner source
+			adBalloon = document.getElementById('ads-balloon-popup').src = `https://${domainURL}.yomedia.vn/` + `${bannerURL}?pid=104`;
+			//Get file javascript
+			fileDirectory = fileName.balloonPopUp;
+			placementBalloon = document.getElementById('ads-balloon');
+			placementBalloon.remove();	
 			placementBottomUp = document.getElementById('ads-bottom-up');
 			placementBottomUp.remove();		
 			placementBigBalloon = document.getElementById('ads-big-balloon');
@@ -75,6 +99,8 @@ if(bannerURL && formatURL) {
 			adBalloon = document.getElementById('ads-big-balloon').src = `https://${domainURL}.yomedia.vn/` + `${bannerURL}?pid=104`;
 			//Get file javascript
 			fileDirectory = fileName.bigBalloon;
+			placementBalloonPopUp = document.getElementById('ads-balloon-popup');
+			placementBalloonPopUp.remove();	
 			placementBottomUp = document.getElementById('ads-bottom-up');
 			placementBottomUp.remove();		
 			placementBalloon = document.getElementById('ads-balloon');

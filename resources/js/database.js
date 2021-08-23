@@ -30,6 +30,7 @@ const list = {
     adformats : [
         //Display Adformats
         { name: 'Display Balloon', value: 'balloon-pc', type: 'display' },
+        { name: 'Display Balloon Popup Expandable', value: 'balloon-popup-pc', type: 'display' },
         { name: 'Display Big Balloon', value: 'big-balloon-pc', type: 'display' },
         { name: 'Display Masthead (Billboard)', value: 'masthead-pc', type: 'display' },
         { name: 'Display Bottom Up', value: 'bottom-up-pc', type: 'display' },
