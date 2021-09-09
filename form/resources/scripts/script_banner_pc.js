@@ -22,7 +22,7 @@ function removeClass (placementBalloon, placementBottomUp) {
 if (bannerURL && formatURL) {
 	//Get fireDirectory name from file directories
 	const fileName = {
-		masthead: '../../form/deliveries/pc_masthead.js',
+		masthead: '../../form/deliveries/display_masthead.js',
 		balloon: '../../form/deliveries/pc_balloon.js',
 		bigBalloon: '../../form/deliveries/pc_big_balloon.js',
 		bottomUp: '../../form/deliveries/pc_bottom_up.js',
