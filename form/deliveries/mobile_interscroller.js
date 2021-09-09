@@ -229,7 +229,7 @@ function showBannerYomedia_c0d26b72b7754f0b9c91d7cd57b2dd64(s) {
 
     //If view ad with PC mode then use => viewWidth
     if (!isMobileDevice()) {
-        banner.setAttribute('style', `border: none; height: ${screen.height}px; width: ${viewWidth}px; overflow: hidden; margin:0 auto;`);
+        banner.setAttribute('style', `border: none; height: ${screen.height}px; width: ${screen.width}px; max-width: ${viewWidth}px; max-height: ${viewHeight}px; overflow: hidden; margin:0 auto;`);
     } else {
         banner.setAttribute('style', `border: none; height: ${screen.height}px; width: ${screen.width}px; overflow: hidden; margin:0 auto;`);
     }
