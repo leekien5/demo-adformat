@@ -227,7 +227,6 @@ function showBannerYomedia_c0d26b72b7754f0b9c91d7cd57b2dd64(s) {
     let creative_src = `https://${domainURL}.yomedia.vn/${bannerURL}?pid=c0d26b72b7754f0b9c91d7cd57b2dd64&aid=4b5aa73eadec4555ad063251c2498a97&fid=50df0294ce1f47c1921940892b19754d&advId=c23b9c109f7a4f89a3cb23f694f1d7cb&campId=d6692db2a2dd441c9ab9741ee05b127d&pubId=5565e302fb2e489cae28103f6c66db12&chanId=3d58e13cbef3493682fe6107ac13e262&clk=` + clickTag;
     banner.src = creative_src;
 
-    //If view ad with PC mode then use => viewWidth
     if (!isMobileDevice()) {
         banner.setAttribute('style', `border: none; height: ${screen.height}px; width: ${screen.width}px; max-width: ${viewWidth}px; max-height: ${viewHeight}px; overflow: hidden; margin:0 auto;`);
     } else {
