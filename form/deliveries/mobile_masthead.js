@@ -46,7 +46,7 @@ var maxHeight_7dee1a8924b1445ab081191f971c0ad2 = maxWidth_7dee1a8924b1445ab08119
 
 function showBannerYomedia_7dee1a8924b1445ab081191f971c0ad2(s) {
     let show_logo = true;
-    let show_close_button = true;
+    let show_close_button = false;
     let urlParams = new URLSearchParams(window.location.search);
     let bannerURL = urlParams.get('b');
     let domainURL = urlParams.get('c');
@@ -96,7 +96,7 @@ function showBannerYomedia_7dee1a8924b1445ab081191f971c0ad2(s) {
         log.success(`Banner source: https://${domainURL}.yomedia.vn/${bannerURL}`);
         var domWrapper = document.createElement('div');
         domWrapper.setAttribute('id', yomediaId_7dee1a8924b1445ab081191f971c0ad2);
-        domWrapper.style.cssText = 'display: block; overflow: hidden; background: transparent; width: 100%; height: ' + viewHeight_7dee1a8924b1445ab081191f971c0ad2 + 'px; right: 0px; left: 0px; padding: 0px; position: relative; border: 0; max-width: ' + maxWidth_7dee1a8924b1445ab081191f971c0ad2 + 'px; max-height: ' + maxHeight_7dee1a8924b1445ab081191f971c0ad2 + 'px; left: 0px; right: 0px; margin: auto; transition: height 0.4s ease-in;';
+        domWrapper.style.cssText = 'display: block; overflow: hidden; background: transparent; width: 100%; height: ' + viewHeight_7dee1a8924b1445ab081191f971c0ad2 + 'px; right: 0px; left: 0px; padding: 0px; position: relative; border: 0; max-width: ' + maxWidth_7dee1a8924b1445ab081191f971c0ad2 + 'px; left: 0px; right: 0px; margin: auto; transition: height 0.4s ease-in;';
     
         switch (positionInsert_7dee1a8924b1445ab081191f971c0ad2) {
             case 'before':
