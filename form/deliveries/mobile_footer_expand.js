@@ -85,7 +85,7 @@ function showBannerYomedia_1936d003c150434a8f90e7e97ee11377(s) {
         if (show_close_button) {
             const btn_close = document.createElement('div');
             btn_close.setAttribute('id', `yo-close-1936d003c150434a8f90e7e97ee11377`);
-            btn_close.setAttribute('style', `width: 34px !important; height: 34px !important; position: absolute; bottom: 0px !important; right: 0px !important; z-index: 2147483647 !important;`);
+            btn_close.setAttribute('style', `width: 34px !important; height: 34px !important; position: absolute; bottom: 132px !important; right: 0px !important; z-index: 2147483647 !important;`);
             let close_image = new Image();
             close_image.src = 'https://media.yomedia.vn/images/btn_close.png';
             close_image.setAttribute('style', 'width: 100% !important; height: 100% !important;')
@@ -112,16 +112,16 @@ function showBannerYomedia_1936d003c150434a8f90e7e97ee11377(s) {
     
         if (show_logo) {
             const logo = document.createElement('div');
-            logo.setAttribute('style', `position: absolute; display: inline-block; height: 25px; cursor: pointer; z-index: 2147483647 !important; left: 0px !important; bottom: 0px !important;`);
+            logo.setAttribute('style', `position: absolute; display: inline-block; height: 25px; cursor: pointer; z-index: 2147483647 !important; left: 0px !important; bottom: 139px !important;`);
             const a_logo = document.createElement('a');
             a_logo.setAttribute('href', 'https://yomedia.vn');
             a_logo.setAttribute('target', '_blank');
             logo.appendChild(a_logo);
             let image_logo = new Image();
-            image_logo.src = 'https://media.yomedia.vn/images/yo-bl-logo.png';
+            image_logo.src = 'https://media.yomedia.vn/images/yo-tl-logo.png';
             image_logo.setAttribute('style', 'width: auto !important; height: 25px !important;');
-            image_logo.setAttribute('onmouseover', `this.src='https://media.yomedia.vn/images/yo-bl-f-logo.png'`);
-            image_logo.setAttribute('onmouseout', `this.src='https://media.yomedia.vn/images/yo-bl-logo.png'`);
+            image_logo.setAttribute('onmouseover', `this.src='https://media.yomedia.vn/images/yo-tl-f-logo.png'`);
+            image_logo.setAttribute('onmouseout', `this.src='https://media.yomedia.vn/images/yo-tl-logo.png'`);
             a_logo.appendChild(image_logo);
             zone_ads.appendChild(logo);
         }
