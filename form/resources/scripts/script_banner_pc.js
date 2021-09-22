@@ -27,7 +27,7 @@ if (bannerURL && formatURL) {
 		bigBalloon: '../../form/deliveries/pc_big_balloon.js',
 		bottomUp: '../../form/deliveries/pc_bottom_up.js',
 		threeDPostCarousel: '../../form/deliveries/pc_mb_3d_post_carousel.js',
-		inImageTakeover: '../../form/deliveries/pc_mb_in_image_takeover.js',
+		inImageTakeover: '../../form/deliveries/display_in_image_takeover.js',
 		inImageWithInread: '../../form/deliveries/pc_mb_in_image_inread.js',
 		inImageCarousel: '../../form/deliveries/pc_mb_in_image_carousel.js',
 		onImagePc: '../../form/deliveries/pc_mb_on_image.js',
