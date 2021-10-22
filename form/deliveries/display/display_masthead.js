@@ -42,7 +42,7 @@ function showBannerYomedia_5b8149ae5b164b2b94ac73f90c67c86f(s) {
         domainURL = 'demo';
     }
     let show_logo = true;
-    let show_close_button = true;
+    let show_close_button = false;
     if (document.getElementById(yomediaId_5b8149ae5b164b2b94ac73f90c67c86f)) {
         return false;
     }
