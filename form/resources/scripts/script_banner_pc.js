@@ -1,201 +1,164 @@
-var urlParams = new URLSearchParams(window.location.search);
-var bannerURL = urlParams.get('b');
-var formatURL = urlParams.get('f');
-var domainURL = urlParams.get('c');
+var a = document.getElementById('ads-balloon');
+var b = document.getElementById('ads-bottom-up');
+var c = document.getElementById('ads-big-balloon');
 
-var fileDirectory;
-var adPlacement = null;
-
-if (domainURL == null || domainURL == 'null') {
-	domainURL = 'demo';
+function removeAllIframes () {
+	a.remove();
+	b.remove();
+	c.remove();
 }
 
-function removeClass (placementBalloon, placementBottomUp) {
-	placementBalloon = document.getElementById('ads-balloon');
-	placementBalloon.remove();
-	placementBottomUp = document.getElementById('ads-bottom-up');
-	placementBottomUp.remove();
-	placementBottomUp = document.getElementById('ads-big-balloon');
-	placementBottomUp.remove();
+function removeIframesForBalloon () {
+	b.remove();
+	c.remove();
 }
 
-if (bannerURL && formatURL) {
-	//Get fireDirectory name from file directories
-	const fileName = {
-		masthead: '../../form/deliveries/display_masthead.js',
-		balloon: '../../form/deliveries/pc_balloon.js',
-		bigBalloon: '../../form/deliveries/pc_big_balloon.js',
-		bottomUp: '../../form/deliveries/pc_bottom_up.js',
-		threeDPostCarousel: '../../form/deliveries/pc_mb_3d_post_carousel.js',
-		inImageTakeover: '../../form/deliveries/display_in_image_takeover.js',
-		inImageWithInread: '../../form/deliveries/pc_mb_in_image_inread.js',
-		inImageCarousel: '../../form/deliveries/pc_mb_in_image_carousel.js',
-		onImagePc: '../../form/deliveries/pc_mb_on_image.js',
-		iab300x250: '../../form/deliveries/pc_mb_iab_300x250.js',
-		iab300x600: '../../form/deliveries/pc_mb_iab_300x600.js',
+function removeIframesForBigBalloon () {
+	a.remove();
+	b.remove();
+}
+
+function removeIframesForBottomUp () {
+	a.remove();
+	c.remove();
+}
+	
+function getFilePath() {
+	const filePath = {
+		display_masthead: '../../form/deliveries/display/display_masthead.js',
+		display_balloon: '../../form/deliveries/display/display_balloon.js',
+		display_big_balloon: '../../form/deliveries/display/display_big_balloon.js',
+		display_bottom_up: '../../form/deliveries/display/display_bottom_up.js',
+		display_3d_post_carousel: '../../form/deliveries/display/display_3d_post_carousel.js',
+		display_in_image_native: '../../form/deliveries/display/display_in_image_native.js',
+		display_in_image_takeover: '../../form/deliveries/display/display_in_image_takeover.js',
+		display_in_image_with_video_inread: '../../form/deliveries/display/display_in_image_with_video_inread.js',
+		display_in_image_carousel: '../../form/deliveries/display/display_in_image_carousel.js',
+		display_on_image: '../../form/deliveries/display/display_on_image.js',
+		display_iab_medium_rectangle: '../../form/deliveries/display/display_iab_medium_rectangle.js',
+		display_iab_half_page: '../../form/deliveries/display/display_iab_half_page.js',
+	}
+	return filePath;
+}
+
+function getBannerName() {
+	const bannerName = {
+		display_masthead: "Display Masthead (Billboard)",
+		display_balloon: "Display Balloon",
+		display_big_balloon: "Big Display Balloon",
+		display_bottom_up: "Display Bottom Up",
+		display_3d_post_carousel: "Display 3D Post Carousel",
+		display_in_image_native: "Display In Image Native",
+		display_in_image_takeover: "Display In Image Takeover",
+		display_in_image_with_video_inread: "Display In Image With Video Inread",
+		display_in_image_carousel: "Display In Image Carousel",
+		display_on_image: "Display On Image",
+		display_iab_medium_rectangle: "Medium Rectangle (300x250)",
+		display_iab_half_page: "Half Page (300x600)",
+	}
+	return bannerName;
+}
+
+function generateScript() {
+	let urlParams = new URLSearchParams(window.location.search);
+	let bannerURL = urlParams.get('b');
+	let formatURL = urlParams.get('f');
+	let domainURL = urlParams.get('c');
+		
+	if (domainURL == null || domainURL == 'null') {
+		domainURL = 'demo';
 	}
 
-	//Switching cases
-	switch(formatURL) {
-		case 'masthead-pc':
-			document.title = "Display Masthead (Billboard)";
-			fileDirectory = fileName.masthead;
-			removeClass();
-			adPlacement = document.getElementById('ads-billboard');
-			//Replace div id with script source
-			var scriptPlacement = document.createElement('script');
-			scriptPlacement.src = fileDirectory;
-			//Append script to div id
-			adPlacement.appendChild(scriptPlacement);		
-			break;
-
-		case 'balloon-pc':
-			console.log("Banner: ", bannerURL);
-			document.title = "Display Balloon";
-			//Replace div id with link banner source
-			adBalloon = document.getElementById('ads-balloon').src = `https://${domainURL}.yomedia.vn/` + `${bannerURL}?pid=104`;
-			//Get file javascript
-			fileDirectory = fileName.balloon;
-			placementBottomUp = document.getElementById('ads-bottom-up');
-			placementBottomUp.remove();		
-			placementBigBalloon = document.getElementById('ads-big-balloon');
-			placementBigBalloon.remove();		
-			adPlacement = document.getElementById('yomedia-destination-197');
-			//Replace div id with script source
-			var scriptPlacement = document.createElement('script');
-			scriptPlacement.src = fileDirectory;
-			//Append script to div id
-			adPlacement.appendChild(scriptPlacement);
-			break;
-		
-		case 'big-balloon-pc':
-			console.log("Banner: ", bannerURL);
-			document.title = "Big Display Balloon";
-			//Replace div id with link banner source
-			adBalloon = document.getElementById('ads-big-balloon').src = `https://${domainURL}.yomedia.vn/` + `${bannerURL}?pid=104`;
-			//Get file javascript
-			fileDirectory = fileName.bigBalloon;
-			placementBottomUp = document.getElementById('ads-bottom-up');
-			placementBottomUp.remove();		
-			placementBalloon = document.getElementById('ads-balloon');
-			placementBalloon.remove();		
-			adPlacement = document.getElementById('yomedia-destination-197');
-			//Replace div id with script source
-			var scriptPlacement = document.createElement('script');
-			scriptPlacement.src = fileDirectory;
-			//Append script to div id
-			adPlacement.appendChild(scriptPlacement);
-			break;
-		
-		case 'bottom-up-pc':
-			console.log("Banner: ", bannerURL);
-			document.title = "Display Bottom Up";
-			//Replace div id with link banner source
-			adBalloon = document.getElementById('ads-bottom-up').src = `https://${domainURL}.yomedia.vn/` + `${bannerURL}?pid=104&ord=12`;
-			//Get file javascript
-			fileDirectory = fileName.bottomUp;
-			adPlacement = document.getElementById('yomedia-destination-197');
-			placementBalloon = document.getElementById('ads-balloon');
-			placementBalloon.remove();		
-			placementBigBalloon = document.getElementById('ads-big-balloon');
-			placementBigBalloon.remove();		
-			//Replace div id with script source
-			var scriptPlacement = document.createElement('script');
-			scriptPlacement.src = fileDirectory;
-			//Append script to div id
-			adPlacement.appendChild(scriptPlacement);
-			break;
+	if (bannerURL && formatURL) {
+		const filePath = this.getFilePath();
+		const bannerName = this.getBannerName();
+		//Switching cases
+		let scriptPlacement = document.createElement('script');
+		switch(formatURL) {
+			case 'masthead-pc':
+				document.title = bannerName.display_masthead;
+				scriptPlacement.src = filePath.display_masthead;
+				document.getElementById('ads-billboard').appendChild(scriptPlacement);		
+				removeAllIframes();
+				break;
+	
+			case 'balloon-pc':
+				document.title = bannerName.display_balloon;
+				scriptPlacement.src = filePath.display_balloon;
+				document.getElementById('yomedia-destination-197').appendChild(scriptPlacement);
+				removeIframesForBalloon();
+				break;
 			
-		case '3d-post-carousel-pc':
-			document.title = "Display 3D Post Carousel";
-			fileDirectory = fileName.threeDPostCarousel;
-			removeClass();
-			adPlacement = document.getElementById('ads-3d-post-carousel');
-			//Replace div id with script source
-			var scriptPlacement = document.createElement('script');
-			scriptPlacement.src = fileDirectory;
-			//Append script to div id
-			adPlacement.appendChild(scriptPlacement);
-			break;
-
-		case 'in-native-pc':
-			document.title = "Display In Image Native";
-			fileDirectory = fileName.inImageTakeover;
-			removeClass();
-			//Replace div id with script source
-			var scriptPlacement = document.createElement('script');
-			scriptPlacement.src = fileDirectory;
-			//Append script to body
-			document.body.appendChild(scriptPlacement);
-			break;
-
-		case 'in-takeover-pc':
-			document.title = "Display In Image Takeover";
-			fileDirectory = fileName.inImageTakeover;
-			removeClass();
-			//Replace div id with script source
-			var scriptPlacement = document.createElement('script');
-			scriptPlacement.src = fileDirectory;
-			//Append script to body
-			document.body.appendChild(scriptPlacement);
-			break;
-		
-		case 'in-inread-pc':
-			document.title = "Display In Image With Video Inread";
-			fileDirectory = fileName.inImageWithInread;
-			removeClass();
-			//Replace div id with script source
-			var scriptPlacement = document.createElement('script');
-			scriptPlacement.src = fileDirectory;
-			//Append script to body
-			document.body.appendChild(scriptPlacement);
-			break;
-
-		case 'in-carousel-pc':
-			document.title = "Display In Image Carousel";
-			fileDirectory = fileName.inImageCarousel;
-			removeClass();
-			//Replace div id with script source
-			var scriptPlacement = document.createElement('script');
-			scriptPlacement.src = fileDirectory;
-			//Append script to body
-			document.body.appendChild(scriptPlacement);
-			break;
-		
-		case 'on-image-pc':
-			document.title = "Display On Image";
-			fileDirectory = fileName.onImagePc;
-			removeClass();
-			adPlacement = document.getElementById('ads-on-image');
-			//Replace div id with script source
-			var scriptPlacement = document.createElement('script');
-			scriptPlacement.src = fileDirectory;
-			//Append script to div id
-			adPlacement.appendChild(scriptPlacement);	
-			break;
-		
-		case 'medium-rectangle-pc':
-			document.title = "Medium Rectangle (300x250)";
-			fileDirectory = fileName.iab300x250;
-			removeClass();
-			adPlacement = document.getElementById('ads-iab');
-			//Replace div id with script source
-			var scriptPlacement = document.createElement('script');
-			scriptPlacement.src = fileDirectory;
-			//Append script to div id
-			adPlacement.appendChild(scriptPlacement);	
-			break;
-		
-		case 'half-page-pc':
-			document.title = "Half Page (300x600)";
-			fileDirectory = fileName.iab300x600;
-			removeClass();
-			adPlacement = document.getElementById('ads-iab');
-			//Replace div id with script source
-			var scriptPlacement = document.createElement('script');
-			scriptPlacement.src = fileDirectory;
-			//Append script to div id
-			adPlacement.appendChild(scriptPlacement);	
-			break;
+			case 'big-balloon-pc':
+				document.title = bannerName.display_big_balloon;
+				scriptPlacement.src = filePath.display_big_balloon;
+				document.getElementById('yomedia-destination-197').appendChild(scriptPlacement);
+				removeIframesForBigBalloon();
+				break;
+			
+			case 'bottom-up-pc':
+				document.title = bannerName.display_bottom_up;
+				scriptPlacement.src = filePath.display_bottom_up;
+				document.getElementById('yomedia-destination-197').appendChild(scriptPlacement);
+				removeIframesForBottomUp();	
+				break;
+				
+			case '3d-post-carousel-pc':
+				document.title = bannerName.display_3d_post_carousel;
+				scriptPlacement.src = filePath.display_3d_post_carousel;
+				document.getElementById('ads-3d-post-carousel').appendChild(scriptPlacement);
+				removeAllIframes();
+				break;
+	
+			case 'in-native-pc':
+				document.title = bannerName.display_in_image_native;
+				scriptPlacement.src = filePath.display_in_image_native;
+				document.body.appendChild(scriptPlacement);
+				removeAllIframes();
+				break;
+	
+			case 'in-takeover-pc':
+				document.title = bannerName.display_in_image_takeover;
+				scriptPlacement.src = filePath.display_in_image_takeover;
+				document.body.appendChild(scriptPlacement);
+				removeAllIframes();
+				break;
+			
+			case 'in-inread-pc':
+				document.title = bannerName.display_in_image_with_video_inread;
+				scriptPlacement.src = filePath.display_in_image_with_video_inread;
+				document.body.appendChild(scriptPlacement);
+				removeAllIframes();
+				break;
+	
+			case 'in-carousel-pc':
+				document.title = bannerName.display_3d_post_carousel;
+				scriptPlacement.src = filePath.display_3d_post_carousel;
+				document.body.appendChild(scriptPlacement);
+				removeAllIframes();
+				break;
+			
+			case 'on-image-pc':
+				document.title = bannerName.display_on_image;
+				scriptPlacement.src = filePath.display_on_image;
+				document.getElementById('ads-on-image').appendChild(scriptPlacement);	
+				removeAllIframes();
+				break;
+			
+			case 'medium-rectangle-pc':
+				document.title = bannerName.display_iab_medium_rectangle;
+				scriptPlacement.src = filePath.display_iab_medium_rectangle;
+				document.getElementById('ads-iab').appendChild(scriptPlacement);	
+				removeAllIframes();
+				break;
+			
+			case 'half-page-pc':
+				document.title = bannerName.display_iab_half_page;
+				scriptPlacement.src = filePath.display_iab_half_page;
+				document.getElementById('ads-iab').appendChild(scriptPlacement);	
+				removeAllIframes();
+				break;
+		}
 	}
 }
+generateScript();

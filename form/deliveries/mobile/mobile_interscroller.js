@@ -1,3 +1,4 @@
+/* MOBILE INTERSCROLLER (INPAGE) */
 var advId_c0d26b72b7754f0b9c91d7cd57b2dd64 = 'c23b9c109f7a4f89a3cb23f694f1d7cb';
 var campId_c0d26b72b7754f0b9c91d7cd57b2dd64 = 'd6692db2a2dd441c9ab9741ee05b127d';
 var pubId_c0d26b72b7754f0b9c91d7cd57b2dd64 = '5565e302fb2e489cae28103f6c66db12';

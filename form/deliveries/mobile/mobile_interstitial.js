@@ -391,7 +391,6 @@ function handleTrackingViewability_9d3a74db38164ebf889697f844c94afd(el) {
     }
 }showBannerYomedia_9d3a74db38164ebf889697f844c94afd(1);
 function impressionTrackingYomedia_9d3a74db38164ebf889697f844c94afd() {
-    getTrackingYomedia('https://tracking.yomedia.vn/mobile?evt=002&token=b42499c3c3ce8789ff69b0f52695d5e74375bed61c&ord=1632318791930' + Date.now());
     if (typeof _YoImp != 'undefined' && avlHelperModule.validateUrl(_YoImp)) {
         getTrackingYomedia(_YoImp);
     } else if (typeof _YoImpCallback_9d3a74db38164ebf889697f844c94afd === 'function') {
@@ -400,14 +399,13 @@ function impressionTrackingYomedia_9d3a74db38164ebf889697f844c94afd() {
 }
 
 function viewableTrackingYomedia_9d3a74db38164ebf889697f844c94afd() {
-    getTrackingYomedia('https://tracking.yomedia.vn/mobile?evt=008&token=b42499c3c3ce8789ff69b0f52695d5e7437517ebbb&ord=1632318791930' + Date.now());
 }
 
 function clickTrackingYomedia_9d3a74db38164ebf889697f844c94afd() {
     if (typeof _YoClick != 'undefined' && avlHelperModule.validateUrl(_YoClick)) {
         getTrackingYomedia(_YoClick);
     }
-        var landingPage = 'https://tracking.yomedia.vn/mobile?evt=009&token=b42499c3c3ce8789ff69b0f52695d5e74375a14170&to=http%3A%2F%2Fwww.yomedia.vn%2F&ord=1632318791930' + Date.now();
+        var landingPage = 'https://yomedia.vn';
         var isMac = /Mac|iPhone|iPod|iPad/.test(navigator.userAgent) && /\sSafari\//.test(navigator.userAgent);
         if (!isMac) {
             window.open(landingPage, '_blank');
@@ -419,7 +417,7 @@ function clickThroughYomedia_9d3a74db38164ebf889697f844c94afd() {
     if (typeof _YoClick != 'undefined' && avlHelperModule.validateUrl(_YoClick)) {
         getTrackingYomedia(_YoClick);
     }
-        var landingPage = 'https://tracking.yomedia.vn/mobile?evt=009&token=b42499c3c3ce8789ff69b0f52695d5e74375a14170&to=http%3A%2F%2Fwww.yomedia.vn%2F&ord=1632318791930' + Date.now();
+    var landingPage = 'https://yomedia.vn';
         window.open(landingPage, '_blank');
     window.parent.postMessage("LgTopBanner","*");
 }
@@ -432,28 +430,23 @@ function clickTracking3rdYomedia_9d3a74db38164ebf889697f844c94afd() {
 }
 
 function startTrackingYomedia_9d3a74db38164ebf889697f844c94afd(){
-    getTrackingYomedia('https://tracking.yomedia.vn/mobile?evt=003&token=b42499c3c3ce8789ff69b0f52695d5e74375aec686&ord=1632318791930' + Date.now());
 }
 
 function firstQuartileTrackingYomedia_9d3a74db38164ebf889697f844c94afd(){
-    getTrackingYomedia('https://tracking.yomedia.vn/mobile?evt=004&token=b42499c3c3ce8789ff69b0f52695d5e74375fc98a7&ord=1632318791930' + Date.now());
 }
 
 function midpointTrackingYomedia_9d3a74db38164ebf889697f844c94afd(){
-    getTrackingYomedia('https://tracking.yomedia.vn/mobile?evt=005&token=b42499c3c3ce8789ff69b0f52695d5e74375f7c9e6&ord=1632318791930' + Date.now());
 }
 
 function thirdQuartileTrackingYomedia_9d3a74db38164ebf889697f844c94afd(){
-    getTrackingYomedia('https://tracking.yomedia.vn/mobile?evt=006&token=b42499c3c3ce8789ff69b0f52695d5e7437595daad&ord=1632318791930' + Date.now());
 }
 
 function completeTrackingYomedia_9d3a74db38164ebf889697f844c94afd(){
-    getTrackingYomedia('https://tracking.yomedia.vn/mobile?evt=007&token=b42499c3c3ce8789ff69b0f52695d5e74375e7f3fc&ord=1632318791930' + Date.now());
 }
 
 function getClickTagYomedia_9d3a74db38164ebf889697f844c94afd() {
     var landingPage = '';
-    landingPage = 'https://tracking.yomedia.vn/mobile?evt=009&token=b42499c3c3ce8789ff69b0f52695d5e74375a14170&to=http%3A%2F%2Fwww.yomedia.vn%2F&ord=1632318791930' + Date.now();
+    landingPage = 'https://yomedia.vn';
     return landingPage;
 }
 
@@ -473,15 +466,6 @@ function iFrameListener_9d3a74db38164ebf889697f844c94afd(event){
     catch(err) {}
 }
 addAnEventListener_9d3a74db38164ebf889697f844c94afd(window,'message',iFrameListener_9d3a74db38164ebf889697f844c94afd);
-// http
-var __yoComScore = __yoComScore || [];
-if (__yoComScore.indexOf("2016090700000000011") === -1) {
-    getTrackingYomedia('https://sb.scorecardresearch.com/p?c1=8&c2=18889311&c3=2016090700000000011&ns_ap_it=b&rn=' + Math.floor(Date.now()));
-    __yoComScore.push("2016090700000000011");
-}
-
-
-//flight: Yomedia Service Testing Interstitial itvc
 
 function createTrackingIframe_9d3a74db38164ebf889697f844c94afd(id, src) {
 	var trackingIframe = document.createElement("iframe");

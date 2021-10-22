@@ -1,4 +1,3 @@
-avlHelperModule.embedTracking("");
 avlHelperModule.embedTracking("");    
 //Minimize popup
 function minYoMediaPopupAd_104() {
