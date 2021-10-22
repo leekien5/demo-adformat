@@ -45,7 +45,7 @@ function getBannerName() {
 	const bannerName = {
 		display_masthead: "Display Masthead (Billboard)",
 		display_balloon: "Display Balloon",
-		display_big_balloon: "Big Display Balloon",
+		display_big_balloon: "Display Big Balloon",
 		display_bottom_up: "Display Bottom Up",
 		display_3d_post_carousel: "Display 3D Post Carousel",
 		display_in_image_native: "Display In Image Native",
@@ -53,8 +53,8 @@ function getBannerName() {
 		display_in_image_with_video_inread: "Display In Image With Video Inread",
 		display_in_image_carousel: "Display In Image Carousel",
 		display_on_image: "Display On Image",
-		display_iab_medium_rectangle: "Medium Rectangle (300x250)",
-		display_iab_half_page: "Half Page (300x600)",
+		display_iab_medium_rectangle: "Display IAB Medium Rectangle (300x250)",
+		display_iab_half_page: "Display IAB Half Page (300x600)",
 	}
 	return bannerName;
 }

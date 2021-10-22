@@ -187,7 +187,6 @@ function showBannerYomedia_c0d26b72b7754f0b9c91d7cd57b2dd64(s) {
     bottom.appendChild(top_first);
 
     let next = wrapper.nextSibling;
-    console.log(next)
     if (next) {
         next.parentNode.insertBefore(bottom, next);
     } else {
