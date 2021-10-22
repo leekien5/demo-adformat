@@ -37,15 +37,15 @@ function getFilePath() {
         mobile_footer_windmill: '../../../form/deliveries/mobile/mobile_footer_windmill.js',
         mobile_footer_pull: '../../../form/deliveries/mobile/mobile_footer_pull.js',
         mobile_footer_scratcher: '../../../form/deliveries/mobile/mobile_footer_scratcher.js',
-        // mobile_bottom_up: '../../../form/deliveries/mobile/mobile_bottom_up.js',
-        // mobile_3d_post_carousel: '../../../form/deliveries/mobile/mobile_3d_post_carousel.js',
+        mobile_bottom_up: '../../../form/deliveries/mobile/mobile_bottom_up.js',
+        mobile_3d_post_carousel: '../../../form/deliveries/mobile/mobile_3d_post_carousel.js',
         mobile_in_image_native: '../../../form/deliveries/mobile/mobile_in_image_takeover.js',
         mobile_in_image_takeover: '../../../form/deliveries/mobile/mobile_in_image_takeover.js',
-        // mobile_in_image_with_video_inread: '../../../form/deliveries/mobile/mobile_in_image_with_video_inread.js',
-        // mobile_in_image_carousel: '../../../form/deliveries/mobile/mobile_in_image_carousel.js',
+        mobile_in_image_with_video_inread: '../../../form/deliveries/mobile/mobile_in_image_with_video_inread.js',
+        mobile_in_image_carousel: '../../../form/deliveries/mobile/mobile_in_image_carousel.js',
         mobile_on_image: '../../../form/deliveries/mobile/mobile_on_image.js',
-        // mobile_iab_medium_rectangle: '../../../form/deliveries/mobile/mobile_iab_medium_rectangle.js',
-        // mobile_iab_half_page: '../../../form/deliveries/mobile/mobile_iab_half_page.js',
+        mobile_iab_medium_rectangle: '../../../form/deliveries/mobile/mobile_iab_medium_rectangle.js',
+        mobile_iab_half_page: '../../../form/deliveries/mobile/mobile_iab_half_page.js',
     }
     return filePath;
 }
