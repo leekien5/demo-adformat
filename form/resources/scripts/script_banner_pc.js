@@ -132,8 +132,8 @@ function generateScript() {
 				break;
 	
 			case 'in-carousel-pc':
-				document.title = bannerName.display_3d_post_carousel;
-				scriptPlacement.src = filePath.display_3d_post_carousel;
+				document.title = bannerName.display_in_image_carousel;
+				scriptPlacement.src = filePath.display_in_image_carousel;
 				document.body.appendChild(scriptPlacement);
 				removeAllIframes();
 				break;
