@@ -1,3 +1,25 @@
+/* DISPLAY BALLOON */
+function showAds() {
+    let urlParams = new URLSearchParams(window.location.search);
+	let bannerURL = urlParams.get('b');
+	let domainURL = urlParams.get('c');
+    let log = {
+        style:'color: #FFFFFF; font-size: 12px; padding: 5px;',
+        info:(msg)=>{
+            console.log(`%c${msg}`,`background: #5DADE2; ${log.style}`)
+        },
+        success:(msg)=>{
+            console.log(`%c${msg}`,`background: #008000; ${log.style}`)
+        },
+    }
+		
+	if (domainURL == null || domainURL == 'null') {
+		domainURL = 'demo';
+	}
+    log.success(`Banner source: https://${domainURL}.yomedia.vn/${bannerURL}`);
+    document.getElementById('ads-balloon-popup').src = `https://${domainURL}.yomedia.vn/` + `${bannerURL}?pid=104`;
+}
+showAds();
 function minYoMediaPopupAd_104() {
     // var sPos = 'right-bottom';
     // avlInteractModule.rectAd('ads-balloon-popup', 'top-down', sPos, 'min', parseInt('300'), parseInt('250'), parseInt('500'), parseInt('300'), parseInt('120'));

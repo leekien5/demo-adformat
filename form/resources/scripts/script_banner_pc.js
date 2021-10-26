@@ -1,32 +1,33 @@
 var a = document.getElementById('ads-balloon');
 var b = document.getElementById('ads-bottom-up');
 var c = document.getElementById('ads-big-balloon');
+var d = document.getElementById('ads-balloon-popup');
 
 function removeAllIframes () {
-	a.remove();
-	b.remove();
-	c.remove();
+	a.remove(); b.remove(); c.remove(); d.remove();
 }
 
 function removeIframesForBalloon () {
-	b.remove();
-	c.remove();
+	b.remove(); c.remove(); d.remove();
 }
 
 function removeIframesForBigBalloon () {
-	a.remove();
-	b.remove();
+	a.remove(); b.remove(); d.remove();
 }
 
 function removeIframesForBottomUp () {
-	a.remove();
-	c.remove();
+	a.remove(); c.remove(); d.remove();
+}
+
+function removeIframesForBalloonPopUp () {
+	a.remove(); b.remove(); c.remove();
 }
 	
 function getFilePath() {
 	const filePath = {
 		display_masthead: '../../form/deliveries/display/display_masthead.js',
 		display_balloon: '../../form/deliveries/display/display_balloon.js',
+		display_balloon_popup: '../../form/deliveries/display/display_balloon_popup.js',
 		display_big_balloon: '../../form/deliveries/display/display_big_balloon.js',
 		display_bottom_up: '../../form/deliveries/display/display_bottom_up.js',
 		display_3d_post_carousel: '../../form/deliveries/display/display_3d_post_carousel.js',
@@ -45,6 +46,7 @@ function getBannerName() {
 	const bannerName = {
 		display_masthead: "Display Masthead (Billboard)",
 		display_balloon: "Display Balloon",
+		display_balloon: "Display Balloon Popup Expandable",
 		display_big_balloon: "Display Big Balloon",
 		display_bottom_up: "Display Bottom Up",
 		display_3d_post_carousel: "Display 3D Post Carousel",
@@ -87,6 +89,13 @@ function generateScript() {
 				scriptPlacement.src = filePath.display_balloon;
 				document.getElementById('yomedia-destination-197').appendChild(scriptPlacement);
 				removeIframesForBalloon();
+				break;
+
+			case 'balloon-popup-pc':
+				document.title = bannerName.display_balloon_popup;
+				scriptPlacement.src = filePath.display_balloon_popup;
+				document.getElementById('yomedia-destination-197').appendChild(scriptPlacement);
+				removeIframesForBalloonPopUp();
 				break;
 			
 			case 'big-balloon-pc':
