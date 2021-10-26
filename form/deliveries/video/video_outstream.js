@@ -29,6 +29,7 @@ if (videoHeight != 0 && videoWitth != 0) {
 }
 
 function showBannerYomedia_5feec6f890d3485bb6f43576f47714ac() {
+    
     var urlParams = new URLSearchParams(window.location.search);
     var bannerURL = urlParams.get('b');
     var domainURL = urlParams.get('c');
@@ -147,8 +148,8 @@ function showBannerYomedia_5feec6f890d3485bb6f43576f47714ac() {
         default:
             document.body.appendChild(domWrapper);
             break;
-    }   
-
+    }
+    
     log.success(`Banner source: https://${domainURL}.yomedia.vn/${bannerURL}`);
 
     var contentHTML_5feec6f890d3485bb6f43576f47714ac = `
@@ -183,6 +184,19 @@ function showBannerYomedia_5feec6f890d3485bb6f43576f47714ac() {
                         },
                     }
                 );
+                const logo = document.createElement('div');
+                logo.setAttribute('style', 'position: absolute; display: inline-block; height: 25px; cursor: pointer; z-index: 9999 !important; left: 0px !important; top: 0px !important;');
+                const a_logo = document.createElement('a');
+                a_logo.setAttribute('href', 'https://yomedia.vn');
+                a_logo.setAttribute('target', '_blank');
+                logo.appendChild(a_logo);
+                let image_logo = new Image();
+                image_logo.src = 'https://media.yomedia.vn/images/yo-tl-logo.png';
+                image_logo.setAttribute('style', 'width: auto !important; height: 25px !important;');
+                image_logo.setAttribute('onmouseover', "this.src='https://media.yomedia.vn/images/yo-tl-f-logo.png'");
+                image_logo.setAttribute('onmouseout', "this.src='https://media.yomedia.vn/images/yo-tl-logo.png'");
+                a_logo.appendChild(image_logo);
+                document.getElementById('yomedia-player-5feec6f890d3485bb6f43576f47714ac').appendChild(logo);
                 playerInstance.on('ready', function() {
                     window.parent.postMessage(JSON.stringify({"event": "ready", "pid": pid, "auth": "Yomedia"}), '*');
                     var dom = document.getElementById('yomedia-player-' + pid);
