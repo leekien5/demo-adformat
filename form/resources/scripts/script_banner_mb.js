@@ -54,7 +54,6 @@ function generateScript() {
     let urlParams = new URLSearchParams(window.location.search);
     let bannerURL = urlParams.get('b');
     let formatURL = urlParams.get('f');
-    let adPlacement = null;
 
     if (bannerURL && formatURL) { 
         const bannerName = this.getBannerName();
