@@ -1,222 +1,186 @@
-let urlParams = new URLSearchParams(window.location.search);
-let bannerURL = urlParams.get('b');
-let formatURL = urlParams.get('f');
-let fileDirectory;
-let adPlacement = null;
-if(bannerURL && formatURL) {
-	//Get fireDirectory name from file directories
-	const fileName = {
-		masthead: '../../../form/deliveries/mb_masthead.js',
-		inpage: '../../../form/deliveries/mb_inpage.js',
-		firstview: '../../../form/deliveries/mb_firstview.js',
-		footer: '../../../form/deliveries/mb_footer.js',
-		wheel: '../../../form/deliveries/mb_footer_wheel.js',
-		windmill: '../../../form/deliveries/mb_footer_windmill.js',
-		bottomUpMb: '../../../form/deliveries/mb_bottom_up.js',
-		threeDPostCarousel: '../../../form/deliveries/pc_mb_3d_post_carousel.js',
-		inImageTakeover: '../../../form/deliveries/pc_mb_in_image_takeover.js',
-		inImageWithInread: '../../../form/deliveries/pc_mb_in_image_inread.js',
-		inImageCarousel: '../../../form/deliveries/pc_mb_in_image_carousel.js',
-		onImageMb: '../../../form/deliveries/pc_mb_on_image.js',
-		iab300x250: '../../../form/deliveries/pc_mb_iab_300x250.js',
-		iab300x600: '../../../form/deliveries/pc_mb_iab_300x600.js',
-	}
-	//Switching cases
-	switch(formatURL) {
-		case 'masthead-mb':
-			document.title = "Mobile Masthead";
-			fileDirectory = fileName.masthead;
-			adPlacement = document.getElementById('ads-billboard');
-			//Replace div id with script source
-			var scriptPlacement = document.createElement('script');
-			scriptPlacement.src = fileDirectory;
-			//Append script to div id
-			adPlacement.appendChild(scriptPlacement);		
-			break;
-
-		case 'inpage-mb':
-			document.title = "Mobile Interscroller (Inpage)";
-			fileDirectory = fileName.inpage;
-			adPlacement = document.getElementById('ads-inpage');
-			//Replace div id with script source
-			var scriptPlacement = document.createElement('script');
-			scriptPlacement.src = fileDirectory;
-			//Append script to div id
-			adPlacement.appendChild(scriptPlacement);	
-			break;
-
-		case 'firstview-mb':
-			document.title = "Mobile Interstitial (Firstview)";
-			fileDirectory = fileName.firstview;
-			//Replace div id with script source
-			var scriptPlacement = document.createElement('script');
-			scriptPlacement.src = fileDirectory;
-			//Append script to body
-			document.body.appendChild(scriptPlacement);
-			break;
-		
-		case 'footer-mb':
-			document.title = "Mobile Footer";
-			fileDirectory = fileName.footer;
-			//Replace div id with script source
-			var scriptPlacement = document.createElement('script');
-			scriptPlacement.src = fileDirectory;
-			//Append script to body
-			document.body.appendChild(scriptPlacement);
-			break;
-
-		case 'footer-expand-mb':
-			document.title = "Mobile Footer Expandable";
-			fileDirectory = fileName.footer;
-			//Replace div id with script source
-			var scriptPlacement = document.createElement('script');
-			scriptPlacement.src = fileDirectory;
-			//Append script to body
-			document.body.appendChild(scriptPlacement);
-			break;
-
-		case '3d-footer-mb':
-			document.title = "Mobile 3D Footer";
-			fileDirectory = fileName.footer;
-			//Replace div id with script source
-			var scriptPlacement = document.createElement('script');
-			scriptPlacement.src = fileDirectory;
-			//Append script to body
-			document.body.appendChild(scriptPlacement);
-			break;
-
-		case 'card-mb':
-			document.title = "Mobile Card";
-			fileDirectory = fileName.footer;
-			//Replace div id with script source
-			var scriptPlacement = document.createElement('script');
-			scriptPlacement.src = fileDirectory;
-			//Append script to body
-			document.body.appendChild(scriptPlacement);
-			break;
-
-		case 'wheel-mb':
-			document.title = "Mobile Footer Wheel";
-			fileDirectory = fileName.wheel;
-			//Replace div id with script source
-			var scriptPlacement = document.createElement('script');
-			scriptPlacement.src = fileDirectory;
-			//Append script to body
-			document.body.appendChild(scriptPlacement);
-			break;
-
-		case 'teris-mb':
-			document.title = "Mobile Teris Footer";
-			fileDirectory = fileName.footer;
-			//Replace div id with script source
-			var scriptPlacement = document.createElement('script');
-			scriptPlacement.src = fileDirectory;
-			//Append script to body
-			document.body.appendChild(scriptPlacement);
-			break;
-
-		case 'windmill-mb':
-			document.title = "Mobile Footer Windmill";
-			fileDirectory = fileName.windmill;
-			//Replace div id with script source
-			var scriptPlacement = document.createElement('script');
-			scriptPlacement.src = fileDirectory;
-			//Append script to body
-			document.body.appendChild(scriptPlacement);
-			break;
-			
-		case 'bottom-up-mb':
-			document.title = "Mobile Bottom Up";
-			fileDirectory = fileName.bottomUpMb;
-			//Replace div id with script source
-			var scriptPlacement = document.createElement('script');
-			scriptPlacement.src = fileDirectory;
-			//Append script to body
-			document.body.appendChild(scriptPlacement);
-			break;
-
-		case '3d-post-carousel-mb':
-			document.title = "Mobile 3D Post Carousel";
-			fileDirectory = fileName.threeDPostCarousel;
-			adPlacement = document.getElementById('ads-3d-post-carousel');
-			//Replace div id with script source
-			var scriptPlacement = document.createElement('script');
-			scriptPlacement.src = fileDirectory;
-			//Append script to div id
-			adPlacement.appendChild(scriptPlacement);
-			break;
-
-		case 'in-native-mb':
-			document.title = "Mobile In Image Native";
-			fileDirectory = fileName.inImageTakeover;
-			//Replace div id with script source
-			var scriptPlacement = document.createElement('script');
-			scriptPlacement.src = fileDirectory;
-			//Append script to body
-			document.body.appendChild(scriptPlacement);
-			break;
-
-		case 'in-takeover-mb':
-			document.title = "Mobile In Image Takeover";
-			fileDirectory = fileName.inImageTakeover;
-			//Replace div id with script source
-			var scriptPlacement = document.createElement('script');
-			scriptPlacement.src = fileDirectory;
-			//Append script to body
-			document.body.appendChild(scriptPlacement);
-			break;
-		
-		case 'in-inread-mb':
-			document.title = "Mobile In Image With Video Inread";
-			fileDirectory = fileName.inImageWithInread;
-			//Replace div id with script source
-			var scriptPlacement = document.createElement('script');
-			scriptPlacement.src = fileDirectory;
-			//Append script to body
-			document.body.appendChild(scriptPlacement);
-			break;
-
-		case 'in-carousel-mb':
-			document.title = "Mobile In Image Carousel";
-			fileDirectory = fileName.inImageCarousel;
-			//Replace div id with script source
-			var scriptPlacement = document.createElement('script');
-			scriptPlacement.src = fileDirectory;
-			//Append script to body
-			document.body.appendChild(scriptPlacement);
-			break;
-			
-		case 'on-image-mb':
-			document.title = "Mobile On Image";
-			fileDirectory = fileName.onImageMb;
-			adPlacement = document.getElementById('ads-on-image');
-			//Replace div id with script source
-			var scriptPlacement = document.createElement('script');
-			scriptPlacement.src = fileDirectory;
-			//Append script to div id
-			adPlacement.appendChild(scriptPlacement);
-			break;
-		
-		case 'medium-rectangle-mb':
-			document.title = "Mobile Medium Rectangle (300x250)";
-			fileDirectory = fileName.iab300x250;
-			adPlacement = document.getElementById('ads-iab');
-			//Replace div id with script source
-			var scriptPlacement = document.createElement('script');
-			scriptPlacement.src = fileDirectory;
-			//Append script to div id
-			adPlacement.appendChild(scriptPlacement);	
-			break;
-		
-		case 'half-page-mb':
-			document.title = "Mobile Half Page (300x600)";
-			fileDirectory = fileName.iab300x600;
-			adPlacement = document.getElementById('ads-iab');
-			//Replace div id with script source
-			var scriptPlacement = document.createElement('script');
-			scriptPlacement.src = fileDirectory;
-			//Append script to div id
-			adPlacement.appendChild(scriptPlacement);	
-			break;
-	}
+function getBannerName() {
+    const bannerName = {
+        mobile_masthead: 'Mobile Masthead',
+        mobile_interscroller: 'Mobile Interscroller (Inpage)',
+        mobile_interstitial: 'Mobile Interstitial (Firstview)',
+        mobile_footer_expand: 'Mobile Footer Expandable',
+        mobile_footer_3d_box: 'Mobile Footer 3D Box Carousel',
+        mobile_footer_card: 'Mobile Card',
+        mobile_footer_wheel: 'Mobile Wheel',
+        mobile_footer_tetris: 'Mobile Tetris',
+        mobile_footer_windmill: 'Mobile Windmill',
+        mobile_footer_pull: 'Mobile Pull Ads',
+        mobile_footer_scratcher: 'Mobile Scratcher',
+        mobile_bottom_up: 'Mobile Bottom Up',
+        mobile_3d_post_carousel: 'Mobile 3D Post Carousel',
+        mobile_in_image_native: 'Mobile In Image Native',
+        mobile_in_image_takeover: 'Mobile In Image Takeover',
+        mobile_in_image_with_video_inread: 'Mobile In Image With Video Inread',
+        mobile_in_image_carousel: 'Mobile In Image Carousel',
+        mobile_on_image: 'Mobile On Image',
+        mobile_iab_medium_rectangle: 'Mobile Medium Rectangle (300x250)',
+        mobile_iab_half_page: 'Mobile Half Page (300x600)',
+    }
+    return bannerName;
 }
+
+function getFilePath() {
+    const filePath = {
+        mobile_masthead: '../../../form/deliveries/mobile/mobile_masthead.js',
+        mobile_interscroller: '../../../form/deliveries/mobile/mobile_interscroller.js',
+        mobile_interstitial: '../../../form/deliveries/mobile/mobile_interstitial.js',
+        mobile_footer_expand: '../../../form/deliveries/mobile/mobile_footer_expand.js',
+        mobile_footer_3d_box: '../../../form/deliveries/mobile/mobile_footer_3d_box.js',
+        mobile_footer_card: '../../../form/deliveries/mobile/mobile_footer_card.js',
+        mobile_footer_wheel: '../../../form/deliveries/mobile/mobile_footer_wheel.js',
+        mobile_footer_tetris: '../../../form/deliveries/mobile/mobile_footer_tetris.js',
+        mobile_footer_windmill: '../../../form/deliveries/mobile/mobile_footer_windmill.js',
+        mobile_footer_pull: '../../../form/deliveries/mobile/mobile_footer_pull.js',
+        mobile_footer_scratcher: '../../../form/deliveries/mobile/mobile_footer_scratcher.js',
+        mobile_bottom_up: '../../../form/deliveries/mobile/mobile_bottom_up.js',
+        mobile_3d_post_carousel: '../../../form/deliveries/mobile/mobile_3d_post_carousel.js',
+        mobile_in_image_native: '../../../form/deliveries/mobile/mobile_in_image_takeover.js',
+        mobile_in_image_takeover: '../../../form/deliveries/mobile/mobile_in_image_takeover.js',
+        mobile_in_image_with_video_inread: '../../../form/deliveries/mobile/mobile_in_image_with_video_inread.js',
+        mobile_in_image_carousel: '../../../form/deliveries/mobile/mobile_in_image_carousel.js',
+        mobile_on_image: '../../../form/deliveries/mobile/mobile_on_image.js',
+        mobile_iab_medium_rectangle: '../../../form/deliveries/mobile/mobile_iab_medium_rectangle.js',
+        mobile_iab_half_page: '../../../form/deliveries/mobile/mobile_iab_half_page.js',
+    }
+    return filePath;
+}
+
+function generateScript() {
+    let urlParams = new URLSearchParams(window.location.search);
+    let bannerURL = urlParams.get('b');
+    let formatURL = urlParams.get('f');
+
+    if (bannerURL && formatURL) { 
+        const bannerName = this.getBannerName();
+        const filePath = this.getFilePath();
+        let scriptPlacement = document.createElement('script');
+
+        switch (formatURL) {
+            case 'masthead-mb':
+                document.title = bannerName.mobile_masthead;
+                scriptPlacement.src = filePath.mobile_masthead;
+                document.getElementById('ads-billboard').appendChild(scriptPlacement);		
+                break;
+    
+            case 'inpage-mb':
+                document.title = bannerName.mobile_interscroller;
+                scriptPlacement.src = filePath.mobile_interscroller;
+                document.getElementById('ads-inpage').appendChild(scriptPlacement);		
+                break;
+    
+            case 'firstview-mb':
+                document.title = bannerName.mobile_interstitial;
+                scriptPlacement.src = filePath.mobile_interstitial;
+                document.body.appendChild(scriptPlacement);
+                break;
+    
+            case 'footer-mb':
+                document.title = bannerName.mobile_footer_expand;
+                scriptPlacement.src = filePath.mobile_footer_expand;
+                document.body.appendChild(scriptPlacement);
+                break;
+    
+            case '3d-footer-mb':
+                document.title = bannerName.mobile_footer_3d_box;
+                scriptPlacement.src = filePath.mobile_footer_3d_box;
+                document.body.appendChild(scriptPlacement);
+                break;
+    
+            case 'card-mb':
+                document.title = bannerName.mobile_footer_card;
+                scriptPlacement.src = filePath.mobile_footer_card;
+                document.body.appendChild(scriptPlacement);
+                break;
+    
+            case 'wheel-mb':
+                document.title = bannerName.mobile_footer_wheel;
+                scriptPlacement.src = filePath.mobile_footer_wheel;
+                document.body.appendChild(scriptPlacement);
+                break;
+    
+            case 'tetris-mb':
+                document.title = bannerName.mobile_footer_tetris;
+                scriptPlacement.src = filePath.mobile_footer_tetris;
+                document.body.appendChild(scriptPlacement);
+                break;
+    
+            case 'scratcher-mb':
+                document.title = bannerName.mobile_footer_scratcher;
+                scriptPlacement.src = filePath.mobile_footer_scratcher;
+                document.body.appendChild(scriptPlacement);
+                break;
+    
+            case 'windmill-mb':
+                document.title = bannerName.mobile_footer_windmill;
+                scriptPlacement.src = filePath.mobile_footer_windmill;
+                document.body.appendChild(scriptPlacement);
+                break;
+    
+            case 'pull-mb':
+                document.title = bannerName.mobile_footer_pull;
+                scriptPlacement.src = filePath.mobile_footer_pull;
+                document.body.appendChild(scriptPlacement);
+                break;
+    
+            case 'bottom-up-mb':
+                document.title = bannerName.mobile_bottom_up;
+                scriptPlacement.src = filePath.mobile_bottom_up;
+                document.body.appendChild(scriptPlacement);
+                break;
+    
+            case '3d-post-carousel-mb':
+                document.title = bannerName.mobile_3d_post_carousel;
+                scriptPlacement.src = filePath.mobile_3d_post_carousel;
+                document.getElementById('ads-3d-post-carousel').appendChild(scriptPlacement);		
+                break;
+    
+            case 'in-native-mb':
+                document.title = bannerName.mobile_in_image_native;
+                scriptPlacement.src = filePath.mobile_in_image_native;
+                document.body.appendChild(scriptPlacement);
+                break;
+    
+            case 'in-takeover-mb':
+                document.title = bannerName.mobile_in_image_takeover;
+                scriptPlacement.src = filePath.mobile_in_image_takeover;
+                document.body.appendChild(scriptPlacement);
+                break;
+    
+            case 'in-inread-mb':
+                document.title = bannerName.mobile_in_image_with_video_inread;
+                scriptPlacement.src = filePath.mobile_in_image_with_video_inread;
+                document.body.appendChild(scriptPlacement);
+                break;
+    
+            case 'in-carousel-mb':
+                document.title = bannerName.mobile_in_image_carousel;
+                scriptPlacement.src = filePath.mobile_in_image_carousel;
+                document.body.appendChild(scriptPlacement);
+                break;
+    
+            case 'on-image-mb':
+                document.title = bannerName.mobile_on_image;
+                scriptPlacement.src = filePath.mobile_on_image;
+                document.getElementById('ads-on-image').appendChild(scriptPlacement);		
+                break;
+    
+            case 'medium-rectangle-mb':
+                document.title = bannerName.mobile_iab_medium_rectangle;
+                scriptPlacement.src = filePath.mobile_iab_medium_rectangle;
+                document.getElementById('ads-iab').appendChild(scriptPlacement);		
+                break;
+    
+            case 'half-page-mb':
+                document.title = bannerName.mobile_iab_half_page;
+                scriptPlacement.src = filePath.mobile_iab_half_page;
+                document.getElementById('ads-iab').appendChild(scriptPlacement);		
+                break;
+        }
+    }
+}
+generateScript();
